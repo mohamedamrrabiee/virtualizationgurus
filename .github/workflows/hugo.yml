@@ -34,8 +34,8 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
-      - name: Clone Ananke theme
-        run: git clone https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+      - name: Clone Ananke theme (pinned compatible version)
+        run: git clone --depth 1 --branch v2.12.2 https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
