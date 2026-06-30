@@ -1,24 +1,47 @@
 baseURL = "https://mohamedamrrabiee.github.io/virtualizationgurus/"
 languageCode = "en-us"
 title = "Virtualization Gurus"
-theme = "ananke"
+theme = "PaperMod"
 
 [params]
   description = "Expert insights on VMware, VCF, and enterprise virtualization"
-  featured_image = ""
-  background_color_class = "bg-dark-blue"
-  recent_posts_number = 5
+  author = "Mohamed Amr Rabiee"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = false
+
+  [params.homeInfoParams]
+    Title = "Virtualization Gurus"
+    Content = "Expert insights on VMware Cloud Foundation, vSphere, NSX, and enterprise virtualization"
+
+  [params.profileMode]
+    enabled = false
 
 [menu]
   [[menu.main]]
+    identifier = "home"
     name = "Home"
     url = "/"
     weight = 1
   [[menu.main]]
+    identifier = "posts"
     name = "Posts"
     url = "/posts/"
     weight = 2
   [[menu.main]]
+    identifier = "about"
     name = "About"
     url = "/about/"
     weight = 3
@@ -27,6 +50,8 @@ theme = "ananke"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+  [markup.highlight]
+    noClasses = false
 
 [pagination]
   pagerSize = 10
