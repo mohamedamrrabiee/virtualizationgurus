@@ -38,6 +38,9 @@ tocopen = false
 text = "Virtualization Gurus"
 url = "/"
 logoText = "VG"
+imageUrl = "/virtualizationgurus/images/logo.svg"
+imageHeight = 48
+imageWidth = 48
 
 # Homepage hero disabled (using _index.md instead for full control)
 [params.homeInfoParams]
