@@ -1,3 +1,23 @@
+# ===========================================================================
+# GitHub Pages deployment workflow for Virtualization Gurus Hugo site.
+#
+# CURRENT STATE (TEMPORARY):
+#   Deploying to: https://mohamedamrrabiee.github.io/virtualizationgurus/
+#   Custom domain: DISABLED (eu.org domain pending approval)
+#
+# AFTER eu.org APPROVAL - four things to restore:
+#   1. hugo.toml: set baseURL = "https://virtualizationgurus.eu.org/"
+#   2. Rename static/CNAME.disabled back to static/CNAME
+#   3. GitHub Settings > Pages > Custom domain = virtualizationgurus.eu.org
+#   4. Cloudflare DNS: CNAME virtualizationgurus.eu.org -> mohamedamrrabiee.github.io
+#
+# ACTIONS VERSIONS (GitHub official Pages workflow):
+#   - actions/checkout@v4
+#   - actions/configure-pages@v5
+#   - actions/upload-pages-artifact@v4
+#   - actions/deploy-pages@v4
+# ===========================================================================
+
 name: Deploy Hugo site to GitHub Pages
 
 on:
@@ -6,11 +26,13 @@ on:
       - main
   workflow_dispatch:
 
+# Permissions required by actions/deploy-pages@v4
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read   # to checkout the repo
+  pages: write     # to deploy to GitHub Pages
+  id-token: write  # OIDC token for secure deployment verification
 
+# Allow only one concurrent deployment; do not cancel in-progress runs.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -20,25 +42,37 @@ defaults:
     shell: bash
 
 jobs:
+  # --- BUILD JOB ---
   build:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.147.9
     steps:
+      # 1. Install Hugo Extended from GitHub releases (pinned version)
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${{ env.HUGO_VERSION }}/hugo_extended_${{ env.HUGO_VERSION }}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      # 2. Checkout with submodules and full git history
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
+
+      # 3. Clone PaperMod theme (shallow for speed)
       - name: Clone PaperMod theme
         run: git clone --depth 1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+
+      # 4. Configure Pages environment and capture base_url output
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+
+      # 5. Build Hugo site
+      #    baseURL is supplied by configure-pages so it is always correct
+      #    (sub-path for github.io OR apex domain once custom domain is live).
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
@@ -49,11 +83,24 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      # 6. SAFETY NET: Remove any CNAME from the built public/ directory.
+      #    Hugo copies static/ into public/; a CNAME there tells GitHub Pages
+      #    to enforce a custom domain. If that domain is not yet verified in
+      #    Settings > Pages the deploy fails with "Deployment failed, try again
+      #    later." The primary fix is that static/CNAME was renamed to
+      #    static/CNAME.disabled, but this step is a belt-and-suspenders guard.
+      #    REMOVE THIS STEP after the custom domain is live and verified.
+      - name: Remove CNAME from artifact (temporary - custom domain pending)
+        run: rm -f ./public/CNAME
+
+      # 7. Upload ./public as the GitHub Pages artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
 
+  # --- DEPLOY JOB ---
   deploy:
     environment:
       name: github-pages
