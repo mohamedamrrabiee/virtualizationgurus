@@ -1,4 +1,15 @@
-baseURL = "http://mohamedamrrabiee.github.io/virtualizationgurus/"
+# ===========================================================================
+# TEMPORARY: Custom domain DISABLED while virtualizationgurus.eu.org is pending eu.org approval.
+#
+# AFTER eu.org APPROVAL — restore these four things:
+#   1. Change baseURL below to: https://virtualizationgurus.eu.org/
+#   2. Rename static/CNAME.disabled back to static/CNAME
+#   3. GitHub Settings > Pages > Custom domain = virtualizationgurus.eu.org
+#   4. Cloudflare DNS: CNAME virtualizationgurus.eu.org -> mohamedamrrabiee.github.io
+# ===========================================================================
+
+# TEMPORARY deployment URL (GitHub Pages default, active while eu.org domain is pending):
+baseURL = "https://mohamedamrrabiee.github.io/virtualizationgurus/"
 languageCode = "en-us"
 title = "Virtualization Gurus"
 theme = "PaperMod"
@@ -25,12 +36,12 @@ tocopen = false
 # Logo in navbar
 [params.logo]
 text = "Virtualization Gurus"
-url  = "/"
+url = "/"
 logoText = "VG"
 
 # Homepage hero disabled (using _index.md instead for full control)
 [params.homeInfoParams]
-Title   = "Virtualization Gurus"
+Title = "Virtualization Gurus"
 Content = "Expert insights on VMware Cloud Foundation, vSphere, NSX, and enterprise virtualization"
 
 [params.profileMode]
@@ -39,15 +50,15 @@ enabled = false
 # Social links shown in header/footer
 [[params.socialIcons]]
 name = "linkedin"
-url  = "https://www.linkedin.com/in/mohamedamrrabiee/"
+url = "https://www.linkedin.com/in/mohamedamrrabiee/"
 
 [[params.socialIcons]]
 name = "github"
-url  = "https://github.com/mohamedamrrabiee"
+url = "https://github.com/mohamedamrrabiee"
 
 [[params.socialIcons]]
 name = "rss"
-url  = "/index.xml"
+url = "/index.xml"
 
 [menu]
 [[menu.main]]
