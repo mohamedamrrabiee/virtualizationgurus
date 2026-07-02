@@ -1,0 +1,286 @@
+/* =============================================
+   Virtualization Gurus - Custom Branding CSS
+   ============================================= */
+
+/* ---------- Color Variables ---------- */
+:root {
+  --vg-blue:    #38bdf8;
+  --vg-purple:  #a78bfa;
+  --vg-indigo:  #6366f1;
+  --vg-dark:    #0f172a;
+  --vg-slate:   #1e293b;
+  --vg-green:   #22c55e;
+  --vg-amber:   #f59e0b;
+}
+
+/* ---------- Header / Logo ---------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Hide default text logo when image logo is present */
+.logo img + a {
+  display: none;
+}
+
+/* ---------- Navigation ---------- */
+.nav {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.nav a {
+  color: #cbd5e1 !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--vg-blue) !important;
+}
+
+/* ---------- Homepage Hero ---------- */
+.home-info {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f2744 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(56, 189, 248, 0.06), 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Decorative grid background */
+.home-info::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Glowing accent top-left */
+.home-info::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.home-info .home-info-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--vg-blue), var(--vg-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.home-info p {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* Logo in hero area */
+.home-info .logo-hero {
+  margin-bottom: 1.5rem;
+}
+
+.home-info .logo-hero img {
+  height: 56px;
+  width: auto;
+  filter: drop-shadow(0 0 12px rgba(56,189,248,0.4));
+}
+
+/* Expertise badges */
+.expertise-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.expertise-badges .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: 1px solid;
+  transition: all 0.2s ease;
+}
+
+.badge-blue  { color: var(--vg-blue);   border-color: rgba(56,189,248,0.35);   background: rgba(56,189,248,0.08); }
+.badge-purple{ color: var(--vg-purple); border-color: rgba(167,139,250,0.35);  background: rgba(167,139,250,0.08);}
+.badge-green { color: var(--vg-green);  border-color: rgba(34,197,94,0.35);    background: rgba(34,197,94,0.08);  }
+.badge-amber { color: var(--vg-amber);  border-color: rgba(245,158,11,0.35);   background: rgba(245,158,11,0.08); }
+.badge-indigo{ color: var(--vg-indigo); border-color: rgba(99,102,241,0.35);   background: rgba(99,102,241,0.08); }
+
+/* ---------- Author info box ---------- */
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(56,189,248,0.12);
+}
+
+.author-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--vg-blue), var(--vg-indigo));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(56,189,248,0.3);
+}
+
+.author-details .author-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 0.15rem;
+}
+
+.author-details .author-title {
+  font-size: 0.78rem;
+  color: var(--vg-blue);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---------- Post Cards ---------- */
+.post-entry {
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.5);
+  transition: all 0.25s ease;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-entry:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(15, 23, 42, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(56,189,248,0.15);
+}
+
+.post-entry .entry-header h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  transition: color 0.2s;
+}
+
+.post-entry:hover .entry-header h2 {
+  color: var(--vg-blue);
+}
+
+.post-entry .entry-content {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+/* ---------- Tags ---------- */
+.post-tags a {
+  background: rgba(56,189,248,0.1);
+  color: var(--vg-blue);
+  border: 1px solid rgba(56,189,248,0.2);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.65rem;
+  transition: all 0.2s;
+}
+
+.post-tags a:hover {
+  background: rgba(56,189,248,0.2);
+  border-color: var(--vg-blue);
+}
+
+/* ---------- Code Blocks ---------- */
+.highlight pre {
+  border: 1px solid rgba(56,189,248,0.15);
+  border-radius: 10px;
+  background: #0d1b2a !important;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid rgba(56,189,248,0.1);
+  color: #475569;
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.footer a {
+  color: var(--vg-blue);
+  text-decoration: none;
+}
+
+/* ---------- Headings in articles ---------- */
+.post-content h2 {
+  border-bottom: 1px solid rgba(56,189,248,0.2);
+  padding-bottom: 0.4rem;
+  color: #e2e8f0;
+}
+
+.post-content h3 {
+  color: var(--vg-blue);
+}
+
+/* ---------- Social Links ---------- */
+.social-icons a {
+  color: #64748b;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: var(--vg-blue);
+}
+
+/* ---------- Reading progress indicator ---------- */
+.reading-time {
+  color: var(--vg-blue);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
