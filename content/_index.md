@@ -6,7 +6,7 @@ description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and ente
 <div class="home-info">
 
 <div class="logo-hero">
-  <img src="/images/logo.svg" alt="Virtualization Gurus Logo" />
+<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus Logo" />
 </div>
 
 <h1 class="home-info-title">Virtualization Gurus</h1>
@@ -26,9 +26,34 @@ description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and ente
 <div class="author-box">
   <div class="author-avatar">MA</div>
   <div class="author-details">
-    <div class="author-name">Mohamed Amr Rabiee</div>
+    <div class="author-name">Mohamed Rabiee</div>
     <div class="author-title">VMware Cloud Foundation &amp; Virtualization Expert</div>
   </div>
+</div>
+
+</div>
+
+<div class="contact-section">
+
+<h2 class="contact-title">Get in Touch</h2>
+
+<p class="contact-subtitle">Have a question, a topic you'd like covered, or just want to connect? Reach out directly!</p>
+
+<div class="contact-links">
+  <a href="mailto:mohamed.amr.rabiee@gmail.com" class="contact-card contact-card-email">
+    <span class="contact-icon">&#9993;</span>
+    <div class="contact-details">
+      <div class="contact-label">Email</div>
+      <div class="contact-value">mohamed.amr.rabiee@gmail.com</div>
+    </div>
+  </a>
+  <a href="https://www.linkedin.com/in/mohamed-rabiee-3b8b27156/" target="_blank" rel="noopener noreferrer" class="contact-card contact-card-linkedin">
+    <span class="contact-icon">&#128101;</span>
+    <div class="contact-details">
+      <div class="contact-label">LinkedIn</div>
+      <div class="contact-value">Mohamed Rabiee</div>
+    </div>
+  </a>
 </div>
 
 </div>
