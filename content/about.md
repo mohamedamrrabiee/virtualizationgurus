@@ -25,3 +25,11 @@ Every post on this blog is based on real-world experience. We avoid generic over
 ## Contact
 
 Have a topic you want covered? Encountered an issue with VCF that you cannot find documentation for? Reach out via GitHub Issues on the blog repository.
+
+Reach out directly!
+✉
+Email
+mohamed.amr.rabiee@gmail.com
+👥
+LinkedIn
+Mohamed Rabiee
