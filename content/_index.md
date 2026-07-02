@@ -6,7 +6,7 @@ description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and ente
 <div class="home-info">
 
 <div class="logo-hero">
-  <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus Logo" />
+  <img src="/images/logo.svg" alt="Virtualization Gurus Logo" />
 </div>
 
 <h1 class="home-info-title">Virtualization Gurus</h1>
