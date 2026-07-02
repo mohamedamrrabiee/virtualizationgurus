@@ -20,6 +20,20 @@
   gap: 0;
 }
 
+/* Show SVG logo image in navbar via CSS background */
+.logo a[accesskey="h"] {
+  display: block;
+  width: 160px;
+  height: 48px;
+  background-image: url('/virtualizationgurus/images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  text-indent: -9999px;
+  overflow: hidden;
+  color: transparent;
+}
+
 .logo img {
   height: 48px;
   width: auto;
