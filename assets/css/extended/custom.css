@@ -4,20 +4,60 @@
 
 /* ---------- Color Variables ---------- */
 :root {
-  --vg-blue:    #38bdf8;
-  --vg-purple:  #a78bfa;
-  --vg-indigo:  #6366f1;
-  --vg-dark:    #0f172a;
-  --vg-slate:   #1e293b;
-  --vg-green:   #22c55e;
-  --vg-amber:   #f59e0b;
+  --vg-blue: #38bdf8;
+  --vg-purple: #a78bfa;
+  --vg-indigo: #6366f1;
+  --vg-dark: #0f172a;
+  --vg-slate: #1e293b;
+  --vg-green: #22c55e;
+  --vg-amber: #f59e0b;
 }
 
-/* ---------- Header / Logo ---------- */
+/* ============================================================
+   NAVIGATION BAR: Full-width stretch + logo on LEFT side
+   ============================================================ */
+
+/* Make the header/nav container stretch the full viewport width */
+header,
+.header {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* The nav element itself should stretch full width */
+.nav {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  background: rgba(15, 23, 42, 0.97) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.18) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 2rem !important;
+  min-height: 64px;
+}
+
+/* The inner nav wrapper - stretch full width */
+.nav .nav-container,
+#nav,
+nav {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Logo on the LEFT side of the navbar */
 .logo {
-  display: flex;
-  align-items: center;
+  display: flex !important;
+  align-items: center !important;
   gap: 0;
+  flex-shrink: 0;
+  margin-right: 2rem;
+  order: -1; /* Ensure logo is first (left) */
 }
 
 /* Show SVG logo image in navbar via CSS background */
@@ -46,11 +86,12 @@
   display: none;
 }
 
-/* ---------- Navigation ---------- */
-.nav {
-  background: rgba(15, 23, 42, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+/* Navigation menu links - push to the right */
+.nav .menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
 }
 
 .nav a {
@@ -67,7 +108,57 @@
   color: var(--vg-blue) !important;
 }
 
-/* ---------- Homepage Hero ---------- */
+/* PaperMod theme specific: override header inner container */
+.header .header-content,
+header > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* ============================================================
+   POST PAGE FOOTER LOGO (centered at bottom of each post)
+   ============================================================ */
+
+/* Footer logo container that appears at end of each post */
+.post-footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.post-footer-logo img {
+  height: 56px;
+  width: auto;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
+  transition: opacity 0.2s ease;
+}
+
+.post-footer-logo img:hover {
+  opacity: 1;
+}
+
+/* Auto-inject logo at end of post content via CSS */
+.post-content > div:last-child img[alt="Virtualization Gurus"],
+.post-content img[alt="Virtualization Gurus"]:last-of-type {
+  display: block;
+  margin: 0 auto;
+  height: 56px;
+  width: auto;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
+}
+
+/* ============================================================
+   HOMEPAGE HERO
+   ============================================================ */
+
 .home-info {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f2744 100%);
   border: 1px solid rgba(56, 189, 248, 0.2);
@@ -154,11 +245,11 @@
   transition: all 0.2s ease;
 }
 
-.badge-blue  { color: var(--vg-blue);   border-color: rgba(56,189,248,0.35);   background: rgba(56,189,248,0.08); }
-.badge-purple{ color: var(--vg-purple); border-color: rgba(167,139,250,0.35);  background: rgba(167,139,250,0.08);}
-.badge-green { color: var(--vg-green);  border-color: rgba(34,197,94,0.35);    background: rgba(34,197,94,0.08);  }
-.badge-amber { color: var(--vg-amber);  border-color: rgba(245,158,11,0.35);   background: rgba(245,158,11,0.08); }
-.badge-indigo{ color: var(--vg-indigo); border-color: rgba(99,102,241,0.35);   background: rgba(99,102,241,0.08); }
+.badge-blue   { color: var(--vg-blue);   border-color: rgba(56,189,248,0.35);  background: rgba(56,189,248,0.08); }
+.badge-purple { color: var(--vg-purple); border-color: rgba(167,139,250,0.35); background: rgba(167,139,250,0.08);}
+.badge-green  { color: var(--vg-green);  border-color: rgba(34,197,94,0.35);   background: rgba(34,197,94,0.08); }
+.badge-amber  { color: var(--vg-amber);  border-color: rgba(245,158,11,0.35);  background: rgba(245,158,11,0.08); }
+.badge-indigo { color: var(--vg-indigo); border-color: rgba(99,102,241,0.35);  background: rgba(99,102,241,0.08); }
 
 /* ---------- Author info box ---------- */
 .author-box {
@@ -299,7 +390,6 @@
   font-weight: 500;
 }
 
-
 /* ---------- Contact Section ---------- */
 .contact-section {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f2744 100%);
@@ -403,5 +493,8 @@
   .contact-card {
     min-width: unset;
     width: 100%;
+  }
+  .nav {
+    padding: 0 1rem !important;
   }
 }
