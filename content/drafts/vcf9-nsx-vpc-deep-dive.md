@@ -181,3 +181,8 @@ VPCs provide built-in isolation — by default, VMs in different VPCs cannot com
 ## What's Next
 
 In the next post, we will explore VCF 9 lifecycle management using VCF Operations, covering the unified upgrade process for ESX, vCenter, NSX, and vSAN, as well as license management, fleet-level health monitoring, and the VCF SDK for automation.
+
+
+<div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
+  <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+</div>
