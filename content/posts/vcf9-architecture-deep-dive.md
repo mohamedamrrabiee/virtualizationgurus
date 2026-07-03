@@ -144,3 +144,8 @@ If you are planning a new VCF deployment or evaluating an upgrade from VCF 4.x o
 ## Next Steps
 
 In our next post, we will walk through the complete VCF 9 deployment flow, from initial planning through a working management domain using the new VCF Installer. Stay tuned!
+
+
+<div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
+  <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+</div>
