@@ -1,0 +1,41 @@
+{{- define "main" -}}
+
+{{/* Render _index.md body content (hero, contact section, etc.) */}}
+{{- if .Content }}
+<div class="home-custom-content">
+  {{- .Content | safeHTML }}
+</div>
+{{- end }}
+
+{{/* Recent Posts section */}}
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- $pages = where $pages "Params.draft" "!=" true }}
+{{- $pages = $pages | first 10 }}
+
+{{- if $pages }}
+<div class="recent-posts-section">
+  <h2 class="recent-posts-title">Recent Posts</h2>
+  <div class="recent-posts-list">
+    {{- range $pages }}
+    <article class="post-entry">
+      <header class="entry-header">
+        <h2 class="entry-hint-parent">
+          <a href="{{ .Permalink }}" aria-label="{{ .Title }}">{{ .Title }}</a>
+        </h2>
+      </header>
+      {{- if .Description }}
+      <div class="entry-content">
+        <p>{{ .Description | plainify | htmlUnescape }}</p>
+      </div>
+      {{- end }}
+      <footer class="entry-footer">
+        {{- partial "post_meta.html" . -}}
+      </footer>
+      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    </article>
+    {{- end }}
+  </div>
+</div>
+{{- end }}
+
+{{- end }}{{- /* end main */ -}}
