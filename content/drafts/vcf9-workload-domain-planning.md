@@ -159,3 +159,8 @@ VCF Operations provides built-in automation for common Day-2 operations:
 ## What's Next
 
 In the next post, we will do a deep dive into VCF 9 NSX VPC networking, covering Transit Gateway design, VPC consumption from vCenter, and practical examples of deploying application workloads using VPC-based isolation.
+
+
+<div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
+  <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+</div>
