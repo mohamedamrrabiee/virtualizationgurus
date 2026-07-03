@@ -15,6 +15,7 @@ title = "Virtualization Gurus"
 theme = "PaperMod"
 
 [params]
+mainSections = ["posts"]
 description = "Expert insights on VMware, VCF, and enterprise virtualization"
 author = "Mohamed Amr Rabiee"
 ShowReadingTime = true
