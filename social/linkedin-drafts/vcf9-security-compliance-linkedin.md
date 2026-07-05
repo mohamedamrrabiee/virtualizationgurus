@@ -1,4 +1,4 @@
-# LinkedIn Draft — VCF 9 Security and Compliance
+——→—→—→—# LinkedIn Draft — VCF 9 Security and Compliance
 Source post: content/drafts/vcf9-security-compliance.md
 Status: DRAFT — needs review before posting
 
