@@ -1,21 +1,23 @@
-——→—→—→—# LinkedIn Draft — VCF 9 Security and Compliance
+# LinkedIn Draft — VCF 9 Security and Compliance
 Source post: content/drafts/vcf9-security-compliance.md
+Image: social/linkedin-drafts/images/vcf9-security-compliance-linkedin.jpg
 Status: DRAFT — needs review before posting
 
 ---
 
-Zero-trust isn't optional in a private cloud, it's the default.
+Zero-trust in VCF 9 isn't a feature you turn on. It's how the platform is built by default.
 
-Our new VCF 9 post looks at how security is layered throughout the platform, from the hypervisor up to the network edge.
+Security is layered from the hypervisor up to the network edge, and VCF 9 changes some defaults that are worth knowing before you deploy.
 
-Inside:
-- NSX Distributed Firewall design for east-west traffic
-- - VPC-level isolation and why it matters for multi-tenancy
-  - - Gateway Firewall, now disabled by default, and when to turn it on
-    - - How VCF Operations supports security compliance validation
-     
-      - A must-read if you're hardening a VCF 9 environment.
-     
-      - Full post on Virtualization Gurus: https://mohamedamrrabiee.github.io/virtualizationgurus/
-     
-      - #VMware #NSX #Security #VCF #Compliance #VirtualizationGurus
+Three layers worth understanding:
+→ Distributed Firewall (DFW) — the primary control for east-west traffic, enforced at the hypervisor level on every VM.
+→ VPC isolation — VPCs can't reach each other unless you explicitly connect them through a Transit Gateway.
+→ Gateway Firewall — now disabled by default on new Tier-0/Tier-1 gateways, enabled only when perimeter inspection is actually needed.
+
+The payoff: isolation-by-default architecture that's harder to misconfigure into an open network.
+
+If you're hardening a new VCF 9 environment, start by confirming which of these defaults your team has intentionally changed, and which were simply left as-is.
+
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/
+
+#VCF9 #NSX #Security #VMware #Broadcom #VirtualizationGurus
