@@ -1,21 +1,23 @@
 # LinkedIn Draft — VCF 9 vSAN ESA Deep Dive
 Source post: content/drafts/vcf9-vsan-esa-deep-dive.md
+Image: social/linkedin-drafts/images/vcf9-vsan-esa-deep-dive-linkedin.jpg
 Status: DRAFT — needs review before posting
 
 ---
 
-Storage in VCF 9: it's all about vSAN ESA now.
+Storage design in VCF 9 starts with one decision: vSAN ESA is now the default, not an option.
 
-vSAN Express Storage Architecture (ESA) is the recommended storage foundation for every new VMware Cloud Foundation 9 deployment, and it's a meaningful shift from the original vSAN architecture.
+Express Storage Architecture (ESA) rethinks the original vSAN's disk-group model entirely: a single storage pool per host, a log-structured file system, and compression built in from the start rather than bolted on.
 
-Our latest post breaks down:
-- ESA architecture and key design decisions
-- - Performance characteristics vs. the original vSAN architecture
-  - - New features, including Dying Disk Handling
-    - - Storage policy design best practices
-     
-      - If storage design is on your VCF 9 roadmap, start here.
-     
-      - Read it on Virtualization Gurus: https://mohamedamrrabiee.github.io/virtualizationgurus/
-     
-      - #VMware #vSAN #VCF #Storage #PrivateCloud #VirtualizationGurus
+What's different in practice:
+→ Architecture — no more cache/capacity tier split; every device contributes to performance and capacity.
+→ Performance — higher throughput and lower latency than the original architecture, especially under all-flash workloads.
+→ New resilience features — including Dying Disk Handling, which proactively evacuates data before a drive fully fails.
+
+The payoff: simpler capacity planning and fewer storage policy compromises, since you're no longer balancing cache tier sizing against capacity.
+
+If you're still running the original vSAN architecture, this post is a good gut-check on whether your next hardware refresh should move to ESA.
+
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/
+
+#VCF9 #vSAN #VMware #Broadcom #PrivateCloud #VirtualizationGurus
