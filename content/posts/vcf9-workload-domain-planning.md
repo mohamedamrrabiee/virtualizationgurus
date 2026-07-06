@@ -1,7 +1,7 @@
 ---
 title: "VCF 9 Workload Domain Planning and Deployment"
 date: 2026-07-06
-draft: true
+draft: false
 tags: ["VCF", "VMware", "Workload Domain", "NSX", "vSAN", "Cloud Foundation"]
 categories: ["VCF 9", "Deployment"]
 description: "A practical guide to planning, designing, and deploying VCF 9 workload domains using VCF Operations, validated against official Broadcom documentation, including deployment options, storage choices, and VPC-ready networking."
