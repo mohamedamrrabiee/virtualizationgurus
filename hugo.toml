@@ -14,6 +14,9 @@ languageCode = "en-us"
 title = "Virtualization Gurus"
 theme = "PaperMod"
 
+[services.googleAnalytics]
+ID = "G-H18T2QZQLY"
+
 [params]
 mainSections = ["posts"]
 description = "Expert insights on VMware, VCF, and enterprise virtualization"
