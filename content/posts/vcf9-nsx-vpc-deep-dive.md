@@ -1,6 +1,6 @@
 ---
 title: "VCF 9 NSX VPC Deep Dive: Cloud-Native Networking for Your Private Cloud"
-date: 2026-07-09
+date: 2026-07-08
 draft: false
 tags: ["VCF", "VMware", "NSX", "VPC", "Networking", "Cloud Foundation"]
 categories: ["VCF 9", "Networking"]
