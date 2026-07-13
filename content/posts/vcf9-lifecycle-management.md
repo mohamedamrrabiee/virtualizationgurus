@@ -1,7 +1,7 @@
 ---
 title: "VCF 9 Lifecycle Management with VCF Operations: Unified Upgrades and Fleet Management"
-date: 2026-07-27
-draft: true
+date: 2026-07-15
+draft: false
 tags:
   - VCF
   - VMware
