@@ -24,64 +24,58 @@ Per VCF Operations' Workload Domain wizard, there are three supported paths:
 The diagram below illustrates the relationship between the VCF 9 management domain, VCF Operations, and multiple workload domains, including VPC-based networking topology:
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────────┐
-│ VCF 9 - Workload Domain Architecture │
-└─────────────────────────────────────────────────────────────────────────────────────────┘
+                   ┌────────────────────────────────────────────────────────────────────────┐
+                   │                  VCF 9 - Workload Domain Architecture                   │
+                   └────────────────────────────────────────────────────────────────────────┘
 
-┌──────────────────────────────────────────────────────────────────────────────────────┐
-│ VCF Operations (Management Plane) │
-│ │
-│ ┌──────────────────┐ ┌──────────────────┐ ┌──────────────────┐ │
-│ │ Fleet Mgmt │ │ Lifecycle Mgmt │ │ Cost & Capacity │ │
-│ │ (All Domains) │ │ (All Components)│ │ Management │ │
-│ └──────────────────┘ └──────────────────┘ └──────────────────┘ │
-└──────────────────────────────────────────────────────────────────────────────────────┘
-│
-┌──────────────────────────────┼──────────────────────────────┐
-│ │ │
-▼ ▼ ▼
-┌─────────────────────┐ ┌─────────────────────┐ ┌─────────────────────┐
-│ Management Domain │ │ Workload Domain A │ │ Workload Domain B │
-│ │ │ │ │ │
-│ vCenter (Mgmt) │ │ vCenter (WLD-A) │ │ vCenter (WLD-B) │
-│ NSX 9.x (Mgmt) │ │ NSX 9.x (shared or │ │ NSX 9.x (shared or │
-│ vSAN (Mgmt) │ │ dedicated) │ │ dedicated) │
-│ │ │ vSAN / NFS / FC │ │ vSAN / NFS / FC │
-│ ┌───────────────┐ │ │ ┌───────────────┐ │ │ ┌───────────────┐ │
-│ │ Management │ │ │ │ VPC / Tenant│ │ │ │ VPC / Tenant│ │
-│ │ VMs only │ │ │ │ Workloads │ │ │ │ Workloads │ │
-│ └───────────────┘ │ │ └───────────────┘ │ │ └───────────────┘ │
-└─────────────────────┘ └─────────────────────┘ └─────────────────────┘
+                   ┌────────────────────────────────────────────────────────────────────────┐
+                   │                   VCF Operations (Management Plane)                     │
+                   │                                                                        │
+                   │  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐  │
+                   │  │    Fleet Mgmt    │    │  Lifecycle Mgmt  │    │ Cost & Capacity  │  │
+                   │  │  (All Domains)   │    │ (All Components) │    │    Management    │  │
+                   │  └──────────────────┘    └──────────────────┘    └──────────────────┘  │
+                   └────────────────────────────────────────────────────────────────────────┘
+                                                        │
+                ┌───────────────────────────────────────┼───────────────────────────────────────┐
+                ▼                                       ▼                                       ▼
+┌──────────────────────────────┐        ┌──────────────────────────────┐        ┌──────────────────────────────┐
+│ Management Domain             │        │ Workload Domain A            │        │ Workload Domain B            │
+│                               │        │                               │        │                               │
+│ vCenter (Mgmt)                │        │ vCenter (WLD-A)               │        │ vCenter (WLD-B)               │
+│ NSX 9.x (Mgmt)                │        │ NSX 9.x (shared/ded.)         │        │ NSX 9.x (shared/ded.)         │
+│ vSAN (Mgmt)                   │        │ vSAN / NFS / FC               │        │ vSAN / NFS / FC               │
+│  ┌─────────────────────┐      │        │  ┌────────────────────────┐  │        │  ┌────────────────────────┐  │
+│  │ Management VMs only │      │        │  │ VPC / Tenant Workloads │  │        │  │ VPC / Tenant Workloads │  │
+│  └─────────────────────┘      │        │  └────────────────────────┘  │        │  └────────────────────────┘  │
+└──────────────────────────────┘        └──────────────────────────────┘        └──────────────────────────────┘
 
-NSX VPC Networking (Per Workload Domain)
-┌───────────────────────────────────────┐
-│ │
-│ Transit Gateway (Centralized or │
-│ Distributed connectivity) │
-│ ┌────────────┐ ┌────────────┐ │
-│ │ VPC-1 │ │ VPC-2 │ │
-│ │ (Tenant A) │ │ (Tenant B) │ │
-│ │ Subnet 1 │ │ Subnet 1 │ │
-│ │ Subnet 2 │ │ Subnet 2 │ │
-│ └────────────┘ └────────────┘ │
-│ │ │ │
-│ └───────┬───────┘ │
-│ │ │
-│ External Uplink │
-│ (via NSX Edge North-South) │
-└───────────────────────────────────────┘
+                                    NSX VPC Networking (Per Workload Domain)
+                                    ┌──────────────────────────────────────┐
+                                    │   Transit Gateway (Centralized or    │
+                                    │      Distributed connectivity)       │
+                                    │  ┌────────────┐      ┌────────────┐  │
+                                    │  │   VPC-1    │      │   VPC-2    │  │
+                                    │  │ (Tenant A) │      │ (Tenant B) │  │
+                                    │  │  Subnet 1  │      │  Subnet 1  │  │
+                                    │  │  Subnet 2  │      │  Subnet 2  │  │
+                                    │  └────────────┘      └────────────┘  │
+                                    │                                      │
+                                    │           External Uplink            │
+                                    │      (via NSX Edge North-South)      │
+                                    └──────────────────────────────────────┘
 
-Physical Infrastructure (Per Workload Domain)
-┌───────────────────────────────────────────────────┐
-│ ESX Hosts (min. 3 for vSAN ESA) │
-│ ┌─────────┐ ┌─────────┐ ┌─────────┐ │
-│ │ ESX-1 │ │ ESX-2 │ │ ESX-3 │ [+more] │
-│ │NVMe/SSD │ │NVMe/SSD │ │NVMe/SSD │ │
-│ │NSX(EDP) │ │NSX(EDP) │ │NSX(EDP) │ │
-│ └─────────┘ └─────────┘ └─────────┘ │
-│ │
-│ Networks: Mgmt | vMotion | vSAN | NSX Overlay │
-└───────────────────────────────────────────────────┘
+                                 Physical Infrastructure (Per Workload Domain)
+                              ┌──────────────────────────────────────────────────┐
+                              │ ESX Hosts (min. 3 for vSAN ESA)                   │
+                              │  ┌─────────┐  ┌─────────┐  ┌─────────┐           │
+                              │  │  ESX-1  │  │  ESX-2  │  │  ESX-3  │  [+more]  │
+                              │  │ NVMe/SSD│  │ NVMe/SSD│  │ NVMe/SSD│           │
+                              │  │ NSX(EDP)│  │ NSX(EDP)│  │ NSX(EDP)│           │
+                              │  └─────────┘  └─────────┘  └─────────┘           │
+                              │                                                  │
+                              │ Networks: Mgmt | vMotion | vSAN | NSX Overlay    │
+                              └──────────────────────────────────────────────────┘
 ```
 
 ## Workload Domain Planning Considerations
