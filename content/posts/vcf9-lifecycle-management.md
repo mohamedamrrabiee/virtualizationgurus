@@ -1,6 +1,6 @@
 ---
 title: "VCF 9 Lifecycle Management with VCF Operations: Unified Upgrades and Fleet Management"
-date: 2026-07-15
+date: 2026-07-14
 draft: false
 tags:
   - VCF
