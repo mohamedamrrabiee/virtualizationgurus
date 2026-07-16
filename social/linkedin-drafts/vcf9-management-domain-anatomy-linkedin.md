@@ -1,22 +1,23 @@
-# LinkedIn Draft -- VCF 9 Management Domain Anatomy
-Source post: content/drafts/vcf9-management-domain-anatomy.md
+# LinkedIn Draft — VCF 9 Management Domain Anatomy
+Source post: content/posts/vcf9-management-domain-anatomy.md
 Image: social/linkedin-drafts/images/vcf9-management-domain-anatomy-linkedin.jpg
-Status: DRAFT -- needs review before posting
+Status: DRAFT — needs review before posting
+
 ---
 
-Every VCF Instance starts with a management domain. Here's exactly what runs inside it.
+SDDC Manager is still in every VCF 9 management domain — but it's not the component doing the Day-2 automation anymore. That's a separate appliance now.
 
-The management domain is the first workload domain deployed in any VCF Instance, and it never stops being special. Beyond the baseline every VCF domain shares -- vCenter, clusters, distributed switches, NSX Manager, storage -- the management domain carries extra responsibility.
+Every VCF Instance starts with a management domain, and it never stops carrying more weight than a normal workload domain — starting with two components that are easy to conflate.
 
--> Deployed first, always -- created during initial deployment or convergence, before any workload domain exists.
--> Houses the fleet's control plane -- in the first Instance of a fleet, it's where License server, VCF Operations, VCF management services, and VCF Automation actually run.
--> Runs SDDC Manager workflows -- adding Day-2 automation on top of VCF Operations.
--> Can still run business workloads -- it's not purely infrastructure, though most designs keep it dedicated for lifecycle isolation.
+What's actually running inside a VCF 9 management domain:
+→ SDDC Manager — still installed, still listed as a component, but its UI and lifecycle workflows are deprecated as of 9.0. The automation now comes from a separate fleet management appliance that extends VCF Operations, not from SDDC Manager itself.
+→ A dedicated License Server — as of VCF 9.1, licensing runs in its own appliance instead of inside VCF Operations.
+→ Fleet-level components only in the first Instance — VCF Operations and VCF Automation live in whichever management domain deployed first; every other management domain in the fleet carries instance-level components only.
 
-The payoff: understanding this anatomy tells you exactly why the first management domain in a fleet needs more headroom than every one after it.
+The payoff: knowing which component actually does what saves you from troubleshooting SDDC Manager for a Day-2 automation issue that's really happening in VCF Operations Fleet Management.
 
-One tradeoff worth flagging early: shared vs. dedicated NSX per workload domain changes your blast radius during a failure -- dedicated costs more footprint but isolates upgrades and outages per domain.
+If you're still describing SDDC Manager as "where the automation happens" in VCF 9, that mental model is a version behind — where do you actually point troubleshooting first?
 
-Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/vcf9-management-domain-anatomy/?utm_source=linkedin&utm_medium=social&utm_campaign=vcf9-management-domain-anatomy
 
-#VCF9 #VMware #Broadcom #ManagementDomain #NSX #CloudInfrastructure #VirtualizationGurus
+#VCF9 #VMware #Broadcom #SDDCManager #CloudInfrastructure #VirtualizationGurus
