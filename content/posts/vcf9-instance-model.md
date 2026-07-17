@@ -1,6 +1,6 @@
 ---
 title: "VCF 9 Instance Model: Designing HQ, DR, and Edge/Sovereign Topologies"
-date: 2026-07-24
+date: 2026-07-18
 draft: false
 tags: ["VCF", "VMware", "VCF Instance", "Fleet", "Disaster Recovery", "Cloud Foundation"]
 categories: ["VCF 9", "Architecture"]
@@ -42,13 +42,19 @@ Edge locations, unlike the general HQ/DR patterns above, do get their own named 
 ## Architecture at a Glance
 
 ```
-VCF FLEET (VCF Operations + VCF Automation) -- single control plane, one or more Instances
-|
------+-----+-----
-| | |
-HQ INSTANCE DR INSTANCE EDGE/SOVEREIGN INSTANCE
-Basic/Site-HA Cross-region VCF Edge model or
-sized to role
+                +-----------------------------------------------+
+                |                   VCF FLEET                    |
+                |        (VCF Operations + VCF Automation)       |
+                |   Single control plane, one or more Instances  |
+                +-----------------------------------------------+
+                                        |
+          +-------------------------+-----------------------------+
+          |                         |                             |
++-------------------+  +------------------------+  +-----------------------------+
+|    HQ INSTANCE    |  |      DR INSTANCE       |  |  EDGE / SOVEREIGN INSTANCE  |
+|  Basic / Site-HA  |  |      Cross-region      |  |        VCF Edge model       |
+|   sized to role   |  |  VMware Live Recovery  |  |       or sized to role      |
++-------------------+  +------------------------+  +-----------------------------+
 ```
 
 ## Comparing the Four Designs
