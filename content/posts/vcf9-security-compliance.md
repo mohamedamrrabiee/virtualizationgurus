@@ -1,6 +1,6 @@
 ---
 title: "VCF 9 Security and Compliance: DFW, VPC Isolation, and Hardened Operations"
-date: 2026-07-18
+date: 2026-08-08
 draft: false
 tags:
 - VCF
