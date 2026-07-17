@@ -1,6 +1,6 @@
 ---
 title: "VCF 9 Management Domain Anatomy: What Actually Runs Inside"
-date: 2026-07-27
+date: 2026-07-21
 draft: false
 tags: ["VCF", "VMware", "Management Domain", "vCenter", "NSX", "Cloud Foundation"]
 categories: ["VCF 9", "Architecture"]
@@ -40,7 +40,7 @@ Workload domains -- and by extension, the NSX relationship they have with the ma
 | Scalability | Each domain scales independently | Constrained by the shared instance's limits |
 | Lifecycle | Upgrades/patches applied independently | Upgrades/patches affect every domain sharing it |
 
-A VCF Instance can scale up to 40 workload domains, and each one individually chooses dedicated or shared NSX -- it isn't a fleet-wide, all-or-nothing setting.
+A VCF Instance can scale up to 25 total domains -- one management domain plus as many as 24 VI workload domains -- and each workload domain individually chooses dedicated or shared NSX; it isn't a fleet-wide, all-or-nothing setting. A single shared NSX Manager has its own ceiling too: an Extra Large or Large form factor supports up to 16 attached vCenters/Compute Managers, while a Medium form factor supports only 2.
 
 ## Architecture at a Glance
 
@@ -61,7 +61,7 @@ Size the management domain with room to grow -- Broadcom's own guidance notes th
 
 ## What's Next
 
-Next in this series: NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, and North-South Firewall Design.
+Next in this series: Physical Network Design: VDS Separation, ToR, and BGP Uplinks.
 
 ## Further Reading (Official Broadcom Documentation)
 
@@ -69,6 +69,7 @@ Next in this series: NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, an
 - [VCF Domain Models](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/design/vmware-cloud-foundation-concepts/design-guide-vmware-cloud-foundation-architecture-models.html)
 - [Deploy VCF Management Services and License Server as Part of VCF Upgrade to 9.1](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/upgrading-cloud-foundation/deploy-vcf-management-services.html)
 - [Licensing Overview](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/licensing/licensing-overview.html)
+- [VMware Configuration Maximums for VCF 9](https://configmax.broadcom.com/guest?vmwareproduct=SDDC%20Manager&release=9.0.0&categories=17-0,73-0,165-0)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
 <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
