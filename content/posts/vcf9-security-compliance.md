@@ -244,7 +244,7 @@ Following the Broadcom VCF 9.0 Design documentation, here is a high-level securi
 
 ## What's Next
 
-In the next post, we cover the NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, and North-South Firewall Design — the perimeter layer that sits just outside the DFW and VPC isolation boundaries covered here. We'll look at Edge cluster sizing and HA, Tier-0/Tier-1 gateway placement, VPN configurations (IPsec and L2VPN), and how the Gateway Firewall default-off posture from this post plays into North-South firewall design decisions.
+In the next post, we cover the VCF 9 Identity Broker — how it replaces VMware Identity Manager for fleet-wide single sign-on, its two deployment modes (Embedded and Instance), and what a real migration from vIDM actually involves.
 
 ## Further Reading (Official Broadcom Documentation)
 
