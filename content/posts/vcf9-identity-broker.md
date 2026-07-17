@@ -54,20 +54,32 @@ A few constraints matter when planning a migration, straight from Broadcom's doc
 ## Architecture at a Glance
 
 ```
-VMware Identity Manager (vIDM) -- Day-0 legacy identity source
-|
-| export (users, groups, sync settings comparison)
-v
-MIGRATION TOOLING (vidm-export / vidb-import / component-update)
-|
-| import + validation
-v
-IDENTITY BROKER -- Embedded (in mgmt vCenter) or Instance (dedicated component)
-|
-| repointed via component-update
------+-----+-----
-| | |
-VCF Operations VCF Automation NSX
++--------------------------------+
+| VMware Identity Manager (vIDM) |
+| Day-0 legacy identity source   |
++--------------------------------+
+                 |
+                 | export (users, groups, sync settings comparison)
+                 v
++------------------------------------------------+
+| MIGRATION TOOLING                              |
+| (vidm-export / vidb-import / component-update) |
++------------------------------------------------+
+                         |
+                         | import + validation
+                         v
++--------------------------------------------------------------+
+| IDENTITY BROKER                                              |
+| Embedded (in mgmt vCenter) or Instance (dedicated component) |
++--------------------------------------------------------------+
+                                |
+                                | repointed via component-update
+                                v
+---------+-------------------+-------------------+--------
+         |                   |                   |
++----------------+  +----------------+  +----------------+
+| VCF Operations |  | VCF Automation |  | NSX            |
++----------------+  +----------------+  +----------------+
 ```
 
 ## The Mental Model Shift
