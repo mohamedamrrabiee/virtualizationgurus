@@ -1,7 +1,7 @@
 ---
 title: "VCF 9 Security and Compliance: DFW, VPC Isolation, and Hardened Operations"
-date: 2026-08-03
-draft: true
+date: 2026-07-18
+draft: false
 tags:
 - VCF
 - VMware
