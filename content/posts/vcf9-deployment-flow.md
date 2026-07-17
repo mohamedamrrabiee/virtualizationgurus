@@ -228,7 +228,7 @@ VCF 9 uses a new licensing model. If license validation fails:
 
 ## Up Next
 
-Now that your management domain is running, the next logical step is creating your first workload domain. In the next post, we will cover workload domain planning, VPC-based network design, and automated workload domain deployment using the VCF Operations API.
+Now that your management domain is running, the next post steps back before we get to workload domains: VCF Operations, VCF Automation, and the new fleet management appliance work together as a single control plane, and it's worth understanding how that layer actually operates before building anything on top of it.
 
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
