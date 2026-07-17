@@ -78,7 +78,7 @@ This post was validated against Broadcom's official VCF 9.1 documentation, speci
 
 ## Up Next
 
-Next in this series: the Instance Model — how HQ, DR, and Edge/Sovereign Cloud topologies are actually designed and connected under a single Fleet.
+Next in this series: VCF 9 Workload Domain Planning and Deployment — putting the fleet management layer to work by planning, provisioning, and standing up your first workload domain.
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
 <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
