@@ -29,63 +29,65 @@ A quick terminology note: starting with VCF/NSX 9.0, Broadcom rebranded this fir
 The diagram below illustrates the VCF 9 security architecture, showing the defense-in-depth layers from the physical network through workload micro-segmentation:
 
 ```
-+-----------------------------------------------------------------------------------+
++--------------------------------------------------+
 | VCF 9 - Security Architecture (Defense in Depth) |
-+-----------------------------------------------------------------------------------+
++--------------------------------------------------+
 
 Layer 1: Physical Network Security
-+---------------------------------------------------------------------+
-| Physical Switches + Firewall |
-| [ ACLs / Port Security ] [ BGP route filtering ] [ MACsec (opt.) ] |
-+---------------------------------------------------------------------+
++-----------------------------------------------------------------------+
+| Physical Switches + Firewall                                          |
+| [ ACLs / Port Security ]  [ BGP route filtering ]  [ MACsec (opt.) ]  |
++-----------------------------------------------------------------------+
 |
 Layer 2: NSX Edge / North-South Security
-+---------------------------------------------------------------------+
-| NSX Edge Cluster (Tier-0 Gateway) |
-| |
-| [ vDefend Gateway Firewall (off by default for NEW gateways on ] |
-| [ greenfield VCF 9.0; ON by default for new gateways when ] |
-| [ upgrading an existing VCF instance to 9.0) ] |
-| [ NAT / Load Balancer / VPN (IPsec, L2VPN) ] |
-| [ BGP to physical network with route filters ] |
-+---------------------------------------------------------------------+
++-----------------------------------------------------------------------+
+| NSX Edge Cluster (Tier-0 Gateway)                                     |
+|                                                                       |
+| [ vDefend Gateway Firewall (off by default for NEW gateways on        |
+|   greenfield VCF 9.0; ON by default for new gateways when             |
+|   upgrading an existing VCF instance to 9.0) ]                        |
+| [ NAT / Load Balancer / VPN (IPsec, L2VPN) ]                          |
+| [ BGP to physical network with route filters ]                        |
++-----------------------------------------------------------------------+
 |
 Layer 3: VPC Isolation (NSX 9.0 Multi-Tenancy)
-+---------------------------+ +---------------------------+
-| VPC-1 (Tenant A) | | VPC-2 (Tenant B) |
-| | | |
-| [ Private Subnets ] | | [ Private Subnets ] |
-| [ Public Subnets + NAT ] | | [ Public Subnets + NAT ] |
-| [ No cross-VPC traffic | | [ No cross-VPC traffic |
-| without TGW attachment] | | without TGW attachment] |
-+---------------------------+ +---------------------------+
-| inter-VPC via Transit Gateway (explicit attachment only)
++----------------------------+ +----------------------------+
+| VPC-1 (Tenant A)           | | VPC-2 (Tenant B)           |
+|                            | |                            |
+| [ Private Subnets ]        | | [ Private Subnets ]        |
+| [ Public Subnets + NAT ]   | | [ Public Subnets + NAT ]   |
+| [ No cross-VPC traffic     | | [ No cross-VPC traffic     |
+|   without TGW attachment ] | |   without TGW attachment ] |
++----------------------------+ +----------------------------+
+|                              inter-VPC via Transit Gateway (explicit attachment only)
++-------------------------------+
+| Transit Gateway (CTGW / DTGW) |
 +-------------------------------+
 |
 Layer 4: vDefend Distributed Firewall (East-West Micro-Segmentation)
-+---------------------------------------------------------------------+
-| vDefend DFW (enforced in the ESX kernel datapath at the vNIC) |
-| VCF 9.0 defaults new workload domains to EDP Standard mode |
-| |
-| [ VM-to-VM traffic filtered at vNIC level ] |
-| [ Context-aware policies: VM tags + Security Groups ] |
-| [ Application-layer filtering with vDefend ATP (optional add-on) ]|
-| [ Zero-trust: default deny between security groups ] |
-+---------------------------------------------------------------------+
-| | |
++-----------------------------------------------------------------------+
+| vDefend DFW (enforced in the ESX kernel datapath at the vNIC)         |
+| VCF 9.0 defaults new workload domains to EDP Standard mode            |
+|                                                                       |
+| [ VM-to-VM traffic filtered at vNIC level ]                           |
+| [ Context-aware policies: VM tags + Security Groups ]                 |
+| [ Application-layer filtering with vDefend ATP (optional add-on) ]    |
+| [ Zero-trust: default deny between security groups ]                  |
++-----------------------------------------------------------------------+
+      |            |            |
 +----------+ +----------+ +----------+
-| VM (App) | | VM (Web) | | VM (DB) |
-| Tag: App | | Tag: Web | | Tag: DB |
+| VM (App) | | VM (Web) | | VM (DB)  |
+| Tag: App | | Tag: Web | | Tag: DB  |
 +----------+ +----------+ +----------+
 
 Layer 5: VCF Operations Security Compliance
-+---------------------------------------------------------------------+
-| VCF Operations |
-| [ Security compliance scanning (ESX, vCenter, NSX configurations) ] |
-| [ Certificate lifecycle management + auto-renewal ] |
-| [ VCF Health / Diagnostics (Skyline Advisor + Diagnostics parity) ] |
-| [ Audit logging for all VCF Operations actions ] |
-+---------------------------------------------------------------------+
++-----------------------------------------------------------------------+
+| VCF Operations                                                        |
+| [ Security compliance scanning (ESX, vCenter, NSX configurations) ]   |
+| [ Certificate lifecycle management + auto-renewal ]                   |
+| [ VCF Health / Diagnostics (Skyline Advisor + Diagnostics parity) ]   |
+| [ Audit logging for all VCF Operations actions ]                      |
++-----------------------------------------------------------------------+
 ```
 
 ## vDefend Distributed Firewall (DFW) in VCF 9
