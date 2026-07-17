@@ -43,20 +43,37 @@ Edge locations, unlike the general HQ/DR patterns above, do get their own named 
 **Architecture of HQ Instance Basic / Site-HA**
 
 ```
-                +-----------------------------------------------+
-                |                   VCF FLEET                    |
-                |        (VCF Operations + VCF Automation)       |
-                |   Single control plane, one or more Instances  |
-                +-----------------------------------------------+
-                                        |
-          +-------------------------+-----------------------------+
-          |                         |                             |
-+-------------------+  +------------------------+  +-----------------------------+
-|    HQ INSTANCE    |  |      DR INSTANCE       |  |  EDGE / SOVEREIGN INSTANCE  |
-|  Basic / Site-HA  |  |      Cross-region      |  |        VCF Edge model       |
-|   sized to role   |  |  VMware Live Recovery  |  |       or sized to role      |
-+-------------------+  +------------------------+  +-----------------------------+
++-----------------------------------------------------------+
+|           HQ INSTANCE -- Basic / Site-HA Design           |
++-----------------------------------------------------------+
 
+                              |
+                              v
++-----------------------------------------------------------+
+|   VCF Fleet Control Plane (first Instance in the fleet)   |
+|              VCF Operations + VCF Automation              |
++-----------------------------------------------------------+
+                              |
+                              v
++-----------------------------------------------------------+
+|                     Management Domain                     |
++-----------------------------------------------------------+
+                              |
+                              v
++------------------------+        +------------------------+ 
+|   Workload Domain A    |        |   Workload Domain B    | 
++------------------------+        +------------------------+ 
+
+Site-HA option -- hosts split across two availability zones:
++------------------------+        +------------------------+ 
+|   Zone A (Preferred)   |        |   Zone B (Secondary)   | 
+|       ESX Hosts        |        |       ESX Hosts        | 
++------------------------+        +------------------------+ 
+             |                                 |             
+             +----------------+----------------+             
+vSAN Stretched Cluster | NSX Stretched Segments | vSphere HA
+
+Basic Design = same picture without the Zone A / Zone B split
 
 ```
 
