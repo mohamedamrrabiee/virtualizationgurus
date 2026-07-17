@@ -40,6 +40,7 @@ Broadcom's VCF Fleet Deployment Models documentation lays out four designs, each
 Edge locations, unlike the general HQ/DR patterns above, do get their own named model: **VCF Edge** (formerly called Remote Clusters), a purpose-built configuration for edge deployments with its own sizing rules -- a minimum of 10 sites, at least 8 CPU cores per host, a cap of 256 CPU cores per site, and a requirement that Edge hosts sit in a physically distinct location (a separate rack or switch) from your data center workloads unless you have strict segregation controls in place. VCF Operations is a mandatory licensing requirement for any VCF Edge deployment. Sovereign-cloud requirements, by contrast, aren't tied to a single named topology -- they're typically met by combining one of the four fleet designs above with in-country data residency and recovery controls (for example, vSAN-based ransomware and data recovery) rather than a distinct named architecture.
 
 ## Architecture at a Glance
+**Architecture of HQ Instance Basic / Site-HA**
 
 ```
                 +-----------------------------------------------+
@@ -55,6 +56,58 @@ Edge locations, unlike the general HQ/DR patterns above, do get their own named 
 |  Basic / Site-HA  |  |      Cross-region      |  |        VCF Edge model       |
 |   sized to role   |  |  VMware Live Recovery  |  |       or sized to role      |
 +-------------------+  +------------------------+  +-----------------------------+
+
+
+```
+
+**Architecture of DR Instance (cross-region recovery)**
+
+```
+--------------------------------------------------------------------+
+|                  VCF FLEET (spans both Instances)                  |
+|    VCF Operations + VCF Automation -- lives in the HQ Instance     |
++--------------------------------------------------------------------+
+                                   |                                  
+               +-------------------+-------------------+              
+               v                                       v              
++----------------------------+          +----------------------------+
+|        HQ INSTANCE         |          |        DR INSTANCE         |
+|      Region: Primary       |          |     Region: Secondary      |
+|                            |          |                            |
+|     Management Domain      |          |     Management Domain      |
+|     Workload Domain(s)     |          |     Workload Domain(s)     |
++----------------------------+          +----------------------------+
+                                                                      
+           -------- Failover: HQ -> DR -------->                      
+           <------- Failback: DR -> HQ ---------                      
+           VMware Live Recovery -- cross-region replication
+
+```
+**Architecture of Edge / Sovereign Instance (VCF Edge model)**
+
+```
++------------------------------------------------------------------------------+
+|                              CORE / HQ INSTANCE                              |
+|                           VCF Fleet Control Plane                            |
+|                     VCF Operations (mandatory for Edge)                      |
++------------------------------------------------------------------------------+
+                                                  |                             
+        +--------------------+--------------------+--------------------+        
+        v                    v                    v                    v        
++---------------+    +---------------+    +---------------+    +---------------+
+|  Edge Site 1  |    |  Edge Site 2  |    |  Edge Site 3  |    |      ...      |
+|>= 8 cores/host|    |>= 8 cores/host|    |>= 8 cores/host|    |    min. 10    |
+|  <= 256 cores |    |  <= 256 cores |    |  <= 256 cores |    |  sites total  |
++---------------+    +---------------+    +---------------+    +---------------+
+
+          VCF Edge model (formerly Remote Clusters): minimum 10 sites
+     Each Edge site: physically distinct rack/switch from core DC workloads
+
+            Sovereign Cloud overlay (not a separate named topology):
+                        any of the 4 Fleet Designs above
+                    + in-country data residency requirements
+                + vSAN-based ransomware / data recovery controls
+
 ```
 
 ## Comparing the Four Designs
