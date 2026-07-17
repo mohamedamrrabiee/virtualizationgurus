@@ -18,10 +18,10 @@ A practitioner-level walkthrough of VMware Cloud Foundation 9, one focused topic
 5. [VCF 9 NSX VPC Deep Dive: Cloud-Native Networking for Your Private Cloud](/virtualizationgurus/posts/vcf9-nsx-vpc-deep-dive/) — July 9, 2026
 6. [VCF 9 vSAN ESA Deep Dive: Architecture, Performance, and New Features](/virtualizationgurus/posts/vcf9-vsan-esa-deep-dive/) — July 12, 2026
 7. [VCF 9 Lifecycle Management with VCF Operations: Unified Upgrades and Fleet Management](/virtualizationgurus/posts/vcf9-lifecycle-management/) — July 15, 2026
+8. [VCF 9 Instance Model: Designing HQ, DR, and Edge/Sovereign Topologies](/virtualizationgurus/posts/vcf9-instance-model/) — July 18, 2026
 
 ## Coming up
 
-8. VCF 9 Instance Model: Designing HQ, DR, and Edge/Sovereign Topologies — July 18, 2026
 9. VCF 9 Management Domain Anatomy: What Actually Runs Inside — July 21, 2026
 10. Physical Network Design: VDS Separation, ToR, and BGP Uplinks — July 24, 2026
 11. Workload Domain Creation: Greenfield vs Import Existing vCenter — July 27, 2026
