@@ -1,6 +1,6 @@
 ---
 title: "VCF 9 Instance Model: Designing HQ, DR, and Edge/Sovereign Topologies"
-date: 2026-07-18
+date: 2026-07-17
 draft: false
 tags: ["VCF", "VMware", "VCF Instance", "Fleet", "Disaster Recovery", "Cloud Foundation"]
 categories: ["VCF 9", "Architecture"]
