@@ -1,6 +1,6 @@
 ---
 title: "VCF 9 Management Domain Anatomy: What Actually Runs Inside"
-date: 2026-07-21
+date: 2026-07-20
 draft: false
 tags: ["VCF", "VMware", "Management Domain", "vCenter", "NSX", "Cloud Foundation"]
 categories: ["VCF 9", "Architecture"]
