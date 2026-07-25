@@ -1,7 +1,7 @@
 ---
 title: "Physical Network Design: VDS Separation, ToR Switches, and BGP Uplinks"
 date: 2026-07-24
-draft: true
+draft: false
 tags: ["Networking", "Physical Network", "VDS", "BGP", "ToR"]
 categories: ["VCF 9", "Networking"]
 description: "How VCF 9.1 expects the physical fabric to look before you ever build a workload domain -- rack-level fault tolerance, ToR trunk and MTU requirements, vSphere Distributed Switch traffic separation profiles, and BGP uplinks from NSX Edge to the physical network."
