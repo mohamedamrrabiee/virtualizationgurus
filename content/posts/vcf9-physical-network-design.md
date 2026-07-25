@@ -14,27 +14,22 @@ Every workload domain you'll ever stand up in VCF inherits whatever the physical
 ## Architectural Overview
 
 ```
-Spine / Core Routers
-| eBGP |
-+--------v--------+ +--------v--------+
-| ToR Switch A | <== 802.1Q trunk ==> | ToR Switch B |
-+--------+--------+ +--------+--------+
-| 2x 25GbE+ per host | 2x 25GbE+ per host
-+---------------+---------------+
-|
-+------------v------------+
-| ESX Host |
-| vSphere Distributed |
-| Switch (traffic-type |
-| separated portgroups) |
-| Mgmt | vMotion | vSAN |
-| NSX Host TEP overlay |
-+------------+------------+
-|
-+------------v------------+
-| NSX Edge Node |
-| Tier-0 uplinks --eBGP--> ToR/Spine |
-+--------------------------+
+                            Spine / Core Routers
+                                     |
+                                   eBGP
+                                     |
+              +----------------------+-----------------------+
+              |                                              |
+    +-------------------+                          +-------------------+
+    |    ToR Switch A   |   <== 802.1Q trunk ==>   |    ToR Switch B   |
+    +---------+---------+                          +---------+---------+
+              |                                              |
+              |  2x 25GbE+ per host                          |  2x 25GbE+ per host
+              +----------------------+-----------------------+
+                                     |
+                        +------------------------+
+                        |        ESX Host        |
+                        |------------------------|
 ```
 
 ## Rack-Level Fabric: Where Bottlenecks Actually Come From
