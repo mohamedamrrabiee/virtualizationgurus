@@ -1,6 +1,6 @@
 ---
 title: "VI Workload Domains: Shared vs Dedicated NSX"
-date: 2026-08-2
+date: 2026-08-02
 draft: false
 tags: ["NSX", "Workload Domains", "vCenter", "Design Decisions"]
 categories: ["VCF 9", "NSX"]
@@ -14,18 +14,19 @@ Every VI workload domain you stand up in VCF asks the same networking question: 
 ## Architectural Overview
 
 ```
-VCF Instance (up to 25 total domains: 1 management + 24 VI workload domains)
-+-------------------------------------------------+
-| |
-| Domain A --+ |
-| Domain B --+---> Shared NSX Manager Instance |
-| Domain C --+ (lower footprint, shared |
-| lifecycle & blast radius) |
-| |
-| Domain D ---------> Dedicated NSX Manager |
-| (own cluster, independent |
-| scaling & lifecycle) |
-+-------------------------------------------------+
+VCF INSTANCE -- UP TO 25 TOTAL DOMAINS (1 MGMT + 24 VI WORKLOAD)
+
+      +----------+      +----------+      +----------+      +----------+
+      | DOMAIN A |      | DOMAIN B |      | DOMAIN C |      | DOMAIN D |
+      +----------+      +----------+      +----------+      +----------+
+            |                 |                 |                 |
+            +-----------------+-----------------+                 |
+                              |                                   |
+              +------------------------------+      +--------------------------+
+              | SHARED NSX MANAGER INSTANCE  |      |  DEDICATED NSX MANAGER   |
+              |   lower footprint, shared    |      | own cluster, independent |
+              |   lifecycle & blast radius   |      |   scaling & lifecycle    |
+              +------------------------------+      +--------------------------+
 ```
 
 ## Shared NSX: Join an Existing Instance
