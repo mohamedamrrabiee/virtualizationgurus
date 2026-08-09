@@ -1,6 +1,6 @@
 ---
 title: "NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, and North-South Firewall Design"
-date: 2026-08-10
+date: 2026-08-09
 draft: false
 tags: ["NSX", "Edge Cluster", "Tier-0", "Tier-1", "VPN", "Firewall", "Networking"]
 categories: ["VCF 9", "NSX"]
