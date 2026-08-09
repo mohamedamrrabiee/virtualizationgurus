@@ -23,10 +23,10 @@ A practitioner-level walkthrough of VMware Cloud Foundation 9, one focused topic
 10. [Physical Network Design: VDS Separation, ToR Switches, and BGP Uplinks](/virtualizationgurus/posts/vcf9-physical-network-design/) — July 24, 2026
 11. [Workload Domain Creation: Greenfield vs Import Existing vCenter](/virtualizationgurus/posts/vcf9-workload-domain-creation-greenfield-vs-import/) — July 28, 2026
 12. [VI Workload Domains: Shared vs Dedicated NSX](/virtualizationgurus/posts/vcf9-vi-workload-domains-shared-vs-dedicated-nsx/) — August 3, 2026
+13. [NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, and North-South Firewall Design](/virtualizationgurus/posts/vcf9-nsx-edge-cluster-deep-dive/) — August 10, 2026
 
 ## Coming up
 
-13. NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, and North-South Firewall Design — August 10, 2026
 14. vSAN ESA vs OSA: Storage Architecture Decisions — August 17, 2026
 15. VCF 9 Security and Compliance: DFW, VPC Isolation, and Hardened Operations — August 24, 2026
 16. VCF 9 Identity Broker: Retiring VMware Identity Manager for Unified Fleet Authentication — August 31, 2026
@@ -37,6 +37,7 @@ A practitioner-level walkthrough of VMware Cloud Foundation 9, one focused topic
 21. Advanced Services for VCF: VPC, Load Balancing, and Network Observability — October 5, 2026
 
 Check back here for the running index, or [subscribe via RSS](/virtualizationgurus/index.xml) to catch new posts as they publish.
+
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
 <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
