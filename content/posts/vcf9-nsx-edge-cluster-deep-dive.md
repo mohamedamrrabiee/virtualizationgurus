@@ -1,7 +1,7 @@
 ---
 title: "NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, and North-South Firewall Design"
-date: 2026-08-05
-draft: true
+date: 2026-08-10
+draft: false
 tags: ["NSX", "Edge Cluster", "Tier-0", "Tier-1", "VPN", "Firewall", "Networking"]
 categories: ["VCF 9", "NSX"]
 description: "A deep dive into NSX Edge cluster architecture in VCF 9.1 -- Tier-0 and Tier-1 gateway roles, HA modes, VPN connectivity, and north-south firewall design with vDefend."
@@ -15,25 +15,41 @@ Every workload domain eventually needs to talk to the outside world, and in NSX 
 
 ```
 Physical / Upstream Network
-| (BGP / static)
-+---------v---------+
-| Tier-0 Gateway | active-active or active-standby
-| (NSX Edge Cluster)|
-+---------+---------+
-100.64.0.0/16 transit
-+---------v---------+
-| Tier-1 Gateway | downlinks only, no direct N-S uplink
-+---+-----------+---+
-| |
-+------v---+ +-----v----+
-| Segment A| | Segment B| (E-W via Distributed Firewall)
-+----------+ +----------+
+                                      |
+                                (BGP / static)
+                                      |
+                   +--------------------------------------+
+                   |            TIER-0 GATEWAY             |
+                   |          (NSX Edge Cluster)           |
+                   |   active-active or active-standby     |
+                   +--------------------------------------+
+                                      |
+                            100.64.0.0/16 transit
+                                      |
+                   +--------------------------------------+
+                   |            TIER-1 GATEWAY             |
+                   |     downlinks only -- no direct       |
+                   |              N-S uplink               |
+                   +--------------------------------------+
+                           +----------+------------+
+                           |                       |
+                    +------------+          +------------+
+                    | SEGMENT A  |          | SEGMENT B  |
+                    +------------+          +------------+
+             (E-W traffic between segments: Distributed Firewall)
 
-VPN (IPSec / L2) --+ +-- vDefend Gateway Firewall
-active-standby only v v N-S stateful L2-7 inspection
-+-------------------+
-| Tier-0 Gateway |
-+-------------------+
+------------------------------------------------------------------------------
+
+                   Services attached to the Tier-0 Gateway
+
+               VPN (IPSec / L2)                vDefend Gateway Firewall
+             active-standby only             N-S stateful L2-7 inspection
+                       |                                   |
+                       +--------------+--------------------+
+                                      |
+                          +------------------------+
+                          |     TIER-0 GATEWAY      |
+                          +------------------------+
 ```
 
 ## Tier-0 Gateway: The Fleet's Front Door
