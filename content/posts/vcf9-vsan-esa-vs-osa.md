@@ -1,7 +1,7 @@
 ---
 title: "vSAN ESA vs OSA: Storage Architecture Decisions"
-date: 2026-08-19
-draft: true
+date: 2026-08-16
+draft: false
 tags: ["vSAN", "ESA", "OSA", "Storage", "Hardware"]
 categories: ["VCF 9", "vSAN"]
 description: "Comparing vSAN Express Storage Architecture (ESA) and Original Storage Architecture (OSA) in VCF 9.1 -- hardware requirements, cluster types, and how to choose."
@@ -14,18 +14,19 @@ vSAN's storage architecture choice gets made before a single VM is ever placed -
 ## Architectural Overview
 
 ```
-vSAN OSA vSAN ESA
-+----------------------+ +----------------------+
-| Disk Group 1 | | Storage Pool |
-| +--------++--------+ | | +----++----++----+ |
-| | Cache ||Capacity| | | |NVMe||NVMe||NVMe| |
-| | (SSD) ||(SSD/HDD)|| | |TLC ||TLC ||TLC | |
-| +--------++--------+ | | +----++----++----+ |
-| Disk Group 2 ... | | every device = cache |
-+----------------------+ | + capacity, one pool |
-+----------------------+
-Storage controller required No disk groups, no
-(HBA / RAID passthrough) separate cache tier
+vSAN OSA                              vSAN ESA
++------------------------------+      +------------------------------+
+|         DISK GROUP 1         |      |         STORAGE POOL         |
+| +----------+  +------------+ |      | +-------+ +-------+ +-------+|
+| |  Cache   |  |  Capacity  | |      | |  NVMe | |  NVMe | |  NVMe ||
+| |  (SSD)   |  |(SSD / HDD) | |      | |  TLC  | |  TLC  | |  TLC  ||
+| +----------+  +------------+ |      | +-------+ +-------+ +-------+|
+|       Disk Group 2 ...       |      |     every device = cache     |
++------------------------------+      |     + capacity, one pool     |
+                                      +------------------------------+
+
+Storage controller required           No disk groups, no
+(HBA / RAID passthrough)              separate cache tier
 ```
 
 ## OSA: Cache and Capacity, Organized in Disk Groups
