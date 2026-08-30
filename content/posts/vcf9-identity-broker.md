@@ -96,15 +96,23 @@ A few constraints matter when planning a migration, straight from Broadcom's doc
 
 A separate migration path exists for a different scenario than the vIDM migration above: moving an Identity Broker that's already running in Embedded mode into Instance mode, without touching vIDM at all. This is new in VCF 9.1, Broadcom's release notes for VCF Operations 9.1 list it explicitly: "Migration from embedded to instance deployment of the identity broker: Support for the migration of the identity broker from embedded mode to instance mode in VCF Operations."
 
-The practical case this solves: you deployed Embedded mode because it was simpler to get running, and now want the three-node HA cluster without reconfiguring your identity provider and SSO setup from scratch.
+Worth correcting a common assumption up front: this is not a zero-touch, click-and-done migration. It's a supported, no-data-loss path, but it involves real manual steps on your end, including reconfiguring your external identity provider.
 
-What's confirmed from Broadcom's documentation:
+**Prerequisites:** your Embedded-mode Identity Broker must already be at version 9.1 (it upgrades automatically as part of the vCenter instance upgrade, no separate step needed), and you need an Instance-mode Identity Broker already deployed somewhere in the fleet to serve as the migration target. Only VCF Instances with an existing Instance-mode broker show up as valid targets, so if none exists yet, you deploy one first.
 
--> The embedded Identity Broker must first be running 9.1. If you're upgrading from 9.0.x, this happens automatically as part of the vCenter instance upgrade, there's no separate upgrade step for the embedded broker itself.
+What the migration actually involves, from VCF Operations (Manage > Fleet Management > Identity & Access > VCF SSO Overview > select the broker > Actions > Migrate from Embedded to Instance):
 
--> Only once the embedded broker is confirmed at 9.1 does Broadcom's documentation describe it as eligible for migration to Instance mode, "for high availability."
+-> **Data transfer is SFTP-based.** You provide an SFTP host, port, username, password, and path; the migration exports data from the embedded broker and imports it into the target instance over that connection. Broadcom's own guidance: use a dedicated, single-purpose SFTP account scoped to only that folder, and delete it once the migration completes.
 
--> The migration is initiated and managed through VCF Operations, consistent with how both deployment modes are configured in the first place.
+-> **Identity provider config and user/group provisioning are suspended for the duration of the transfer.** Plan the migration window accordingly rather than treating it as a background operation.
+
+-> **You manually update your external identity provider afterward.** The wizard shows you the new Identity Broker instance's service provider details, and you take those into your IdP's own admin console to update its configuration, there's no automatic push to a third-party IdP. A Test Login step lets you validate the new connection before committing further.
+
+-> **Component reconnection is only partly automatic.** The wizard's "Update Components" step reconnects and sanity-tests the components it knows how to handle, but VCF Operations, HCX, log management, and VCF Operations for Networks all need manual follow-up, along with any automation scripts using API clients against the old configuration.
+
+-> **Canceling mid-migration deletes the target's configuration**, not just aborts cleanly, so treat the confirmation step as a real go/no-go point rather than a formality.
+
+Broadcom documents the exact procedure in "Migration of Identity Broker Embedded to Identity Broker Instance," linked below, worth a full read before scheduling this given the manual IdP and component-update work involved.
 
 ## What's Next
 
@@ -116,7 +124,7 @@ Next in this series: Bundle Management, Online vs Offline/Air-Gapped Depots.
 - [Deployment Modes of the Identity Broker](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/fleet-management/managing-identity-and-access-using-vcf-single-sign-on/what-is/deployment-models-for-sso.html)
 - [Migrating VMware Identity Manager to Identity Broker](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/fleet-management/managing-identity-and-access-using-vcf-single-sign-on/migrating-vmware-identity-manager-to-vcf-identity-broker.html)
 - [Upgrade to Identity Broker 9.1](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/upgrading-cloud-foundation/upgrade-vcf-identity-broker.html)
-- [Upgrading vCenter and NSX Manager (Embedded to Instance migration reference)](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/upgrading-cloud-foundation/upgrade-the-management-domain-to-vmware-cloud-foundation-5-2/updating-vcenter-and-nsx.html)
+- [Migration of Identity Broker Embedded to Identity Broker Instance](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/fleet-management/managing-identity-and-access-using-vcf-single-sign-on/what-is/managing-vmware-cloud-foundation-operations-sso/migration-of-vcf-identity-broker-embedded-to-vcf-identity-broker-appliance.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
 <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
