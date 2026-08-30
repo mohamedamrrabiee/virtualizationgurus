@@ -17,7 +17,7 @@ VCF single sign-on is the mechanism that lets components across the fleet (vCent
 
 ## Two Deployment Modes: Embedded or Instance
 
-According to Broadcom's documentation, the Identity Broker supports two deployment modes, and the choice affects where the component actually lives. Worth flagging up front: Broadcom renamed the non-embedded mode between releases: VCF 9.0 documentation calls it "Appliance" mode, while the same deployment type is called "Instance" mode as of the VCF 9.1 docs. Same component, updated name, useful to know if you're cross-referencing older 9.0-era material or blog posts.
+According to Broadcom's documentation, the Identity Broker supports two deployment modes, and the choice affects where the component actually lives. Worth flagging up front: the change between releases isn't just a rename. In VCF 9.0, the non-embedded mode ran as a standalone, externally-deployed multi-node appliance cluster, and Broadcom called it "Appliance" mode. In VCF 9.1, that same role is filled by "Instance" mode, but the underlying architecture changed with it: it's now consolidated into VCF Management Services, the unified runtime VCF 9.1 introduced for centralized lifecycle and operations across components like Identity Broker, Log Management, and the License Server. Broadcom's own upgrade documentation confirms this directly: the 9.0 external vIDB appliance cluster is "migrated directly into VCF Management Services" as part of the 9.1 upgrade, not simply relabeled. If you're cross-referencing older 9.0-era material or blog posts, keep this in mind, the terminology changed because the architecture did.
 
 -> Embedded mode, the Identity Broker is configured directly inside the management domain vCenter of a VCF Instance. This is the simpler option, typically used within a single VCF Instance. It's also a single point of failure: if the management domain vCenter goes down, the embedded Identity Broker goes down with it.
 
@@ -90,7 +90,7 @@ A few constraints matter when planning a migration, straight from Broadcom's doc
 | One identity config per tool | Shared Identity Broker across VCF Operations, VCF Automation, and NSX |
 | Manual, ad hoc cutover between identity tools | Documented export/import/component-update migration path |
 | Local accounts and MFA handled inconsistently | Local + MFA combinations explicitly unsupported on the Broker, third-party IdP/AD integration is the expected pattern |
-| "Appliance mode" (VCF 9.0 terminology) | "Instance mode" (same deployment type, renamed as of VCF 9.1) |
+| "Appliance mode": standalone external appliance cluster (VCF 9.0) | "Instance mode": consolidated into VCF Management Services (VCF 9.1), architecture changed, not just the name |
 
 ## Embedded to Instance Migration (VCF 9.1)
 
@@ -125,6 +125,7 @@ Next in this series: Bundle Management, Online vs Offline/Air-Gapped Depots.
 - [Migrating VMware Identity Manager to Identity Broker](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/fleet-management/managing-identity-and-access-using-vcf-single-sign-on/migrating-vmware-identity-manager-to-vcf-identity-broker.html)
 - [Upgrade to Identity Broker 9.1](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/upgrading-cloud-foundation/upgrade-vcf-identity-broker.html)
 - [Migration of Identity Broker Embedded to Identity Broker Instance](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/fleet-management/managing-identity-and-access-using-vcf-single-sign-on/what-is/managing-vmware-cloud-foundation-operations-sso/migration-of-vcf-identity-broker-embedded-to-vcf-identity-broker-appliance.html)
+- [VCF Management Services Models](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/design/vmware-cloud-foundation-concepts/vcf-management-services-models.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
 <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
