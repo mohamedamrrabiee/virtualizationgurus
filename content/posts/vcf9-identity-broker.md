@@ -1,7 +1,7 @@
 ---
 title: "VCF 9 Identity Broker: Retiring VMware Identity Manager for Unified Fleet Authentication"
-date: 2026-08-11
-draft: true
+date: 2026-08-30
+draft: false
 tags: ["VCF", "VMware", "Identity Broker", "SSO", "Security", "Cloud Foundation"]
 categories: ["VCF 9", "Security"]
 description: "A technical breakdown of the VCF 9 Identity Broker, validated against official Broadcom documentation: how it replaces VMware Identity Manager, its two deployment modes, and the migration path from vIDM."
@@ -9,25 +9,25 @@ description: "A technical breakdown of the VCF 9 Identity Broker, validated agai
 
 ## Introduction
 
-If Fleet collapsed three consoles into one control plane, the Identity Broker does the same job for authentication. VMware Identity Manager (vIDM) is superseded in VCF 9 by a fleet-native component called the Identity Broker — the new component takes over VCF single sign-on going forward, though Broadcom doesn't force a rip-and-replace cutover: existing vIDM instances can keep running (still managed via VMware Aria Suite Lifecycle 8.x) as an authentication source for components like VCF Automation while you migrate the rest of the fleet on your own schedule. This post covers what the Identity Broker actually is, the two ways you can deploy it, and what a real migration from vIDM looks like, based on Broadcom's official 9.1 documentation.
+If Fleet collapsed three consoles into one control plane, the Identity Broker does the same job for authentication. VMware Identity Manager (vIDM) is superseded in VCF 9 by a fleet-native component called the Identity Broker. The new component takes over VCF single sign-on going forward, though Broadcom doesn't force a rip-and-replace cutover: existing vIDM instances can keep running (still managed via VMware Aria Suite Lifecycle 8.x) as an authentication source for components like VCF Automation while you migrate the rest of the fleet on your own schedule. This post covers what the Identity Broker actually is, the two ways you can deploy it, and what a real migration from vIDM looks like, based on Broadcom's official 9.1 documentation.
 
 ## From VMware Identity Manager to a Fleet-Native Identity Broker
 
-VCF single sign-on is the mechanism that lets components across the fleet — vCenter, VCF Operations, VCF Automation, NSX, log management, VCF Operations for Networks, and VCF Operations Orchestrator — authenticate against a shared set of identity providers instead of maintaining separate logins. Two notable exceptions: SDDC Manager and ESX are not covered by VCF single sign-on and keep their own authentication paths. In earlier VCF releases, vIDM often filled the fleet-authentication role. In VCF 9.1, that job belongs to the Identity Broker, a purpose-built component for VCF single sign-on across the fleet.
+VCF single sign-on is the mechanism that lets components across the fleet (vCenter, VCF Operations, VCF Automation, NSX, log management, VCF Operations for Networks, and VCF Operations Orchestrator) authenticate against a shared set of identity providers instead of maintaining separate logins. Two notable exceptions: SDDC Manager and ESX are not covered by VCF single sign-on and keep their own authentication paths. In earlier VCF releases, vIDM often filled the fleet-authentication role. In VCF 9.1, that job belongs to the Identity Broker, a purpose-built component for VCF single sign-on across the fleet.
 
 ## Two Deployment Modes: Embedded or Instance
 
-According to Broadcom's documentation, the Identity Broker supports two deployment modes, and the choice affects where the component actually lives. Worth flagging up front: Broadcom renamed the non-embedded mode between releases — VCF 9.0 documentation calls it "Appliance" mode, while the same deployment type is called "Instance" mode as of the VCF 9.1 docs. Same component, updated name — useful to know if you're cross-referencing older 9.0-era material or blog posts.
+According to Broadcom's documentation, the Identity Broker supports two deployment modes, and the choice affects where the component actually lives. Worth flagging up front: Broadcom renamed the non-embedded mode between releases: VCF 9.0 documentation calls it "Appliance" mode, while the same deployment type is called "Instance" mode as of the VCF 9.1 docs. Same component, updated name, useful to know if you're cross-referencing older 9.0-era material or blog posts.
 
 -> Embedded mode -- the Identity Broker is configured directly inside the management domain vCenter of a VCF Instance. This is the simpler option, typically used within a single VCF Instance. It's also a single point of failure: if the management domain vCenter goes down, the embedded Identity Broker goes down with it.
 
--> Instance mode -- the Identity Broker is deployed as its own dedicated VCF management services component within the management domain, separate from vCenter, running as a three-node cluster that tolerates a single node failure. The first Identity Broker instance is deployed in the primary VCF Instance, and you can optionally deploy additional Identity Broker instances in other VCF Instances across the fleet — Broadcom's guidance caps a single Instance-mode broker at up to five connected VCF Instances.
+-> Instance mode -- the Identity Broker is deployed as its own dedicated VCF management services component within the management domain, separate from vCenter, running as a three-node cluster that tolerates a single node failure. The first Identity Broker instance is deployed in the primary VCF Instance, and you can optionally deploy additional Identity Broker instances in other VCF Instances across the fleet, though Broadcom's guidance caps a single Instance-mode broker at up to five connected VCF Instances.
 
 Broadcom's Identity Broker Detailed Design documentation covers the specific requirements and recommendations for choosing between the two.
 
 ## What Migration From vIDM Actually Involves
 
-For environments coming from VMware Identity Manager 3.3.7 GA (or its latest patch), Broadcom provides a dedicated migration path in VCF 9.1 — targeting an Instance-mode Identity Broker running 9.1 or later — built around export/import scripts rather than a one-click in-place upgrade:
+For environments coming from VMware Identity Manager 3.3.7 GA (or its latest patch), Broadcom provides a dedicated migration path in VCF 9.1, targeting an Instance-mode Identity Broker running 9.1 or later, built around export/import scripts rather than a one-click in-place upgrade:
 
 -> Users and groups are migrated from vIDM to the Identity Broker directly.
 
@@ -54,32 +54,32 @@ A few constraints matter when planning a migration, straight from Broadcom's doc
 ## Architecture at a Glance
 
 ```
-+--------------------------------+
-| VMware Identity Manager (vIDM) |
-| Day-0 legacy identity source   |
-+--------------------------------+
-                 |
-                 | export (users, groups, sync settings comparison)
-                 v
-+------------------------------------------------+
-| MIGRATION TOOLING                              |
-| (vidm-export / vidb-import / component-update) |
-+------------------------------------------------+
-                         |
-                         | import + validation
-                         v
-+--------------------------------------------------------------+
-| IDENTITY BROKER                                              |
-| Embedded (in mgmt vCenter) or Instance (dedicated component) |
-+--------------------------------------------------------------+
-                                |
-                                | repointed via component-update
-                                v
----------+-------------------+-------------------+--------
-         |                   |                   |
-+----------------+  +----------------+  +----------------+
-| VCF Operations |  | VCF Automation |  | NSX            |
-+----------------+  +----------------+  +----------------+
+                    +--------------------------------+
+                    | VMware Identity Manager (vIDM) |
+                    |  Day-0 legacy identity source  |
+                    +--------------------------------+
+                                     |
+                                     | export (users, groups, sync settings comparison)
+                                     v
+            +------------------------------------------------+
+            |               MIGRATION TOOLING                |
+            | (vidm-export / vidb-import / component-update) |
+            +------------------------------------------------+
+                                     |
+                                     | import + validation
+                                     v
+     +--------------------------------------------------------------+
+     |                       IDENTITY BROKER                        |
+     | Embedded (in mgmt vCenter) or Instance (dedicated component) |
+     +--------------------------------------------------------------+
+                                     |
+                                     | repointed via component-update
+                                     v
+                 +-------------------+-------------------+
+                 |                   |                   |
+        +----------------+  +----------------+  +----------------+
+        | VCF Operations |  | VCF Automation |  |      NSX       |
+        +----------------+  +----------------+  +----------------+
 ```
 
 ## The Mental Model Shift
@@ -94,7 +94,7 @@ A few constraints matter when planning a migration, straight from Broadcom's doc
 
 ## What's Next
 
-Next in this series: the VCF 9 Instance Model — how HQ, DR, and Edge/Sovereign Cloud topologies are designed and connected under a single Fleet.
+Next in this series: the VCF 9 Instance Model, how HQ, DR, and Edge/Sovereign Cloud topologies are designed and connected under a single Fleet.
 
 ## Further Reading (Official Broadcom Documentation)
 
