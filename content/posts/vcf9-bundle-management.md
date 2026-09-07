@@ -1,7 +1,7 @@
 ---
 title: "Bundle Management: Online vs Offline/Air-Gapped"
-date: 2026-09-07
-draft: true
+date: 2026-09-06
+draft: false
 tags: ["Lifecycle Management", "Software Depot", "Air-Gapped", "VCF Download Tool"]
 categories: ["VCF 9", "Lifecycle Management"]
 description: "VCF 9.1 didn't just add an offline option to bundle management, it formalized three distinct software depot connection modes. What Connected, Offline Depot, and Disconnected actually mean, and why conflating the last two causes real prechecks to fail."
