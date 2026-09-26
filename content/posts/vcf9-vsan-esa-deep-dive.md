@@ -28,65 +28,9 @@ vSAN Express Storage Architecture (ESA) is the recommended storage architecture 
 
 The diagram below illustrates the vSAN ESA architecture in a VCF 9 environment, from the NVMe hardware layer through the vSAN data path and management plane:
 
-```
-+-----------------------------------------------------------------------------------+
-|           VCF 9 - vSAN Express Storage Architecture (ESA)                         |
-+-----------------------------------------------------------------------------------+
-
-  +-----------------------------------------------------------------------------+
-  |                        vSAN Management Plane                                 |
-  |                                                                              |
-  |  +------------------+  +------------------+  +--------------------------+   |
-  |  |  vCenter Server  |  |  vSAN Health Svc |  |  VCF Operations          |   |
-  |  |  (Policy Mgmt,   |  |  (Proactive HW,  |  |  (LCM, Capacity Mgmt,   |   |
-  |  |   Cluster Ops)   |  |   Skyline Health)|  |   vSAN File Services)    |   |
-  |  +------------------+  +------------------+  +--------------------------+   |
-  +-----------------------------------------------------------------------------+
-                                      |
-  +-------------------------------------v----------------------------------------+
-  |                         ESX Host Data Path (per host)                         |
-  |                                                                               |
-  |  +-------------------------------------------------------------------------+  |
-  |  |                      vSAN ESA Storage Stack                             |  |
-  |  |                                                                         |  |
-  |  |   VM I/O Request                                                        |  |
-  |  |        |                                                                |  |
-  |  |        v                                                                |  |
-  |  |  +-------------+   Log-Structured File System (LFS)                    |  |
-  |  |  | vSAN Object |<-- Single-tier NVMe pool (no cache/capacity split)    |  |
-  |  |  |   Layer     |   Always-on compression (cluster service, VCF 9.1)   |  |
-  |  |  +------+------+   Metadata/B-tree based snapshots (near-zero impact) |  |
-  |  |         |                                                              |  |
-  |  |         v                                                              |  |
-  |  |  +-------------+                                                       |  |
-  |  |  |  NVMe/RDMA  |<-- NVMe-oF support for direct fabric I/O             |  |
-  |  |  |   Driver    |                                                       |  |
-  |  |  +------+------+                                                       |  |
-  |  +---------|-----------------------------------------------------------------+  |
-  |            |                                                              |
-  |  +---------v---------------------------------------------------------+   |
-  |  |                       NVMe SSD Pool (ESA)                         |   |
-  |  |                                                                   |   |
-  |  |   +------------+  +------------+  +------------+                 |   |
-  |  |   | NVMe SSD 1 |  | NVMe SSD 2 |  | NVMe SSD 3 |  [+more]      |   |
-  |  |   | (PHM mon.) |  | (PHM mon.) |  | (PHM mon.) |                |   |
-  |  |   +------------+  +------------+  +------------+                 |   |
-  |  |                                                                   |   |
-  |  |   All drives contribute to a single performance+capacity pool     |   |
-  |  |   No cache/capacity tier separation (unlike OSA)                  |   |
-  |  +-------------------------------------------------------------------+   |
-  +---------------------------------------------------------------------------+
-
-  vSAN ESA Cluster (3 hosts minimum)
-  +-----------------+   +-----------------+   +-----------------+
-  |    ESX Host 1   |   |    ESX Host 2   |   |    ESX Host 3   |
-  |  NVMe x3 (min)  |   |  NVMe x3 (min)  |   |  NVMe x3 (min)  |
-  |  Auto-RAID      |   |  Auto-RAID      |   |  Auto-RAID      |
-  +-----------------+   +-----------------+   +-----------------+
-            |                    |                    |
-            +--------------------+--------------------+
-                        vSAN Network (dedicated VLAN)
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-vsan-esa-deep-dive.svg"></object>
+</div>
 
 ## ESA vs OSA: Architecture Comparison
 
@@ -113,7 +57,7 @@ ESA eliminates the two-tier cache/capacity split used in OSA. All NVMe drives co
 - **Consistent low-latency I/O** across all stored objects regardless of working set size
 - **Simplified capacity planning** with no cache-to-capacity ratio calculations required
 - **Minimum 3 NVMe drives per host** for ESA (the Broadcom Compatibility Guide lists ESA-certified NVMe drives)
-- All drives must be certified for ESA — not all NVMe drives qualify; refer to the Broadcom Compatibility Guide (BCG) for the ESA Compatibility category
+- All drives must be certified for ESA: not all NVMe drives qualify; refer to the Broadcom Compatibility Guide (BCG) for the ESA Compatibility category
 
 ### Log-Structured File System (LFS)
 
@@ -128,7 +72,7 @@ ESA uses a purpose-built Log-Structured File System optimized for NVMe character
 ESA's log-structured architecture enables a metadata-based snapshot engine that is fundamentally different from OSA's copy-on-write approach:
 
 - Snapshots are tracked through metadata pointers rather than copying data blocks, so creation is crash-consistent without stunning the VM
-- Snapshot deletion is largely a metadata operation — acknowledged immediately, with underlying data reclaimed asynchronously — and is dramatically faster than OSA's redo-log-based mechanism
+- Snapshot deletion is largely a metadata operation, acknowledged immediately, with underlying data reclaimed asynchronously, and is dramatically faster than OSA's redo-log-based mechanism
 - Snapshot trees do not degrade read/write performance, enabling efficient use of snapshots for backup integration (VMware Live Recovery)
 - Supports VMware Live Recovery with RPO as low as 1 minute for vSAN-to-vSAN replication in supported configurations
 
@@ -136,7 +80,7 @@ ESA's log-structured architecture enables a metadata-based snapshot engine that 
 
 VCF 9.1 introduces **Auto-RAID**, a fully system-managed approach to data resilience that replaces manual RAID/FTT policy selection as the recommended default for vSAN ESA clusters:
 
-- A single **"vSAN ESA Auto RAID Policy"** governs all vSAN 9.1 clusters cluster-wide — no explicit resilience settings are stored in the policy itself; vSAN senses cluster characteristics (host count, topology) and applies the optimal RAID level automatically
+- A single **"vSAN ESA Auto RAID Policy"** governs all vSAN 9.1 clusters cluster-wide: no explicit resilience settings are stored in the policy itself; vSAN senses cluster characteristics (host count, topology) and applies the optimal RAID level automatically
 - **Standard clusters with 6+ hosts**: FTT=2 using RAID-6 (1.5x capacity overhead)
 - **Standard clusters with 3–5 hosts**: FTT=1 using RAID-5, always using the 2+1 erasure code (1.5x capacity overhead)
 - **Fewer than 3 hosts**: FTT=0 (1.0x capacity overhead) until the cluster scales up
@@ -155,7 +99,7 @@ vSAN's **Proactive Hardware Management (PHM)** capability applies to ESA NVMe dr
 - **Administrator-driven remediation**: Based on the predictive failure signal, PHM lets you take the appropriate remediation action (such as proactively evacuating data from the affected drive) before an unplanned failure occurs
 - **Alert integration**: PHM events surface through the vSAN management service on vCenter and integrate with vSAN Health and Skyline Health for fleet-wide visibility in VCF Operations
 
-Requires a supported Hardware Support Manager registered to vCenter — without an HSM, vSAN cannot receive OEM predictive-failure signals for PHM.
+Requires a supported Hardware Support Manager registered to vCenter: without an HSM, vSAN cannot receive OEM predictive-failure signals for PHM.
 
 ## vSAN ESA Storage Policies in VCF 9
 
@@ -163,7 +107,7 @@ Storage policies in vSAN ESA are defined through VM Storage Policies applied at 
 
 ### Key Policy Parameters
 
-**Failures to Tolerate (FTT)** — the number of host failures the cluster can sustain:
+**Failures to Tolerate (FTT)**: the number of host failures the cluster can sustain:
 
 - FTT=1 with RAID-1 (mirroring): minimum 3 hosts required
 - FTT=1 with RAID-5 (erasure coding): minimum 4 hosts, more space-efficient than RAID-1
@@ -171,7 +115,7 @@ Storage policies in vSAN ESA are defined through VM Storage Policies applied at 
 
 **Storage Policy Best Practices for VCF 9:**
 
-1. On VCF 9.1, start with the **vSAN ESA Auto RAID Policy** as the datastore default — it removes the guesswork of matching RAID level to host count and adjusts automatically as the cluster scales
+1. On VCF 9.1, start with the **vSAN ESA Auto RAID Policy** as the datastore default: it removes the guesswork of matching RAID level to host count and adjusts automatically as the cluster scales
 2. If manual policies are still required (pre-9.1 clusters, or specific IOPS limit / Object Space Reservation / stretched-cluster site-locality needs), use **RAID-5/FTT=1** for general workloads with 4+ hosts and **RAID-6/FTT=2** for business-critical VMs requiring tolerance of 2 simultaneous host failures
 3. Define **separate storage policies** for management VMs and workload VMs only where Auto-RAID's cluster-wide policy doesn't fit the requirement (for example, custom IOPS limits)
 4. Enable **storage-based policy management (SPBM)** integration with VCF Automation for self-service policy assignment
@@ -212,16 +156,16 @@ VCF 9's vSAN ESA integrates with **VMware Live Recovery** for disaster recovery:
 **Monitoring and health:**
 
 - Enable Skyline Health integration in VCF Operations for proactive hardware health alerts
-- Review PHM alerts regularly — a predictive-failure signal indicates a drive is near end of life and should be scheduled for replacement
+- Review PHM alerts regularly: a predictive-failure signal indicates a drive is near end of life and should be scheduled for replacement
 - vSAN performance diagnostics are available from vCenter > Monitor > vSAN > Performance
 
 ## What's Next
 
-In the next post, we cover VCF 9 Lifecycle Management with VCF Operations — Unified Upgrades and Fleet Management, walking through the unified upgrade workflow for ESX, vCenter, NSX, and vSAN, the new simplified licensing model, and fleet-level health monitoring across every VCF domain.
+In the next post, we cover VCF 9 Lifecycle Management with VCF Operations: Unified Upgrades and Fleet Management, walking through the unified upgrade workflow for ESX, vCenter, NSX, and vSAN, the new simplified licensing model, and fleet-level health monitoring across every VCF domain.
 
 ## Further Reading (Official Broadcom Documentation)
 
-- [vSAN 9.1 New Features — Release Notes](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/release-notes/vmware-cloud-foundation-9-1-0-0-release-notes/what-s-new/whats-new-vsan.html)
+- [vSAN 9.1 New Features: Release Notes](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/release-notes/vmware-cloud-foundation-9-1-0-0-release-notes/what-s-new/whats-new-vsan.html)
 - [Selecting the Best RAID Configuration for a vSAN Storage Cluster](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/vsan-deployment-administration-and-monitoring/administering-vmware-vsan/increasing-space-efficiency-in-a-vsan-cluster/using-raid-5-6-erasure-coding-in-vsan-cluster.html)
 - [Managing Proactive Hardware](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/vsan-deployment-administration-and-monitoring/vsan-monitoring-and-troubleshooting/managing-proactive-hardware.html)
 - [vSAN File Service](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/vsan-deployment-administration-and-monitoring/administering-vmware-vsan/expanding-and-managing-a-vsan-cluster/vsan-file-service.html)

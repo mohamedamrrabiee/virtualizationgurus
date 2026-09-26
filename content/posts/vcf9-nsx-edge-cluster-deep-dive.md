@@ -18,44 +18,9 @@ Every workload domain eventually needs to talk to the outside world, and in NSX 
 
 ## Architectural Overview
 
-```
-Physical / Upstream Network
-                                      |
-                                (BGP / static)
-                                      |
-                   +--------------------------------------+
-                   |            TIER-0 GATEWAY             |
-                   |          (NSX Edge Cluster)           |
-                   |   active-active or active-standby     |
-                   +--------------------------------------+
-                                      |
-                            100.64.0.0/16 transit
-                                      |
-                   +--------------------------------------+
-                   |            TIER-1 GATEWAY             |
-                   |     downlinks only -- no direct       |
-                   |              N-S uplink               |
-                   +--------------------------------------+
-                           +----------+------------+
-                           |                       |
-                    +------------+          +------------+
-                    | SEGMENT A  |          | SEGMENT B  |
-                    +------------+          +------------+
-             (E-W traffic between segments: Distributed Firewall)
-
-------------------------------------------------------------------------------
-
-                   Services attached to the Tier-0 Gateway
-
-               VPN (IPSec / L2)                vDefend Gateway Firewall
-             active-standby only             N-S stateful L2-7 inspection
-                       |                                   |
-                       +--------------+--------------------+
-                                      |
-                          +------------------------+
-                          |     TIER-0 GATEWAY      |
-                          +------------------------+
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-nsx-edge-cluster-deep-dive.svg"></object>
+</div>
 
 ## Tier-0 Gateway: The Fleet's Front Door
 

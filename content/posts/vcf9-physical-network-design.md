@@ -18,24 +18,9 @@ Every workload domain you'll ever stand up in VCF inherits whatever the physical
 
 ## Architectural Overview
 
-```
-                            Spine / Core Routers
-                                     |
-                                   eBGP
-                                     |
-              +----------------------+-----------------------+
-              |                                              |
-    +-------------------+                          +-------------------+
-    |    ToR Switch A   |   <== 802.1Q trunk ==>   |    ToR Switch B   |
-    +---------+---------+                          +---------+---------+
-              |                                              |
-              |  2x 25GbE+ per host                          |  2x 25GbE+ per host
-              +----------------------+-----------------------+
-                                     |
-                        +------------------------+
-                        |        ESX Host        |
-                        |------------------------|
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-physical-network-design.svg"></object>
+</div>
 
 ## Rack-Level Fabric: Where Bottlenecks Actually Come From
 

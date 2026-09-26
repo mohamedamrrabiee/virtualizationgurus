@@ -18,21 +18,9 @@ vSAN's storage architecture choice gets made before a single VM is ever placed -
 
 ## Architectural Overview
 
-```
-vSAN OSA                              vSAN ESA
-+------------------------------+      +------------------------------+
-|         DISK GROUP 1         |      |         STORAGE POOL         |
-| +----------+  +------------+ |      | +-------+ +-------+ +-------+|
-| |  Cache   |  |  Capacity  | |      | |  NVMe | |  NVMe | |  NVMe ||
-| |  (SSD)   |  |(SSD / HDD) | |      | |  TLC  | |  TLC  | |  TLC  ||
-| +----------+  +------------+ |      | +-------+ +-------+ +-------+|
-|       Disk Group 2 ...       |      |     every device = cache     |
-+------------------------------+      |     + capacity, one pool     |
-                                      +------------------------------+
-
-Storage controller required           No disk groups, no
-(HBA / RAID passthrough)              separate cache tier
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-vsan-esa-vs-osa.svg"></object>
+</div>
 
 ## OSA: Cache and Capacity, Organized in Disk Groups
 

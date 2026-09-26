@@ -33,67 +33,9 @@ A quick terminology note: starting with VCF/NSX 9.0, Broadcom rebranded this fir
 
 The diagram below illustrates the VCF 9 security architecture, showing the defense-in-depth layers from the physical network through workload micro-segmentation:
 
-```
-+--------------------------------------------------+
-| VCF 9 - Security Architecture (Defense in Depth) |
-+--------------------------------------------------+
-
-Layer 1: Physical Network Security
-+-----------------------------------------------------------------------+
-| Physical Switches + Firewall                                          |
-| [ ACLs / Port Security ]  [ BGP route filtering ]  [ MACsec (opt.) ]  |
-+-----------------------------------------------------------------------+
-|
-Layer 2: NSX Edge / North-South Security
-+-----------------------------------------------------------------------+
-| NSX Edge Cluster (Tier-0 Gateway)                                     |
-|                                                                       |
-| [ vDefend Gateway Firewall (off by default for NEW gateways on        |
-|   greenfield VCF 9.0; ON by default for new gateways when             |
-|   upgrading an existing VCF instance to 9.0) ]                        |
-| [ NAT / Load Balancer / VPN (IPsec, L2VPN) ]                          |
-| [ BGP to physical network with route filters ]                        |
-+-----------------------------------------------------------------------+
-|
-Layer 3: VPC Isolation (NSX 9.0 Multi-Tenancy)
-+----------------------------+ +----------------------------+
-| VPC-1 (Tenant A)           | | VPC-2 (Tenant B)           |
-|                            | |                            |
-| [ Private Subnets ]        | | [ Private Subnets ]        |
-| [ Public Subnets + NAT ]   | | [ Public Subnets + NAT ]   |
-| [ No cross-VPC traffic     | | [ No cross-VPC traffic     |
-|   without TGW attachment ] | |   without TGW attachment ] |
-+----------------------------+ +----------------------------+
-|                              inter-VPC via Transit Gateway (explicit attachment only)
-+-------------------------------+
-| Transit Gateway (CTGW / DTGW) |
-+-------------------------------+
-|
-Layer 4: vDefend Distributed Firewall (East-West Micro-Segmentation)
-+-----------------------------------------------------------------------+
-| vDefend DFW (enforced in the ESX kernel datapath at the vNIC)         |
-| VCF 9.0 defaults new workload domains to EDP Standard mode            |
-|                                                                       |
-| [ VM-to-VM traffic filtered at vNIC level ]                           |
-| [ Context-aware policies: VM tags + Security Groups ]                 |
-| [ Application-layer filtering with vDefend ATP (optional add-on) ]    |
-| [ Zero-trust: default deny between security groups ]                  |
-+-----------------------------------------------------------------------+
-      |            |            |
-+----------+ +----------+ +----------+
-| VM (App) | | VM (Web) | | VM (DB)  |
-| Tag: App | | Tag: Web | | Tag: DB  |
-+----------+ +----------+ +----------+
-
-Layer 5: VCF Operations Security Compliance
-+-----------------------------------------------------------------------+
-| VCF Operations                                                        |
-| [ Security compliance scanning (ESX, vCenter, NSX configurations) ]   |
-| [ Certificate lifecycle management + auto-renewal ]                   |
-| [ VCF Health / Diagnostics (Skyline Advisor + Diagnostics parity) ]   |
-| [ Audit logging for all VCF Operations actions ]                      |
-+-----------------------------------------------------------------------+
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-security-compliance.svg"></object>
+</div>
 
 ## vDefend Distributed Firewall (DFW) in VCF 9
 
@@ -135,16 +77,16 @@ In VCF 9's VPC model, DFW policies apply within and between VPCs:
 
 ### Context-Aware DFW and Threat Prevention (vDefend ATP)
 
-As of VCF/NSX 9.0, Broadcom's advanced security add-on is branded **VMware vDefend Advanced Threat Prevention (ATP)** — this replaces the older "NSX Intelligence" / "NSX ATP" naming you may still see referenced in older material. vDefend ATP combines several detection technologies with aggregation, correlation, and context from Network Detection and Response (NDR):
+As of VCF/NSX 9.0, Broadcom's advanced security add-on is branded **VMware vDefend Advanced Threat Prevention (ATP)**: this replaces the older "NSX Intelligence" / "NSX ATP" naming you may still see referenced in older material. vDefend ATP combines several detection technologies with aggregation, correlation, and context from Network Detection and Response (NDR):
 
 - **IDS/IPS**: Signature-based intrusion detection and prevention, supported on both the Distributed Firewall and the Gateway Firewall; NSX Manager checks for new intrusion-detection signatures on the cloud every 4 hours by default
 - **Network Sandboxing (Malware Prevention)**: File-based threat analysis for traffic traversing the DFW or Gateway Firewall
 - **Network Traffic Analysis (NTA)**: Behavioral and anomaly detection to catch lateral movement and unusual traffic patterns within the VCF environment
-- **Licensing**: the IDS/IPS capability requires a Threat Prevention license; Malware Prevention requires the separate Advanced Threat Prevention license — worth confirming which license tier a customer has before promising ATP capabilities in a design
+- **Licensing**: the IDS/IPS capability requires a Threat Prevention license; Malware Prevention requires the separate Advanced Threat Prevention license: worth confirming which license tier a customer has before promising ATP capabilities in a design
 
 ## vDefend Gateway Firewall: Off by Default for New Gateways
 
-One of the significant security posture changes in VCF 9 / NSX 9.0 is that the **vDefend Gateway Firewall is disabled by default for new gateways — but only on greenfield VCF 9.0 deployments.** This is controlled by the *Auto-Activate Gateway Firewall on New Gateways* setting (Security → Gateway Firewall → Settings) and can be toggled globally; changing it never affects gateways that are already deployed.
+One of the significant security posture changes in VCF 9 / NSX 9.0 is that the **vDefend Gateway Firewall is disabled by default for new gateways: but only on greenfield VCF 9.0 deployments.** This is controlled by the *Auto-Activate Gateway Firewall on New Gateways* setting (Security → Gateway Firewall → Settings) and can be toggled globally; changing it never affects gateways that are already deployed.
 
 The behavior is different for brownfield environments: **for an installation upgraded from a previous VCF release to VCF 9.0, Gateway Firewall remains enabled by default for new gateways.** If you want the new off-by-default posture on an upgraded environment, you have to explicitly switch the auto-activate setting to Off.
 
@@ -152,7 +94,7 @@ The behavior is different for brownfield environments: **for an installation upg
 
 In NSX 9.0's VPC-centric design, the primary traffic model has shifted:
 
-- VPC isolation provides tenant separation by default — cross-VPC communication requires explicit Transit Gateway attachment
+- VPC isolation provides tenant separation by default: cross-VPC communication requires explicit Transit Gateway attachment
 - DFW provides micro-segmentation within VPCs
 - The Gateway Firewall was historically used for perimeter-style controls, which are better implemented at the physical edge in the VPC model
 
@@ -204,7 +146,7 @@ VCF Operations centralizes certificate lifecycle management for both the VCF man
 - Supports automatic (non-disruptive) renewal for eligible certificates, avoiding a manual replace-and-restart cycle
 - Can generate certificate signing requests (CSRs) and configure an internal or external Certificate Authority directly from the console
 
-Note that SDDC Manager still appears in this certificate inventory in VCF 9.0 — its management UI is deprecated and lifecycle workflows have moved to VCF Operations Fleet Management, but the SDDC Manager component itself, and its certificate, are still part of the deployed stack during this transition.
+Note that SDDC Manager still appears in this certificate inventory in VCF 9.0: its management UI is deprecated and lifecycle workflows have moved to VCF Operations Fleet Management, but the SDDC Manager component itself, and its certificate, are still part of the deployed stack during this transition.
 
 ### Audit Logging
 
@@ -228,7 +170,7 @@ Rather than "integrating with" a separate Skyline Health product, **VCF Operatio
 Following the Broadcom VCF 9.0 Design documentation, here is a high-level security hardening checklist:
 
 **NSX / vDefend:**
-- Confirm the Gateway Firewall auto-activate status for new gateways — off by default only applies to greenfield VCF 9.0 deployments; verify explicitly if this environment was upgraded from a prior VCF release
+- Confirm the Gateway Firewall auto-activate status for new gateways: off by default only applies to greenfield VCF 9.0 deployments; verify explicitly if this environment was upgraded from a prior VCF release
 - Define DFW default-deny policy for all workload domains
 - Use security groups with VM tags for DFW policy management (avoid IP-based rules where possible)
 - Enable NSX audit logging and forward logs to SIEM
@@ -249,7 +191,7 @@ Following the Broadcom VCF 9.0 Design documentation, here is a high-level securi
 
 ## What's Next
 
-In the next post, we cover the VCF 9 Identity Broker — how it replaces VMware Identity Manager for fleet-wide single sign-on, its two deployment modes (Embedded and Instance), and what a real migration from vIDM actually involves.
+In the next post, we cover the VCF 9 Identity Broker: how it replaces VMware Identity Manager for fleet-wide single sign-on, its two deployment modes (Embedded and Instance), and what a real migration from vIDM actually involves.
 
 ## Further Reading (Official Broadcom Documentation)
 

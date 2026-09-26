@@ -20,64 +20,9 @@ VMware Cloud Foundation 9 (VCF 9) represents a significant evolution in how Broa
 
 The diagram below shows the high-level architecture of a VCF 9 environment, spanning the management domain and workload domains with all core components:
 
-```
-┌──────────────────────────────────────────────────────────────────────────────────────┐
-│                        VMware Cloud Foundation 9 - Architecture                      │
-└──────────────────────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────────────────────┐
-│                               MANAGEMENT PLANE                                      │
-│                                                                                     │
-│  ┌─────────────────────────────────────────────────────────────────────────────┐    │
-│  │                            VCF Operations                                   │    │
-│  │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────────────┐  │    │
-│  │  │  Fleet & Domain  │  │  Lifecycle Mgmt  │  │   API / Automation       │  │    │
-│  │  │    Management    │  │    & Upgrades    │  │   (REST / PowerCLI)      │  │    │
-│  │  └──────────────────┘  └──────────────────┘  └──────────────────────────┘  │    │
-│  └─────────────────────────────────────────────────────────────────────────────┘    │
-│                                                                                     │
-│  ┌───────────────────────────┐    ┌──────────────────────────────────────────────┐  │
-│  │  NSX Manager              │    │  vCenter Server                              │  │
-│  │  ┌────┐ ┌────┐ ┌────┐    │    │  ┌──────────────┐  ┌────────────────────┐   │  │
-│  │  │NSX1│ │NSX2│ │NSX3│    │    │  │   DRS / HA   │  │  Lifecycle Mgmt    │   │  │
-│  │  └────┘ └────┘ └────┘    │    │  └──────────────┘  └────────────────────┘   │  │
-│  │  (3-node HA cluster or    │    └──────────────────────────────────────────────┘  │
-│  │   single node for lab)    │                                                     │
-│  └───────────────────────────┘                                                     │
-└─────────────────────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────────────────────┐
-│                     MANAGEMENT DOMAIN (min. 3 ESX hosts)                            │
-│                                                                                     │
-│  ┌────────────────────────────────────────────────────────────────────────────────┐ │
-│  │                            vSAN ESA Cluster                                    │ │
-│  │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐             │ │
-│  │  │   ESX Host 1     │  │   ESX Host 2     │  │   ESX Host 3     │  [+more]    │ │
-│  │  │ NVMe  NVMe  NVMe │  │ NVMe  NVMe  NVMe │  │ NVMe  NVMe  NVMe │             │ │
-│  │  │ [ NSX DFW (EDP)] │  │ [ NSX DFW (EDP)] │  │ [ NSX DFW (EDP)] │             │ │
-│  │  │  VTEP | TEP Pool │  │  VTEP | TEP Pool │  │  VTEP | TEP Pool │             │ │
-│  │  └──────────────────┘  └──────────────────┘  └──────────────────┘             │ │
-│  └────────────────────────────────────────────────────────────────────────────────┘ │
-│                                                                                     │
-│  NETWORKS: [ Management VLAN ] [ vMotion VLAN ] [ vSAN VLAN ] [ NSX Overlay Trunk] │
-└─────────────────────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────────────────────┐
-│                  WORKLOAD DOMAIN(S) (optional, expandable)                          │
-│                                                                                     │
-│  ┌──────────────────────────────────────┐  ┌──────────────────────────────────────┐ │
-│  │         Workload Domain A            │  │         Workload Domain B            │ │
-│  │  vCenter + NSX + vSAN ESA cluster   │  │  vCenter + NSX + vSAN ESA cluster   │ │
-│  │  [ VPC-based workload isolation ]   │  │  [ VPC-based workload isolation ]   │ │
-│  └──────────────────────────────────────┘  └──────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────────────────────────┐
-│                           PHYSICAL NETWORK UNDERLAY                                 │
-│       ToR Switches (BGP/ECMP) → Spine Layer → Core/WAN                             │
-│       NSX Edge Nodes: North-South routing, Load Balancing, NAT, VPN                │
-└─────────────────────────────────────────────────────────────────────────────────────┘
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-architecture-deep-dive.svg"></object>
+</div>
 
 ## Management Domain Redesign
 
@@ -86,7 +31,7 @@ One of the most impactful changes in VCF 9 is the redesigned management domain. 
 - **Reduced minimum footprint:** VCF 9 supports a 3-host management domain, lowering the barrier to entry for smaller deployments and edge/ROBO scenarios
 - **VCF Operations as the single management plane:** VCF Operations replaces the SDDC Manager-centric model, providing a unified interface for fleet management, lifecycle operations, licensing, and cost management across all VCF instances
 - **Single NSX Manager support:** VCF 9 introduces the option to deploy a single NSX Manager (instead of the traditional 3-node cluster) for resource-constrained environments. A 3-node NSX Manager cluster remains the recommended configuration for production high availability.
-- **Unified versioning:** VCF 9.0 ships ESX 9.0, vCenter 9.0, and NSX 9.0 as a single, co-versioned platform — simplifying compatibility and lifecycle management
+- **Unified versioning:** VCF 9.0 ships ESX 9.0, vCenter 9.0, and NSX 9.0 as a single, co-versioned platform, simplifying compatibility and lifecycle management
 
 ## NSX 9.0 Integration
 
@@ -131,7 +76,7 @@ VCF 9 continues with vSAN ESA (Express Storage Architecture) as the recommended 
 The workload domain creation and management process in VCF 9 has been significantly modernized:
 
 - **VCF Installer for deployment:** The new VCF Installer virtual appliance (replacing Cloud Builder) orchestrates management domain bringup. It is downloaded from the Broadcom Support portal and deployed as a virtual appliance.
-- **VCF Operations for Day-2:** VCF Operations provides a unified interface for fleet and domain management, lifecycle operations, license management, cost and capacity visibility, and security compliance — all from a single pane of glass
+- **VCF Operations for Day-2:** VCF Operations provides a unified interface for fleet and domain management, lifecycle operations, license management, cost and capacity visibility, and security compliance, all from a single pane of glass
 - **VPC-Ready domains:** Every new workload domain is provisioned VPC-ready, meaning networking isolation via NSX VPCs is available immediately upon domain creation
 - **API-first design:** The VCF SDK (with Python and Java bindings) and PowerCLI provide comprehensive automation capabilities for all VCF operations
 

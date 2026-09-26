@@ -14,74 +14,23 @@ cover:
 
 ## Introduction
 
-With the VCF 9 management domain up and running, the next step in your private cloud journey is creating workload domains. A workload domain groups ESX hosts under a dedicated vCenter instance, along with NSX networking and storage, so it can host tenant or departmental workloads. Depending on how you configure NSX connectivity during creation, a workload domain can become VPC-ready either immediately or after a short follow-up step — more on that below.
+With the VCF 9 management domain up and running, the next step in your private cloud journey is creating workload domains. A workload domain groups ESX hosts under a dedicated vCenter instance, along with NSX networking and storage, so it can host tenant or departmental workloads. Depending on how you configure NSX connectivity during creation, a workload domain can become VPC-ready either immediately or after a short follow-up step: more on that below.
 
 ## Three Ways to Create a Workload Domain
 
 Per VCF Operations' Workload Domain wizard, there are three supported paths:
 
-- **Full deployment with cluster** — deploys a fully provisioned workload domain with an initial vSphere cluster. Requires ESX hosts already commissioned with the target principal storage type.
-- **Domain infrastructure only** — deploys and configures a new vCenter instance and a new-or-shared NSX Manager instance, without requiring any unassigned ESX hosts. You add a vSphere cluster to it later.
-- **Import an existing vCenter** — brings an already-running vCenter and its managed ESX hosts under VCF as a workload domain, so it's included in centralized identity, certificate, and lifecycle management.
+- **Full deployment with cluster**: deploys a fully provisioned workload domain with an initial vSphere cluster. Requires ESX hosts already commissioned with the target principal storage type.
+- **Domain infrastructure only**: deploys and configures a new vCenter instance and a new-or-shared NSX Manager instance, without requiring any unassigned ESX hosts. You add a vSphere cluster to it later.
+- **Import an existing vCenter**: brings an already-running vCenter and its managed ESX hosts under VCF as a workload domain, so it's included in centralized identity, certificate, and lifecycle management.
 
 ## Architectural Overview
 
 The diagram below illustrates the relationship between the VCF 9 management domain, VCF Operations, and multiple workload domains, including VPC-based networking topology:
 
-```
-                   ┌────────────────────────────────────────────────────────────────────────┐
-                   │                  VCF 9 - Workload Domain Architecture                   │
-                   └────────────────────────────────────────────────────────────────────────┘
-
-                   ┌────────────────────────────────────────────────────────────────────────┐
-                   │                   VCF Operations (Management Plane)                     │
-                   │                                                                        │
-                   │  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐  │
-                   │  │    Fleet Mgmt    │    │  Lifecycle Mgmt  │    │ Cost & Capacity  │  │
-                   │  │  (All Domains)   │    │ (All Components) │    │    Management    │  │
-                   │  └──────────────────┘    └──────────────────┘    └──────────────────┘  │
-                   └────────────────────────────────────────────────────────────────────────┘
-                                                        │
-                ┌───────────────────────────────────────┼───────────────────────────────────────┐
-                ▼                                       ▼                                       ▼
-┌──────────────────────────────┐        ┌──────────────────────────────┐        ┌──────────────────────────────┐
-│ Management Domain             │        │ Workload Domain A            │        │ Workload Domain B            │
-│                               │        │                               │        │                               │
-│ vCenter (Mgmt)                │        │ vCenter (WLD-A)               │        │ vCenter (WLD-B)               │
-│ NSX 9.x (Mgmt)                │        │ NSX 9.x (shared/ded.)         │        │ NSX 9.x (shared/ded.)         │
-│ vSAN (Mgmt)                   │        │ vSAN / NFS / FC               │        │ vSAN / NFS / FC               │
-│  ┌─────────────────────┐      │        │  ┌────────────────────────┐  │        │  ┌────────────────────────┐  │
-│  │ Management VMs only │      │        │  │ VPC / Tenant Workloads │  │        │  │ VPC / Tenant Workloads │  │
-│  └─────────────────────┘      │        │  └────────────────────────┘  │        │  └────────────────────────┘  │
-└──────────────────────────────┘        └──────────────────────────────┘        └──────────────────────────────┘
-
-                                    NSX VPC Networking (Per Workload Domain)
-                                    ┌──────────────────────────────────────┐
-                                    │   Transit Gateway (Centralized or    │
-                                    │      Distributed connectivity)       │
-                                    │  ┌────────────┐      ┌────────────┐  │
-                                    │  │   VPC-1    │      │   VPC-2    │  │
-                                    │  │ (Tenant A) │      │ (Tenant B) │  │
-                                    │  │  Subnet 1  │      │  Subnet 1  │  │
-                                    │  │  Subnet 2  │      │  Subnet 2  │  │
-                                    │  └────────────┘      └────────────┘  │
-                                    │                                      │
-                                    │           External Uplink            │
-                                    │      (via NSX Edge North-South)      │
-                                    └──────────────────────────────────────┘
-
-                                 Physical Infrastructure (Per Workload Domain)
-                              ┌──────────────────────────────────────────────────┐
-                              │ ESX Hosts (min. 3 for vSAN ESA)                   │
-                              │  ┌─────────┐  ┌─────────┐  ┌─────────┐           │
-                              │  │  ESX-1  │  │  ESX-2  │  │  ESX-3  │  [+more]  │
-                              │  │ NVMe/SSD│  │ NVMe/SSD│  │ NVMe/SSD│           │
-                              │  │ NSX(EDP)│  │ NSX(EDP)│  │ NSX(EDP)│           │
-                              │  └─────────┘  └─────────┘  └─────────┘           │
-                              │                                                  │
-                              │ Networks: Mgmt | vMotion | vSAN | NSX Overlay    │
-                              └──────────────────────────────────────────────────┘
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-workload-domain-planning.svg"></object>
+</div>
 
 ## Workload Domain Planning Considerations
 
@@ -98,10 +47,10 @@ Before creating a workload domain in VCF 9, use the **VCF Planning and Preparati
 
 A workload domain can be built on one of four principal storage types, selected during the wizard's Storage step:
 
-- **vSAN** — either ESA (the current recommended architecture) or OSA; requires SSD or NVMe disks free of pre-existing partitions
-- **NFS** — an external NFS datastore, identified by server IP and export path
-- **VMFS on FC** — Fibre Channel-backed VMFS datastore
-- **vVols** — supported for compatibility, but Broadcom has marked vVols as deprecated as of VCF/vSphere Foundation 9.0, with removal planned in a future release; new designs should avoid it
+- **vSAN**: either ESA (the current recommended architecture) or OSA; requires SSD or NVMe disks free of pre-existing partitions
+- **NFS**: an external NFS datastore, identified by server IP and export path
+- **VMFS on FC**: Fibre Channel-backed VMFS datastore
+- **vVols**: supported for compatibility, but Broadcom has marked vVols as deprecated as of VCF/vSphere Foundation 9.0, with removal planned in a future release; new designs should avoid it
 
 ### Networking Design
 
@@ -117,8 +66,8 @@ A workload domain can be built on one of four principal storage types, selected 
 
 Every workload domain needs an NSX Manager, which can either be a new dedicated instance or a shared instance already used by another domain (subject to version-compatibility rules between the shared NSX Manager and each domain's vCenter version). When configuring VPC Gateway Connectivity during creation, you choose between:
 
-- **Centralized Connectivity** — simpler to set up, but the domain becomes VPC-ready only after you separately deploy an NSX Edge cluster with a Tier-0 gateway afterward
-- **Distributed Connectivity** — requires a dedicated VLAN, gateway CIDR, and external/private IP blocks up front, but the workload domain is VPC-ready immediately after creation
+- **Centralized Connectivity**: simpler to set up, but the domain becomes VPC-ready only after you separately deploy an NSX Edge cluster with a Tier-0 gateway afterward
+- **Distributed Connectivity**: requires a dedicated VLAN, gateway CIDR, and external/private IP blocks up front, but the workload domain is VPC-ready immediately after creation
 
 ## Deploying a Workload Domain via VCF Operations
 
@@ -141,7 +90,7 @@ Before creating a full-deployment workload domain, commission the target ESX hos
 
 ### Step 3: Post-Creation VPC Setup
 
-If you chose Centralized Connectivity, complete VPC-readiness by deploying an NSX Edge cluster with an active-standby Tier-0 gateway. If you chose Distributed Connectivity, the domain is already VPC-ready — proceed straight to creating VPCs, subnets, and Transit Gateway connectivity for each tenant or application team.
+If you chose Centralized Connectivity, complete VPC-readiness by deploying an NSX Edge cluster with an active-standby Tier-0 gateway. If you chose Distributed Connectivity, the domain is already VPC-ready: proceed straight to creating VPCs, subnets, and Transit Gateway connectivity for each tenant or application team.
 
 ## Day-2 Workload Domain Operations
 

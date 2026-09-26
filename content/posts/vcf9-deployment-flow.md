@@ -16,65 +16,15 @@ cover:
 
 Deploying VMware Cloud Foundation 9 is a structured process that, when followed correctly, results in a fully configured SDDC in a matter of hours. This guide walks through the complete deployment flow from planning through a functional management domain.
 
-> **Note:** VCF 9 replaces the Cloud Builder appliance used in VCF 5.x with the new **VCF Installer** — a new virtual appliance downloaded from the Broadcom Support portal that provides automated deployment and configuration workflows for the VCF environment. Unlike Cloud Builder which was a single-purpose OVA, the VCF Installer also supports VCF Converge (bringing existing vSphere infrastructure into VCF) and downloading/staging all required VCF component binaries.
+> **Note:** VCF 9 replaces the Cloud Builder appliance used in VCF 5.x with the new **VCF Installer**: a new virtual appliance downloaded from the Broadcom Support portal that provides automated deployment and configuration workflows for the VCF environment. Unlike Cloud Builder which was a single-purpose OVA, the VCF Installer also supports VCF Converge (bringing existing vSphere infrastructure into VCF) and downloading/staging all required VCF component binaries.
 
 ## Deployment Flow Overview
 
 The following diagram illustrates the end-to-end VCF 9 deployment flow, from initial planning through a running management domain:
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                         VCF 9 Deployment Flow                           │
-└─────────────────────────────────────────────────────────────────────────┘
-
-┌──────────────────┐
-│  1. Planning &   │
-│  Prerequisites   │
-│  - Hardware      │
-│  - Network/DNS   │
-│  - NTP           │
-└────────┬─────────┘
-         │
-         ▼
-┌──────────────────┐
-│  2. Prepare      │
-│  Deployment JSON │
-│  (replaces Excel │
-│   workbook)      │
-└────────┬─────────┘
-         │
-         ▼
-┌──────────────────┐
-│  3. Deploy VCF   │
-│  Installer OVA   │◄─── New in VCF 9
-│  (virtual appl.) │     (replaces Cloud Builder OVA)
-└────────┬─────────┘
-         │
-         ▼
-┌──────────────────────────────────────────────────────────────┐
-│              4. Pre-deployment Validation                     │
-│   DNS ✓ | Network ✓ | NTP ✓ | Hardware HCL ✓                │
-└────────────────────────────┬─────────────────────────────────┘
-                             │
-┌────────────────────────────────────┐
-│    5. Management Domain Bringup    │
-└────────────────────────────────────┘
-                │
-    ┌──────────┬───────────┼────────────┬───────────┐
-    ▼          ▼           ▼            ▼           ▼
-┌──────────┐ ┌────────┐ ┌────────┐ ┌──────────┐ ┌──────────┐
-│ Phase 1  │ │Phase 2 │ │Phase 3 │ │ Phase 4  │ │ Phase 5  │
-│ ESX      │ │ vSAN   │ │vCenter │ │  NSX 9.0 │ │VCF Ops / │
-│ Config   │ │Cluster │ │Deploy  │ │  Deploy  │ │VCF Mgmt  │
-│ 15-20min │ │20-30min│ │30-45min│ │ 45-60min │ │ 20-30min │
-└──────────┘ └────────┘ └────────┘ └──────────┘ └──────────┘
-                             │
-                             ▼
-┌──────────────────────────────────────────────────────────────┐
-│              6. Post-Deployment Validation                    │
-│  VCF Operations UI | NSX 9.0 Status | vSAN Health            │
-└──────────────────────────────────────────────────────────────┘
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-deployment-flow.svg"></object>
+</div>
 
 ## Prerequisites
 
@@ -152,7 +102,7 @@ In the VCF Installer:
 
 1. Navigate to **Workflow → Deploy VMware Cloud Foundation**
 2. Upload your completed deployment JSON specification
-3. Click **Validate** — the VCF Installer will perform over 200 pre-deployment checks including:
+3. Click **Validate**: the VCF Installer will perform over 200 pre-deployment checks including:
    - DNS resolution (forward and reverse) for all FQDNs
    - Network connectivity between hosts
    - NTP synchronization
@@ -184,7 +134,7 @@ Once validation passes (all green), click **Deploy** to begin the management dom
 ### Phase 4: NSX 9.0 Deployment (45-60 min)
 - Deploys NSX Manager (3-node cluster for production HA, or single node for resource-constrained/lab environments)
 - Configures transport zones and host switch profiles
-- NSX VIBs are already bundled with ESX 9.0 — no separate VIB installation is required
+- NSX VIBs are already bundled with ESX 9.0: no separate VIB installation is required
 - Configures VTEP pool and host transport nodes
 - Enhanced Data Path (EDP) Standard is configured as the default host switch mode for new VCF installations
 
@@ -201,7 +151,7 @@ After the VCF Installer reports successful completion:
 1. Log in to **VCF Operations** at `https://<vcf-operations-fqdn>/`
 2. **Verify inventory:** All ESX hosts should show as ACTIVE under the management domain
 3. **Check NSX 9.0 status:** Navigate to NSX Manager and confirm all transport nodes show as Up; verify EDP Standard mode is active
-4. **Validate vSAN health:** In vCenter, check vSAN health under the cluster — all checks should be green; verify ESA disk groups are formed correctly
+4. **Validate vSAN health:** In vCenter, check vSAN health under the cluster: all checks should be green; verify ESA disk groups are formed correctly
 5. **Run VCF Operations health check:** From VCF Operations, review system health across all management domain components
 6. **Verify licensing:** Confirm VCF and vSAN licenses are applied and usage is being tracked; note that license usage must be submitted from VCF Operations every 180 days
 
@@ -212,14 +162,14 @@ After the VCF Installer reports successful completion:
 If vSAN ESA fails to claim disks during Phase 2, verify:
 
 - Disks are not presenting existing partition tables (wipe with `esxcli storage core device partition delete`)
-- NVMe disks are certified for vSAN ESA (check the Broadcom Compatibility Guide — ESA requires specific NVMe certification)
+- NVMe disks are certified for vSAN ESA (check the Broadcom Compatibility Guide: ESA requires specific NVMe certification)
 - All ESA-required NVMe disks are visible and healthy in ESX
 
 ### NSX Manager Deployment Timeout
 
 If NSX Manager deployment times out:
 
-- Check vSAN health — insufficient capacity is the most common cause
+- Check vSAN health: insufficient capacity is the most common cause
 - Verify the NSX Manager FQDN resolves correctly (including reverse DNS) from the VCF Installer appliance
 - Ensure the management network has connectivity to all target hosts
 

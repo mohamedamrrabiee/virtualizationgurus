@@ -47,40 +47,9 @@ Edge locations, unlike the general HQ/DR patterns above, do get their own named 
 ## Architecture at a Glance
 **Architecture of HQ Instance Basic / Site-HA**
 
-```
-+-----------------------------------------------------------+
-|           HQ INSTANCE -- Basic / Site-HA Design           |
-+-----------------------------------------------------------+
-
-                              |
-                              v
-+-----------------------------------------------------------+
-|   VCF Fleet Control Plane (first Instance in the fleet)   |
-|              VCF Operations + VCF Automation              |
-+-----------------------------------------------------------+
-                              |
-                              v
-+-----------------------------------------------------------+
-|                     Management Domain                     |
-+-----------------------------------------------------------+
-                              |
-                              v
-+------------------------+        +------------------------+ 
-|   Workload Domain A    |        |   Workload Domain B    | 
-+------------------------+        +------------------------+ 
-
-Site-HA option -- hosts split across two availability zones:
-+------------------------+        +------------------------+ 
-|   Zone A (Preferred)   |        |   Zone B (Secondary)   | 
-|       ESX Hosts        |        |       ESX Hosts        | 
-+------------------------+        +------------------------+ 
-             |                                 |             
-             +----------------+----------------+             
-vSAN Stretched Cluster | NSX Stretched Segments | vSphere HA
-
-Basic Design = same picture without the Zone A / Zone B split
-
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-instance-model.svg"></object>
+</div>
 
 **Architecture of DR Instance (cross-region recovery)**
 

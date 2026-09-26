@@ -49,23 +49,9 @@ A VCF Instance can scale up to 25 total domains -- one management domain plus as
 
 ## Architecture at a Glance
 
-```
-+----------------------------------------------------------------------------+
-|                  MANAGEMENT DOMAIN -- FIRST IN THE FLEET                   |
-|----------------------------------------------------------------------------|
-| vCenter + Clusters   |   SDDC Manager (UI deprecated)   |   NSX Manager    |
-| Fleet Mgmt Appliance |   VCF Operations + Automation + License Server      |
-|         (fleet-level components: first Instance in the fleet only)         |
-+----------------------------------------------------------------------------+
-                                       |
-                               deploys / manages
-                                       |
-              +------------------------+------------------------+
-              |                        |                        |
-   +--------------------+   +--------------------+   +--------------------+
-   | WORKLOAD DOMAIN 1  |   | WORKLOAD DOMAIN 2  |   | WORKLOAD DOMAIN N  |
-   +--------------------+   +--------------------+   +--------------------+
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-management-domain-anatomy.svg"></object>
+</div>
 
 ## A Practical Tip
 

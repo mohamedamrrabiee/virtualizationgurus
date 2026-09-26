@@ -799,3 +799,22 @@ header > div {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(56,189,248,0.15);
 }
+
+/* ============================================================
+   ARCHITECTURE DIAGRAMS - draw.io VMware Validated Design (vvd)
+   diagrams embedded via <object>, replacing the old ASCII art.
+   ============================================================ */
+.diagram-embed {
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1.5rem 0 2rem;
+  overflow-x: auto;
+}
+
+.diagram-embed object {
+  display: block;
+  width: 100%;
+  min-width: 640px;
+}

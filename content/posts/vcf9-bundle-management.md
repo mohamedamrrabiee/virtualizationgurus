@@ -44,30 +44,9 @@ Both Offline Depot and Disconnected modes rely on the same underlying utility: t
 
 ## Architectural Overview
 
-```
-                        Broadcom Online Repository
-                                     |
-             +-----------------------+-----------------------+
-             |                       |                       |
-         Connected             Offline Depot           Disconnected
-             |                       |                       |
-       direct/proxy          VCF Download Tool       VCF Download Tool
-       registration           to owned server       to any internet PC
-             |                       |                       |
-             v                       v                       v
-          +----------------------------------------------------+
-          |                   SOFTWARE DEPOT                   |
-          |         (fleet-level, first VCF Instance)          |
-          +----------------------------------------------------+
-                                     |
-                   latency to another Instance > 150ms?
-                                     |
-                                     v
-                  +------------------------------------+
-                  |      SECONDARY SOFTWARE DEPOT      |
-                  |  (deployed within that Instance)   |
-                  +------------------------------------+
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-bundle-management.svg"></object>
+</div>
 
 ## Choosing Between Them: A Quick Checklist
 

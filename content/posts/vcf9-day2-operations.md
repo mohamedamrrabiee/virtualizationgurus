@@ -46,28 +46,9 @@ Patched doesn't mean compliant. A host can be running the latest build and still
 
 ## Architectural Overview
 
-```
-  +--------------------------------------------------------------------------+
-  |                             MANAGEMENT LAYER                             |
-  |      VCF Mgmt Services, VCF Operations, VCF Automation, Cloud Proxy      |
-  |--------------------------------------------------------------------------|
-  |     Declarative: define target version, Fleet Lifecycle orchestrates     |
-  +--------------------------------------------------------------------------+
-                                        |
-  +--------------------------------------------------------------------------+
-  |                           CONTROL PLANE LAYER                            |
-  |              vCenter, NSX Manager, vSphere Supervisor, VKS               |
-  |--------------------------------------------------------------------------|
-  |        Quick Patch, Reduced Downtime Upgrade, or rolling updates         |
-  +--------------------------------------------------------------------------+
-                                        |
-  +--------------------------------------------------------------------------+
-  |                             DATA PLANE LAYER                             |
-  |                           ESX, vSAN, NSX Edge                            |
-  |--------------------------------------------------------------------------|
-  |    ESX Live Patch in-memory, Quick Boot plus vMotion when unavoidable    |
-  +--------------------------------------------------------------------------+
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-day2-operations.svg"></object>
+</div>
 
 ## What's Actually New Architecturally in 9.1
 
