@@ -53,53 +53,15 @@ Edge locations, unlike the general HQ/DR patterns above, do get their own named 
 
 **Architecture of DR Instance (cross-region recovery)**
 
-```
---------------------------------------------------------------------+
-|                  VCF FLEET (spans both Instances)                  |
-|    VCF Operations + VCF Automation -- lives in the HQ Instance     |
-+--------------------------------------------------------------------+
-                                   |                                  
-               +-------------------+-------------------+              
-               v                                       v              
-+----------------------------+          +----------------------------+
-|        HQ INSTANCE         |          |        DR INSTANCE         |
-|      Region: Primary       |          |     Region: Secondary      |
-|                            |          |                            |
-|     Management Domain      |          |     Management Domain      |
-|     Workload Domain(s)     |          |     Workload Domain(s)     |
-+----------------------------+          +----------------------------+
-                                                                      
-           -------- Failover: HQ -> DR -------->                      
-           <------- Failback: DR -> HQ ---------                      
-           VMware Live Recovery -- cross-region replication
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-instance-model-dr.svg"></object>
+</div>
 
-```
 **Architecture of Edge / Sovereign Instance (VCF Edge model)**
 
-```
-+------------------------------------------------------------------------------+
-|                              CORE / HQ INSTANCE                              |
-|                           VCF Fleet Control Plane                            |
-|                     VCF Operations (mandatory for Edge)                      |
-+------------------------------------------------------------------------------+
-                                                  |                             
-        +--------------------+--------------------+--------------------+        
-        v                    v                    v                    v        
-+---------------+    +---------------+    +---------------+    +---------------+
-|  Edge Site 1  |    |  Edge Site 2  |    |  Edge Site 3  |    |      ...      |
-|>= 8 cores/host|    |>= 8 cores/host|    |>= 8 cores/host|    |    min. 10    |
-|  <= 256 cores |    |  <= 256 cores |    |  <= 256 cores |    |  sites total  |
-+---------------+    +---------------+    +---------------+    +---------------+
-
-          VCF Edge model (formerly Remote Clusters): minimum 10 sites
-     Each Edge site: physically distinct rack/switch from core DC workloads
-
-            Sovereign Cloud overlay (not a separate named topology):
-                        any of the 4 Fleet Designs above
-                    + in-country data residency requirements
-                + vSAN-based ransomware / data recovery controls
-
-```
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-instance-model-edge.svg"></object>
+</div>
 
 ## Comparing the Four Designs
 
