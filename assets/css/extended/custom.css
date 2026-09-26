@@ -14,6 +14,24 @@
 }
 
 /* ============================================================
+   WIDER LAYOUT - PaperMod's default 720px main column wastes
+   most of a normal monitor. Widen it (and match the nav width
+   so the header lines up with the content below it) so posts,
+   code blocks, and diagrams actually use the screen.
+   ============================================================ */
+:root {
+  --main-width: 1100px;
+  --nav-width: 1100px;
+}
+
+@media (max-width: 1150px) {
+  :root {
+    --main-width: 90vw;
+    --nav-width: 90vw;
+  }
+}
+
+/* ============================================================
    NAVIGATION BAR: Full-width stretch + logo on LEFT side
    ============================================================ */
 

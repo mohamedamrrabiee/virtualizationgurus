@@ -46,7 +46,7 @@ tocopen = false
 seriesTotal = 21
 
 [params.footer]
-text = "All content on this site is my own original work, written from hands-on testing in my own lab. The views expressed here are mine alone and do not represent those of my employer."
+text = "Every post here reflects my own hands-on lab work and independent research. Opinions are my own and don't reflect my employer's views."
 
 # Logo in navbar
 [params.logo]
