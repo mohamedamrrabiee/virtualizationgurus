@@ -17,18 +17,27 @@
    WIDER LAYOUT - PaperMod's default 720px main column wastes
    most of a normal monitor. Widen it (and match the nav width
    so the header lines up with the content below it) so posts,
-   code blocks, and diagrams actually use the screen.
+   code blocks, and diagrams actually use the screen. min() scales
+   it down gracefully on smaller viewports without a media query.
    ============================================================ */
 :root {
-  --main-width: 1100px;
-  --nav-width: 1100px;
+  --main-width: min(1500px, 92vw);
+  --nav-width: min(1500px, 92vw);
 }
 
-@media (max-width: 1150px) {
-  :root {
-    --main-width: 90vw;
-    --nav-width: 90vw;
-  }
+/* ============================================================
+   DARK BLUE BACKGROUND - swap PaperMod's neutral gray dark theme
+   for a deep navy that matches the site's own blue/purple brand
+   system, so the page background and the cards/nav feel like one
+   cohesive design instead of navy cards floating on gray.
+   ============================================================ */
+:root[data-theme="dark"] {
+  --theme: #0a0f1d;
+  --entry: #101d33;
+  --code-block-bg: #0d1b2a;
+  --code-bg: #142238;
+  --border: #1e293b;
+  --tertiary: #1e293b;
 }
 
 /* ============================================================
