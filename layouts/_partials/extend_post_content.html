@@ -1,0 +1,10 @@
+{{- /* Virtualization Gurus: VCF 9 series progress badge, shown when a post sets seriesPart in front matter */ -}}
+{{- $part := .Param "seriesPart" }}
+{{- if $part }}
+{{- $total := (.Param "seriesTotal") | default site.Params.seriesTotal | default 21 }}
+<a class="series-badge" href="{{ "vcf9-series/" | absLangURL }}">
+    <span class="series-badge-dot"></span>
+    VCF 9 Series &middot; Post {{ $part }}/{{ $total }}
+    <span class="series-badge-arrow">&rarr;</span>
+</a>
+{{- end }}

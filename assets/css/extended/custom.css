@@ -486,6 +486,141 @@ header > div {
   color: #e2e8f0;
 }
 
+/* ============================================================
+   TABLE OF CONTENTS - branded to match site accent
+   ============================================================ */
+
+.toc {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 12px;
+}
+
+.toc .details summary,
+.toc-title {
+  color: var(--vg-blue) !important;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.toc ul li a {
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+
+.toc ul li a:hover,
+.toc ul li a.active {
+  color: var(--vg-blue);
+}
+
+.toc ul {
+  border-left: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+/* ============================================================
+   POST COVER IMAGES - card thumbnails + single-post banner
+   ============================================================ */
+
+.entry-cover {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  margin-bottom: 1rem;
+}
+
+.entry-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.post-entry:hover .entry-cover img {
+  transform: scale(1.02);
+}
+
+.post-single .entry-cover {
+  margin: 1rem 0 2rem;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35), 0 0 0 1px rgba(56,189,248,0.08);
+}
+
+/* ============================================================
+   SERIES PROGRESS BADGE - shown at the end of series posts
+   ============================================================ */
+
+.series-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.07);
+  color: var(--vg-blue) !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.series-badge:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--vg-blue);
+  transform: translateX(2px);
+}
+
+.series-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--vg-blue);
+  box-shadow: 0 0 8px rgba(56,189,248,0.7);
+  flex-shrink: 0;
+}
+
+.series-badge-arrow {
+  transition: transform 0.2s ease;
+}
+
+.series-badge:hover .series-badge-arrow {
+  transform: translateX(3px);
+}
+
+/* ============================================================
+   FOOTER DISCLAIMER + COPYRIGHT
+   ============================================================ */
+
+.site-disclaimer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  max-width: 640px;
+  margin: 0 auto 0.75rem;
+  line-height: 1.6;
+}
+
+.site-disclaimer span {
+  color: #64748b;
+  font-size: 0.78rem;
+}
+
+.site-disclaimer .site-copyright {
+  color: #475569;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.site-poweredby {
+  display: block;
+  opacity: 0.55;
+  font-size: 0.75rem;
+}
+
 @media (max-width: 640px) {
   .contact-links {
     flex-direction: column;

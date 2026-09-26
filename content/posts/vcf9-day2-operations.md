@@ -5,6 +5,11 @@ draft: false
 tags: ["VCF Operations", "Patching", "Compliance", "Configuration Drift", "Day-2"]
 categories: ["VCF 9", "Operations"]
 description: "VCF 9.1 doesn't patch the whole stack the same way, it matches the mechanism to each layer's disruption profile. And staying patched isn't the same as staying compliant, VCF Operations treats them as two separate, continuous jobs."
+seriesPart: 18
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-day2-operations.jpg"
+  alt: "Day-2 Operations: Lifecycle, Patching, and Compliance via VCF Operations"
+  relative: false
 ---
 
 ## Introduction
@@ -95,7 +100,7 @@ Next in this series: DR & Ransomware Recovery, Isolated Recovery, SRM, and VPC I
 - [Securing your VMware Cloud Foundation 9.1 Environment](https://blogs.vmware.com/cloud-foundation/2026/08/06/securing-your-vmware-cloud-foundation-9-1-environment/)
 - [Fleet Management: Configuration Management Overview](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/overview-of-vmware-cloud-foundation-9/what-is-vmware-cloud-foundation-and-vmware-vsphere-foundation/vcf-operations-overview/fleet-management.html)
 - [VCF Operations 9.1.0.0 What's New](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/release-notes/vmware-cloud-foundation-9-1-0-0-release-notes/what-s-new/whats-new-vcf-ops.html)
-- [VMware Cloud Foundation 9.1.1.0 Release Notes](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/release-notes/vmware-cloud-foundation-9-1-1-0-release-notes.html)
+- [VMware Cloud Foundation 9.1.1.0 Release Notes, Getting to 9.1.1](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/release-notes/vmware-cloud-foundation-9-1-1-0-release-notes.html#getting-to-9.1.1)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
 <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
