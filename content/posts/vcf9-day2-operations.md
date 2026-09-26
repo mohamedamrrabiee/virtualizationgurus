@@ -1,6 +1,6 @@
 ---
 title: "Day-2 Operations: Lifecycle, Patching, and Compliance via VCF Operations"
-date: 2026-09-27
+date: 2026-09-26
 draft: false
 tags: ["VCF Operations", "Patching", "Compliance", "Configuration Drift", "Day-2"]
 categories: ["VCF 9", "Operations"]
