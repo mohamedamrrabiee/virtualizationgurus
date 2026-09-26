@@ -1,7 +1,7 @@
 ---
 title: "Day-2 Operations: Lifecycle, Patching, and Compliance via VCF Operations"
-date: 2026-09-14
-draft: true
+date: 2026-09-27
+draft: false
 tags: ["VCF Operations", "Patching", "Compliance", "Configuration Drift", "Day-2"]
 categories: ["VCF 9", "Operations"]
 description: "VCF 9.1 doesn't patch the whole stack the same way, it matches the mechanism to each layer's disruption profile. And staying patched isn't the same as staying compliant, VCF Operations treats them as two separate, continuous jobs."
