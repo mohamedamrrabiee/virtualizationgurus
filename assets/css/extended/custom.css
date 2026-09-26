@@ -651,3 +651,142 @@ header > div {
     padding: 0 1rem !important;
   }
 }
+
+/* ============================================================
+   POST GRID - multi-column card layout for the homepage recent
+   posts list, the /posts/ archive, and tag/category lists, so
+   you see several posts per row instead of one long column.
+   ============================================================ */
+.recent-posts-list,
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.recent-posts-list .post-entry,
+.posts-grid .post-entry {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.recent-posts-list .entry-cover,
+.posts-grid .entry-cover {
+  aspect-ratio: 1200 / 630;
+  margin-bottom: 0.9rem;
+}
+
+.recent-posts-list .entry-cover img,
+.posts-grid .entry-cover img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.recent-posts-list .entry-header,
+.posts-grid .entry-header {
+  margin-bottom: 0.35rem;
+}
+
+.recent-posts-list .entry-header h2,
+.posts-grid .entry-header h2 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.recent-posts-list .entry-content,
+.posts-grid .entry-content {
+  flex-grow: 1;
+}
+
+.recent-posts-list .entry-content p,
+.posts-grid .entry-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.recent-posts-list .entry-footer,
+.posts-grid .entry-footer {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .recent-posts-list,
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   PAGE / POST TITLES - gradient treatment matching the homepage
+   hero, so About, VCF 9 Series, Search, tags, and every post
+   title share the same modern identity instead of the theme's
+   plain default heading.
+   ============================================================ */
+.post-title,
+.page-header h1 {
+  background: linear-gradient(90deg, var(--vg-blue), var(--vg-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  display: inline-block;
+}
+
+.post-header,
+.page-header {
+  position: relative;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.post-header::after,
+.page-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 72px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--vg-blue), var(--vg-purple));
+}
+
+/* ============================================================
+   SEARCH PAGE - brand the input and result cards instead of
+   the theme's plain bordered box.
+   ============================================================ */
+#searchInput {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 10px;
+  color: #e2e8f0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#searchInput:focus {
+  border-color: var(--vg-blue);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+  outline: none;
+}
+
+.searchResults li {
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.5);
+  transition: all 0.25s ease;
+}
+
+.searchResults li:hover,
+.searchResults li:focus-within {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(15, 23, 42, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(56,189,248,0.15);
+}

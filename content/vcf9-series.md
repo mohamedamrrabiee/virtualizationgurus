@@ -27,11 +27,11 @@ A practitioner-level walkthrough of VMware Cloud Foundation 9, one focused topic
 14. [vSAN ESA vs OSA: Storage Architecture Decisions](/virtualizationgurus/posts/vcf9-vsan-esa-vs-osa/), August 17, 2026
 15. [VCF 9 Security and Compliance: DFW, VPC Isolation, and Hardened Operations](/virtualizationgurus/posts/vcf9-security-compliance/), August 24, 2026
 16. [VCF 9 Identity Broker: Retiring VMware Identity Manager for Unified Fleet Authentication](/virtualizationgurus/posts/vcf9-identity-broker/), August 30, 2026
+17. [Bundle Management: Online vs Offline/Air-Gapped Depots](/virtualizationgurus/posts/vcf9-bundle-management/), September 6, 2026
+18. [Day-2 Operations: Lifecycle, Patching, and Compliance via VCF Operations](/virtualizationgurus/posts/vcf9-day2-operations/), September 26, 2026
 
 ## Coming up
 
-17. Bundle Management: Online vs Offline/Air-Gapped, September 7, 2026
-18. Day-2 Operations: Lifecycle, Patching, and Compliance via VCF Operations, September 14, 2026
 19. DR & Ransomware Recovery: Isolated Recovery, SRM, and VPC Isolation, September 21, 2026
 20. Private AI Workload Domain: GPU Nodes, AI Kubernetes, and NVIDIA NIM, September 28, 2026
 21. Advanced Services for VCF: VPC, Load Balancing, and Network Observability, October 5, 2026

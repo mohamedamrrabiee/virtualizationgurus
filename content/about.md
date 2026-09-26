@@ -20,7 +20,7 @@ Our primary focus areas include:
 
 ## Content Philosophy
 
-Every post on this blog is based on real-world experience. We avoid generic overviews in favor of actionable technical content — the kind of detail you need when you are actually building or troubleshooting a VCF environment.
+Every post on this blog is based on real-world experience. We avoid generic overviews in favor of actionable technical content: the kind of detail you need when you are actually building or troubleshooting a VCF environment.
 
 ## Contact
 
