@@ -16,15 +16,16 @@ description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and ente
 </p>
 
 <div class="expertise-badges">
-  <span class="badge badge-blue">&#9729; VCF 9</span>
-  <span class="badge badge-purple">&#128279; NSX</span>
-  <span class="badge badge-green">&#9711; vSAN ESA</span>
-  <span class="badge badge-indigo">&#9881; vSphere</span>
-  <span class="badge badge-amber">&#128196; SDDC Manager</span>
+  <span class="badge badge-blue"><img src="/virtualizationgurus/images/icons/vcf9.svg" alt="" /> VCF 9</span>
+  <span class="badge badge-purple"><img src="/virtualizationgurus/images/icons/nsx.svg" alt="" /> NSX</span>
+  <span class="badge badge-green"><img src="/virtualizationgurus/images/icons/vsan.svg" alt="" /> vSAN ESA</span>
+  <span class="badge badge-indigo"><img src="/virtualizationgurus/images/icons/vsphere.svg" alt="" /> vSphere</span>
+  <span class="badge badge-amber"><img src="/virtualizationgurus/images/icons/sddc.svg" alt="" /> SDDC Manager</span>
+  <span class="badge badge-teal"><img src="/virtualizationgurus/images/icons/vcfops.svg" alt="" /> VCF Operations</span>
 </div>
 
 <div class="author-box">
-  <div class="author-avatar">MA</div>
+  <div class="author-avatar">MR</div>
   <div class="author-details">
     <div class="author-name">Mohamed Rabiee</div>
     <div class="author-title">VMware Cloud Foundation &amp; Virtualization Expert</div>

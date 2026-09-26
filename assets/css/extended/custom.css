@@ -11,6 +11,7 @@
   --vg-slate: #1e293b;
   --vg-green: #22c55e;
   --vg-amber: #f59e0b;
+  --vg-teal: #14b8a6;
 }
 
 /* ============================================================
@@ -277,6 +278,14 @@ header > div {
 .badge-green  { color: var(--vg-green);  border-color: rgba(34,197,94,0.35);   background: rgba(34,197,94,0.08); }
 .badge-amber  { color: var(--vg-amber);  border-color: rgba(245,158,11,0.35);  background: rgba(245,158,11,0.08); }
 .badge-indigo { color: var(--vg-indigo); border-color: rgba(99,102,241,0.35);  background: rgba(99,102,241,0.08); }
+.badge-teal   { color: var(--vg-teal);   border-color: rgba(20,184,166,0.35);  background: rgba(20,184,166,0.08); }
+
+.expertise-badges .badge img {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+}
 
 /* ---------- Author info box ---------- */
 .author-box {
