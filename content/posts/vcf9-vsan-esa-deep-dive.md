@@ -13,6 +13,11 @@ categories:
   - VCF 9
   - Storage
 description: "A comprehensive deep dive into vSAN Express Storage Architecture (ESA) in VCF 9, covering architecture design decisions, performance characteristics, VCF 9.1's Auto-RAID capability, and best practices for storage policy design."
+seriesPart: 6
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-vsan-esa-deep-dive.jpg"
+  alt: "VCF 9 vSAN ESA Deep Dive: Architecture, Performance, and New Features"
+  relative: false
 ---
 
 ## Introduction

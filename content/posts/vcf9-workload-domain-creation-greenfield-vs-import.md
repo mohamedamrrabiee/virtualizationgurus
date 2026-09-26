@@ -5,6 +5,11 @@ draft: false
 tags: ["Workload Domains", "vCenter", "Migration", "NSX"]
 categories: ["VCF 9", "Deployment"]
 description: "Two ways to add a workload domain to a VCF instance -- build it fresh through the wizard, or import an existing vCenter as-is. What each path requires, what it changes on day one, and how to choose."
+seriesPart: 11
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-workload-domain-creation-greenfield-vs-import.jpg"
+  alt: "Workload Domain Creation: Greenfield vs Import Existing vCenter"
+  relative: false
 ---
 
 ## Introduction

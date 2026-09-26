@@ -5,6 +5,11 @@ draft: false
 tags: ["NSX", "Edge Cluster", "Tier-0", "Tier-1", "VPN", "Firewall", "Networking"]
 categories: ["VCF 9", "NSX"]
 description: "A deep dive into NSX Edge cluster architecture in VCF 9.1 -- Tier-0 and Tier-1 gateway roles, HA modes, VPN connectivity, and north-south firewall design with vDefend."
+seriesPart: 13
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-nsx-edge-cluster-deep-dive.jpg"
+  alt: "NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, and North-South Firewall Design"
+  relative: false
 ---
 
 ## Introduction

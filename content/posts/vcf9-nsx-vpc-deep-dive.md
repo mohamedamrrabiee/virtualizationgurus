@@ -5,6 +5,11 @@ draft: false
 tags: ["VCF", "VMware", "NSX", "VPC", "Networking", "Cloud Foundation"]
 categories: ["VCF 9", "Networking"]
 description: "An in-depth exploration of the VCF 9 Virtual Private Cloud (VPC) networking model in NSX 9.0, covering Transit Gateways, VPC design, EDP Standard, and practical workload networking patterns."
+seriesPart: 5
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-nsx-vpc-deep-dive.jpg"
+  alt: "VCF 9 NSX VPC Deep Dive: Cloud-Native Networking for Your Private Cloud"
+  relative: false
 ---
 
 ## Introduction

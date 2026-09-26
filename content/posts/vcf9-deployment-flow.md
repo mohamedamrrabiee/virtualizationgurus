@@ -5,6 +5,11 @@ draft: false
 tags: ["VCF", "VMware", "Deployment", "VCF Installer", "Cloud Foundation"]
 categories: ["VCF 9", "Deployment"]
 description: "Step-by-step walkthrough of the VCF 9 deployment process, covering prerequisites, the VCF Installer virtual appliance workflow, and initial management domain bringup."
+seriesPart: 2
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-deployment-flow.jpg"
+  alt: "VCF 9 Deployment Flow: From Planning to a Running Management Domain"
+  relative: false
 ---
 
 ## Introduction

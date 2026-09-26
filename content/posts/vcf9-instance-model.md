@@ -5,6 +5,11 @@ draft: false
 tags: ["VCF", "VMware", "VCF Instance", "Fleet", "Disaster Recovery", "Cloud Foundation"]
 categories: ["VCF 9", "Architecture"]
 description: "A technical breakdown of the VCF 9 Instance and Fleet constructs, validated against official Broadcom documentation: how single-site, multi-site, and disaster-recovery topologies map onto the four VCF Fleet deployment designs."
+seriesPart: 8
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-instance-model.jpg"
+  alt: "VCF 9 Instance Model: Designing HQ, DR, and Edge/Sovereign Topologies"
+  relative: false
 ---
 
 ## Introduction

@@ -5,6 +5,11 @@ draft: false
 tags: ["NSX", "Workload Domains", "vCenter", "Design Decisions"]
 categories: ["VCF 9", "NSX"]
 description: "How to choose between a shared and a dedicated NSX Manager instance for each VI workload domain in VCF 9.1, and what that decision costs you in footprint, availability, and lifecycle."
+seriesPart: 12
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-vi-workload-domains-shared-vs-dedicated-nsx.jpg"
+  alt: "VI Workload Domains: Shared vs Dedicated NSX"
+  relative: false
 ---
 
 ## Introduction

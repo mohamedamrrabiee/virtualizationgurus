@@ -5,6 +5,11 @@ draft: false
 tags: ["VCF", "VMware", "Fleet Management", "VCF Operations", "VCF Automation", "VCF Installer", "Cloud Foundation"]
 categories: ["VCF 9", "Architecture"]
 description: "A technical breakdown of the VCF 9 Fleet management layer, validated against official Broadcom documentation: how VCF Installer, VCF Operations, and VCF Automation combine into a single control plane across VCF Instances."
+seriesPart: 3
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-fleet-management-layer.jpg"
+  alt: "VCF 9 Fleet Management Layer: One Control Plane for Every Instance"
+  relative: false
 ---
 
 ## Introduction

@@ -5,6 +5,11 @@ draft: false
 tags: ["VCF", "VMware", "Architecture", "Cloud Foundation"]
 categories: ["VCF 9", "Architecture"]
 description: "A comprehensive look at the architectural changes in VMware Cloud Foundation 9, including the new management domain design, NSX 9.0 updates, vSAN ESA improvements, and the new VCF Operations management plane."
+seriesPart: 1
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-architecture-deep-dive.jpg"
+  alt: "VCF 9 Architecture Deep Dive: What Changed and Why It Matters"
+  relative: false
 ---
 
 ## Overview

@@ -5,6 +5,11 @@ draft: false
 tags: ["VCF", "VMware", "Identity Broker", "SSO", "Security", "Cloud Foundation"]
 categories: ["VCF 9", "Security"]
 description: "A technical breakdown of the VCF 9 Identity Broker, validated against official Broadcom documentation: how it replaces VMware Identity Manager, its two deployment modes, and the migration path from vIDM."
+seriesPart: 16
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-identity-broker.jpg"
+  alt: "VCF 9 Identity Broker: Retiring VMware Identity Manager for Unified Fleet Authentication"
+  relative: false
 ---
 
 ## Introduction

@@ -14,6 +14,11 @@ categories:
 - VCF 9
 - Security
 description: "A comprehensive guide to VCF 9 security architecture, covering NSX Distributed Firewall design, VPC-level isolation, Gateway Firewall best practices, and VCF Operations security compliance capabilities."
+seriesPart: 15
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-security-compliance.jpg"
+  alt: "VCF 9 Security and Compliance: DFW, VPC Isolation, and Hardened Operations"
+  relative: false
 ---
 
 ## Introduction

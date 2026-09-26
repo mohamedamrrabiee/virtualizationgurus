@@ -13,6 +13,11 @@ categories:
   - VCF 9
   - Operations
 description: "A deep dive into VCF 9 lifecycle management using VCF Operations, covering the unified upgrade workflow for ESX, vCenter, NSX, and vSAN, the new licensing model, fleet-level health monitoring, and automation through the VCF SDK."
+seriesPart: 7
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-lifecycle-management.jpg"
+  alt: "VCF 9 Lifecycle Management with VCF Operations: Unified Upgrades and Fleet Management"
+  relative: false
 ---
 
 ## Introduction

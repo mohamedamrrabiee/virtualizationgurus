@@ -5,6 +5,11 @@ draft: false
 tags: ["vSAN", "ESA", "OSA", "Storage", "Hardware"]
 categories: ["VCF 9", "vSAN"]
 description: "Comparing vSAN Express Storage Architecture (ESA) and Original Storage Architecture (OSA) in VCF 9.1 -- hardware requirements, cluster types, and how to choose."
+seriesPart: 14
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-vsan-esa-vs-osa.jpg"
+  alt: "vSAN ESA vs OSA: Storage Architecture Decisions"
+  relative: false
 ---
 
 ## Introduction

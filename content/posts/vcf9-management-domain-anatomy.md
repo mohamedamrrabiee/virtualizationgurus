@@ -5,6 +5,11 @@ draft: false
 tags: ["VCF", "VMware", "Management Domain", "vCenter", "NSX", "Cloud Foundation"]
 categories: ["VCF 9", "Architecture"]
 description: "A technical breakdown of the VCF 9 management domain, validated against official Broadcom documentation: its required components, how the first management domain differs from additional ones, and the shared-vs-dedicated NSX decision."
+seriesPart: 9
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-management-domain-anatomy.jpg"
+  alt: "VCF 9 Management Domain Anatomy: What Actually Runs Inside"
+  relative: false
 ---
 
 ## Introduction
