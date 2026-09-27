@@ -36,8 +36,6 @@ I'm a Senior Cloud Infrastructure Consultant specializing in VMware Cloud Founda
 
 *Views and content on this blog are my own, based on personal experience, and do not represent the views of any employer, past or present.*
 
-*Views and content here are my own and don't represent evoila, Broadcom, or any employer or client I've worked with.*
-
 ## Certifications
 
 <div class="cert-badges">
