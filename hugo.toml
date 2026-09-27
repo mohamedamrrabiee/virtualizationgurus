@@ -25,13 +25,13 @@ home = ["HTML", "RSS", "JSON"]
 [params]
 mainSections = ["posts"]
 description = "Expert insights on VMware, VCF, and enterprise virtualization"
-author = "Mohamed Amr Rabiee"
-ShowReadingTime = true
+author = "Mohamed Rabiee"
+ShowReadingTime = false
 ShowShareButtons = true
 ShowPostNavLinks = true
 ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
-ShowWordCount = true
+ShowWordCount = false
 ShowRssButtonInSectionTermList = true
 UseHugoToc = true
 disableSpecial1stPost = false

@@ -1,6 +1,6 @@
 ---
 title: "Virtualization Gurus"
-description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and enterprise virtualization, by Mohamed Amr Rabiee"
+description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and enterprise virtualization, by Mohamed Rabiee"
 ---
 
 <div class="home-info">
