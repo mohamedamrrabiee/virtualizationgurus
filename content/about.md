@@ -34,6 +34,8 @@ Every post on this blog is based on real-world experience. We avoid generic over
 
 I'm a Senior Cloud Infrastructure Consultant specializing in VMware Cloud Foundation (VCF) and multi-cloud architecture. I've delivered 50+ VCF deployments and upgrade engagements for enterprise customers, moving from VMware technical support through a Site Reliability Engineer role at VMware, Pod Lead on 50+ VCF upgrade engagements, to multi-cloud consulting (OCI, GCP) and now partner-level SDDC advisory work at evoila. This blog is where I write up the architecture details, upgrade gotchas, and design decisions from that work, VCF 9 in particular.
 
+*Views and content here are my own and don't represent evoila, Broadcom, or any employer or client I've worked with.*
+
 ## Certifications
 
 <div class="cert-badges">
