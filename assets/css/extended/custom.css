@@ -287,6 +287,59 @@ header > div {
   vertical-align: middle;
 }
 
+/* ---------- Certification badge wall ---------- */
+.cert-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.cert-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  background: rgba(15, 23, 42, 0.5);
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+}
+
+.cert-badge:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  background: rgba(15, 23, 42, 0.85);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 0 1px rgba(56,189,248,0.15);
+}
+
+.cert-badge img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  margin-bottom: 0.6rem;
+}
+
+.cert-badge span {
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.cert-badge:hover span {
+  color: #e2e8f0;
+}
+
+.cert-badges-note {
+  font-size: 0.82rem;
+  color: var(--vg-muted, #94a3b8);
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
 /* ---------- Author info box ---------- */
 .author-box {
   display: flex;
