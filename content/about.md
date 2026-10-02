@@ -51,6 +51,10 @@ I'm a Senior Cloud Infrastructure Consultant specializing in VMware Cloud Founda
     <img src="https://images.credly.com/size/150x150/images/09b91d88-e1a6-4bbc-9b72-58570b4e72c0/blob" alt="VMware Certified Advanced Professional - VMware Cloud Foundation VKS" loading="lazy" />
     <span>VCAP - VCF VKS</span>
   </a>
+  <a class="cert-badge" href="https://www.credly.com/badges/485bb726-86fe-4722-a92f-964e1eb7f8d8" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.credly.com/size/150x150/images/6fabfcb7-679e-4bae-ab26-7dbfb3b20061/blob" alt="VMware Certified Advanced Professional - VMware Cloud Foundation Networking" loading="lazy" />
+    <span>VCAP - VCF Networking</span>
+  </a>
   <a class="cert-badge" href="https://www.credly.com/badges/b500b531-2ada-4ed0-9c9f-03e4bbd55c26" target="_blank" rel="noopener noreferrer">
     <img src="https://images.credly.com/size/150x150/images/e023a1cb-8325-4dfd-b901-4edff87cf1f6/image.png" alt="VMware Certified Specialist - Cloud Foundation 2023" loading="lazy" />
     <span>VCF Certified Specialist</span>
