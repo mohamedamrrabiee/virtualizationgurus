@@ -87,6 +87,22 @@ I'm a Senior Cloud Infrastructure Consultant specializing in VMware Cloud Founda
     <img src="https://images.credly.com/size/150x150/images/aa869edb-32cb-49be-9555-c645be94fb40/blob" alt="Broadcom Partner Certification - Proven Professional - vSphere Kubernetes Service - Support" loading="lazy" />
     <span>Broadcom PP - VKS Support</span>
   </a>
+  <a class="cert-badge" href="https://www.credly.com/badges/2d2233be-3e7c-4b34-a9bd-015e3c729bb5" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.credly.com/size/150x150/images/3582c7d9-949d-4499-ad96-0329bca11ea5/blob" alt="Broadcom Partner Certification - Proven Professional - VCF Networking - Architecture" loading="lazy" />
+    <span>Broadcom PP - VCF Networking Architecture</span>
+  </a>
+  <a class="cert-badge" href="https://www.credly.com/badges/68fdc4ef-07f4-45b2-a31c-143b7bde71ec" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.credly.com/size/150x150/images/a4cb3c65-1fb2-4eaf-ab9b-4c9c934960fb/blob" alt="Broadcom Partner Certification - Proven Professional - VCF Networking - Implementation" loading="lazy" />
+    <span>Broadcom PP - VCF Networking Implementation</span>
+  </a>
+  <a class="cert-badge" href="https://www.credly.com/badges/0cb4a583-63b9-490e-bcd8-a4e02ab86668" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.credly.com/size/150x150/images/0003b8c0-3a86-4f47-aef3-2964190b9685/blob" alt="Broadcom Partner Certification - Proven Professional - VCF Networking - Pre-Sales" loading="lazy" />
+    <span>Broadcom PP - VCF Networking Pre-Sales</span>
+  </a>
+  <a class="cert-badge" href="https://www.credly.com/badges/9d9feea1-2c4b-4052-9cfa-03b75441b208" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.credly.com/size/150x150/images/90d6e797-577b-46ba-be67-4a0baf3bca91/blob" alt="Broadcom Partner Certification - Proven Professional - VCF Networking - Support" loading="lazy" />
+    <span>Broadcom PP - VCF Networking Support</span>
+  </a>
   <a class="cert-badge" href="https://www.credly.com/badges/23d378e6-cf7e-4457-ba45-d6a68e0c382d" target="_blank" rel="noopener noreferrer">
     <img src="https://images.credly.com/size/150x150/images/714cc980-5799-40ff-babe-cd95bed4869d/blob" alt="Broadcom Partner Certification - Certified Expert - VMware Cloud Foundation - Sales" loading="lazy" />
     <span>Broadcom CE - VCF Sales</span>
@@ -94,6 +110,10 @@ I'm a Senior Cloud Infrastructure Consultant specializing in VMware Cloud Founda
   <a class="cert-badge" href="https://www.credly.com/badges/a2dbd58c-c222-4102-b0d5-dc625e631d0c" target="_blank" rel="noopener noreferrer">
     <img src="https://images.credly.com/size/150x150/images/f0f7389f-1711-425f-9798-2e3d853e32e8/blob" alt="Broadcom Partner Certification - Proven Professional - VMware Cloud Foundation - Sales" loading="lazy" />
     <span>Broadcom PP - VCF Sales</span>
+  </a>
+  <a class="cert-badge" href="https://www.credly.com/badges/f9488fe0-3b3d-4eb9-bddf-b6b1f18d1824" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.credly.com/size/150x150/images/fd110d18-2246-4d22-9e5b-839424702b73/blob" alt="Broadcom Partner Certification - Proven Professional - VMware Cloud Foundation - Implementation" loading="lazy" />
+    <span>Broadcom PP - VCF Implementation</span>
   </a>
   <a class="cert-badge" href="https://www.credly.com/badges/872e2c4c-8bea-4f45-b734-4cfd65937c36" target="_blank" rel="noopener noreferrer">
     <img src="https://images.credly.com/size/150x150/images/b326f151-7abd-4645-b0f9-c4385bcc9d4b/vmware_KN_vSphere6.7F.png" alt="VMware vSphere 6.7 Foundations" loading="lazy" />
