@@ -1,14 +1,14 @@
 ---
-title: "DR & Ransomware Recovery: Isolated Recovery, SRM, and VPC Isolation"
+title: "DR & Ransomware Recovery: Isolated Recovery, Protection and Recovery, and VPC Isolation"
 date: 2026-10-03
 draft: false
-tags: ["Disaster Recovery", "Ransomware", "IRE", "SRM", "vSAN ESA", "NSX"]
+tags: ["Disaster Recovery", "Ransomware", "IRE", "Protection and Recovery", "SRM", "vSAN ESA", "NSX"]
 categories: ["VCF 9", "Security"]
 description: "Cyber recovery and operational DR get planned as one discipline in most VCF conversations. Broadcom builds them as two, with different assumptions, different tooling, and a dedicated Isolated Recovery Environment that exists for exactly one purpose."
 seriesPart: 19
 cover:
   image: "/virtualizationgurus/images/covers/vcf9-dr-ransomware-recovery.jpg"
-  alt: "DR & Ransomware Recovery: Isolated Recovery, SRM, and VPC Isolation"
+  alt: "DR & Ransomware Recovery: Isolated Recovery, Protection and Recovery, and VPC Isolation"
   relative: false
 ---
 
@@ -38,9 +38,9 @@ VCF 9.1's Protection and Recovery capability, paired with VMware Advanced Cyber 
 
 Cyber recovery is supported with vSAN snapshots and replication, and only vSAN-protected VMs are supported, so scope your protection groups with that in mind. VCF 9.1 ships two purpose-built presets rather than making you hand-configure retention every time: a Ransomware Recovery preset (1-hour RPO, last snapshot kept, hourly retained for a day, daily for a week, weekly for a month, monthly for six months) and a lighter Short-Term Retention preset for less critical workloads (same 1-hour RPO, but retention tapers off after the weekly tier). Protection groups can now be assigned by vSphere tag as well as by static or wildcard name, which matters once you're managing this at real fleet scale rather than a handful of VMs.
 
-## Where SRM Fits
+## Where Site Recovery Manager Fits Now
 
-VMware Live Recovery has been renamed and integrated into VCF as VCF Protection and Recovery, and Broadcom's 9.1 documentation frames it as three capabilities: operational recovery on vSAN local snapshots, disaster recovery that orchestrates array-based and host-based replication, and cyber recovery in a clean room. Site Recovery Manager hasn't disappeared, Broadcom's validated on-premises ransomware recovery design still documents a recovery plan built on SRM and vSphere Replication for business-critical workloads. What changed is that SRM is no longer the only recovery path, since vSAN snapshots now cover operational recovery and the cyber recovery workflow is built on vSAN-protected VMs. The 9.1 Protection and Recovery documentation doesn't name SRM at all, so confirm which orchestrator your design actually relies on against the validated design before you commit to it.
+The naming has moved twice, so it's worth getting straight. Broadcom rebranded Site Recovery Manager (SRM) to VMware Live Site Recovery in 2024, and VMware Live Recovery has since been renamed and integrated into VCF as VCF Protection and Recovery. Broadcom's 9.1 documentation frames Protection and Recovery as three capabilities: operational recovery on vSAN local snapshots, disaster recovery that orchestrates array-based and host-based replication, and cyber recovery in a clean room. The 9.1 Protection and Recovery documentation doesn't use the SRM name at all, but Broadcom's validated on-premises ransomware recovery design still refers to Site Recovery Manager and vSphere Replication for the recovery plan, so expect to meet both names depending on which document you're reading. What changed is that SRM-style orchestration is no longer the only recovery path, since vSAN snapshots now cover operational recovery and the cyber recovery workflow is built on vSAN-protected VMs. Confirm which orchestrator your design actually relies on against the validated design before you commit to it.
 
 ## Architectural Overview
 
@@ -72,6 +72,7 @@ Next in this series: Private AI Workload Domain, GPU Nodes, AI Kubernetes, and N
 - [Isolated Recovery Environment Design for On-Premises Ransomware Recovery](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vvs/9-X/on-prem-ransomware-recovery-for-vmware-cloud-foundation/detailed-design-for-site-protection-and-disaster-recovery/ire-design(1).html)
 - [Cyber Recovery in Protection and Recovery 9.1](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/protection-and-recovery/9-1/using-on-premises-ransomware-recovery/welcome-to-cyber-recovery.html)
 - [Ransomware Recovery States](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/protection-and-recovery/9-1/using-on-premises-ransomware-recovery/using-on-premises-ransomware-recovery/ransomware-recovery-states.html)
+- [VMware Live Site Recovery 9.0 Release Notes (Site Recovery Manager rebrand)](https://techdocs.broadcom.com/us/en/vmware-cis/live-recovery/live-site-recovery/9-0/release-notes/vmware-live-site-recovery-90-release-notes.html)
 - [Protection and Recovery 9.1 Release Notes](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/protection-and-recovery/9-1/release-notes/protection-and-recovery-91-release-notes.html)
 - [VMware vSAN Protection and Recovery Enhancements for VCF 9.1](https://blogs.vmware.com/cloud-foundation/2026/05/14/vmware-vsan-protection-and-recovery-enhancements-for-vcf-9-1/)
 - [Continuous Compliance, Integrated Cyber Recovery and Enhanced Platform Security for VCF 9.1](https://blogs.vmware.com/cloud-foundation/2026/05/05/continuous-compliance-integrated-cyber-recovery-and-enhanced-platform-security-for-vcf-9-1/)

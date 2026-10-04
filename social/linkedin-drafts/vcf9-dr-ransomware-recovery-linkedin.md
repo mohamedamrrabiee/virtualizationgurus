@@ -1,4 +1,4 @@
-LinkedIn Draft: DR & Ransomware Recovery: Isolated Recovery, SRM, and VPC Isolation
+LinkedIn Draft: DR & Ransomware Recovery: Isolated Recovery, Protection and Recovery, and VPC Isolation
 Source post: content/posts/vcf9-dr-ransomware-recovery.md
 Image: social/linkedin-drafts/images/vcf9-dr-ransomware-recovery-linkedin.jpg
 Status: DRAFT, needs review before posting
@@ -12,7 +12,7 @@ The Isolated Recovery Environment (IRE) exists for exactly one purpose: a clean 
 → DNS and NTP inside the IRE are intentionally separate from production, so the recovery environment's path to the internet never retraces anything the compromised environment touched
 → Cyber recovery is supported with vSAN snapshots and replication, with two built-in presets, Ransomware Recovery (1-hour RPO, retention out to 6 months) and Short-Term Retention for less critical workloads
 
-SRM hasn't gone away, Broadcom's validated ransomware recovery design still builds a recovery plan on SRM and vSphere Replication. But it's no longer the only path, Protection and Recovery now adds vSAN-snapshot operational recovery and a clean-room cyber recovery workflow beside it. "SRM handles failover" isn't wrong, it's just incomplete.
+The naming has moved twice: SRM became VMware Live Site Recovery, and Live Recovery is now VCF Protection and Recovery. Broadcom's validated ransomware recovery design still refers to SRM and vSphere Replication for the recovery plan, but it's no longer the only path, Protection and Recovery adds vSAN-snapshot operational recovery and a clean-room cyber recovery workflow beside it. "SRM handles failover" isn't wrong, it's just incomplete.
 
 The Payoff:
 An IRE that's ready on paper but never budgeted its own DFW license or its own DNS infrastructure isn't ready, it's a design decision nobody actually implemented yet.
