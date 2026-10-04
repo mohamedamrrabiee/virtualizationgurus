@@ -3,18 +3,18 @@ Source post: content/posts/vcf9-private-ai-workload-domain.md
 Image: social/linkedin-drafts/images/vcf9-private-ai-workload-domain-linkedin.jpg
 Status: DRAFT, needs review before posting
 
-"Stand up a GPU workload domain" sounds like one task. VMware Private AI Foundation with NVIDIA on VCF 9.1 actually gives you three distinct ways to consume that GPU capacity, and picking the wrong one changes your host bill of materials before you've deployed a single workload.
+"Stand up a GPU workload domain" sounds like one task. VMware Private AI Foundation with NVIDIA on VCF 9.1 actually gives you three distinct ways to consume that GPU capacity, and picking the wrong one changes your design before you've deployed a single workload.
 
-→ Deep Learning VMs: pre-configured, boots with driver, CUDA, and frameworks from the NGC catalog already in place, fastest way to validate the GPU stack is actually healthy
-→ Private AI Services: the LLM-centric path, Model Store and Model Runtime with vector DB and RAG plumbing already managed, not something you assemble yourself
-→ GPU-accelerated VKS clusters: deploy through the VCF Automation catalog and the NVIDIA GPU Operator plus a NIM template installs automatically, an ML engineer never touches a Helm chart
+→ Deep Learning VMs: pre-configured and validated by NVIDIA and VMware, deployable from the VCF Automation AI workstation catalog item or straight from the vSphere Client, the fastest way to prove the GPU stack is healthy
+→ Private AI Services: the LLM-centric path, a Supervisor Service with a Model Gallery in Harbor, Model Runtime endpoints, a PostgreSQL vector database for RAG, and an Agent Builder, managed as one integrated service
+→ GPU-accelerated VKS clusters: the AI Kubernetes Cluster catalog item deploys the NVIDIA GPU Operator on your worker nodes, with kubectl available for vGPU and passthrough when you need more control
 
-The gotcha almost nobody catches before it's already a problem: MIG cannot back NVIDIA NIM microservices. MIG is for training and notebook isolation only. Inference with NIM needs a whole GPU or time-sliced vGPU, and reconfiguring that after you've already provisioned is a much bigger job than deciding correctly up front.
+The gotcha almost nobody catches before it's already a problem: Broadcom's requirements state that MIG sharing is incompatible with NVIDIA NIM. Inference with NIM needs time-sliced vGPU or a dedicated GPU, and changing GPU assignment after you've provisioned means reworking hosts and workloads.
 
-Licensing spans two vendors who don't sell you the same thing: a VCF subscription and the Private AI Foundation add-on from Broadcom, plus an NVIDIA AI Enterprise vGPU license bought directly from NVIDIA. And the add-on license has a placement subtlety, it goes on the GPU workload domain where AI actually runs, but you also need it on the management domain if you want the guided deployment UI to show up in the vSphere Client at all.
+Licensing spans two vendors. A VCF subscription and the Private AI Foundation add-on come from Broadcom, and NVIDIA AI Enterprise comes directly from NVIDIA for vGPU mode. New in 9.1, DirectPath enablement gives VMs and Kubernetes nodes exclusive GPU access without an NVAIE license, so your GPU mode now shapes your licensing bill too. The add-on also has a placement subtlety: capacity is allocated to the GPU workload domain, but the guided deployment UI and the VCF Automation quickstart wizard only appear if the license is also assigned to the management domain.
 
 The Payoff:
-A GPU workload domain that's technically deployed but built on the wrong consumption path isn't a working platform, it's a rebuild waiting to happen once the first inference workload needs NIM and finds MIG instead.
+A GPU workload domain that's technically deployed but built on the wrong consumption path or the wrong GPU mode isn't a working platform, it's a rebuild waiting to happen the first time an inference workload needs NIM and finds MIG.
 
 Which consumption path are you actually building toward, and does your GPU assignment mode already match it?
 
