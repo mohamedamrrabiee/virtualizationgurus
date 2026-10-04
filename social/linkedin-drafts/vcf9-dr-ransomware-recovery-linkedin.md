@@ -10,9 +10,9 @@ The Isolated Recovery Environment (IRE) exists for exactly one purpose: a clean 
 → A dedicated vSAN ESA storage cluster plus its own compute and NSX edge clusters, fully separate from production infrastructure
 → A Python isolation script creates graduated network isolation levels, and it needs its own Distributed Firewall license, worth budgeting for before an incident, not during one
 → DNS and NTP inside the IRE are intentionally separate from production, so the recovery environment's path to the internet never retraces anything the compromised environment touched
-→ Recovery runs on vSAN snapshots with two built-in presets, Ransomware Recovery (1-hour RPO, retention out to 6 months) and Short-Term Retention for less critical workloads
+→ Cyber recovery is supported with vSAN snapshots and replication, with two built-in presets, Ransomware Recovery (1-hour RPO, retention out to 6 months) and Short-Term Retention for less critical workloads
 
-SRM hasn't gone away, but it's no longer the whole story. It now runs as one layer inside a broader Protection and Recovery framework alongside vSAN-native snapshots and the cyber-recovery-specific validation workflow. "SRM handles failover" isn't wrong anymore, it's just incomplete.
+SRM hasn't gone away, Broadcom's validated ransomware recovery design still builds a recovery plan on SRM and vSphere Replication. But it's no longer the only path, Protection and Recovery now adds vSAN-snapshot operational recovery and a clean-room cyber recovery workflow beside it. "SRM handles failover" isn't wrong, it's just incomplete.
 
 The Payoff:
 An IRE that's ready on paper but never budgeted its own DFW license or its own DNS infrastructure isn't ready, it's a design decision nobody actually implemented yet.
