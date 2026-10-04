@@ -1,7 +1,7 @@
-# LinkedIn Draft — vSAN ESA vs OSA: Storage Architecture Decisions
+# LinkedIn Draft: vSAN ESA vs OSA: Storage Architecture Decisions
 Source post: content/posts/vcf9-vsan-esa-vs-osa.md
 Image: social/linkedin-drafts/images/vcf9-vsan-esa-vs-osa-linkedin.jpg
-Status: DRAFT — needs review before posting
+Status: DRAFT, needs review before posting
 
 ---
 

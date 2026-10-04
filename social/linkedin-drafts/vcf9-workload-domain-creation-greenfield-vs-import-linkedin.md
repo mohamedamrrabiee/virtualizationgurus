@@ -1,7 +1,7 @@
-LinkedIn Draft — Workload Domain Creation: Greenfield vs Import Existing vCenter
+LinkedIn Draft: Workload Domain Creation: Greenfield vs Import Existing vCenter
 Source post: content/posts/vcf9-workload-domain-creation-greenfield-vs-import.md
 Image: social/linkedin-drafts/images/vcf9-workload-domain-creation-greenfield-vs-import-linkedin.jpg
-Status: DRAFT — needs review before posting
+Status: DRAFT, needs review before posting
 
 "Import it now, sort out the version mismatch later" is the plan that permanently blocks a workload domain from upgrading -- and the wizard won't warn you until it's already done.
 

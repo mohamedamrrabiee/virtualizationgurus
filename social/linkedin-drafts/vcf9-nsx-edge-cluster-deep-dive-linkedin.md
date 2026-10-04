@@ -1,7 +1,7 @@
-# LinkedIn Draft — NSX Edge Cluster Deep Dive
+# LinkedIn Draft: NSX Edge Cluster Deep Dive
 Source post: content/posts/vcf9-nsx-edge-cluster-deep-dive.md
 Image: social/linkedin-drafts/images/vcf9-nsx-edge-cluster-deep-dive-linkedin.jpg
-Status: DRAFT — needs review before posting
+Status: DRAFT, needs review before posting
 
 ---
 

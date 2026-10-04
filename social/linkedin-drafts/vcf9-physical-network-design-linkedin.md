@@ -1,7 +1,7 @@
-# LinkedIn Draft — Physical Network Design: VDS Separation, ToR Switches, and BGP Uplinks
+# LinkedIn Draft: Physical Network Design: VDS Separation, ToR Switches, and BGP Uplinks
 Source post: content/posts/vcf9-physical-network-design.md
 Image: social/linkedin-drafts/images/vcf9-physical-network-design-linkedin.jpg
-Status: DRAFT — needs review before posting
+Status: DRAFT, needs review before posting
 
 ---
 
