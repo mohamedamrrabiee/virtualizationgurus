@@ -1,0 +1,880 @@
+/* =============================================
+   Virtualization Gurus - Custom Branding CSS
+   ============================================= */
+
+/* ---------- Color Variables ---------- */
+:root {
+  --vg-blue: #38bdf8;
+  --vg-purple: #a78bfa;
+  --vg-indigo: #6366f1;
+  --vg-dark: #0f172a;
+  --vg-slate: #1e293b;
+  --vg-green: #22c55e;
+  --vg-amber: #f59e0b;
+  --vg-teal: #14b8a6;
+}
+
+/* ============================================================
+   WIDER LAYOUT - PaperMod's default 720px main column wastes
+   most of a normal monitor. Widen it (and match the nav width
+   so the header lines up with the content below it) so posts,
+   code blocks, and diagrams actually use the screen. min() scales
+   it down gracefully on smaller viewports without a media query.
+   ============================================================ */
+:root {
+  --main-width: min(1500px, 92vw);
+  --nav-width: min(1500px, 92vw);
+}
+
+/* ============================================================
+   DARK BLUE BACKGROUND - swap PaperMod's neutral gray dark theme
+   for a deep navy that matches the site's own blue/purple brand
+   system, so the page background and the cards/nav feel like one
+   cohesive design instead of navy cards floating on gray.
+   ============================================================ */
+:root[data-theme="dark"] {
+  --theme: #0a0f1d;
+  --entry: #101d33;
+  --code-block-bg: #0d1b2a;
+  --code-bg: #142238;
+  --border: #1e293b;
+  --tertiary: #1e293b;
+}
+
+/* ============================================================
+   NAVIGATION BAR: Full-width stretch + logo on LEFT side
+   ============================================================ */
+
+/* Make the header/nav container stretch the full viewport width */
+header,
+.header {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box;
+}
+
+/* The nav element itself should stretch full width */
+.nav {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+  background: rgba(15, 23, 42, 0.97) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(56, 189, 248, 0.18) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 2rem !important;
+  min-height: 64px;
+}
+
+/* The inner nav wrapper - stretch full width */
+.nav .nav-container,
+#nav,
+nav {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Logo on the LEFT side of the navbar */
+.logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0;
+  flex-shrink: 0;
+  margin-right: 2rem;
+  order: -1; /* Ensure logo is first (left) */
+}
+
+/* Show SVG logo image in navbar via CSS background */
+.logo a[accesskey="h"] {
+  display: block;
+  width: 160px;
+  height: 48px;
+  background-image: url('/virtualizationgurus/images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left center;
+  text-indent: -9999px;
+  overflow: hidden;
+  color: transparent;
+}
+
+.logo img {
+  height: 48px;
+  width: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Hide default text logo when image logo is present */
+.logo img + a {
+  display: none;
+}
+
+/* Navigation menu links - push to the right */
+.nav .menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.nav a {
+  color: #cbd5e1 !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--vg-blue) !important;
+}
+
+/* PaperMod theme specific: override header inner container */
+.header .header-content,
+header > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+/* ============================================================
+   POST PAGE FOOTER LOGO (centered at bottom of each post)
+   ============================================================ */
+
+/* Footer logo container that appears at end of each post */
+.post-footer-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.post-footer-logo img {
+  height: 56px;
+  width: auto;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
+  transition: opacity 0.2s ease;
+}
+
+.post-footer-logo img:hover {
+  opacity: 1;
+}
+
+/* Auto-inject logo at end of post content via CSS */
+.post-content > div:last-child img[alt="Virtualization Gurus"],
+.post-content img[alt="Virtualization Gurus"]:last-of-type {
+  display: block;
+  margin: 0 auto;
+  height: 56px;
+  width: auto;
+  opacity: 0.85;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3));
+}
+
+/* ============================================================
+   HOMEPAGE HERO
+   ============================================================ */
+
+.home-info {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f2744 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(56, 189, 248, 0.06), 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Decorative grid background */
+.home-info::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Glowing accent top-left */
+.home-info::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(56,189,248,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.home-info .home-info-title {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--vg-blue), var(--vg-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.home-info p {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* Logo in hero area */
+.home-info .logo-hero {
+  margin-bottom: 1.5rem;
+}
+
+.home-info .logo-hero img {
+  height: 56px;
+  width: auto;
+  filter: drop-shadow(0 0 12px rgba(56,189,248,0.4));
+}
+
+/* Expertise badges */
+.expertise-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.expertise-badges .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: 1px solid;
+  transition: all 0.2s ease;
+}
+
+.badge-blue   { color: var(--vg-blue);   border-color: rgba(56,189,248,0.35);  background: rgba(56,189,248,0.08); }
+.badge-purple { color: var(--vg-purple); border-color: rgba(167,139,250,0.35); background: rgba(167,139,250,0.08);}
+.badge-green  { color: var(--vg-green);  border-color: rgba(34,197,94,0.35);   background: rgba(34,197,94,0.08); }
+.badge-amber  { color: var(--vg-amber);  border-color: rgba(245,158,11,0.35);  background: rgba(245,158,11,0.08); }
+.badge-indigo { color: var(--vg-indigo); border-color: rgba(99,102,241,0.35);  background: rgba(99,102,241,0.08); }
+.badge-teal   { color: var(--vg-teal);   border-color: rgba(20,184,166,0.35);  background: rgba(20,184,166,0.08); }
+
+.expertise-badges .badge img {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ---------- Certification badge wall ---------- */
+.cert-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.cert-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  background: rgba(15, 23, 42, 0.5);
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+}
+
+.cert-badge:hover {
+  border-color: rgba(56, 189, 248, 0.45);
+  background: rgba(15, 23, 42, 0.85);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 0 1px rgba(56,189,248,0.15);
+}
+
+.cert-badge img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  margin-bottom: 0.6rem;
+}
+
+.cert-badge span {
+  font-size: 0.72rem;
+  line-height: 1.3;
+  color: #cbd5e1;
+  font-weight: 500;
+}
+
+.cert-badge:hover span {
+  color: #e2e8f0;
+}
+
+.cert-badges-note {
+  font-size: 0.82rem;
+  color: var(--vg-muted, #94a3b8);
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- Author info box ---------- */
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(56,189,248,0.12);
+}
+
+.author-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--vg-blue), var(--vg-indigo));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 0 16px rgba(56,189,248,0.3);
+}
+
+.author-details .author-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 0.15rem;
+}
+
+.author-details .author-title {
+  font-size: 0.78rem;
+  color: var(--vg-blue);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---------- Post Cards ---------- */
+.post-entry {
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.5);
+  transition: all 0.25s ease;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-entry:hover {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(15, 23, 42, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(56,189,248,0.15);
+}
+
+.post-entry .entry-header h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  transition: color 0.2s;
+}
+
+.post-entry:hover .entry-header h2 {
+  color: var(--vg-blue);
+}
+
+.post-entry .entry-content {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+/* ---------- Tags ---------- */
+.post-tags a {
+  background: rgba(56,189,248,0.1);
+  color: var(--vg-blue);
+  border: 1px solid rgba(56,189,248,0.2);
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.65rem;
+  transition: all 0.2s;
+}
+
+.post-tags a:hover {
+  background: rgba(56,189,248,0.2);
+  border-color: var(--vg-blue);
+}
+
+/* ---------- Code Blocks ---------- */
+.highlight pre {
+  border: 1px solid rgba(56,189,248,0.15);
+  border-radius: 10px;
+  background: #0d1b2a !important;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid rgba(56,189,248,0.1);
+  color: #475569;
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.footer a {
+  color: var(--vg-blue);
+  text-decoration: none;
+}
+
+/* ---------- Headings in articles ---------- */
+.post-content h2 {
+  border-bottom: 1px solid rgba(56,189,248,0.2);
+  padding-bottom: 0.4rem;
+  color: #e2e8f0;
+}
+
+.post-content h3 {
+  color: var(--vg-blue);
+}
+
+/* ---------- Social Links ---------- */
+.social-icons a {
+  color: #64748b;
+  transition: color 0.2s;
+}
+
+.social-icons a:hover {
+  color: var(--vg-blue);
+}
+
+/* ---------- Reading progress indicator ---------- */
+.reading-time {
+  color: var(--vg-blue);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* ---------- Contact Section ---------- */
+.contact-section {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f2744 100%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 16px;
+  padding: 2.5rem 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(56, 189, 248, 0.06), 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+.contact-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--vg-blue), var(--vg-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
+}
+
+.contact-subtitle {
+  color: #94a3b8;
+  font-size: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  background: rgba(15, 23, 42, 0.6);
+  text-decoration: none !important;
+  transition: all 0.25s ease;
+  min-width: 240px;
+  flex: 1;
+}
+
+.contact-card:hover {
+  border-color: rgba(56, 189, 248, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(56,189,248,0.2);
+}
+
+.contact-card-linkedin:hover {
+  border-color: rgba(10, 102, 194, 0.6);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(10, 102, 194, 0.3);
+}
+
+.contact-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(56,189,248,0.4));
+}
+
+.contact-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--vg-blue);
+  margin-bottom: 0.2rem;
+}
+
+.contact-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+/* ============================================================
+   TABLE OF CONTENTS - branded to match site accent
+   ============================================================ */
+
+.toc {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 12px;
+}
+
+.toc .details summary,
+.toc-title {
+  color: var(--vg-blue) !important;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.toc ul li a {
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+
+.toc ul li a:hover,
+.toc ul li a.active {
+  color: var(--vg-blue);
+}
+
+.toc ul {
+  border-left: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+/* ============================================================
+   POST COVER IMAGES - card thumbnails + single-post banner
+   ============================================================ */
+
+.entry-cover {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  margin-bottom: 1rem;
+}
+
+.entry-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.post-entry:hover .entry-cover img {
+  transform: scale(1.02);
+}
+
+.post-single .entry-cover {
+  margin: 1rem 0 2rem;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.35), 0 0 0 1px rgba(56,189,248,0.08);
+}
+
+/* ============================================================
+   SERIES PROGRESS BADGE - shown at the end of series posts
+   ============================================================ */
+
+.series-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: rgba(56, 189, 248, 0.07);
+  color: var(--vg-blue) !important;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+}
+
+.series-badge:hover {
+  background: rgba(56, 189, 248, 0.15);
+  border-color: var(--vg-blue);
+  transform: translateX(2px);
+}
+
+.series-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--vg-blue);
+  box-shadow: 0 0 8px rgba(56,189,248,0.7);
+  flex-shrink: 0;
+}
+
+.series-badge-arrow {
+  transition: transform 0.2s ease;
+}
+
+.series-badge:hover .series-badge-arrow {
+  transform: translateX(3px);
+}
+
+/* ============================================================
+   FOOTER DISCLAIMER + COPYRIGHT
+   ============================================================ */
+
+.site-disclaimer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  max-width: 640px;
+  margin: 0 auto 0.75rem;
+  line-height: 1.6;
+}
+
+.site-disclaimer span {
+  color: #64748b;
+  font-size: 0.78rem;
+}
+
+.site-disclaimer .site-copyright {
+  color: #475569;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.site-poweredby {
+  display: block;
+  opacity: 0.55;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .contact-links {
+    flex-direction: column;
+  }
+  .contact-card {
+    min-width: unset;
+    width: 100%;
+  }
+  .nav {
+    padding: 0 1rem !important;
+  }
+}
+
+/* ============================================================
+   POST GRID - multi-column card layout for the homepage recent
+   posts list, the /posts/ archive, and tag/category lists, so
+   you see several posts per row instead of one long column.
+   ============================================================ */
+.recent-posts-list,
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.recent-posts-list .post-entry,
+.posts-grid .post-entry {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.recent-posts-list .entry-cover,
+.posts-grid .entry-cover {
+  aspect-ratio: 1200 / 630;
+  margin-bottom: 0.9rem;
+}
+
+.recent-posts-list .entry-cover img,
+.posts-grid .entry-cover img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.recent-posts-list .entry-header,
+.posts-grid .entry-header {
+  margin-bottom: 0.35rem;
+}
+
+.recent-posts-list .entry-header h2,
+.posts-grid .entry-header h2 {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.recent-posts-list .entry-content,
+.posts-grid .entry-content {
+  flex-grow: 1;
+}
+
+.recent-posts-list .entry-content p,
+.posts-grid .entry-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.recent-posts-list .entry-footer,
+.posts-grid .entry-footer {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .recent-posts-list,
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   PAGE / POST TITLES - gradient treatment matching the homepage
+   hero, so About, VCF 9 Series, Search, tags, and every post
+   title share the same modern identity instead of the theme's
+   plain default heading.
+   ============================================================ */
+.post-title,
+.page-header h1 {
+  background: linear-gradient(90deg, var(--vg-blue), var(--vg-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  display: inline-block;
+}
+
+.post-header,
+.page-header {
+  position: relative;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+}
+
+.post-header::after,
+.page-header::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 72px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--vg-blue), var(--vg-purple));
+}
+
+/* ============================================================
+   SEARCH PAGE - brand the input and result cards instead of
+   the theme's plain bordered box.
+   ============================================================ */
+#searchInput {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 10px;
+  color: #e2e8f0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#searchInput:focus {
+  border-color: var(--vg-blue);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+  outline: none;
+}
+
+.searchResults li {
+  border: 1px solid rgba(56, 189, 248, 0.1);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.5);
+  transition: all 0.25s ease;
+}
+
+.searchResults li:hover,
+.searchResults li:focus-within {
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(15, 23, 42, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px rgba(56,189,248,0.15);
+}
+
+/* ============================================================
+   ARCHITECTURE DIAGRAMS - draw.io VMware Validated Design (vvd)
+   diagrams embedded via <object>, replacing the old ASCII art.
+   ============================================================ */
+.diagram-embed {
+  margin: 1.5rem 0 2rem;
+  overflow-x: auto;
+}
+
+.diagram-embed object {
+  display: block;
+  width: 100%;
+  min-width: 640px;
+  border-radius: 12px;
+  overflow: hidden;
+}
