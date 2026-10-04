@@ -5,6 +5,11 @@ draft: false
 tags: ["Disaster Recovery", "Ransomware", "IRE", "SRM", "vSAN ESA", "NSX"]
 categories: ["VCF 9", "Security"]
 description: "Cyber recovery and operational DR get planned as one discipline in most VCF conversations. Broadcom builds them as two, with different assumptions, different tooling, and a dedicated Isolated Recovery Environment that exists for exactly one purpose."
+seriesPart: 19
+cover:
+  image: "/virtualizationgurus/images/covers/vcf9-dr-ransomware-recovery.jpg"
+  alt: "DR & Ransomware Recovery: Isolated Recovery, SRM, and VPC Isolation"
+  relative: false
 ---
 
 ## Introduction
