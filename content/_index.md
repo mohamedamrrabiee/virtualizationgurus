@@ -38,6 +38,8 @@ description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and ente
 
 </div>
 
+{{< cert-slideshow >}}
+
 <div class="contact-section">
 
 <h2 class="contact-title">Get in Touch</h2>
