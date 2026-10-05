@@ -25,7 +25,7 @@ description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and ente
 </div>
 
 <div class="author-box">
-  <div class="author-avatar">MR</div>
+  <div class="author-avatar author-avatar-photo"><img src="/virtualizationgurus/images/mohamed-rabiee.jpg" alt="Mohamed Rabiee" /></div>
   <div class="author-details">
     <div class="author-name">Mohamed Rabiee</div>
     <div class="author-title">VMware Cloud Foundation &amp; Virtualization Expert</div>
