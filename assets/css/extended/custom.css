@@ -1036,22 +1036,14 @@ header > div {
 }
 
 .home-badges .cert-slideshow-head {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 0.2rem;
 }
 
-.home-badges .cert-slideshow-head::before {
-  content: "";
-}
-
 .home-badges .cert-slideshow-title {
-  text-align: center;
-}
-
-.home-badges .cert-slideshow-counter {
-  justify-self: end;
+  text-align: left;
 }
 
 .home-badges .cert-slideshow-title {
