@@ -1011,7 +1011,7 @@ header > div {
 }
 
 .home-badges {
-  --badge-row-h: 170px;
+  --badge-row-h: 146px;
 }
 
 .home-badges .vexpert-badge {
@@ -1074,14 +1074,14 @@ header > div {
 }
 
 .home-badges .cert-slide .cert-badge img {
-  width: 104px;
-  height: 104px;
+  width: 80px;
+  height: 80px;
   margin: 0;
   flex: 0 0 auto;
 }
 
 .home-badges .cert-slide .cert-badge span {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.35;
 }
 
@@ -1092,8 +1092,8 @@ header > div {
 }
 
 @media (max-width: 1000px) {
-  .home-badges .cert-slide .cert-badge img { width: 96px; height: 96px; }
-  .home-badges .cert-slide .cert-badge span { font-size: 1rem; }
+  .home-badges .cert-slide .cert-badge img { width: 76px; height: 76px; }
+  .home-badges .cert-slide .cert-badge span { font-size: 0.95rem; }
 }
 
 @media (max-width: 600px) {
