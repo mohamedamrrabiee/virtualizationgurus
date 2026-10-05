@@ -1,0 +1,51 @@
+{{- $about := site.GetPage "/about" -}}
+{{- $badges := findRE `(?s)<a class="cert-badge".*?</a>` $about.RawContent -}}
+<div class="cert-slideshow" data-count="{{ len $badges }}">
+  <div class="cert-slideshow-head">
+    <h2 class="cert-slideshow-title">Certifications</h2>
+    <div class="cert-slideshow-controls">
+      <button type="button" class="cert-prev" aria-label="Previous certifications">&#8249;</button>
+      <button type="button" class="cert-next" aria-label="Next certifications">&#8250;</button>
+    </div>
+  </div>
+  <div class="cert-slideshow-track" tabindex="0" aria-label="Certification badges">
+    {{- range $badges }}
+    {{ . | safeHTML }}
+    {{- end }}
+  </div>
+</div>
+<script>
+(function () {
+  var root = document.currentScript.previousElementSibling;
+  if (!root) return;
+  var track = root.querySelector('.cert-slideshow-track');
+  var prev = root.querySelector('.cert-prev');
+  var next = root.querySelector('.cert-next');
+  var timer = null;
+  function step() {
+    var item = track.querySelector('.cert-badge');
+    if (!item) return 0;
+    return item.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 16);
+  }
+  function go(dir) {
+    var max = track.scrollWidth - track.clientWidth;
+    var target = track.scrollLeft + dir * step() * (window.innerWidth < 600 ? 1 : 2);
+    if (dir > 0 && track.scrollLeft >= max - 4) target = 0;
+    if (dir < 0 && track.scrollLeft <= 4) target = max;
+    track.scrollTo({ left: target, behavior: 'smooth' });
+  }
+  function start() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    stop();
+    timer = setInterval(function () { go(1); }, 3500);
+  }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+  prev.addEventListener('click', function () { go(-1); start(); });
+  next.addEventListener('click', function () { go(1); start(); });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+  start();
+})();
+</script>
