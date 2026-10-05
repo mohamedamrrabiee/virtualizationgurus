@@ -32,13 +32,15 @@ description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and ente
   </div>
 </div>
 
+<div class="home-badges">
 <a class="vexpert-badge" href="https://vexpert.vmware.com/directory/15186" target="_blank" rel="noopener noreferrer">
   <img src="/virtualizationgurus/images/badges/vexpert-2026.png" alt="VMware vExpert 2026" loading="lazy" />
 </a>
-
+{{< cert-slideshow >}}
 </div>
 
-{{< cert-slideshow >}}
+
+</div>
 
 <div class="contact-section">
 

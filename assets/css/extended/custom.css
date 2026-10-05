@@ -1000,3 +1000,87 @@ header > div {
   .cert-slideshow { padding: 1rem; }
   .cert-slideshow-stage { gap: 0.5rem; }
 }
+
+/* ---------- Homepage badge row: vExpert + certification slideshow ---------- */
+.home-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.home-badges .vexpert-badge {
+  flex: 0 0 260px;
+  margin: 0;
+}
+
+.home-badges .cert-slideshow {
+  flex: 1 1 280px;
+  min-width: 0;
+  margin: 0;
+  padding: 0.6rem 0.9rem 0.75rem;
+}
+
+.home-badges .cert-slideshow-head {
+  margin-bottom: 0.35rem;
+}
+
+.home-badges .cert-slideshow-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-badges .cert-slideshow-counter {
+  font-size: 0.75rem;
+}
+
+.home-badges .cert-slideshow-stage {
+  gap: 0.5rem;
+}
+
+.home-badges .cert-slides {
+  flex: 1 1 auto;
+}
+
+.home-badges .cert-slide .cert-badge {
+  flex-direction: row;
+  justify-content: flex-start;
+  text-align: left;
+  gap: 1rem;
+  padding: 0.5rem 0.9rem;
+  border: none;
+  background: transparent;
+}
+
+.home-badges .cert-slide .cert-badge:hover {
+  transform: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.home-badges .cert-slide .cert-badge img {
+  width: 72px;
+  height: 72px;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.home-badges .cert-slide .cert-badge span {
+  font-size: 0.95rem;
+}
+
+.home-badges .cert-slideshow-stage button {
+  width: 30px;
+  height: 30px;
+  font-size: 1.15rem;
+}
+
+@media (max-width: 600px) {
+  .home-badges .vexpert-badge { flex: 0 0 auto; }
+  .home-badges .cert-slideshow { flex-basis: 100%; }
+  .home-badges .cert-slide .cert-badge { gap: 0.75rem; padding: 0.4rem 0.25rem; }
+  .home-badges .cert-slide .cert-badge img { width: 56px; height: 56px; }
+  .home-badges .cert-slide .cert-badge span { font-size: 0.85rem; overflow-wrap: break-word; min-width: 0; }
+}
