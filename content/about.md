@@ -25,7 +25,7 @@ Every post on this blog is based on real-world experience. We avoid generic over
 ## About the Author
 
 <div class="author-box">
-  <div class="author-avatar">MR</div>
+  <div class="author-avatar author-avatar-photo"><img src="/virtualizationgurus/images/mohamed-rabiee.jpg" alt="Mohamed Rabiee" /></div>
   <div class="author-details">
     <div class="author-name">Mohamed Rabiee</div>
     <div class="author-title">Senior Cloud Infrastructure Consultant, evoila</div>

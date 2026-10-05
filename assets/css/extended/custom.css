@@ -391,6 +391,20 @@ header > div {
   box-shadow: 0 0 16px rgba(56,189,248,0.3);
 }
 
+.author-avatar-photo {
+  overflow: hidden;
+  width: 64px;
+  height: 64px;
+}
+
+.author-avatar-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
 .author-details .author-name {
   font-size: 0.95rem;
   font-weight: 700;
