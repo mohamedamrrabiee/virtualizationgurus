@@ -36,6 +36,14 @@ I'm a Senior Cloud Infrastructure Consultant specializing in VMware Cloud Founda
 
 *Views and content on this blog are my own, based on personal experience, and do not represent the views of any employer, past or present.*
 
+## Community Recognition
+
+Named a **VMware vExpert 2026**, the Broadcom community program that recognizes practitioners who share their VMware knowledge publicly.
+
+<a class="vexpert-badge" href="https://vexpert.vmware.com/directory/15186" target="_blank" rel="noopener noreferrer">
+  <img src="/virtualizationgurus/images/badges/vexpert-2026.png" alt="VMware vExpert 2026" loading="lazy" />
+</a>
+
 ## Certifications
 
 <div class="cert-badges">
