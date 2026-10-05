@@ -1,5 +1,6 @@
 {{- $about := site.GetPage "/about" -}}
 {{- $badges := findRE `(?s)<a class="cert-badge".*?</a>` $about.RawContent -}}
+{{- /* use a sharper 340px image in the slideshow, fall back to the 150px thumbnail if it is unavailable */ -}}
 <div class="cert-slideshow" data-count="{{ len $badges }}">
   <div class="cert-slideshow-head">
     <h2 class="cert-slideshow-title">Certifications</h2>
@@ -10,7 +11,7 @@
     <div class="cert-slides">
       {{- range $i, $b := $badges }}
       <div class="cert-slide{{ if eq $i 0 }} is-active{{ end }}" aria-hidden="{{ if eq $i 0 }}false{{ else }}true{{ end }}">
-        {{ $b | safeHTML }}
+        {{ $b | replaceRE `size/150x150/images/([^"]+)"` `size/340x340/images/$1" onerror="this.onerror=null;this.src=this.src.replace('size/340x340','size/150x150')"` | safeHTML }}
       </div>
       {{- end }}
     </div>
