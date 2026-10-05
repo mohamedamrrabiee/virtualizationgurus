@@ -3,45 +3,44 @@
 <div class="cert-slideshow" data-count="{{ len $badges }}">
   <div class="cert-slideshow-head">
     <h2 class="cert-slideshow-title">Certifications</h2>
-    <div class="cert-slideshow-controls">
-      <button type="button" class="cert-prev" aria-label="Previous certifications">&#8249;</button>
-      <button type="button" class="cert-next" aria-label="Next certifications">&#8250;</button>
-    </div>
+    <span class="cert-slideshow-counter" aria-live="off">1 / {{ len $badges }}</span>
   </div>
-  <div class="cert-slideshow-track" tabindex="0" aria-label="Certification badges">
-    {{- range $badges }}
-    {{ . | safeHTML }}
-    {{- end }}
+  <div class="cert-slideshow-stage">
+    <button type="button" class="cert-prev" aria-label="Previous certification">&#8249;</button>
+    <div class="cert-slides">
+      {{- range $i, $b := $badges }}
+      <div class="cert-slide{{ if eq $i 0 }} is-active{{ end }}" aria-hidden="{{ if eq $i 0 }}false{{ else }}true{{ end }}">
+        {{ $b | safeHTML }}
+      </div>
+      {{- end }}
+    </div>
+    <button type="button" class="cert-next" aria-label="Next certification">&#8250;</button>
   </div>
 </div>
 <script>
 (function () {
   var root = document.currentScript.previousElementSibling;
   if (!root) return;
-  var track = root.querySelector('.cert-slideshow-track');
-  var prev = root.querySelector('.cert-prev');
-  var next = root.querySelector('.cert-next');
-  var timer = null;
-  function step() {
-    var item = track.querySelector('.cert-badge');
-    if (!item) return 0;
-    return item.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 16);
-  }
-  function go(dir) {
-    var max = track.scrollWidth - track.clientWidth;
-    var target = track.scrollLeft + dir * step() * (window.innerWidth < 600 ? 1 : 2);
-    if (dir > 0 && track.scrollLeft >= max - 4) target = 0;
-    if (dir < 0 && track.scrollLeft <= 4) target = max;
-    track.scrollTo({ left: target, behavior: 'smooth' });
+  var slides = root.querySelectorAll('.cert-slide');
+  var counter = root.querySelector('.cert-slideshow-counter');
+  var n = slides.length, i = 0, timer = null;
+  if (!n) return;
+  function show(k) {
+    slides[i].classList.remove('is-active');
+    slides[i].setAttribute('aria-hidden', 'true');
+    i = (k + n) % n;
+    slides[i].classList.add('is-active');
+    slides[i].setAttribute('aria-hidden', 'false');
+    counter.textContent = (i + 1) + ' / ' + n;
   }
   function start() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     stop();
-    timer = setInterval(function () { go(1); }, 3500);
+    timer = setInterval(function () { show(i + 1); }, 3000);
   }
   function stop() { if (timer) { clearInterval(timer); timer = null; } }
-  prev.addEventListener('click', function () { go(-1); start(); });
-  next.addEventListener('click', function () { go(1); start(); });
+  root.querySelector('.cert-prev').addEventListener('click', function () { show(i - 1); start(); });
+  root.querySelector('.cert-next').addEventListener('click', function () { show(i + 1); start(); });
   root.addEventListener('mouseenter', stop);
   root.addEventListener('mouseleave', start);
   root.addEventListener('focusin', stop);
