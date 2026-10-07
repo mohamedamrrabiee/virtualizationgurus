@@ -111,6 +111,18 @@ Named a **VMware vExpert 2026**, the Broadcom community program that recognizes 
     <img src="https://images.credly.com/size/150x150/images/90d6e797-577b-46ba-be67-4a0baf3bca91/blob" alt="Broadcom Partner Certification - Proven Professional - VCF Networking - Support" loading="lazy" />
     <span>Broadcom PP - VCF Networking Support</span>
   </a>
+  <a class="cert-badge" href="https://www.credly.com/badges/39ede7ab-0454-4fd2-8ea4-ba8e1cbafea6" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.credly.com/size/150x150/images/9b4e3076-73e7-4cff-a112-fbafd55896a8/blob" alt="Broadcom Partner Certification - Certified Expert - VMware Cloud Foundation - Implementation" loading="lazy" />
+    <span>Broadcom CE - VCF Implementation</span>
+  </a>
+  <a class="cert-badge" href="https://www.credly.com/badges/2b0d99d7-0406-496a-adc0-9800c2095677" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.credly.com/size/150x150/images/43a4dc62-b98c-4b83-92cc-ae6814e0abac/blob" alt="Broadcom Partner Certification - Certified Expert - vSphere Kubernetes Service - Implementation" loading="lazy" />
+    <span>Broadcom CE - VKS Implementation</span>
+  </a>
+  <a class="cert-badge" href="https://www.credly.com/badges/382804f6-cdd8-4f98-b42d-66d7917c3a93" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.credly.com/size/150x150/images/bd5e2ab1-a623-41a5-a415-c49140c337dd/blob" alt="Broadcom Partner Certification - Certified Expert - VCF Networking - Implementation" loading="lazy" />
+    <span>Broadcom CE - VCF Networking Implementation</span>
+  </a>
   <a class="cert-badge" href="https://www.credly.com/badges/23d378e6-cf7e-4457-ba45-d6a68e0c382d" target="_blank" rel="noopener noreferrer">
     <img src="https://images.credly.com/size/150x150/images/714cc980-5799-40ff-babe-cd95bed4869d/blob" alt="Broadcom Partner Certification - Certified Expert - VMware Cloud Foundation - Sales" loading="lazy" />
     <span>Broadcom CE - VCF Sales</span>
