@@ -65,7 +65,7 @@ The network isolation techniques underpinning the IRE, Tier-1 gateways, DFW-base
 
 ## What's Next
 
-Next in this series: Private AI Workload Domain, GPU Nodes, AI Kubernetes, and NVIDIA NIM.
+Next in this series: Private AI Workload Domain, GPU Nodes, AI Kubernetes, and Private AI Services.
 
 ## Further Reading (Official Broadcom Documentation)
 
