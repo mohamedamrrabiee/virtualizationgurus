@@ -1,15 +1,15 @@
-LinkedIn Draft: Private AI Workload Domain: GPU Nodes, AI Kubernetes, and NVIDIA NIM
+LinkedIn Draft: Private AI Workload Domain: GPU Nodes, AI Kubernetes, and Private AI Services
 Source post: content/posts/vcf9-private-ai-workload-domain.md
 Image: social/linkedin-drafts/images/vcf9-private-ai-workload-domain-linkedin.jpg
 Status: READY, post Mon 2026-10-12 together with the blog post
 
-"Build a GPU platform" is not one task.
+"Run AI on our own infrastructure" is not one task.
 
 Three things worth getting right before the first AI workload lands:
 
-1. Pick the consumption path first. Ready-made GPU virtual machines, a managed LLM service, or GPU-enabled Kubernetes clusters. Each one changes what you need to build.
-2. Match the GPU mode to the workload. Slicing a GPU into isolated partitions looks efficient, but it does not work with NVIDIA NIM inference microservices. Decide before you provision.
-3. Plan licensing across two vendors. Broadcom and NVIDIA each sell a different piece, and the GPU mode you choose affects what you need to buy.
+1. Pick how you will use the GPUs first. Ready-made GPU virtual machines, a service for building AI apps on your own models, or Kubernetes clusters with GPUs. Each one changes what you need to build.
+2. Give the GPUs their own domain. A dedicated workload domain with at least three GPU hosts, and a management domain that stays GPU-free.
+3. Plan licensing across two vendors. Broadcom and NVIDIA each sell a different piece, and how you attach the GPUs affects what you need to buy.
 
 The platform is easy to deploy. The planning decisions are what make it work.
 
