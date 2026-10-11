@@ -1,6 +1,6 @@
 ---
 title: "Virtualization Gurus"
-description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and enterprise virtualization, by Mohamed Rabiee"
+description: "Virtualization Gurus: practitioner guides to VMware Cloud Foundation (VCF 9), NSX, vSAN ESA, vSphere, and VCF Operations, by Mohamed Rabiee"
 ---
 
 <div class="home-info">

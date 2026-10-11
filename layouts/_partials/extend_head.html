@@ -5,7 +5,8 @@
   workflow does; the Cloudflare Pages build does not), so the primary site
   never redirects to itself.
   The script keeps the page path, query string (UTM tags) and hash.
-  2) Primary site (no redirect target set): Cloudflare Web Analytics beacon.
+  2) Primary site (no redirect target set): Cloudflare Web Analytics beacon and
+     WebSite structured data (name and alternate names for Google).
 */ -}}
 {{- $target := getenv "HUGO_REDIRECT_TARGET" -}}
 {{- if $target -}}
@@ -21,4 +22,7 @@
 {{- else if hugo.IsProduction -}}
 {{- /* Primary site only: Cloudflare Web Analytics beacon (the token is public by design). */ -}}
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "6611ec3c775b4456bdf0d8ae5304ece1"}'></script>
+{{- if .IsHome }}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "WebSite" "name" "Virtualization Gurus" "alternateName" (slice "VirtualizationGurus" "Virtualization Gurus VCF 9 Series" "VCF 9 Series by Mohamed Rabiee") "url" "https://virtualizationgurus.pages.dev/" | jsonify | safeJS }}</script>
+{{- end }}
 {{- end -}}
