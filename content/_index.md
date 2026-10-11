@@ -6,7 +6,7 @@ description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and ente
 <div class="home-info">
 
 <div class="logo-hero">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus Logo" />
+<img src="/images/logo.svg" alt="Virtualization Gurus Logo" />
 </div>
 
 <h1 class="home-info-title">Virtualization Gurus</h1>
@@ -16,16 +16,16 @@ description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and ente
 </p>
 
 <div class="expertise-badges">
-  <span class="badge badge-blue"><img src="/virtualizationgurus/images/icons/vcf9.svg" alt="" /> VCF 9</span>
-  <span class="badge badge-purple"><img src="/virtualizationgurus/images/icons/nsx.svg" alt="" /> NSX</span>
-  <span class="badge badge-green"><img src="/virtualizationgurus/images/icons/vsan.svg" alt="" /> vSAN ESA</span>
-  <span class="badge badge-indigo"><img src="/virtualizationgurus/images/icons/vsphere.svg" alt="" /> vSphere</span>
-  <span class="badge badge-amber"><img src="/virtualizationgurus/images/icons/sddc.svg" alt="" /> SDDC Manager</span>
-  <span class="badge badge-teal"><img src="/virtualizationgurus/images/icons/vcfops.svg" alt="" /> VCF Operations</span>
+  <span class="badge badge-blue"><img src="/images/icons/vcf9.svg" alt="" /> VCF 9</span>
+  <span class="badge badge-purple"><img src="/images/icons/nsx.svg" alt="" /> NSX</span>
+  <span class="badge badge-green"><img src="/images/icons/vsan.svg" alt="" /> vSAN ESA</span>
+  <span class="badge badge-indigo"><img src="/images/icons/vsphere.svg" alt="" /> vSphere</span>
+  <span class="badge badge-amber"><img src="/images/icons/sddc.svg" alt="" /> SDDC Manager</span>
+  <span class="badge badge-teal"><img src="/images/icons/vcfops.svg" alt="" /> VCF Operations</span>
 </div>
 
 <div class="author-box">
-  <div class="author-avatar author-avatar-photo"><img src="/virtualizationgurus/images/mohamed-rabiee.jpg" alt="Mohamed Rabiee" /></div>
+  <div class="author-avatar author-avatar-photo"><img src="/images/mohamed-rabiee.jpg" alt="Mohamed Rabiee" /></div>
   <div class="author-details">
     <div class="author-name">Mohamed Rabiee</div>
     <div class="author-title">VMware Cloud Foundation &amp; Virtualization Expert</div>
@@ -34,7 +34,7 @@ description: "Expert insights on VMware Cloud Foundation, vSphere, NSX, and ente
 
 <div class="home-badges">
 <a class="vexpert-badge" href="https://vexpert.vmware.com/directory/15186" target="_blank" rel="noopener noreferrer">
-  <img src="/virtualizationgurus/images/badges/vexpert-2026.png" alt="VMware vExpert 2026" loading="lazy" />
+  <img src="/images/badges/vexpert-2026.png" alt="VMware vExpert 2026" loading="lazy" />
 </a>
 {{< cert-slideshow >}}
 </div>

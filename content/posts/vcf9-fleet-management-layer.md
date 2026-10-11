@@ -7,7 +7,7 @@ categories: ["VCF 9", "Architecture"]
 description: "A technical breakdown of the VCF 9 Fleet management layer, validated against official Broadcom documentation: how VCF Installer, VCF Operations, and VCF Automation combine into a single control plane across VCF Instances."
 seriesPart: 3
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-fleet-management-layer.jpg"
+  image: "/images/covers/vcf9-fleet-management-layer.jpg"
   alt: "VCF 9 Fleet Management Layer: One Control Plane for Every Instance"
   relative: false
 ---
@@ -37,7 +37,7 @@ Strictly speaking, the persistent "VCF fleet" is composed of VCF Operations and 
 ## Architecture at a Glance
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-fleet-management-layer.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-fleet-management-layer.svg"></object>
 </div>
 
 ## The Mental Model Shift
@@ -62,5 +62,5 @@ This post was validated against Broadcom's official VCF 9.1 documentation, speci
 Next in this series: VCF 9 Workload Domain Planning and Deployment: putting the fleet management layer to work by planning, provisioning, and standing up your first workload domain.
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

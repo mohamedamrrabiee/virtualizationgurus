@@ -7,7 +7,7 @@ categories: ["VCF 9", "Deployment"]
 description: "A practical guide to planning, designing, and deploying VCF 9 workload domains using VCF Operations, validated against official Broadcom documentation, including deployment options, storage choices, and VPC-ready networking."
 seriesPart: 4
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-workload-domain-planning.jpg"
+  image: "/images/covers/vcf9-workload-domain-planning.jpg"
   alt: "VCF 9 Workload Domain Planning and Deployment"
   relative: false
 ---
@@ -29,7 +29,7 @@ Per VCF Operations' Workload Domain wizard, there are three supported paths:
 The diagram below illustrates the relationship between the VCF 9 management domain, VCF Operations, and multiple workload domains, including VPC-based networking topology:
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-workload-domain-planning.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-workload-domain-planning.svg"></object>
 </div>
 
 ## Workload Domain Planning Considerations
@@ -110,5 +110,5 @@ Validated against Broadcom's official VCF 9.1 documentation: [Building Cloud Inf
 In the next post, we will do a deep dive into VCF 9 NSX VPC networking, covering Transit Gateway design, VPC consumption from vCenter, and practical examples of deploying application workloads using VPC-based isolation.
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

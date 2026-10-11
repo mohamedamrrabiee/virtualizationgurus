@@ -7,7 +7,7 @@ categories: ["VCF 9", "Lifecycle Management"]
 description: "VCF 9.1 didn't just add an offline option to bundle management, it formalized three distinct software depot connection modes. What Connected, Offline Depot, and Disconnected actually mean, and why conflating the last two causes real prechecks to fail."
 seriesPart: 17
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-bundle-management.jpg"
+  image: "/images/covers/vcf9-bundle-management.jpg"
   alt: "Bundle Management: Online vs Offline/Air-Gapped"
   relative: false
 ---
@@ -45,7 +45,7 @@ Both Offline Depot and Disconnected modes rely on the same underlying utility: t
 ## Architectural Overview
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-bundle-management.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-bundle-management.svg"></object>
 </div>
 
 ## Choosing Between Them: A Quick Checklist
@@ -68,5 +68,5 @@ Next in this series: Day-2 Operations, Lifecycle, Patching, and Compliance via V
 - [VCF Download Tool Command Reference Information](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/lifecycle-management/binary-management-for-vmware-cloud-foundation/what-is-the-vcf-download-tool-.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

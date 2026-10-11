@@ -7,7 +7,7 @@ categories: ["VCF 9", "Security"]
 description: "Cyber recovery and operational DR get planned as one discipline in most VCF conversations. Broadcom builds them as two, with different assumptions, different tooling, and a dedicated Isolated Recovery Environment that exists for exactly one purpose."
 seriesPart: 19
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-dr-ransomware-recovery.jpg"
+  image: "/images/covers/vcf9-dr-ransomware-recovery.jpg"
   alt: "DR & Ransomware Recovery: Isolated Recovery, Protection and Recovery, and VPC Isolation"
   relative: false
 ---
@@ -45,7 +45,7 @@ The naming has moved twice, so it's worth getting straight. Broadcom rebranded S
 ## Architectural Overview
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-dr-ransomware-recovery.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-dr-ransomware-recovery.svg"></object>
 </div>
 
 ## What Can Actually Go Wrong
@@ -78,5 +78,5 @@ Next in this series: Private AI Workload Domain, GPU Nodes, AI Kubernetes, and P
 - [Continuous Compliance, Integrated Cyber Recovery and Enhanced Platform Security for VCF 9.1](https://blogs.vmware.com/cloud-foundation/2026/05/05/continuous-compliance-integrated-cyber-recovery-and-enhanced-platform-security-for-vcf-9-1/)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

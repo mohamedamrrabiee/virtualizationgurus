@@ -7,7 +7,7 @@ categories: ["VCF 9", "Security"]
 description: "A technical breakdown of the VCF 9 Identity Broker, validated against official Broadcom documentation: how it replaces VMware Identity Manager, its two deployment modes, and the migration path from vIDM."
 seriesPart: 16
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-identity-broker.jpg"
+  image: "/images/covers/vcf9-identity-broker.jpg"
   alt: "VCF 9 Identity Broker: Retiring VMware Identity Manager for Unified Fleet Authentication"
   relative: false
 ---
@@ -59,7 +59,7 @@ A few constraints matter when planning a migration, straight from Broadcom's doc
 ## Architecture at a Glance
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-identity-broker.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-identity-broker.svg"></object>
 </div>
 
 ## The Mental Model Shift
@@ -108,5 +108,5 @@ Next in this series: Bundle Management, Online vs Offline/Air-Gapped Depots.
 - [VCF Management Services Models](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/design/vmware-cloud-foundation-concepts/vcf-management-services-models.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

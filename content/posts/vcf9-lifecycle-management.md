@@ -15,7 +15,7 @@ categories:
 description: "A deep dive into VCF 9 lifecycle management using VCF Operations, covering the unified upgrade workflow for ESX, vCenter, NSX, and vSAN, the new licensing model, fleet-level health monitoring, and automation through the VCF SDK."
 seriesPart: 7
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-lifecycle-management.jpg"
+  image: "/images/covers/vcf9-lifecycle-management.jpg"
   alt: "VCF 9 Lifecycle Management with VCF Operations: Unified Upgrades and Fleet Management"
   relative: false
 ---
@@ -31,7 +31,7 @@ In this post, we explore the VCF 9 lifecycle management architecture, the unifie
 The diagram below shows the VCF Operations lifecycle management architecture, including the relationships between the management plane, fleet components, and the upgrade orchestration workflow:
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-lifecycle-management.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-lifecycle-management.svg"></object>
 </div>
 
 ## VCF Operations: The Unified Management Plane
@@ -183,5 +183,5 @@ In the next post, we will explore VCF 9 security and compliance, covering the NS
 - [VCF SDKs, APIs, and CLIs: What's New](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-0/release-notes/vmware-cloud-foundation-90-release-notes/platform-whats-new/whats-new-vcf-cli-api-sdk.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-  <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+  <img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

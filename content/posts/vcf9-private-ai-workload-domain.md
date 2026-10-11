@@ -7,7 +7,7 @@ categories: ["VCF 9", "Private AI"]
 description: "Running AI on your own infrastructure sounds like one project. With VMware Private AI Foundation with NVIDIA it is really three different ways to use your GPUs, plus a licensing model that spans two vendors, and the choices you make early shape everything you build and buy."
 seriesPart: 20
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-private-ai-workload-domain.jpg"
+  image: "/images/covers/vcf9-private-ai-workload-domain.jpg"
   alt: "Private AI Workload Domain: GPU Nodes, AI Kubernetes, and Private AI Services"
   relative: false
 ---
@@ -41,7 +41,7 @@ One placement detail is worth knowing up front. The Private AI Foundation licens
 ## Architectural Overview
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-private-ai-workload-domain.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-private-ai-workload-domain.svg"></object>
 </div>
 
 ## What 9.1.1 Changed
@@ -73,5 +73,5 @@ Next in this series: Advanced Services for VCF, VPC, Load Balancing, and Network
 - [VMware Private AI Foundation with NVIDIA 9.1.x Release Notes](https://techdocs.broadcom.com/us/en/vmware-cis/private-ai/foundation-with-nvidia/9-1/private-ai-release-notes/vmware-private-ai-foundation-with-nvidia-91-release-notes.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

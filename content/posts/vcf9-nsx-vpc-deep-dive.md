@@ -7,7 +7,7 @@ categories: ["VCF 9", "Networking"]
 description: "An in-depth exploration of the VCF 9 Virtual Private Cloud (VPC) networking model in NSX 9.0, covering Transit Gateways, VPC design, EDP Standard, and practical workload networking patterns."
 seriesPart: 5
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-nsx-vpc-deep-dive.jpg"
+  image: "/images/covers/vcf9-nsx-vpc-deep-dive.jpg"
   alt: "VCF 9 NSX VPC Deep Dive: Cloud-Native Networking for Your Private Cloud"
   relative: false
 ---
@@ -23,7 +23,7 @@ In this post, we dive deep into the VCF 9 VPC architecture, Transit Gateway desi
 The diagram below illustrates the complete NSX 9.0 VPC networking architecture in VCF 9, from the physical network underlay through the VPC overlay consumed by workloads:
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-nsx-vpc-deep-dive.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-nsx-vpc-deep-dive.svg"></object>
 </div>
 
 ## Key VPC Concepts in NSX 9.0
@@ -136,5 +136,5 @@ In the next post, we cover the VCF 9 vSAN ESA Deep Dive: Architecture, Performan
 - [Add a Network Span](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/advanced-network-management/inventory/add-network-spans.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-  <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+  <img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

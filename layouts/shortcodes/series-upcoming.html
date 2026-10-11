@@ -1,0 +1,9 @@
+{{- /* Planned posts from the series page front matter (upcoming:). An entry disappears
+       automatically once a post with the same seriesPart is published. */ -}}
+{{- $published := slice -}}
+{{- range where site.RegularPages "Params.seriesPart" "ne" nil }}{{ $published = $published | append .Params.seriesPart }}{{ end -}}
+{{- range .Page.Params.upcoming }}
+{{- if not (in $published .part) }}
+<ol start="{{ .part }}"><li>{{ .title }}, {{ dateFormat "January 2, 2006" .date }}</li></ol>
+{{- end }}
+{{- end }}

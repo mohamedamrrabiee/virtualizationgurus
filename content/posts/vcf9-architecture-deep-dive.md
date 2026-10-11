@@ -7,7 +7,7 @@ categories: ["VCF 9", "Architecture"]
 description: "A comprehensive look at the architectural changes in VMware Cloud Foundation 9, including the new management domain design, NSX 9.0 updates, vSAN ESA improvements, and the new VCF Operations management plane."
 seriesPart: 1
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-architecture-deep-dive.jpg"
+  image: "/images/covers/vcf9-architecture-deep-dive.jpg"
   alt: "VCF 9 Architecture Deep Dive: What Changed and Why It Matters"
   relative: false
 ---
@@ -21,7 +21,7 @@ VMware Cloud Foundation 9 (VCF 9) represents a significant evolution in how Broa
 The diagram below shows the high-level architecture of a VCF 9 environment, spanning the management domain and workload domains with all core components:
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-architecture-deep-dive.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-architecture-deep-dive.svg"></object>
 </div>
 
 ## Management Domain Redesign
@@ -97,5 +97,5 @@ In our next post, we will walk through the complete VCF 9 deployment flow, from 
 
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-  <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+  <img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>
