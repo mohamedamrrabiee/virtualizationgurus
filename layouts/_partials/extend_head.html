@@ -1,0 +1,19 @@
+{{- /*
+  Redirect for the legacy GitHub Pages site.
+  Only active when the build sets HUGO_REDIRECT_TARGET (the GitHub Actions
+  workflow does; the Cloudflare Pages build does not), so the primary site
+  never redirects to itself.
+  The script keeps the page path, query string (UTM tags) and hash.
+*/ -}}
+{{- $target := getenv "HUGO_REDIRECT_TARGET" -}}
+{{- if $target -}}
+{{- $target = strings.TrimSuffix "/" $target -}}
+<script>
+  (function () {
+    var target = {{ $target | jsonify | safeJS }};
+    var path = location.pathname.replace(/^\/virtualizationgurus/, "") || "/";
+    location.replace(target + path + location.search + location.hash);
+  })();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url={{ $target }}/"></noscript>
+{{- end -}}
