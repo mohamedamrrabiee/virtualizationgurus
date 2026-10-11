@@ -7,7 +7,7 @@ ShowBreadCrumbs: false
 hidemeta: true
 ---
 
-A practitioner-level walkthrough of VMware Cloud Foundation 9, one focused topic per post, each one validated against the official Broadcom TechDocs. This is a 21-part series, here's where it stands so far.
+A practitioner-level walkthrough of VMware Cloud Foundation 9, one focused topic per post, each one validated against the official Broadcom TechDocs. This is a 21-part series, and 20 posts are live, with the finale landing next.
 
 ## Published
 
@@ -15,26 +15,26 @@ A practitioner-level walkthrough of VMware Cloud Foundation 9, one focused topic
 2. [VCF 9 Deployment Flow: From Planning to a Running Management Domain](/virtualizationgurus/posts/vcf9-deployment-flow/), June 22, 2026
 3. [VCF 9 Fleet Management Layer: One Control Plane for Every Instance](/virtualizationgurus/posts/vcf9-fleet-management-layer/), July 3, 2026
 4. [VCF 9 Workload Domain Planning and Deployment](/virtualizationgurus/posts/vcf9-workload-domain-planning/), July 6, 2026
-5. [VCF 9 NSX VPC Deep Dive: Cloud-Native Networking for Your Private Cloud](/virtualizationgurus/posts/vcf9-nsx-vpc-deep-dive/), July 9, 2026
-6. [VCF 9 vSAN ESA Deep Dive: Architecture, Performance, and New Features](/virtualizationgurus/posts/vcf9-vsan-esa-deep-dive/), July 12, 2026
-7. [VCF 9 Lifecycle Management with VCF Operations: Unified Upgrades and Fleet Management](/virtualizationgurus/posts/vcf9-lifecycle-management/), July 15, 2026
-8. [VCF 9 Instance Model: Designing HQ, DR, and Edge/Sovereign Topologies](/virtualizationgurus/posts/vcf9-instance-model/), July 18, 2026
-9. [VCF 9 Management Domain Anatomy: What Actually Runs Inside](/virtualizationgurus/posts/vcf9-management-domain-anatomy/), July 21, 2026
+5. [VCF 9 NSX VPC Deep Dive: Cloud-Native Networking for Your Private Cloud](/virtualizationgurus/posts/vcf9-nsx-vpc-deep-dive/), July 8, 2026
+6. [VCF 9 vSAN ESA Deep Dive: Architecture, Performance, and New Features](/virtualizationgurus/posts/vcf9-vsan-esa-deep-dive/), July 11, 2026
+7. [VCF 9 Lifecycle Management with VCF Operations: Unified Upgrades and Fleet Management](/virtualizationgurus/posts/vcf9-lifecycle-management/), July 14, 2026
+8. [VCF 9 Instance Model: Designing HQ, DR, and Edge/Sovereign Topologies](/virtualizationgurus/posts/vcf9-instance-model/), July 17, 2026
+9. [VCF 9 Management Domain Anatomy: What Actually Runs Inside](/virtualizationgurus/posts/vcf9-management-domain-anatomy/), July 20, 2026
 10. [Physical Network Design: VDS Separation, ToR Switches, and BGP Uplinks](/virtualizationgurus/posts/vcf9-physical-network-design/), July 24, 2026
-11. [Workload Domain Creation: Greenfield vs Import Existing vCenter](/virtualizationgurus/posts/vcf9-workload-domain-creation-greenfield-vs-import/), July 28, 2026
-12. [VI Workload Domains: Shared vs Dedicated NSX](/virtualizationgurus/posts/vcf9-vi-workload-domains-shared-vs-dedicated-nsx/), August 3, 2026
-13. [NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, and North-South Firewall Design](/virtualizationgurus/posts/vcf9-nsx-edge-cluster-deep-dive/), August 10, 2026
-14. [vSAN ESA vs OSA: Storage Architecture Decisions](/virtualizationgurus/posts/vcf9-vsan-esa-vs-osa/), August 17, 2026
-15. [VCF 9 Security and Compliance: DFW, VPC Isolation, and Hardened Operations](/virtualizationgurus/posts/vcf9-security-compliance/), August 24, 2026
+11. [Workload Domain Creation: Greenfield vs Import Existing vCenter](/virtualizationgurus/posts/vcf9-workload-domain-creation-greenfield-vs-import/), July 25, 2026
+12. [VI Workload Domains: Shared vs Dedicated NSX](/virtualizationgurus/posts/vcf9-vi-workload-domains-shared-vs-dedicated-nsx/), August 2, 2026
+13. [NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, and North-South Firewall Design](/virtualizationgurus/posts/vcf9-nsx-edge-cluster-deep-dive/), August 9, 2026
+14. [vSAN ESA vs OSA: Storage Architecture Decisions](/virtualizationgurus/posts/vcf9-vsan-esa-vs-osa/), August 16, 2026
+15. [VCF 9 Security and Compliance: DFW, VPC Isolation, and Hardened Operations](/virtualizationgurus/posts/vcf9-security-compliance/), August 23, 2026
 16. [VCF 9 Identity Broker: Retiring VMware Identity Manager for Unified Fleet Authentication](/virtualizationgurus/posts/vcf9-identity-broker/), August 30, 2026
-17. [Bundle Management: Online vs Offline/Air-Gapped Depots](/virtualizationgurus/posts/vcf9-bundle-management/), September 6, 2026
+17. [Bundle Management: Online vs Offline/Air-Gapped](/virtualizationgurus/posts/vcf9-bundle-management/), September 6, 2026
 18. [Day-2 Operations: Lifecycle, Patching, and Compliance via VCF Operations](/virtualizationgurus/posts/vcf9-day2-operations/), September 26, 2026
+19. [DR & Ransomware Recovery: Isolated Recovery, Protection and Recovery, and VPC Isolation](/virtualizationgurus/posts/vcf9-dr-ransomware-recovery/), October 3, 2026
+20. [Private AI Workload Domain: GPU Nodes, AI Kubernetes, and Private AI Services](/virtualizationgurus/posts/vcf9-private-ai-workload-domain/), October 11, 2026
 
 ## Coming up
 
-19. DR & Ransomware Recovery: Isolated Recovery, SRM, and VPC Isolation, September 21, 2026
-20. Private AI Workload Domain: GPU Nodes, AI Kubernetes, and NVIDIA NIM, September 28, 2026
-21. Advanced Services for VCF: VPC, Load Balancing, and Network Observability, October 5, 2026
+21. Advanced Services for VCF: VPC, Load Balancing, and Network Observability, October 12, 2026
 
 Check back here for the running index, or [subscribe via RSS](/virtualizationgurus/index.xml) to catch new posts as they publish.
 
