@@ -1,7 +1,7 @@
 LinkedIn Draft: Private AI Workload Domain: GPU Nodes, AI Kubernetes, and NVIDIA NIM
 Source post: content/posts/vcf9-private-ai-workload-domain.md
 Image: social/linkedin-drafts/images/vcf9-private-ai-workload-domain-linkedin.jpg
-Status: DRAFT, needs review before posting
+Status: READY, post Mon 2026-10-12 together with the blog post
 
 "Build a GPU platform" is not one task.
 
