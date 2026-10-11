@@ -73,10 +73,15 @@ jobs:
       # 5. Build Hugo site
       #    baseURL is supplied by configure-pages so it is always correct
       #    (sub-path for github.io OR apex domain once custom domain is live).
+      #    HUGO_REDIRECT_TARGET makes every page on this legacy GitHub Pages
+      #    site redirect to the same path on Cloudflare Pages (see
+      #    layouts/_partials/extend_head.html). The Cloudflare build does not
+      #    set it, so the primary site never redirects.
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
+          HUGO_REDIRECT_TARGET: https://virtualizationgurus.pages.dev
           TZ: America/Los_Angeles
         run: |
           hugo \
