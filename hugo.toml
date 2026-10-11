@@ -16,7 +16,8 @@ home = ["HTML", "RSS", "JSON"]
 
 [params]
 mainSections = ["posts"]
-description = "Expert insights on VMware, VCF, and enterprise virtualization"
+description = "Virtualization Gurus: practitioner guides to VMware Cloud Foundation (VCF 9), NSX, vSAN ESA, vSphere, and VCF Operations, by Mohamed Rabiee"
+keywords = ["Virtualization Gurus", "VirtualizationGurus", "VCF 9", "VMware Cloud Foundation 9", "VCF 9 series", "NSX", "vSAN ESA", "vSphere", "VCF Operations", "SDDC Manager", "VMware Private AI", "Broadcom VCF", "Mohamed Rabiee"]
 author = "Mohamed Rabiee"
 ShowReadingTime = false
 ShowShareButtons = true
