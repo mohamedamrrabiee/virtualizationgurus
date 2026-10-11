@@ -1,14 +1,6 @@
-# ===========================================================================
-# TEMPORARY: Custom domain DISABLED while virtualizationgurus.eu.org is pending eu.org approval.
-#
-# AFTER eu.org APPROVAL — restore these four things:
-#   1. Change baseURL below to: https://virtualizationgurus.eu.org/
-#   2. Rename static/CNAME.disabled back to static/CNAME
-#   3. GitHub Settings > Pages > Custom domain = virtualizationgurus.eu.org
-#   4. Cloudflare DNS: CNAME virtualizationgurus.eu.org -> mohamedamrrabiee.github.io
-# ===========================================================================
+# Primary site: https://virtualizationgurus.pages.dev/ (Cloudflare Pages; its build overrides baseURL with -b).
+# The value below is used by the legacy GitHub Pages build, which redirects visitors to Cloudflare.
 
-# TEMPORARY deployment URL (GitHub Pages default, active while eu.org domain is pending):
 baseURL = "https://mohamedamrrabiee.github.io/virtualizationgurus/"
 languageCode = "en-us"
 title = "Virtualization Gurus"
