@@ -8,7 +8,7 @@ hidemeta: true
 upcoming:
   - part: 21
     title: "Advanced Services for VCF: VPC, Load Balancing, and Network Observability"
-    date: 2026-10-12
+    date: 2026-10-19
 ---
 
 A practitioner-level walkthrough of VMware Cloud Foundation 9, one focused topic per post, each one validated against the official Broadcom TechDocs. {{< series-status >}}
