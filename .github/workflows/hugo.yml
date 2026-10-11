@@ -1,15 +1,10 @@
 # ===========================================================================
-# GitHub Pages deployment workflow for Virtualization Gurus Hugo site.
+# Legacy GitHub Pages deployment for the Virtualization Gurus Hugo site.
 #
-# CURRENT STATE (TEMPORARY):
-#   Deploying to: https://mohamedamrrabiee.github.io/virtualizationgurus/
-#   Custom domain: DISABLED (eu.org domain pending approval)
-#
-# AFTER eu.org APPROVAL - four things to restore:
-#   1. hugo.toml: set baseURL = "https://virtualizationgurus.eu.org/"
-#   2. Rename static/CNAME.disabled back to static/CNAME
-#   3. GitHub Settings > Pages > Custom domain = virtualizationgurus.eu.org
-#   4. Cloudflare DNS: CNAME virtualizationgurus.eu.org -> mohamedamrrabiee.github.io
+# The primary site is https://virtualizationgurus.pages.dev/ (Cloudflare Pages).
+# This workflow keeps https://mohamedamrrabiee.github.io/virtualizationgurus/
+# alive only to redirect visitors to Cloudflare (see HUGO_REDIRECT_TARGET and
+# layouts/_partials/extend_head.html).
 #
 # ACTIONS VERSIONS (GitHub official Pages workflow):
 #   - actions/checkout@v4
@@ -89,14 +84,8 @@ jobs:
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
 
-      # 6. SAFETY NET: Remove any CNAME from the built public/ directory.
-      #    Hugo copies static/ into public/; a CNAME there tells GitHub Pages
-      #    to enforce a custom domain. If that domain is not yet verified in
-      #    Settings > Pages the deploy fails with "Deployment failed, try again
-      #    later." The primary fix is that static/CNAME was renamed to
-      #    static/CNAME.disabled, but this step is a belt-and-suspenders guard.
-      #    REMOVE THIS STEP after the custom domain is live and verified.
-      - name: Remove CNAME from artifact (temporary - custom domain pending)
+      # 6. Safety net: never ship a CNAME, since no custom domain is configured.
+      - name: Remove CNAME from artifact
         run: rm -f ./public/CNAME
 
       # 7. Upload ./public as the GitHub Pages artifact
