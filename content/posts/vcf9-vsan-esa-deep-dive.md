@@ -15,7 +15,7 @@ categories:
 description: "A comprehensive deep dive into vSAN Express Storage Architecture (ESA) in VCF 9, covering architecture design decisions, performance characteristics, VCF 9.1's Auto-RAID capability, and best practices for storage policy design."
 seriesPart: 6
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-vsan-esa-deep-dive.jpg"
+  image: "/images/covers/vcf9-vsan-esa-deep-dive.jpg"
   alt: "VCF 9 vSAN ESA Deep Dive: Architecture, Performance, and New Features"
   relative: false
 ---
@@ -29,7 +29,7 @@ vSAN Express Storage Architecture (ESA) is the recommended storage architecture 
 The diagram below illustrates the vSAN ESA architecture in a VCF 9 environment, from the NVMe hardware layer through the vSAN data path and management plane:
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-vsan-esa-deep-dive.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-vsan-esa-deep-dive.svg"></object>
 </div>
 
 ## ESA vs OSA: Architecture Comparison
@@ -171,5 +171,5 @@ In the next post, we cover VCF 9 Lifecycle Management with VCF Operations: Unifi
 - [vSAN File Service](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/vsan-deployment-administration-and-monitoring/administering-vmware-vsan/expanding-and-managing-a-vsan-cluster/vsan-file-service.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-  <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+  <img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

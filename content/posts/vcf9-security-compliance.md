@@ -16,7 +16,7 @@ categories:
 description: "A comprehensive guide to VCF 9 security architecture, covering NSX Distributed Firewall design, VPC-level isolation, Gateway Firewall best practices, and VCF Operations security compliance capabilities."
 seriesPart: 15
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-security-compliance.jpg"
+  image: "/images/covers/vcf9-security-compliance.jpg"
   alt: "VCF 9 Security and Compliance: DFW, VPC Isolation, and Hardened Operations"
   relative: false
 ---
@@ -34,7 +34,7 @@ A quick terminology note: starting with VCF/NSX 9.0, Broadcom rebranded this fir
 The diagram below illustrates the VCF 9 security architecture, showing the defense-in-depth layers from the physical network through workload micro-segmentation:
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-security-compliance.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-security-compliance.svg"></object>
 </div>
 
 ## vDefend Distributed Firewall (DFW) in VCF 9
@@ -202,5 +202,5 @@ In the next post, we cover the VCF 9 Identity Broker: how it replaces VMware Ide
 - [Overview of NSX IDS/IPS and NSX Malware Prevention (vDefend ATP)](https://techdocs.broadcom.com/us/en/vmware-security-load-balancing/vdefend/vdefend-atp/9-0/nsx-ids-ips-and-nsx-malware-prevention/overview-of-nsx-ids-ips-and-nsx-malware-prevention.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

@@ -7,7 +7,7 @@ categories: ["VCF 9", "vSAN"]
 description: "Comparing vSAN Express Storage Architecture (ESA) and Original Storage Architecture (OSA) in VCF 9.1 -- hardware requirements, cluster types, and how to choose."
 seriesPart: 14
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-vsan-esa-vs-osa.jpg"
+  image: "/images/covers/vcf9-vsan-esa-vs-osa.jpg"
   alt: "vSAN ESA vs OSA: Storage Architecture Decisions"
   relative: false
 ---
@@ -19,7 +19,7 @@ vSAN's storage architecture choice gets made before a single VM is ever placed -
 ## Architectural Overview
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-vsan-esa-vs-osa.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-vsan-esa-vs-osa.svg"></object>
 </div>
 
 ## OSA: Cache and Capacity, Organized in Disk Groups
@@ -57,5 +57,5 @@ Next in this series: VCF 9 Security and Compliance: DFW, VPC Isolation, and Hard
 - [Create a New Workload Domain](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/building-your-private-cloud-infrastructure/working-with-workload-domains/deploy-a-vi-workload-domain-using-the-sddc-manager-ui.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

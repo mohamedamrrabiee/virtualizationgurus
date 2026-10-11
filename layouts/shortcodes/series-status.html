@@ -1,0 +1,6 @@
+{{- $live := len (where site.RegularPages "Params.seriesPart" "ne" nil) -}}
+{{- $total := $live -}}
+{{- $published := slice -}}
+{{- range where site.RegularPages "Params.seriesPart" "ne" nil }}{{ $published = $published | append .Params.seriesPart }}{{ end -}}
+{{- range .Page.Params.upcoming }}{{ if not (in $published .part) }}{{ $total = add $total 1 }}{{ end }}{{ end -}}
+This is a {{ $total }}-part series, and {{ $live }} {{ if eq $live 1 }}post is{{ else }}posts are{{ end }} live.

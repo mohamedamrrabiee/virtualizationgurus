@@ -7,7 +7,7 @@ categories: ["VCF 9", "Architecture"]
 description: "A technical breakdown of the VCF 9 management domain, validated against official Broadcom documentation: its required components, how the first management domain differs from additional ones, and the shared-vs-dedicated NSX decision."
 seriesPart: 9
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-management-domain-anatomy.jpg"
+  image: "/images/covers/vcf9-management-domain-anatomy.jpg"
   alt: "VCF 9 Management Domain Anatomy: What Actually Runs Inside"
   relative: false
 ---
@@ -50,7 +50,7 @@ A VCF Instance can scale up to 25 total domains -- one management domain plus as
 ## Architecture at a Glance
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-management-domain-anatomy.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-management-domain-anatomy.svg"></object>
 </div>
 
 ## A Practical Tip
@@ -70,5 +70,5 @@ Next in this series: Physical Network Design: VDS Separation, ToR, and BGP Uplin
 - [VMware Configuration Maximums for VCF 9](https://configmax.broadcom.com/guest?vmwareproduct=SDDC%20Manager&release=9.0.0&categories=17-0,73-0,165-0)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

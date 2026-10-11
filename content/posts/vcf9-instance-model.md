@@ -7,7 +7,7 @@ categories: ["VCF 9", "Architecture"]
 description: "A technical breakdown of the VCF 9 Instance and Fleet constructs, validated against official Broadcom documentation: how single-site, multi-site, and disaster-recovery topologies map onto the four VCF Fleet deployment designs."
 seriesPart: 8
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-instance-model.jpg"
+  image: "/images/covers/vcf9-instance-model.jpg"
   alt: "VCF 9 Instance Model: Designing HQ, DR, and Edge/Sovereign Topologies"
   relative: false
 ---
@@ -48,19 +48,19 @@ Edge locations, unlike the general HQ/DR patterns above, do get their own named 
 **Architecture of HQ Instance Basic / Site-HA**
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-instance-model.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-instance-model.svg"></object>
 </div>
 
 **Architecture of DR Instance (cross-region recovery)**
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-instance-model-dr.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-instance-model-dr.svg"></object>
 </div>
 
 **Architecture of Edge / Sovereign Instance (VCF Edge model)**
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-instance-model-edge.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-instance-model-edge.svg"></object>
 </div>
 
 ## Comparing the Four Designs
@@ -97,5 +97,5 @@ Next in this series: VCF 9 Management Domain Anatomy -- what actually lives insi
 - [Architectural Options in VMware Cloud Foundation](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/design/vmware-cloud-foundation-concepts.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

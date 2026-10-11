@@ -25,7 +25,7 @@ Every post on this blog is based on real-world experience. We avoid generic over
 ## About the Author
 
 <div class="author-box">
-  <div class="author-avatar author-avatar-photo"><img src="/virtualizationgurus/images/mohamed-rabiee.jpg" alt="Mohamed Rabiee" /></div>
+  <div class="author-avatar author-avatar-photo"><img src="/images/mohamed-rabiee.jpg" alt="Mohamed Rabiee" /></div>
   <div class="author-details">
     <div class="author-name">Mohamed Rabiee</div>
     <div class="author-title">Senior Cloud Infrastructure Consultant, evoila</div>
@@ -41,7 +41,7 @@ I'm a Senior Cloud Infrastructure Consultant specializing in VMware Cloud Founda
 Named a **VMware vExpert 2026**, the Broadcom community program that recognizes practitioners who share their VMware knowledge publicly.
 
 <a class="vexpert-badge" href="https://vexpert.vmware.com/directory/15186" target="_blank" rel="noopener noreferrer">
-  <img src="/virtualizationgurus/images/badges/vexpert-2026.png" alt="VMware vExpert 2026" loading="lazy" />
+  <img src="/images/badges/vexpert-2026.png" alt="VMware vExpert 2026" loading="lazy" />
 </a>
 
 ## Certifications

@@ -7,7 +7,7 @@ categories: ["VCF 9", "Deployment"]
 description: "Step-by-step walkthrough of the VCF 9 deployment process, covering prerequisites, the VCF Installer virtual appliance workflow, and initial management domain bringup."
 seriesPart: 2
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-deployment-flow.jpg"
+  image: "/images/covers/vcf9-deployment-flow.jpg"
   alt: "VCF 9 Deployment Flow: From Planning to a Running Management Domain"
   relative: false
 ---
@@ -23,7 +23,7 @@ Deploying VMware Cloud Foundation 9 is a structured process that, when followed 
 The following diagram illustrates the end-to-end VCF 9 deployment flow, from initial planning through a running management domain:
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-deployment-flow.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-deployment-flow.svg"></object>
 </div>
 
 ## Prerequisites
@@ -187,5 +187,5 @@ Now that your management domain is running, the next post steps back before we g
 
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-  <img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+  <img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

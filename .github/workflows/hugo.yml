@@ -56,9 +56,9 @@ jobs:
           submodules: recursive
           fetch-depth: 0
 
-      # 3. Clone PaperMod theme (shallow for speed)
-      - name: Clone PaperMod theme
-        run: git clone --depth 1 https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
+      # 3. Install PaperMod at the commit pinned in scripts/install-theme.sh
+      - name: Install PaperMod theme
+        run: bash scripts/install-theme.sh
 
       # 4. Configure Pages environment and capture base_url output
       - name: Setup Pages
@@ -83,6 +83,15 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      # 5b. Point canonical, og:url, sitemap and RSS links at the primary site so
+      #     search engines credit Cloudflare, not this redirect-only copy.
+      - name: Point legacy URLs at the primary site
+        env:
+          HUGO_REDIRECT_TARGET: https://virtualizationgurus.pages.dev
+        run: |
+          find public -type f \( -name '*.html' -o -name '*.xml' \) -exec \
+            sed -i -E "s#https://mohamedamrrabiee\.github\.io/(virtualizationgurus/)?#${HUGO_REDIRECT_TARGET}/#g" {} +
 
       # 6. Safety net: never ship a CNAME, since no custom domain is configured.
       - name: Remove CNAME from artifact

@@ -7,7 +7,7 @@ categories: ["VCF 9", "Networking"]
 description: "How VCF 9.1 expects the physical fabric to look before you ever build a workload domain -- rack-level fault tolerance, ToR trunk and MTU requirements, vSphere Distributed Switch traffic separation profiles, and BGP uplinks from NSX Edge to the physical network."
 seriesPart: 10
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-physical-network-design.jpg"
+  image: "/images/covers/vcf9-physical-network-design.jpg"
   alt: "Physical Network Design: VDS Separation, ToR Switches, and BGP Uplinks"
   relative: false
 ---
@@ -19,7 +19,7 @@ Every workload domain you'll ever stand up in VCF inherits whatever the physical
 ## Architectural Overview
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-physical-network-design.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-physical-network-design.svg"></object>
 </div>
 
 ## Rack-Level Fabric: Where Bottlenecks Actually Come From
@@ -66,5 +66,5 @@ Next in this series: Workload Domain Creation: Greenfield vs Import Existing vCe
 - [Tier-0 Gateways](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/advanced-network-management/tier-0-gateways.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

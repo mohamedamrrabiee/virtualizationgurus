@@ -7,7 +7,7 @@ categories: ["VCF 9", "NSX"]
 description: "A deep dive into NSX Edge cluster architecture in VCF 9.1 -- Tier-0 and Tier-1 gateway roles, HA modes, VPN connectivity, and north-south firewall design with vDefend."
 seriesPart: 13
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-nsx-edge-cluster-deep-dive.jpg"
+  image: "/images/covers/vcf9-nsx-edge-cluster-deep-dive.jpg"
   alt: "NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, and North-South Firewall Design"
   relative: false
 ---
@@ -19,7 +19,7 @@ Every workload domain eventually needs to talk to the outside world, and in NSX 
 ## Architectural Overview
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-nsx-edge-cluster-deep-dive.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-nsx-edge-cluster-deep-dive.svg"></object>
 </div>
 
 ## Tier-0 Gateway: The Fleet's Front Door
@@ -67,5 +67,5 @@ Next in this series: vSAN ESA vs OSA: Storage Architecture Decisions.
 - [vDefend Firewall with Advanced Threat Prevention](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/advanced-network-management/security.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

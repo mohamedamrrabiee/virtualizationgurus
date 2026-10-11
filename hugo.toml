@@ -45,7 +45,7 @@ text = "Every post here reflects my own hands-on lab work and independent resear
 text = "Virtualization Gurus"
 url = "/"
 logoText = "VG"
-imageUrl = "/virtualizationgurus/images/logo.svg"
+imageUrl = "/images/logo.svg"
 imageHeight = 48
 imageWidth = 48
 

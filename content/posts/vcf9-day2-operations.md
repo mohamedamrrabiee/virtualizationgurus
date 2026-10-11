@@ -7,7 +7,7 @@ categories: ["VCF 9", "Operations"]
 description: "VCF 9.1 doesn't patch the whole stack the same way, it matches the mechanism to each layer's disruption profile. And staying patched isn't the same as staying compliant, VCF Operations treats them as two separate, continuous jobs."
 seriesPart: 18
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-day2-operations.jpg"
+  image: "/images/covers/vcf9-day2-operations.jpg"
   alt: "Day-2 Operations: Lifecycle, Patching, and Compliance via VCF Operations"
   relative: false
 ---
@@ -47,7 +47,7 @@ Patched doesn't mean compliant. A host can be running the latest build and still
 ## Architectural Overview
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-day2-operations.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-day2-operations.svg"></object>
 </div>
 
 ## What's Actually New Architecturally in 9.1
@@ -84,5 +84,5 @@ Next in this series: DR & Ransomware Recovery, Isolated Recovery, SRM, and VPC I
 - [VMware Cloud Foundation 9.1.1.0 Release Notes, Getting to 9.1.1](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/release-notes/vmware-cloud-foundation-9-1-1-0-release-notes.html#getting-to-9.1.1)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>

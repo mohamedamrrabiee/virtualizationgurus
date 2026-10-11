@@ -7,7 +7,7 @@ categories: ["VCF 9", "NSX"]
 description: "How to choose between a shared and a dedicated NSX Manager instance for each VI workload domain in VCF 9.1, and what that decision costs you in footprint, availability, and lifecycle."
 seriesPart: 12
 cover:
-  image: "/virtualizationgurus/images/covers/vcf9-vi-workload-domains-shared-vs-dedicated-nsx.jpg"
+  image: "/images/covers/vcf9-vi-workload-domains-shared-vs-dedicated-nsx.jpg"
   alt: "VI Workload Domains: Shared vs Dedicated NSX"
   relative: false
 ---
@@ -19,7 +19,7 @@ Every VI workload domain you stand up in VCF asks the same networking question: 
 ## Architectural Overview
 
 <div class="diagram-embed">
-  <object type="image/svg+xml" data="/virtualizationgurus/images/diagrams/vcf9-vi-workload-domains-shared-vs-dedicated-nsx.svg"></object>
+  <object type="image/svg+xml" data="/images/diagrams/vcf9-vi-workload-domains-shared-vs-dedicated-nsx.svg"></object>
 </div>
 
 ## Shared NSX: Join an Existing Instance
@@ -69,5 +69,5 @@ Next in this series: NSX Edge Cluster Deep Dive: Tier-0/Tier-1 Gateways, VPN, an
 - [VMware Configuration Maximums for VCF 9](https://configmax.broadcom.com/guest?vmwareproduct=SDDC%20Manager&release=9.0.0&categories=17-0,73-0,165-0)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
-<img src="/virtualizationgurus/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
+<img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />
 </div>
