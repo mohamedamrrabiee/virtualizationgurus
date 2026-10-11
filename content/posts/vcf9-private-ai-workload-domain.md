@@ -1,6 +1,6 @@
 ---
 title: "Private AI Workload Domain: GPU Nodes, AI Kubernetes, and Private AI Services"
-date: 2026-10-12
+date: 2026-10-11
 draft: false
 tags: ["Private AI", "GPU", "NVIDIA", "VKS", "Private AI Services", "vSphere Supervisor"]
 categories: ["VCF 9", "Private AI"]
