@@ -1,0 +1,8 @@
+{{- /* Planned lab posts from the page front matter (upcoming:). An entry disappears once a post with the same labPart is published. */ -}}
+{{- $published := slice -}}
+{{- range where site.RegularPages "Params.labPart" "ne" nil }}{{ $published = $published | append .Params.labPart }}{{ end -}}
+{{- range .Page.Params.upcoming }}
+{{- if not (in $published .part) }}
+<ol start="{{ .part }}"><li>{{ .title }}</li></ol>
+{{- end }}
+{{- end }}
