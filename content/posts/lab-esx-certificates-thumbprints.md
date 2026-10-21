@@ -44,6 +44,7 @@ Check two things in that output. The subject and the SAN must both contain the F
 During host commissioning for the workload domain, validation failed on the first host with a message that asked for "a valid certificate with a fully qualified domain name in its Common Name". DNS, credentials and connectivity were all fine.
 
 -> **Cause**: the host name had been set to the full FQDN. `generate-certificates` appends the domain to the host name, so the CN and SAN became `vg1-w01-esx01.vgurus.lab.vgurus.lab`.
+
 -> **Fix**: set the short name and the domain separately, regenerate, restart services, then verify the CN and SAN with `openssl` from SDDC Manager.
 
 ```bash
@@ -64,6 +65,7 @@ Failed to obtain vc thumbprint: HTTPSConnectionPool(host='vg1-m01-esx01.vgurus.l
 ```
 
 -> **What had happened**: the certificates were renewed a day earlier and only `hostd` and `vpxa` were restarted. In the lab, port 443 kept serving the old certificate, and the installer held the old fingerprint.
+
 -> **A second trap**: running `generate-certificates` again later wrote new files to disk, but port 443 still served the old certificate until `services.sh restart` ran.
 -> **Fix that worked**: `services.sh restart` on all four hosts, confirm that port 443 matched the certificate on disk, recapture the SHA-256 thumbprints into the spec, then deploy a fresh installer appliance and re-import the spec. Deploy vCenter then completed in about 18 minutes.
 
@@ -82,10 +84,13 @@ Put the real password in the spec before the first validation run, and validate 
 ## Before you move on
 
 -> **Host name**: short name and domain set separately on every host.
+
 -> **Certificate**: CN and SAN contain the FQDN once.
 -> **Port 443**: serves the same certificate as the file on disk.
+
 -> **Thumbprint**: SHA-256 captured after the restart, and stored in the spec.
 -> **NTP**: all hosts point at the lab router, service running and set to start with the host.
+
 -> **Do not touch certificates again** until the fleet is deployed.
 
 ## What's Next
