@@ -4,6 +4,7 @@ date: 2026-10-21
 draft: false
 tags: ["VCF", "VMware", "Lab", "Design", "Nested"]
 categories: ["VCF 9", "Lab Series"]
+labPart: 1
 description: "The design behind a hands-on VCF 9.1.1 lab built end to end: naming convention, VLAN and subnet plan, host sizing, and the decisions that shaped the management and workload domains before a single appliance was deployed."
 ---
 

@@ -1,0 +1,6 @@
+{{- /* Published posts of the lab series, built from each post's labPart and date. */ -}}
+<ol>
+{{- range sort (where site.RegularPages "Params.labPart" "ne" nil) "Params.labPart" }}
+  <li value="{{ .Params.labPart }}"><a href="{{ .RelPermalink }}">{{ .LinkTitle | safeHTML }}</a>, {{ .Date.Format "January 2, 2006" }}</li>
+{{- end }}
+</ol>
