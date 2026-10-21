@@ -25,6 +25,7 @@ The target is a VCF 9.1.1 fleet with two domains:
 -> **Management domain (m01)**: four hosts on vSAN ESA, vCenter, SDDC Manager, a three-node NSX cluster (Medium), a two-node VCF Operations deployment with a cloud proxy, and VCF Management Services in `small_ha` mode.
 
 -> **Workload domain (w01)**: three hosts on vSAN ESA with their own vCenter, an isolated SSO domain and their own three-node NSX cluster, using a centralized connectivity VPC design.
+
 -> **Services around it**: a lab router (gateway, DNS, NTP, BGP) and an Ubuntu jump host that carries PowerShell, the offline depot and, later, the identity provider.
 
 <div class="diagram-embed">
@@ -50,6 +51,7 @@ The pattern used throughout the series is `<instance>-<domain>-<component><nn>.v
 -> **Instance (`vg1`)**: matches the VCF instance name, so the first token in any name tells you which fleet member you are looking at.
 
 -> **Domain (`m01`, `w01`)**: matches the domain name in SDDC Manager, which keeps host names, cluster names and network pools aligned with what the UI shows.
+
 -> **Short name plus domain, never the full FQDN as the host name**: this one is easy to get wrong on the ESX side and it breaks certificates later. The next post covers it.
 
 ## VLAN and subnet plan
@@ -86,9 +88,11 @@ Nested virtual NVMe disks are not on the vSAN ESA HCL. The lab handles that with
 -> **Four hosts in m01, three in w01**: the management domain carries the whole VCF management stack plus the w01 NSX nodes, so it gets the larger cluster. The workload domain only needs to host the Supervisor, VKS and test workloads.
 
 -> **VCF Installer outside the management domain**: with vSAN ESA, the m01 hosts have no datastore before bring-up and their NVMe disks must stay blank. The installer therefore runs on a temporary datastore on a w01 host and is removed afterwards. Post 3 covers this.
+
 -> **Isolated SSO for w01**: the workload domain gets its own vCenter and its own `vsphere.local` domain. VCF SSO with an external identity provider and vCenter linking come later, so one vSphere Client can see both domains.
 
 -> **Centralized connectivity for w01 VPCs**: Edge nodes and a Tier-0 gateway peer with the lab router over eBGP, which makes north-south traffic and VPC reachability something you can verify from both sides.
+
 -> **Static host TEP pool for w01**: the workload domain wizard defaults to DHCP for host TEPs. That did not work in this lab and a static pool replaced it, which is why the plan above reserves a pool range for it.
 
 ## Pre-flight checklist
@@ -96,6 +100,7 @@ Nested virtual NVMe disks are not on the vSAN ESA HCL. The lab handles that with
 -> **DNS**: forward and reverse records for every name in the table above, before the installer runs.
 
 -> **NTP**: all seven hosts pointed at the lab router, service running and set to start with the host.
+
 -> **Routing and MTU**: every gateway (`.1`) answers, and jumbo frames pass between hosts once the vSAN and TEP interfaces exist (`vmkping -d -s 8972`).
 
 -> **Certificates**: regenerated on every host after the host name and domain are set correctly, before thumbprints are captured.

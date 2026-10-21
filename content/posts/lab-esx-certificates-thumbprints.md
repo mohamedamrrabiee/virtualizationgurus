@@ -67,6 +67,7 @@ Failed to obtain vc thumbprint: HTTPSConnectionPool(host='vg1-m01-esx01.vgurus.l
 -> **What had happened**: the certificates were renewed a day earlier and only `hostd` and `vpxa` were restarted. In the lab, port 443 kept serving the old certificate, and the installer held the old fingerprint.
 
 -> **A second trap**: running `generate-certificates` again later wrote new files to disk, but port 443 still served the old certificate until `services.sh restart` ran.
+
 -> **Fix that worked**: `services.sh restart` on all four hosts, confirm that port 443 matched the certificate on disk, recapture the SHA-256 thumbprints into the spec, then deploy a fresh installer appliance and re-import the spec. Deploy vCenter then completed in about 18 minutes.
 
 The lesson is simple to state. A certificate on disk is not a certificate in use. Always compare what port 443 serves against the file before you capture a thumbprint.
@@ -86,9 +87,11 @@ Put the real password in the spec before the first validation run, and validate 
 -> **Host name**: short name and domain set separately on every host.
 
 -> **Certificate**: CN and SAN contain the FQDN once.
+
 -> **Port 443**: serves the same certificate as the file on disk.
 
 -> **Thumbprint**: SHA-256 captured after the restart, and stored in the spec.
+
 -> **NTP**: all hosts point at the lab router, service running and set to start with the host.
 
 -> **Do not touch certificates again** until the fleet is deployed.
