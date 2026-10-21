@@ -18,9 +18,11 @@ With vSAN ESA, the management hosts have no datastore before bring-up, and their
 -> **Temporary datastore**: on `vg1-w01-esx01`, create a VMFS datastore on one 512 GiB NVMe disk.
 
 -> **Port group**: a VM port group on VLAN 3321 on the standard switch. The installer VM only needs a VM port group, not a VMkernel adapter.
+
 -> **Appliance**: deploy the SDDC Manager appliance OVA (thin provisioned) from the jump host as `installer.vgurus.lab` on `10.20.10.30/24`, with the lab router as gateway, DNS and NTP.
 
 -> **Deployment choice**: in the installer, choose a VCF Installer deployed outside the management domain, so a new SDDC Manager (`vg1-m01-sddc01`) is deployed on vSAN.
+
 -> **Clean-up**: after bring-up, power off and delete the installer, delete the temporary datastore and clear the partition table on that NVMe disk, so vSAN ESA can claim it when the workload domain hosts are commissioned.
 
 Two small mistakes worth avoiding:
@@ -56,6 +58,7 @@ Four things went wrong on the way, all small:
 -> **Wrong shell**: `Set-PSRepository: command not found` meant the command was run in bash. Start `pwsh` first.
 
 -> **Module not autoloading**: the module (version 9.1.0.1007) is tagged for the Desktop edition and does not load by default in PowerShell on Linux. `-SkipEditionCheck` fixes it. Install ImportExcel and VCF.PowerCLI manually.
+
 -> **A "Value Missing" error**: `Invalid input 'Value Missing' for flt_net_nodea_gateway_cidr`. The gateway cell was empty, and the generator reads the values Excel last saved. Fill the gateway, recalculate and save in Excel, then rerun.
 
 -> **Sizing and block differences**: the exported spec sized the appliances from the deployment model (High Availability plus Small), which differed from the plan, and it carried a default private transit gateway block of `172.31.0.0/16`. Align the plan to the model and set `privateTgwIpBlockCidr` to your own range.
@@ -85,6 +88,7 @@ Also, validate once. Repeated validations with a placeholder password lock the r
 -> **Installer**: running on a temporary datastore outside m01, on the correct build.
 
 -> **Depot**: connected by IP, 9.1.1.0 bundles selected.
+
 -> **Spec**: generated from a saved and recalculated workbook, with real passwords and current thumbprints.
 
 -> **Switches**: HCL options set after every import.
