@@ -24,7 +24,8 @@ This post covers both, the retry method that fixed the first, and the workflow v
 
 -> **The error**: `400 POST /v1/sddc/initialize: PUBLIC_DOMAINSPEC_VALIDATION_FAILED / VPC_NETWORK_CONFIG_TYPE_NOT_ALLOWED_FOR_NON_SHELL_DOMAIN`.
 
-<!-- TODO screenshot after masking: S086 (Trigger SDDC Initialize workflow failed) -->
+![VCF Installer with Trigger SDDC Initialize workflow failed](/images/lab/lab-S086.jpg)
+*Trigger SDDC Initialize workflow: the 400 response and its remediation message.*
 
 The spec the installer exported contained `nsxtSpec.vpcSpec.vpcNetworkConfigurationType=FULL_STACK_VPC`. The SDDC Manager API documentation describes that field as only applicable to shell domains, and this deployment was a management domain.
 
@@ -51,7 +52,8 @@ The call returned HTTP 200, the existing vCenter and SDDC Manager were kept, and
 
 -> **The error**: `FAILED_TO_GET_VCF_COMPLIANT_NSXT_VERSION`, with the SDDC Manager `domainmanager.log` showing `NSX version compliant with VCF: null`.
 
-<!-- TODO screenshot after masking: S088 (Get NSX Version Compliant with VCF failed) -->
+![VCF Installer with Get NSX Version Compliant with VMware Cloud Foundation failed](/images/lab/lab-S088.jpg)
+*Get NSX Version Compliant with VMware Cloud Foundation: failed after the retries.*
 
 Two things were wrong at the same time:
 

@@ -24,7 +24,8 @@ This is the last of the three troubleshooting posts. After these two fixes the m
 
 -> **The error**: `FAILED_TO_GENERATE_ADD_VI_INTERNAL_MODEL` with `Error while retrieving credential null for device <psc-id>`, under the support code `LOQSE1`.
 
-<!-- TODO screenshot after masking: S093 (Generate VCF Domain Runtime Data Model failed) -->
+![VCF Installer with Generate VCF Domain Runtime Data Model failed](/images/lab/lab-S093.jpg)
+*Generate VCF Domain Runtime Data Model failed at step 55 of 135.*
 
 The message points at a credential, and the credential was fine. The Common Services log (`vcf-commonsvcs.log`) held the real error: `VMwareProductVersion can not be null or empty`.
 
@@ -49,7 +50,8 @@ Configure vSphere cluster then completed all 135 steps.
 
 -> **The error**: `VCF_ERROR_INTERNAL_SERVER_ERROR` in `PrepareNsxtInputAction`, under the support code `P2KLT7`, with the cause line `Cannot invoke "String.split(String)" because "version" is null`.
 
-<!-- TODO screenshot after masking: S094 (Deploy and configure NSX stopped at 3/103) -->
+![VCF Installer with Generate NSX Input Data failed](/images/lab/lab-S094.jpg)
+*Generate NSX Input Data failed at step 3 of 103.*
 
 The earlier NSX version patch had covered two copies of the spec in the workflow vault and missed a third, where `productVersion` was absent altogether. The vCenter `productVersion` was also null in every copy.
 

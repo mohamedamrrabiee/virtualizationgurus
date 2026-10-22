@@ -1141,3 +1141,17 @@ header > div {
   background: #2dd4bf;
   box-shadow: 0 0 8px rgba(45, 212, 191, 0.7);
 }
+
+/* Lab series screenshots */
+.post-content p > img {
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  border-radius: 8px;
+  margin: 0.5rem 0 0.25rem;
+}
+.post-content p > img + em,
+.post-content p > em:only-child {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}

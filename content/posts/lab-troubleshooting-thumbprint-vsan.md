@@ -26,7 +26,8 @@ Both failures came from the same event, and both are easy to misread. This is th
 
 -> **The error**: the installer log shows `Failed to obtain vc thumbprint` with `Fingerprints did not match`, the expected and received SHA-1 values differing.
 
-<!-- TODO screenshot after masking: S032 (Deploy vCenter Appliance failed after automatic retries) -->
+![VCF Installer with Deploy vCenter Appliance failed after automatic retries](/images/lab/lab-S032.jpg)
+*Deploy vCenter Appliance failed after the automatic retries.*
 
 The cause was a certificate renewed the day before with only `hostd` and `vpxa` restarted. In this lab, port 443 kept serving the old certificate, and the installer held the old thumbprint. The certificates post has the commands.
 
@@ -40,7 +41,11 @@ To retry, the bootstrap vSAN on `vg1-m01-esx01` was torn down. The next validati
 
 -> **What the host said**: `vdq -qH` showed the disks as eligible. The disks were fine. The service answering the query was not.
 
-<!-- TODO screenshots after masking: S055 (vSAN ESA Disks Eligibility failed on esx01), S056 (vdq -qH during the disk cleanup) -->
+![VCF Installer validation with vSAN ESA Disks Eligibility failed](/images/lab/lab-S055.jpg)
+*Validation: vSAN ESA Disks Eligibility failed on the first host.*
+
+![Terminal showing vdq -qH output on the first management host](/images/lab/lab-S056.jpg)
+*vdq -qH during the disk cleanup.*
 
 The cause was `vsanmgmtd` on that host being in a bad state after the teardown. The link between the teardown and the bad state is an inference from the logs, not something Broadcom documents. A Broadcom KB on vSAN disk availability validation was checked and was not the cause here.
 
