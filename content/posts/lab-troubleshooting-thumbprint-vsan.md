@@ -4,6 +4,11 @@ date: 2026-10-26
 draft: true
 tags: ["VCF", "VMware", "Lab", "Troubleshooting", "vSAN ESA", "VCF Installer"]
 categories: ["VCF 9", "Lab Series"]
+labPart: 6
+cover:
+  image: "/images/covers/lab-troubleshooting-thumbprint-vsan.jpg"
+  alt: "Troubleshooting Bring-up 1: Thumbprint Mismatch and vSAN ESA Disk Eligibility"
+  relative: false
 description: "The first bring-up failure in a VCF 9.1.1 lab: a host thumbprint mismatch at Deploy vCenter, and the vSAN ESA disk eligibility failure that followed when the bootstrap vSAN was torn down, with the cleanup that fixed both."
 ---
 

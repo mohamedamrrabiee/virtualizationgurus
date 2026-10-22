@@ -4,6 +4,11 @@ date: 2026-10-25
 draft: true
 tags: ["VCF", "VMware", "Lab", "VCF Installer", "Bring-up", "Timing"]
 categories: ["VCF 9", "Lab Series"]
+labPart: 5
+cover:
+  image: "/images/covers/lab-bring-up-milestones.jpg"
+  alt: "Bring-up Milestones: What Each Stage Builds and How Long It Took"
+  relative: false
 description: "The seven bring-up milestones of a VCF 9.1.1 management domain deployment in a nested lab, with the duration of each stage as shown by the installer and what to expect while it runs."
 ---
 

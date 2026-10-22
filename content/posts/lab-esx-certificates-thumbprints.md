@@ -4,6 +4,11 @@ date: 2026-10-22
 draft: true
 tags: ["VCF", "VMware", "Lab", "ESX", "Certificates", "Troubleshooting"]
 categories: ["VCF 9", "Lab Series"]
+labPart: 2
+cover:
+  image: "/images/covers/lab-esx-certificates-thumbprints.jpg"
+  alt: "Preparing Nested ESX Hosts: Certificates and Thumbprints Done Right"
+  relative: false
 description: "How ESX host certificates and SHA-256 thumbprints decide whether VCF Installer validation, vCenter deployment and host commissioning succeed, with two real failures from a VCF 9.1.1 lab and the order of operations that avoids both."
 ---
 

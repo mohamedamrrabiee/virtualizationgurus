@@ -4,6 +4,11 @@ date: 2026-10-23
 draft: true
 tags: ["VCF", "VMware", "Lab", "VCF Installer", "Offline Depot", "Deployment"]
 categories: ["VCF 9", "Lab Series"]
+labPart: 3
+cover:
+  image: "/images/covers/lab-vcf-installer-depot-spec.jpg"
+  alt: "VCF Installer in a Lab: Appliance Placement, Offline Depot and a Spec from the Planning Workbook"
+  relative: false
 description: "Where to run the VCF Installer when the management hosts have no datastore yet, how to connect an offline depot and pick the right 9.1.1 binaries, and how to generate a deployment JSON from the planning workbook with PowerShell on Linux."
 ---
 
