@@ -98,7 +98,11 @@ Also, validate once. Repeated validations with a placeholder password lock the r
 
 -> **Switches**: HCL options set after every import.
 
-<!-- TODO screenshots after masking: S034, S035 (installer deployment and depot) -->
+![VCF Installer depot settings with the offline depot connection active](/images/lab/lab-S034.jpg)
+*Depot settings: the offline depot connected by IP address.*
+
+![VCF Installer binary management listing the 9.1.1 components to download](/images/lab/lab-S035.jpg)
+*Binary management: select 9.1.1.0 explicitly, the list defaults to 9.1.0.0.*
 
 ## What's Next
 

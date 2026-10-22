@@ -44,7 +44,14 @@ The final run started on 16 October at 22:13 and completed on 17 October at 12:3
 
 -> **VCF Management Platform, operations appliance and VCF Management Services**: the three VCF 9 layers on top. Together they took about three hours 50 minutes in this lab, with no failures.
 
-<!-- TODO screenshots after masking: S082 (Deploy SDDC Manager in progress), S096 (three NSX Manager OVF deployments), S099 (NSX complete, VCF Management Platform in progress), S100 (deployment completed) -->
+![VCF Installer with Deploy SDDC Manager in progress](/images/lab/lab-S082.jpg)
+*Deploy SDDC Manager in progress.*
+
+![vCenter task list showing three NSX Manager OVF deployments](/images/lab/lab-S096.jpg)
+*Deploy and configure NSX: three NSX Manager OVF deployments running in parallel in vCenter.*
+
+![VCF Installer with NSX complete and VCF Management Platform in progress](/images/lab/lab-S099.jpg)
+*NSX complete, VCF Management Platform in progress.*
 
 ## What the stages tell you while you wait
 
@@ -58,7 +65,8 @@ The final run started on 16 October at 22:13 and completed on 17 October at 12:3
 
 The installer shows a completed deployment and a panel of next steps for VCF Operations.
 
-<!-- TODO screenshot after masking: S100 -->
+![VCF Installer showing the deployment completed successfully](/images/lab/lab-S100.jpg)
+*Deployment completed, with the next steps panel for VCF Operations.*
 
 The first thing to verify afterwards is that every fleet component is listed with its 9.1.1 version in VCF Operations, which the day-N post covers.
 

@@ -36,49 +36,60 @@ The wizard was run three times in this lab. The first two runs stopped on a thum
 
 Pick the version (9.1.1.0 here), the instance name (`vg1`), the domain name (`m01`), and the DNS and NTP servers (the lab router). The instance and domain names are the tokens in every host name that follows, so this is the step where the naming plan from the first post gets locked in.
 
-<!-- TODO screenshot after masking: S008 (general information) -->
+![VCF Installer general information step](/images/lab/lab-S008.jpg)
+*General information: version, instance name, domain name, DNS and NTP.*
 
 ### 2. Networks
 
 Enter the ESX management, VM management and VCF management networks with their VLAN IDs, subnets and gateways, plus the IP pool used by VCF Management Services.
 
-<!-- TODO screenshot after masking: S011 (networks) -->
+![VCF Installer networks step](/images/lab/lab-S011.jpg)
+*Networks: VLAN IDs, gateways and the IP pool for VCF Management Services.*
 
 ### 3. VCF Management
 
 This step defines the VCF Operations deployment: a primary node and a replica node, a cloud proxy and the license server, each with an FQDN from the naming plan.
 
-<!-- TODO screenshot after masking: S013 (VCF Operations nodes) -->
+![VCF Installer VCF Management step](/images/lab/lab-S013.jpg)
+*VCF Management: operations nodes, cloud proxy and license server FQDNs.*
 
 ### 4. vCenter
 
 Set the vCenter name (`vg1-m01-vc01`), datacenter (`vg1-m01-dc01`), cluster (`vg1-m01-cl01`) and the SSO domain (`vsphere.local`).
 
-<!-- TODO screenshot after masking: S015 (vCenter) -->
+![VCF Installer vCenter step](/images/lab/lab-S015.jpg)
+*vCenter: appliance FQDN, datacenter, cluster and SSO domain.*
 
 ### 5. Storage
 
 Choose vSAN ESA and enable the option to auto-claim HCL-incompatible disks. This is the step that matters most on nested hardware, and it gets its own section below.
 
-<!-- TODO screenshot after masking: S016 (storage) -->
+![VCF Installer storage step with vSAN ESA and auto-claim of HCL-incompatible disks](/images/lab/lab-S016.jpg)
+*Storage: vSAN ESA with auto-claim of HCL-incompatible disks enabled.*
 
 ### 6. Distributed switch
 
 Name the switch (`vg1-m01-cl01-vds01`), assign two uplinks, and map the traffic types (management, vMotion, vSAN) to port groups.
 
-<!-- TODO screenshot after masking: S017 (distributed switch) -->
+![VCF Installer distributed switch step](/images/lab/lab-S017.jpg)
+*Distributed switch: two uplinks and the traffic type mapping.*
 
 ### 7. NSX Manager
 
 Enter the cluster VIP and the three appliance FQDNs, then the VLAN and gateway for VPC gateway connectivity. This lab uses distributed connectivity on VLAN 3332 with gateway `10.20.98.1/24`.
 
-<!-- TODO screenshot after masking: S020 (NSX Manager) -->
+![VCF Installer NSX Manager step](/images/lab/lab-S020.jpg)
+*NSX Manager: cluster and appliance FQDNs, VPC gateway VLAN and gateway.*
 
 ### 8. Validate and deploy
 
 The installer runs its pre-checks against the hosts, network, DNS and NTP. Anything that cannot be fixed shows up here as an error, and anything it considers a risk shows up as a warning you must acknowledge before deploying.
 
-<!-- TODO screenshot after masking: S024 (validation with HCL warnings), S079 (final run, all validations passed) -->
+![VCF Installer validation with vSAN HCL warnings](/images/lab/lab-S024.jpg)
+*Validation: the vSAN HCL warnings that appear on virtual NVMe disks.*
+
+![VCF Installer final validation run with all checks passed](/images/lab/lab-S079.jpg)
+*Final run: all validations passed and the warnings acknowledged.*
 
 ## The HCL warning on nested hardware
 
