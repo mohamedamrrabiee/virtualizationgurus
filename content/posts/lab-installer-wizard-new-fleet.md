@@ -4,6 +4,11 @@ date: 2026-10-24
 draft: true
 tags: ["VCF", "VMware", "Lab", "VCF Installer", "Deployment", "vSAN ESA"]
 categories: ["VCF 9", "Lab Series"]
+labPart: 4
+cover:
+  image: "/images/covers/lab-installer-wizard-new-fleet.jpg"
+  alt: "Walking the VCF Installer Wizard for a New Fleet"
+  relative: false
 description: "A step-by-step walk through the VCF Installer wizard for a new VCF 9.1.1 fleet: every setting used for the management domain, the vSAN ESA HCL warnings on nested hardware, and what the final validation looked like."
 ---
 
