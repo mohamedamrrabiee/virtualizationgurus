@@ -64,7 +64,7 @@ Every VLAN has its own /24 inside `10.20.0.0/16`, with the third octet grouping 
 | 3322 | ESX Management | 10.20.11.0/24 | 1500 |
 | 3323 | m01 vMotion | 10.20.12.0/24 | 9000 |
 | 3324 | m01 vSAN | 10.20.13.0/24 | 9000 |
-| 3325 | m01 host TEP | 10.20.14.0/24 | 9000 |
+| 3325 | m01 host TEP | 10.20.14.0/24 | 1500 |
 | 3333 | VCF Management (VCF Management Services, VCF Operations) | 10.20.99.0/24 | 1500 |
 | 3332 | m01 VPC gateway connectivity | 10.20.98.0/24 | 1500 |
 | 3326 | w01 vMotion | 10.20.22.0/24 | 9000 |
@@ -101,7 +101,7 @@ Nested virtual NVMe disks are not on the vSAN ESA HCL. The lab handles that with
 
 -> **NTP**: all seven hosts pointed at the lab router, service running and set to start with the host.
 
--> **Routing and MTU**: every gateway (`.1`) answers, and jumbo frames pass between hosts once the vSAN and TEP interfaces exist (`vmkping -d -s 8972`).
+-> **Routing and MTU**: every gateway (`.1`) answers, and jumbo frames (MTU 9000) pass between hosts on the vMotion and vSAN networks once those interfaces exist (`vmkping -d -s 8972`). The m01 host TEP network stays at 1500 because the management domain uses distributed connectivity for its VPCs.
 
 -> **Certificates**: regenerated on every host after the host name and domain are set correctly, before thumbprints are captured.
 
