@@ -16,6 +16,6 @@ The cheapest decisions in a VCF build are the ones you make on paper.
 
 How do you name things in your lab: a pattern, or whatever the wizard suggests?
 
-Full technical breakdown on the blog: https://virtualizationgurus.pages.dev/posts/lab-designing-nested-vcf-lab/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-designing-nested-vcf-lab
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-designing-nested-vcf-lab/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-designing-nested-vcf-lab
 
 #VCF9 #VMware #Broadcom #HomeLab #Design #VirtualizationGurus #VMwareCommunity

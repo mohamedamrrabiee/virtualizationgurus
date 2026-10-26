@@ -14,6 +14,6 @@ The payoff: a self-service network is only as supportable as your visibility int
 
 Design for the platform you're entitled to run, not just the features you can configure.
 
-Full technical breakdown on the blog: https://virtualizationgurus.pages.dev/posts/vcf9-advanced-services/?utm_source=linkedin&utm_medium=social&utm_campaign=vcf9-advanced-services
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/vcf9-advanced-services/?utm_source=linkedin&utm_medium=social&utm_campaign=vcf9-advanced-services
 
 #VCF9 #VMware #Broadcom #NSX #LoadBalancing #VirtualizationGurus #VMwareCommunity #vExpert

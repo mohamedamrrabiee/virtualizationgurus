@@ -16,6 +16,6 @@ When the host and the installer disagree about a disk, suspect the service in be
 
 Do you check the installer log first, or the task list?
 
-Full technical breakdown on the blog: https://virtualizationgurus.pages.dev/posts/lab-troubleshooting-thumbprint-vsan/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-troubleshooting-thumbprint-vsan
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-troubleshooting-thumbprint-vsan/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-troubleshooting-thumbprint-vsan
 
 #VCF9 #VMware #Broadcom #Troubleshooting #vSAN #VirtualizationGurus #VMwareCommunity
