@@ -16,6 +16,6 @@ Read the exported spec before the first bring-up. Both failures were already vis
 
 Have you ever had to patch a running deployment workflow, and would you do it again?
 
-Full technical breakdown on the blog: https://virtualizationgurus.pages.dev/posts/lab-troubleshooting-vpc-config-nsx-version/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-troubleshooting-vpc-config-nsx-version
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-troubleshooting-vpc-config-nsx-version/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-troubleshooting-vpc-config-nsx-version
 
 #VCF9 #VMware #Broadcom #Troubleshooting #SDDCManager #VirtualizationGurus #VMwareCommunity

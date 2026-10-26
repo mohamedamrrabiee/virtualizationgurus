@@ -16,6 +16,6 @@ A null in a log is a field name in a spec. Check every copy of it.
 
 When an error message and a log disagree, which one do you trust first?
 
-Full technical breakdown on the blog: https://virtualizationgurus.pages.dev/posts/lab-troubleshooting-credential-null-nsx-input/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-troubleshooting-credential-null-nsx-input
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-troubleshooting-credential-null-nsx-input/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-troubleshooting-credential-null-nsx-input
 
 #VCF9 #VMware #Broadcom #Troubleshooting #SDDCManager #VirtualizationGurus #VMwareCommunity

@@ -17,6 +17,6 @@ None of these are hard, but each one costs a validation cycle if you meet it unp
 
 What is the smallest thing that has cost you the most time in a VCF deployment?
 
-Full technical breakdown on the blog: https://virtualizationgurus.pages.dev/posts/lab-vcf-installer-depot-spec/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-vcf-installer-depot-spec
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-vcf-installer-depot-spec/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-vcf-installer-depot-spec
 
 #VCF9 #VMware #Broadcom #VCFInstaller #Deployment #VirtualizationGurus #VMwareCommunity

@@ -16,6 +16,6 @@ Knowing what each stage is doing tells you whether a long pause is normal or a p
 
 How long did your last management domain bring-up take, and where did the time go?
 
-Full technical breakdown on the blog: https://virtualizationgurus.pages.dev/posts/lab-bring-up-milestones/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-bring-up-milestones
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-bring-up-milestones/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-bring-up-milestones
 
 #VCF9 #VMware #Broadcom #VCFInstaller #Deployment #VirtualizationGurus #VMwareCommunity
