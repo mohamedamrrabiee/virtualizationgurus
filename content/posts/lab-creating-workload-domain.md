@@ -32,7 +32,26 @@ The deployment took about one hour 12 minutes, from 15:24 to 16:36, with no fail
 | Hosts | `vg1-w01-esx01` to `esx03` |
 | Distributed switch | Default profile `vg1-w01-cl01-vds-01`, two uplinks, TEP VLAN 3328 |
 
-<!-- TODO screenshots after masking: S133 (general information), S135 (NSX Manager), S138 (VPC), S139 (storage), S140 (hosts), S145 (distributed switch), S148 (review) -->
+![Workload domain wizard, General Information step](/images/lab/lab-S133.jpg)
+*General information: domain name, full deployment with a cluster, and the Supervisor switch left off.*
+
+![Workload domain wizard, NSX Manager step with a new three-node cluster](/images/lab/lab-S135.jpg)
+*NSX Manager: a new high availability instance, with Medium as the smallest appliance size on offer.*
+
+![Workload domain wizard, NSX Manager step with Full Stack VPC and centralized connectivity](/images/lab/lab-S138.jpg)
+*Full Stack VPC with centralized connectivity. The transit gateway is configured after deployment.*
+
+![Workload domain wizard, Storage step with vSAN ESA](/images/lab/lab-S139.jpg)
+*Storage: vSAN with ESA enabled and auto claim of HCL incompatible disks allowed.*
+
+![Workload domain wizard, Hosts step with the three commissioned hosts](/images/lab/lab-S140.jpg)
+*Hosts: the three commissioned hosts, selected from the network pool created earlier.*
+
+![Workload domain wizard, Distributed Switch step with the Transport VLAN required](/images/lab/lab-S145.jpg)
+*Distributed switch: the transport VLAN has to be typed, and the TEP assignment shows DHCP.*
+
+![Workload domain wizard, Review step](/images/lab/lab-S148.jpg)
+*Review: a summary of the choices before validation starts.*
 
 ## What the wizard does not let you set
 
@@ -50,11 +69,19 @@ The deployment took about one hour 12 minutes, from 15:24 to 16:36, with no fail
 
 The review step summarizes everything, then validation runs. All checks succeeded in this lab, and the deployment was started.
 
-<!-- TODO screenshot after masking: S154 (validation, all checks succeeded) -->
+![Workload domain wizard, Validation step with every check succeeded](/images/lab/lab-S154.jpg)
+*Validation: all checks succeeded, so Finish starts the deployment.*
 
 The task appears in VCF Operations under Tasks as "Creating Workload Domain: w01", with the commissioning and bundle tasks listed earlier in the same view. SDDC Manager shows the subtasks underneath, and all of them completed successfully at 16:36.
 
-<!-- TODO screenshots after masking: S156 (task running), S157 (SDDC Manager subtasks completed), S188 (VCF Operations task successful) -->
+![VCF Operations Tasks view with the Creating Workload Domain task running](/images/lab/lab-S156.jpg)
+*The task starts and shows as running in VCF Operations.*
+
+![SDDC Manager subtasks for Creating Workload Domain, all Successful](/images/lab/lab-S157.jpg)
+*SDDC Manager lists the subtasks, all Successful at 4:36 PM.*
+
+![VCF Operations Tasks view with the Creating Workload Domain task Successful](/images/lab/lab-S188.jpg)
+*Back in VCF Operations, the same task shows Successful.*
 
 ## What to take from it
 
