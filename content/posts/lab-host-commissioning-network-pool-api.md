@@ -31,7 +31,8 @@ The pool defines the vMotion and vSAN networks the new hosts will use. It is cre
 
 -> **Values are locked once the pool is saved**: check that the vMotion and vSAN VLANs and subnets are not swapped before you save. A mistake means a new pool.
 
-<!-- TODO screenshot after masking: S117 (Create Network Pool) -->
+![Create Network Pool in the vSphere Client with the vSAN network VLAN 3326, MTU 9000 and the included IP range](/images/lab/lab-S117.jpg)
+*The network pool wizard, with the VLAN, MTU, gateway and IP range entered for the first network.*
 
 ## Step 2: the host certificate name (CI-07)
 
@@ -59,7 +60,8 @@ The certificates post in this series covers the same rule from the other directi
 
 The Commission Hosts wizard starts with a checklist to accept. Then you add the hosts with storage type vSAN ESA and the w01 network pool.
 
-<!-- TODO screenshot after masking: S122 (Commission Hosts checklist) -->
+![The Commission Hosts checklist in the vSphere Client](/images/lab/lab-S122.jpg)
+*The Commission Hosts checklist. Every item has to be ticked before Proceed becomes available.*
 
 Validation then failed on all three hosts:
 
@@ -84,7 +86,8 @@ POST  /v1/hosts                  # all three hosts, storageType VSAN_ESA,
 GET   /v1/tasks/<task-id>        # watch the task
 ```
 
-<!-- TODO screenshot after masking: S128 (Developer Center, POST /v1/hosts, task queued) -->
+![SDDC Manager Developer Center after POST /v1/hosts, with the commissioning task queued](/images/lab/lab-S128.jpg)
+*POST /v1/hosts in the Developer Center. The response returns a task in the QUEUED state, which then shows up under Tasks.*
 
 The task completed and VCF Operations showed the commissioning task as Successful. The three hosts then appeared as unassigned, ready for the workload domain.
 

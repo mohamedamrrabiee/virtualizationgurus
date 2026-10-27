@@ -24,7 +24,11 @@ This post covers the fix, a second step that was needed even after the fix looke
 
 -> **On the host**: `esxcli network ip interface ipv4 get` showed the TEP interfaces (`vmk10`, `vmk11`) on 169.254.x.x addresses with DHCP as the type and gateway 0.0.0.0. The self-assigned address is what a DHCP client uses when nothing answers.
 
-<!-- TODO screenshots after masking: S216 (NSX hosts still Down), S217 (host agent status, NSX_VDL2 Down) -->
+![NSX Hosts view with all three w01 hosts Down](/images/lab/lab-S216.jpg)
+*The three hosts show Down in NSX after the deployment.*
+
+![NSX host agent status with NSX_VDL2 Down](/images/lab/lab-S217.jpg)
+*The host agent status: every agent is Up except NSX_VDL2.*
 
 The cause is on the wizard side: the default distributed switch profile offers only DHCP for host TEPs, and the lab router has no DHCP scope on VLAN 3328. The addressing in this lab is below.
 
@@ -39,7 +43,14 @@ The cause is on the wizard side: the default distributed switch profile offers o
 1. In the w01 NSX Manager, open Networking, then IP Address Pools, and add a pool `vg1-w01-cl01-tep01` with the range 10.20.24.11 to .30, CIDR 10.20.24.0/24 and gateway .1.
 2. Under System, Fabric, Hosts, open the transport node profile and edit the host switch. Change the IPv4 assignment from DHCP to Use IP Pool and select the pool.
 
-<!-- TODO screenshots after masking: S165 (pool created), S210 (subnet range), S214 and S215 (IPv4 assignment, Use IP Pool selected) -->
+![NSX Set Subnets dialog with the host TEP range 10.20.24.11 to 10.20.24.30](/images/lab/lab-S210.jpg)
+*The pool subnet: range, CIDR and gateway for the host TEPs.*
+
+![NSX IP Address Pools with the host TEP pool created](/images/lab/lab-S165.jpg)
+*The pool is created and shows Success.*
+
+![NSX transport node profile host switch with IPv4 assignment set to Use IP Pool](/images/lab/lab-S214.jpg)
+*The transport node profile host switch, with the IPv4 assignment changed to Use IP Pool.*
 
 The hosts picked up static TEP addresses straight away. Three checks confirmed the data plane:
 
@@ -61,7 +72,8 @@ The hosts still showed Down. The pool had been applied and the data plane was he
 
 After the restart all three hosts showed Up with no alarms.
 
-<!-- TODO screenshot after masking: S167 (all three hosts Up) -->
+![NSX Hosts view with all three w01 hosts Up](/images/lab/lab-S167.jpg)
+*After the agent restart, all three hosts are Up with no alarms.*
 
 -> **The agent restart as the fix is from this lab only**: it is not from a Broadcom document. Treat it as something to try when the data plane checks pass and the status does not follow.
 
@@ -75,7 +87,8 @@ The workload domain wizard created the datacenter as `w01-DC`. It was renamed to
 
 -> **Follow the Broadcom article**: it lists which VCF objects can be renamed and how.
 
-<!-- TODO screenshot after masking: S208 (VCF Operations inventory with the renamed datacenter) -->
+![VCF Operations inventory showing the renamed w01 datacenter](/images/lab/lab-S208.jpg)
+*VCF Operations inventory after the rename: both datacenters now follow the naming pattern.*
 
 ## What to take from it
 
