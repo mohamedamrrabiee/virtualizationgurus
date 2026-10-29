@@ -3,7 +3,7 @@ Source post: content/posts/lab-esx-certificates-thumbprints.md
 Image: social/linkedin-drafts/images/lab-esx-certificates-thumbprints-linkedin.jpg
 Status: DRAFT, needs review before posting
 
-Two of the most expensive failures in my VCF 9.1.1 lab were certificate problems, and neither showed the real cause in the UI.
+Two certificate problems cost me the most time in my VCF 9.1.1 lab, and neither showed its real cause in the UI.
 
 The VCF Installer does not trust a host by name. It trusts the fingerprint in your spec and then checks that port 443 still serves that certificate. In one case a renewed certificate sat on disk while port 443 kept serving the old one. In another, setting the full FQDN as the host name made the certificate CN end in the domain twice.
 

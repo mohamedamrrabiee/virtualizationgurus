@@ -16,7 +16,7 @@ description: "How ESX host certificates and SHA-256 thumbprints decide whether V
 
 The VCF Installer does not trust an ESX host because of its name. It trusts the certificate fingerprint you put in the deployment spec and then checks that the host still presents that certificate on port 443. If the two differ at any point, validation fails or, worse, a deployment fails halfway through.
 
-Two of the most expensive problems in this lab were certificate problems. Both were avoidable. This post covers the host preparation order that avoids them, with the exact commands and what each failure looked like.
+Two certificate problems cost the most time in this lab. Both were avoidable. This post covers the host preparation order that avoids them, with the exact commands and what each failure looked like.
 
 ## The order that works
 
