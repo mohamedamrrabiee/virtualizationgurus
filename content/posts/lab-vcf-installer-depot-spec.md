@@ -44,6 +44,8 @@ The lab pulls binaries from an offline depot running on the jump host. Two thing
 
 -> **Version selection**: the installer listed 9.1.0.0 binaries by default. Select 9.1.1.0 explicitly and download those bundles.
 
+In VCF 9.0 an offline depot needed HTTPS with basic authentication. VCF 9.1 adds HTTP without basic authentication, but only through the installer API, not the installer UI. If you use HTTPS, make sure the certificate covers the name or address the installer connects to.
+
 Keep the depot address in one place. In this lab the address changed once, and every file that referenced it had to be updated.
 
 ## Generating the deployment spec
@@ -112,7 +114,7 @@ Next in this series: Walking the VCF Installer wizard for a new fleet.
 
 - [Deploying a New VCF Platform](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/deploying-a-new-vmware-cloud-foundation-or-vmware-vsphere-foundation-private-cloud-.html)
 - [VCF 9.1 Planning and Preparation](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/planning-and-preparation.html)
-- [Broadcom KB 442952: Disk eligibility and HCL warnings](https://knowledge.broadcom.com/external/article/442952)
+- [Broadcom KB 442952: Resolving VCF 9 Deployment Failures: Disk Eligibility and False-Positive HCL Warnings](https://knowledge.broadcom.com/external/article/442952)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
 <img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />

@@ -70,7 +70,7 @@ Deploy vCenter then completed in about 18 minutes.
 
 -> **A fresh installer, not a retry**: the installer held old state, so a new appliance with the corrected spec was cleaner than retrying the failed deployment.
 
--> **`services.sh restart` does not reset `vsanmgmtd`**: that needed its own restart.
+-> **`services.sh restart` does not reset `vsanmgmtd`**: that needed its own restart. KB 443077 describes a different vsanmgmtd failure, missing certificate files on the host, where the host watchdog restarts the service, so it is related background and not this fix. KB 320280 also warns against `services.sh restart` on hosts running vSAN, so use it only before vSAN and NSX are configured, as here.
 
 -> **The HCL switches reset again**: on the new installer, the two HCL options in the Storage step had to be set again.
 
@@ -90,8 +90,8 @@ Next in this series: Troubleshooting bring-up 2, the VPC config type and the NSX
 
 ## Further Reading (Official Broadcom Documentation)
 
-- [Broadcom KB 320280: Restarting the Management agents on an ESXi host](https://knowledge.broadcom.com/external/article/320280)
-- [Broadcom KB 443077: vsanmgmtd and host SSL certificate files](https://knowledge.broadcom.com/external/article/443077)
+- [Broadcom KB 320280: Restarting Management Agents in ESXi](https://knowledge.broadcom.com/external/article/320280)
+- [Broadcom KB 443077: ESXi vSAN Management Daemon (vsanmgmtd) crashes due to missing SSL certificates](https://knowledge.broadcom.com/external/article/443077)
 - [Deploying a New VCF Platform](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/deploying-a-new-vmware-cloud-foundation-or-vmware-vsphere-foundation-private-cloud-.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">

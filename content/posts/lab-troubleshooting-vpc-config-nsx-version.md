@@ -42,7 +42,7 @@ curl -sk -X PATCH "https://<installer>/v1/sddcs/<deployment-id>" \
   -d @spec-corrected.json
 ```
 
-The call returned HTTP 200, the existing vCenter and SDDC Manager were kept, and the stage moved on. Broadcom documents this retry method in KB 424770. Use it with support guidance on anything that matters.
+The call returned HTTP 200, the existing vCenter and SDDC Manager were kept, and the stage moved on. Broadcom documents this retry method in KB 424770, which exports the spec with a GET on `/v1/sddcs/<id>/spec`, edits only the fields that need it, and warns that changing a workflow by hand can have a significant impact. Use it with support guidance on anything that matters.
 
 -> **Why the API and not the UI Retry**: the assumption was that the UI Retry resends the stored, uncorrected spec. That was not tested, so treat it as a reason for caution, not a finding.
 
@@ -88,8 +88,8 @@ Next in this series: Troubleshooting bring-up 3, the two internal errors that ca
 
 ## Further Reading (Official Broadcom Documentation)
 
-- [Broadcom KB 424770](https://knowledge.broadcom.com/external/article/424770): the installer API retry method
-- [Broadcom KB 314620](https://knowledge.broadcom.com/external/article/314620): the workflow vault method
+- [Broadcom KB 424770: Retry VCF 9.0 Installer workflow by modifying the deployment workflow JSON SPEC file](https://knowledge.broadcom.com/external/article/424770)
+- [Broadcom KB 314620: Retry SDDC Manager workflows by modifying workflow spec files](https://knowledge.broadcom.com/external/article/314620)
 - [Deploying a New VCF Platform](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/deploying-a-new-vmware-cloud-foundation-or-vmware-vsphere-foundation-private-cloud-.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">

@@ -62,7 +62,7 @@ The installer sits outside the management domain, on a temporary datastore on on
 
 1. Destroy the installer VM.
 2. Unmount the temporary datastore.
-3. Relabel the NVMe disk with a GPT label so it is eligible for vSAN.
+3. Clear the partition table on the NVMe disk so vSAN can claim it. In this lab that was a fresh GPT label, written with `partedUtil`. Broadcom KB 442952 describes the same idea for stale vSAN partitions.
 
 ```bash
 partedUtil mklabel /vmfs/devices/disks/<disk-id> gpt

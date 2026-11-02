@@ -83,9 +83,9 @@ After the restart all three hosts showed Up with no alarms.
 
 The workload domain wizard created the datacenter as `w01-DC`. It was renamed to `vg1-w01-dc01` in vCenter so it follows the naming pattern, and VCF Operations picked up the new name in its inventory.
 
--> **Rename the datacenter, nothing else**: do not rename the distributed switch or its port groups. VCF tracks those, and a rename there is not a supported edit.
+-> **Rename the datacenter, nothing else**: KB 316012 says the distributed switch cannot be renamed, and gives conflicting guidance on port groups, so leave both alone. For the datacenter it describes an out of band rename in vCenter, which is then synced to SDDC Manager.
 
--> **Follow the Broadcom article**: it lists which VCF objects can be renamed and how.
+-> **Follow the Broadcom article**: it lists which VCF objects can be renamed and how, including the sync step after a vCenter-side rename.
 
 ![VCF Operations inventory showing the renamed w01 datacenter](/images/lab/lab-S208.jpg)
 *VCF Operations inventory after the rename: both datacenters now follow the naming pattern.*

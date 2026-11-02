@@ -77,6 +77,8 @@ Failed to obtain vc thumbprint: HTTPSConnectionPool(host='vg1-m01-esx01.vgurus.l
 
 The lesson is simple to state. A certificate on disk is not a certificate in use. Always compare what port 443 serves against the file before you capture a thumbprint.
 
+Two cautions from the Broadcom documentation. KB 320280 advises against `services.sh restart` on hosts that run vSAN, LACP or NSX, and says to restart single services (`hostd`, then `vpxa`) instead. That is safe here only because these hosts were not yet running vSAN or NSX. KB 409537 covers the same certificate rule for the installer: the host needs a working FQDN, the certificate must be regenerated after the name is set, and the SAN must list that FQDN. Its fix also includes rebooting the host, which is a cleaner reset than restarting services if you can afford it.
+
 ## A related trap: the locked root account
 
 Validation attempts with a placeholder password in the spec locked the root account on the hosts, and every later validation then failed with "Cannot complete login due to an incorrect user name or password", even with the correct password.
@@ -108,7 +110,8 @@ Next in this series: VCF Installer placement, the offline depot and a deployment
 ## Further Reading (Official Broadcom Documentation)
 
 - [VCF 9.1 Planning and Preparation](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/planning-and-preparation.html)
-- [Broadcom KB 320280: Restarting the Management agents on an ESXi host](https://knowledge.broadcom.com/external/article/320280)
+- [Broadcom KB 320280: Restarting Management Agents in ESXi](https://knowledge.broadcom.com/external/article/320280)
+- [Broadcom KB 409537: VCF Installer fails to add hosts during deployment due to hostname mismatch with subject alternative name](https://knowledge.broadcom.com/external/article/409537/vcf-installer-fails-to-add-hosts-during.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
 <img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />

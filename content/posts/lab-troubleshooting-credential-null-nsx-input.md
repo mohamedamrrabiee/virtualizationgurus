@@ -81,7 +81,7 @@ Next in this series: Day-N starts in VCF Operations, verifying the management do
 
 ## Further Reading (Official Broadcom Documentation)
 
-- [Broadcom KB 314620](https://knowledge.broadcom.com/external/article/314620): the workflow vault method
+- [Broadcom KB 314620: Retry SDDC Manager workflows by modifying workflow spec files](https://knowledge.broadcom.com/external/article/314620)
 - [Deploying a New VCF Platform](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/deploying-a-new-vmware-cloud-foundation-or-vmware-vsphere-foundation-private-cloud-.html)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
