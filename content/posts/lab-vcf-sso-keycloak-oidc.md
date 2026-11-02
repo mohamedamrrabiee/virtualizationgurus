@@ -68,7 +68,8 @@ curl -s --cacert ~/keycloak/certs/ca.crt https://jump.vgurus.lab:8443/realms/vgu
 
 The discovery document returned the issuer `https://jump.vgurus.lab:8443/realms/vgurus`. That issuer value is exactly what the wizard asks for later.
 
-<!-- TODO screenshot after masking: S193 (Keycloak container start log) -->
+![Keycloak start log on the jump host](/images/lab/lab-S193.jpg)
+*Keycloak 26.3.0 started on the jump host and listening on 8443 over HTTPS.*
 
 ## The VCF SSO wizard
 
@@ -76,7 +77,7 @@ The Configure VCF SSO flow runs from VCF Operations. In this lab the steps and v
 
 | Step | Setting used |
 |---|---|
-| Deployment mode | Instance (recommended), identity broker `vg1-m01-idb01` |
+| Deployment mode | Instance (recommended), identity broker `vg1-m01-idb01`. The alternative is Embedded, which uses the broker built into the management domain vCenter |
 | Provider type | Generic OIDC |
 | Identity provider configuration | Client `vcf`, the client secret, the OpenID discovery address, and the CA chain file |
 | Provisioning method | JIT, unique identifier `sub` |
@@ -89,13 +90,41 @@ The Configure VCF SSO flow runs from VCF Operations. In this lab the steps and v
 | Assign VCF roles | Group `vcf-admins`, scope components with the identity broker, role VCF Administrator, never expires |
 | Enable SSO | vCenter and NSX components, all four Configured |
 
-<!-- TODO screenshots after masking: S189 (deployment mode), S195 (JIT, unique identifier sub), S196 (Groups Pre-provisioning warning), S200 (attribute mapping with groups), S159 (Test Login, six checks), S205 (role assignment), S161 (four components Configured) -->
+![Choose Deployment Mode with Instance selected](/images/lab/lab-S189.jpg)
+*Deployment mode: Instance (recommended), with the identity broker vg1-m01-idb01.*
+
+![Identity Provider Configuration page](/images/lab/lab-S158.jpg)
+*Identity provider page: client identifier, secret, OpenID address, redirect URI and the CA chain file.*
+
+![User/Group Provisioning Method with JIT selected](/images/lab/lab-S195.jpg)
+*JIT provisioning with sub as the unique identifier.*
+
+![Group Provisioning page with the permanence warning](/images/lab/lab-S196.jpg)
+*Groups Pre-provisioning, with the warning that the method cannot be changed later.*
+
+![Attribute mapping with the groups attribute](/images/lab/lab-S200.jpg)
+*Attribute mapping: the group attribute is groups.*
+
+![Test Login result with six passed checks](/images/lab/lab-S159.jpg)
+*Test Login: all six checks passed.*
+
+![Assign VCF roles for the vcf-admins group](/images/lab/lab-S205.jpg)
+*Role assignment: vcf-admins gets VCF Administrator on the components with the identity broker, never expires.*
+
+![Enable SSO for vCenter and NSX with four components Configured](/images/lab/lab-S161.jpg)
+*All four components Configured: two vCenters and two NSX Managers.*
+
+What the documentation adds, and what I only saw in the lab:
+
+-> **Scope**: VCF SSO covers vCenter, NSX and the other VCF components. It does not cover the SDDC Manager UI or ESX hosts, so those keep their own local sign-in.
+
+-> **Who can configure it**: the user running the wizard needs the VCF Administrator role with the All Objects scope. After SSO is configured, manage it only from VCF Operations.
 
 Three details are worth knowing before you click Next:
 
--> **The redirect URI comes from the wizard**: I created the Keycloak client with a wildcard redirect for the broker host first, then replaced it with the exact URI the wizard showed, which ends in `/federation/t/CUSTOMER/auth/response/oauth2`. A wildcard is fine for a first pass, but the exact value is what you keep.
+-> **The redirect URI comes from the wizard**: I created the Keycloak client with a wildcard redirect for the broker host first, then replaced it with the exact URI the wizard showed, which ends in `/federation/t/CUSTOMER/auth/response/oauth2`. A wildcard is fine for a first pass, but the exact value is what you keep. This is what I did in the lab, not a documented requirement.
 
--> **Group provisioning cannot be changed later**: the wizard warns that Groups Pre-provisioning is permanent for this configuration. Choose it deliberately, because changing it later means resetting the identity provider.
+-> **Group provisioning cannot be changed later**: the wizard itself warns that the group provisioning method cannot be modified after the configuration is completed, and that you must reset the identity provider to change it. Choose it deliberately.
 
 -> **The group claim has to match the mapper**: the attribute mapping step reads the group attribute `groups`, which is the claim name the Keycloak group membership mapper writes. With the field empty, the group is not recognized.
 
@@ -105,13 +134,18 @@ At 18:07 the Keycloak sign-in page returned "Invalid username or password" for t
 
 The fix was three steps: run the `set-password` command again, sign in to Keycloak directly with the user, and only then run Test Login again. All six checks passed at 18:08.
 
-<!-- TODO screenshot after masking and cropping: S203 (Keycloak sign-in error). The realm title shows in large letters, crop it before use. -->
+![Keycloak sign-in page showing an invalid username or password error](/images/lab/lab-S203.jpg)
+*The Keycloak sign-in page rejecting the SSO user before the password was reset.*
 
 ## What the result looks like
 
 After the wizard finished, signing in on the w01 vCenter and the w01 NSX Manager worked as the SSO user, and VCF Operations accepted it too. VCF SSO pushed the VCF Administrator role down to vCenter and NSX, so no manual permissions were needed on either. It also connected all four components while vCenter was still on its evaluation license, so there was no license block.
 
-<!-- TODO screenshots after masking: S206 (w01 vCenter signed in as the SSO user), S164 (w01 NSX Manager signed in as the SSO user) -->
+![w01 vSphere Client signed in as the SSO user](/images/lab/lab-S206.jpg)
+*The w01 vSphere Client signed in as the SSO user.*
+
+![w01 NSX Manager signed in as the SSO user](/images/lab/lab-S164.jpg)
+*The w01 NSX Manager signed in as the same SSO user.*
 
 ## What to take from it
 
@@ -130,6 +164,7 @@ Next in this series: one vSphere Client for two domains, using vCenter linking i
 ## Further Reading (Official Broadcom Documentation)
 
 - [VCF 9.1 documentation on TechDocs](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1.html)
+- [Configure an identity provider using Generic OIDC (VCF 9.1)](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/fleet-management/managing-identity-and-access-using-vcf-single-sign-on/what-is/setting-up-sso/cofigure-vmware-cloud-foundation-identity-provider/configure-an-identity-provider-using-generic-oidc.html)
 - [Keycloak documentation](https://www.keycloak.org/documentation)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
