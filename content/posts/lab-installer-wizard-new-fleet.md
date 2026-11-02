@@ -123,8 +123,8 @@ Next in this series: Bring-up milestones, what each stage builds and how long it
 
 - [Deploying a New VCF Platform](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/deploying-a-new-vmware-cloud-foundation-or-vmware-vsphere-foundation-private-cloud-.html)
 - [Components in VCF](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/vcf-management-appliances.html)
-- [Broadcom KB 408300: vSAN ESA HCL override](https://knowledge.broadcom.com/external/article/408300)
-- [Broadcom KB 442952: Disk eligibility and HCL warnings](https://knowledge.broadcom.com/external/article/442952)
+- [Broadcom KB 408300: vSAN ESA Deployment: Override HCL Validation for Non-Certified Hardware](https://knowledge.broadcom.com/external/article/408300)
+- [Broadcom KB 442952: Resolving VCF 9 Deployment Failures: Disk Eligibility and False-Positive HCL Warnings](https://knowledge.broadcom.com/external/article/442952)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
 <img src="/images/logo.svg" alt="Virtualization Gurus" style="height:56px; width:auto; opacity:0.85;" />

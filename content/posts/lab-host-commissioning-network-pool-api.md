@@ -73,7 +73,7 @@ The same cause stopped the vSAN configuration during the installer run. There th
 
 ### What did not work
 
--> **The disk claim property from the Broadcom override article**: adding `vsan.esa.sddc.managed.disk.claim=true` to the `domainmanager` and `operationsmanager` properties, with the related feature flag, changed nothing for host commissioning in 9.1.1. That article is about the installer path, and in this lab it did not carry over. This is an observation from this lab, not a statement about every build.
+-> **The disk claim property from the Broadcom override article**: adding `vsan.esa.sddc.managed.disk.claim=true` to the `domainmanager` and `operationsmanager` properties, with the related feature flag, changed nothing for host commissioning in 9.1.1. KB 408300 does cover host commissioning (the `operationsmanager` properties file) as well as the installer, and lists 9.1.x as affected. Its scope is narrower than this lab, though: it is for disks that appear in the HCL data but that the product cannot verify. Virtual NVMe disks are not in the HCL at all, so no effect is what that scope predicts. This is an observation from this lab, not a statement about every build.
 
 ### What did work: commission through the API
 
