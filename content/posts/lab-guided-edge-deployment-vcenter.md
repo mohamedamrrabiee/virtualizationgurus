@@ -60,6 +60,8 @@ The wizard opens from the workload domain vCenter in the vSphere Client: Network
 | Edge TEP | VLAN 3329, addresses from the static pool |
 | Uplink mapping | uplink-1 to fp-eth0 (vmnic0 active, vmnic1 standby), uplink-2 to fp-eth1 (vmnic1 active, vmnic0 standby) |
 
+Edge sizes, as the documentation lists them: Small (2 vCPU, 4 GB) for labs and proofs of concept, Medium (4 vCPU, 8 GB) for production, Large (8 vCPU, 32 GB) and XLarge (16 vCPU, 64 GB). With Supervisor or VCF Automation the documentation recommends Large or XLarge, so Medium is a lab choice here.
+
 The resulting Edge TEP addresses were 10.20.25.11 and .12 on the first node, and .13 and .14 on the second.
 
 ![Configure Network Connectivity with Centralized Connection selected](/images/lab/lab-S169.jpg)
