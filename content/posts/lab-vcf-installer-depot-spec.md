@@ -18,7 +18,7 @@ Before the VCF Installer can build anything, three practical questions need answ
 
 ## Installer prerequisites to settle first
 
-The placement decision depends on what the installer needs, so check these before choosing a host. They follow the TechDocs page for deploying the VCF Installer appliance, as reported by several independent walkthroughs. The sizing and password rule agree across all of them, and one attributes them to the official deployment page. I could not open the TechDocs page itself from my tooling, so confirm the numbers there for your release.
+The placement decision depends on what the installer needs, so check these before choosing a host. They follow the VCF 9.1 documentation for deploying the VCF Installer appliance.
 
 -> **Where it can run**: outside the management domain (on a vCenter, or Workstation or Fusion), or on a host that will become part of the management domain. An installer placed in the domain deploys one platform and stays in SDDC Manager mode afterwards.
 
