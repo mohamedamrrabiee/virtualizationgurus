@@ -60,6 +60,8 @@ Install-Module VCF.PowerCLI -Scope CurrentUser
 Start-VCFJsonGeneration                     # menu driven; reads the saved planning workbook
 ```
 
+`VCF.JSONGenerator` is a PowerShell module published on the PowerShell Gallery by VMware and Broadcom. It turns a filled-in planning workbook into the deployment JSON. It exposes two commands: `Start-VCFJsonGeneration`, which is menu driven, and `Set-VCFJsonGenerationPrequisites` (spelled that way in the module). The gallery page does not document usage, so the steps above are what worked in this lab. The field names in the generated file follow the `InstallerSpec` schema in the VCF Installer API reference, listed below.
+
 Four things went wrong on the way, all small:
 
 -> **Wrong shell**: `Set-PSRepository: command not found` meant the command was run in bash. Start `pwsh` first.
@@ -114,6 +116,8 @@ Next in this series: Walking the VCF Installer wizard for a new fleet.
 
 - [Deploying a New VCF Platform](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/deploying-a-new-vmware-cloud-foundation-or-vmware-vsphere-foundation-private-cloud-.html)
 - [VCF 9.1 Planning and Preparation](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/planning-and-preparation.html)
+- [VCF.JSONGenerator module on the PowerShell Gallery](https://www.powershellgallery.com/packages/VCF.JSONGenerator/9.1.0.1003)
+- [VCF Installer API: InstallerSpec data structure (9.1.1)](https://developer.broadcom.com/xapis/vcf-installer-api/9.1.1/data-structures/InstallerSpec/)
 - [Broadcom KB 442952: Resolving VCF 9 Deployment Failures: Disk Eligibility and False-Positive HCL Warnings](https://knowledge.broadcom.com/external/article/442952)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
