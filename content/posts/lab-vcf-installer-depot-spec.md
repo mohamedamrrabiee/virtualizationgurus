@@ -26,7 +26,7 @@ The placement decision depends on what the installer needs, so check these befor
 
 -> **DNS**: forward (A) and reverse (PTR) records for the installer and for every component you will deploy. The OVA accepts at most two DNS servers.
 
--> **Resources**: 4 vCPU, 16 GB RAM and 914 GB of storage. The 914 GB is the thick size. Thin provisioning shrinks the real footprint to a few GB (the deploy wizard showed about 4.2 GB thin in one walkthrough), which is why the appliance fits comfortably on a single 512 GiB disk in this lab. When the appliance runs on a management host, the documentation asks for a local datastore and moves the appliance later.
+-> **Resources**: 4 vCPU, 16 GB RAM and 914 GB of storage. The 914 GB is the thick size. Thin provisioning shrinks the real footprint to a few GB, about 4.2 GB in the deploy wizard, which is why the appliance fits comfortably on a single 512 GiB disk in this lab. When the appliance runs on a management host, the documentation asks for a local datastore and moves the appliance later.
 
 -> **Passwords**: the OVA root and local user passwords need at least 15 characters, with upper and lower case, a digit and one of `@ ! # $ % ? ^`, or the deployment fails.
 
