@@ -16,6 +16,26 @@ description: "Where to run the VCF Installer when the management hosts have no d
 
 Before the VCF Installer can build anything, three practical questions need answers. Where does the installer appliance run when no datastore exists yet? How does it get the 9.1.1 binaries? And how do you produce a deployment spec that passes validation? This post walks through each, with the small mistakes that cost time in this lab.
 
+## Installer prerequisites to settle first
+
+The placement decision depends on what the installer needs, so check these before choosing a host. They follow the TechDocs page for deploying the VCF Installer appliance, as summarized in a community walkthrough that cites it. I could not open the TechDocs page itself while writing, so confirm the numbers against it for your release.
+
+-> **Where it can run**: outside the management domain (on a vCenter, or Workstation or Fusion), or on a host that will become part of the management domain. An installer placed in the domain deploys one platform and stays in SDDC Manager mode afterwards.
+
+-> **Name and address**: a static IP and a resolvable FQDN. The appliance FQDN becomes the SDDC Manager FQDN and cannot be changed after deployment, so choose it deliberately.
+
+-> **DNS**: forward (A) and reverse (PTR) records for the installer and for every component you will deploy. The OVA accepts at most two DNS servers.
+
+-> **Resources**: reported as 4 vCPU, 16 GB RAM and about 914 GB of storage. Thin provisioning kept it within the 512 GiB disk in this lab, but check the sizing on the TechDocs deployment page. When the appliance runs on a management host, the documentation asks for a local datastore and moves the appliance later.
+
+-> **Passwords**: the OVA root and local user passwords need at least 15 characters, with upper and lower case, a digit and one of `@ ! # $ % ? ^`, or the deployment fails.
+
+-> **Network reachability**: the installer must reach the ESX hosts, DNS and NTP, and the depot. An online depot needs outbound HTTPS 443 to the Broadcom download hosts and an activation code, and an offline depot needs a web server filled with the VCF Download Tool. An HTTPS offline depot's certificate has to be trusted by the installer.
+
+-> **Version**: the wizard and JSON workflows need installer 9.1.1 or later, and the appliance build should match the release you deploy.
+
+In this lab those answers pointed to one choice: with vSAN ESA there is no datastore on the management hosts, and I wanted the SDDC Manager FQDN under my own control, so the installer runs outside the management domain.
+
 ## Where the installer runs
 
 With vSAN ESA, the management hosts have no datastore before bring-up, and their NVMe disks must stay blank so vSAN can claim them. The installer cannot live on a management host, so it runs outside the management domain.
@@ -118,6 +138,7 @@ Next in this series: Walking the VCF Installer wizard for a new fleet.
 - [VCF 9.1 Planning and Preparation](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/planning-and-preparation.html)
 - [VCF.JSONGenerator module on the PowerShell Gallery](https://www.powershellgallery.com/packages/VCF.JSONGenerator/9.1.0.1003)
 - [VCF Installer API: InstallerSpec data structure (9.1.1)](https://developer.broadcom.com/xapis/vcf-installer-api/9.1.1/data-structures/InstallerSpec/)
+- [Deploy the VCF Installer appliance (VCF 9.1 TechDocs)](https://techdocs.broadcom.com/us/en/vmware-cis/vcf/vcf-9-0-and-later/9-1/deployment/deploying-a-new-vmware-cloud-foundation-or-vmware-vsphere-foundation-private-cloud-/preparing-your-environment/deploy-the-vmware-cloud-foundation-installer-appliance.html)
 - [Broadcom KB 442952: Resolving VCF 9 Deployment Failures: Disk Eligibility and False-Positive HCL Warnings](https://knowledge.broadcom.com/external/article/442952)
 
 <div style="text-align:center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(56,189,248,0.2);">
