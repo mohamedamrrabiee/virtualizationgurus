@@ -60,7 +60,7 @@ Install-Module VCF.PowerCLI -Scope CurrentUser
 Start-VCFJsonGeneration                     # menu driven; reads the saved planning workbook
 ```
 
-`VCF.JSONGenerator` is a PowerShell module published on the PowerShell Gallery by VMware and Broadcom. It turns a filled-in planning workbook into the deployment JSON. It exposes two commands: `Start-VCFJsonGeneration`, which is menu driven, and `Set-VCFJsonGenerationPrequisites` (spelled that way in the module). The gallery page does not document usage, so the steps above are what worked in this lab. The field names in the generated file follow the `InstallerSpec` schema in the VCF Installer API reference, listed below.
+[`VCF.JSONGenerator`](https://www.powershellgallery.com/packages/VCF.JSONGenerator/9.1.0.1003) is a PowerShell module published on the PowerShell Gallery by VMware and Broadcom. It turns a filled-in planning workbook into the deployment JSON. It exposes two commands: `Start-VCFJsonGeneration`, which is menu driven, and `Set-VCFJsonGenerationPrequisites` (spelled that way in the module). The gallery page does not document usage, so the steps above are what worked in this lab. The field names in the generated file follow the `InstallerSpec` schema in the VCF Installer API reference, listed below.
 
 Four things went wrong on the way, all small:
 
