@@ -1,7 +1,7 @@
 ---
 title: "VCF Installer in a Lab: Appliance Placement, Offline Depot and a Spec from the Planning Workbook"
-date: 2026-10-23
-draft: true
+date: 2026-11-04
+draft: false
 tags: ["VCF", "VMware", "Lab", "VCF Installer", "Offline Depot", "Deployment"]
 categories: ["VCF 9", "Lab Series"]
 labPart: 3
