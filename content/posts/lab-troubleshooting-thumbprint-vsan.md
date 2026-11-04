@@ -47,7 +47,7 @@ To retry, the bootstrap vSAN on `vg1-m01-esx01` was torn down. The next validati
 ![Terminal showing vdq -qH output on the first management host](/images/lab/lab-S056.jpg)
 *vdq -qH during the disk cleanup.*
 
-The cause was `vsanmgmtd` on that host being in a bad state after the teardown. The link between the teardown and the bad state is an inference from the logs, not something Broadcom documents. A Broadcom KB on vSAN disk availability validation was checked and was not the cause here.
+The cause was `vsanmgmtd` on that host being in a bad state after the teardown. The link between the teardown and the bad state is an inference from the logs, not something Broadcom documents. A Broadcom KB on vSAN disk availability validation looked related but was not the cause here.
 
 ## The cleanup that fixed it
 

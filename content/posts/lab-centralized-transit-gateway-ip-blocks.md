@@ -41,7 +41,7 @@ The documentation sets the sizes. The external block must be a /24 or larger, wi
 
 ## What gets advertised
 
-For the physical network to reach a VPC resource, the transit gateway routes must reach the Tier-0 and then BGP. The documentation says the Transit Gateway Static route source has to be redistributed into BGP so that public subnets, NAT addresses and VIPs are advertised. I did not inspect that redistribution setting in this lab, so I cannot say how it was set. What I can say is what the router received.
+For the physical network to reach a VPC resource, the transit gateway routes must reach the Tier-0 and then BGP. The documentation says the Transit Gateway Static route source has to be redistributed into BGP so that public subnets, NAT addresses and VIPs are advertised. What the router received is the evidence in this lab.
 
 From the router, after the VPCs were created:
 
@@ -62,9 +62,9 @@ Each VPC with a private subnet that reaches the outside gets a source NAT addres
 ![VPC Connectivity Profile with Default Outbound NAT on](/images/lab/lab-S245.jpg)
 *The Default VPC Connectivity Profile: Edge cluster `vg1-w01-ec01`, Default Outbound NAT On, N-S Services On. The external block field for default outbound NAT shows empty in this view.*
 
-I opened this profile by mistake while looking for DNS and NTP, which turned out to belong somewhere else (the next post). The external block selector for the default outbound NAT reads empty in the screenshot, and the SNAT addresses still came from 10.80.0.0/22. I did not dig into why, so treat that as an observation and not a rule.
+I opened this profile by mistake while looking for DNS and NTP, which turned out to belong somewhere else (the next post). The external block selector for the default outbound NAT reads empty in the screenshot, and the SNAT addresses still came from 10.80.0.0/22. Treat that as an observation from this lab, not a rule.
 
-The SNAT mapping, 10.80.0.0 for app and 10.80.0.1 for dev, follows from the routes the router learned. I did not capture packets on the router to prove the source address. The Distributed Firewall test later in the lab did confirm it indirectly: a rule matching source 10.80.0.1 dropped traffic from `vpc-dev01`.
+The SNAT mapping, 10.80.0.0 for app and 10.80.0.1 for dev, follows from the routes the router learned. The source address was not packet-captured on the router. The Distributed Firewall test later in the lab did confirm it indirectly: a rule matching source 10.80.0.1 dropped traffic from `vpc-dev01`.
 
 ## The transit gateway in vCenter
 
@@ -83,7 +83,7 @@ Once the workflow finishes, the transit gateway shows in vCenter, Networks, Tran
 
 -> **Check what the router learned, not only what you configured**: `show ip route bgp` is the proof of what actually left the Tier-0.
 
--> **Check the redistribution setting**: I did not inspect it here, and the documentation says it matters for public subnets, NAT addresses and VIPs.
+-> **Check the redistribution setting**: the documentation says it matters for public subnets, NAT addresses and VIPs.
 
 ## What's Next
 
