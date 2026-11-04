@@ -19,4 +19,4 @@ When did a certificate last cost you a deployment retry?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-esx-certificates-thumbprints/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-esx-certificates-thumbprints
 
-#VCF9 #VMware #Broadcom #Troubleshooting #ESX #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #Troubleshooting #ESX #VirtualizationGurus #VMwareCommunity #vExpert

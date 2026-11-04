@@ -18,4 +18,4 @@ Do you check the installer log first, or the task list?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-troubleshooting-thumbprint-vsan/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-troubleshooting-thumbprint-vsan
 
-#VCF9 #VMware #Broadcom #Troubleshooting #vSAN #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #Troubleshooting #vSAN #VirtualizationGurus #VMwareCommunity #vExpert

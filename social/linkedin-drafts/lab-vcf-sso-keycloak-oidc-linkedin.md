@@ -19,4 +19,4 @@ What do you use as an identity provider in your lab?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-vcf-sso-keycloak-oidc/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-vcf-sso-keycloak-oidc
 
-#VCF9 #VMware #Broadcom #Keycloak #VCFSSO #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #Keycloak #VCFSSO #VirtualizationGurus #VMwareCommunity #vExpert

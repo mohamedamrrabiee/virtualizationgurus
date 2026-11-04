@@ -18,4 +18,4 @@ Which wizard step has cost you the most validation runs?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-installer-wizard-new-fleet/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-installer-wizard-new-fleet
 
-#VCF9 #VMware #Broadcom #VCFInstaller #vSAN #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #VCFInstaller #vSAN #VirtualizationGurus #VMwareCommunity #vExpert

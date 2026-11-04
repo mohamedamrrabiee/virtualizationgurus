@@ -18,4 +18,4 @@ What is the first thing you check after a bring-up finishes?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-verifying-management-domain/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-verifying-management-domain
 
-#VCF9 #VMware #Broadcom #Troubleshooting #SDDCManager #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #Troubleshooting #SDDCManager #VirtualizationGurus #VMwareCommunity #vExpert

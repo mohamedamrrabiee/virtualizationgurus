@@ -19,4 +19,4 @@ Where did you look first for VPC DNS settings?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-vpcs-subnets-vcenter/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-vpcs-subnets-vcenter
 
-#VCF9 #VMware #Broadcom #NSX #VPC #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #NSX #VPC #VirtualizationGurus #VMwareCommunity #vExpert

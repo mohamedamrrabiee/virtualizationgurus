@@ -18,4 +18,4 @@ How long did your last management domain bring-up take, and where did the time g
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-bring-up-milestones/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-bring-up-milestones
 
-#VCF9 #VMware #Broadcom #VCFInstaller #Deployment #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #VCFInstaller #Deployment #VirtualizationGurus #VMwareCommunity #vExpert

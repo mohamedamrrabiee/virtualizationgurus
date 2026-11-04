@@ -5,18 +5,19 @@ Status: DRAFT, needs review before posting
 
 With vSAN ESA there is no datastore on the management hosts before bring-up, so where does the VCF Installer run?
 
-In my lab it runs on a temporary VMFS datastore on a workload host, outside the management domain, and gets removed afterwards so vSAN can claim that disk. That was the first of several small surprises on the way to a deployment spec that validates.
+In my lab it runs outside the management domain, on a temporary VMFS datastore on a workload host. It gets removed after bring-up so vSAN can claim that disk.
 
-→ The depot host name was rejected as an invalid URL, the IP address worked
-→ The installer listed 9.1.0.0 binaries until I selected 9.1.1.0 explicitly
-→ The JSON generator needed a skip-edition-check flag to load in PowerShell on Linux
-→ The two HCL switches for nested NVMe disks reset on every spec import
+Three things I would set up before the first validation:
+
+→ Place the installer outside the management domain, on the build that matches your target release
+→ Connect the offline depot by IP address and select 9.1.1.0 explicitly
+→ Generate the spec from a saved and recalculated planning workbook, then set the HCL switches again after every import
 
 The Payoff:
-None of these are hard, but each one costs a validation cycle if you meet it unprepared.
+Get the placement, the depot and the spec right once, and validation becomes a formality instead of a loop.
 
-What is the smallest thing that has cost you the most time in a VCF deployment?
+What do you prepare before your first VCF Installer validation?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-vcf-installer-depot-spec/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-vcf-installer-depot-spec
 
-#VCF9 #VMware #Broadcom #VCFInstaller #Deployment #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #VCFInstaller #Deployment #VirtualizationGurus #VMwareCommunity #vExpert

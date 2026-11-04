@@ -19,4 +19,4 @@ How do you verify what your Tier-0 advertises?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-centralized-transit-gateway-ip-blocks/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-centralized-transit-gateway-ip-blocks
 
-#VCF9 #VMware #Broadcom #NSX #VPC #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #NSX #VPC #VirtualizationGurus #VMwareCommunity #vExpert

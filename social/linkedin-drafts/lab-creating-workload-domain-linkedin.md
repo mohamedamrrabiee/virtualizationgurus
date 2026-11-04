@@ -18,4 +18,4 @@ What do you settle on paper before you open the workload domain wizard?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-creating-workload-domain/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-creating-workload-domain
 
-#VCF9 #VMware #Broadcom #NSX #VCFOperations #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #NSX #VCFOperations #VirtualizationGurus #VMwareCommunity #vExpert

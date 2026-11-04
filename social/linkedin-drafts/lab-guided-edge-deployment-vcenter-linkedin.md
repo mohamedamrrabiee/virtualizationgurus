@@ -19,4 +19,4 @@ What do you create before you open an Edge deployment wizard?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-guided-edge-deployment-vcenter/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-guided-edge-deployment-vcenter
 
-#VCF9 #VMware #Broadcom #NSX #Edge #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #NSX #Edge #VirtualizationGurus #VMwareCommunity #vExpert
