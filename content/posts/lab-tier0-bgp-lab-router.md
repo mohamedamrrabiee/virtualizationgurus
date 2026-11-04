@@ -103,7 +103,7 @@ The router side proves the sessions. The NSX side proves the Edges. In NSX Manag
 ![NSX Edges list showing both nodes Up and Success](/images/lab/lab-S180.jpg)
 *NSX Manager, Edges: cluster Success, `vg1-w01-en01` and `vg1-w01-en02` Up, with their TEP addresses.*
 
-I did not keep the Edge CLI output in this lab. The checks I would run on an Edge node as admin, to complete the picture from the Edge itself:
+To complete the picture from the Edge itself, run these on an Edge node as admin:
 
 ```bash
 get logical-routers

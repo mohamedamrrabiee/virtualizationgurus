@@ -29,7 +29,7 @@ This post covers both, the retry method that fixed the first, and the workflow v
 
 The spec the installer exported contained `nsxtSpec.vpcSpec.vpcNetworkConfigurationType=FULL_STACK_VPC`. The SDDC Manager API documentation describes that field as only applicable to shell domains, and this deployment was a management domain.
 
-That the installer export is a defect in 9.1.1 is an inference. No Broadcom article was found for it.
+That the installer export is a defect in 9.1.1 is my inference, not a Broadcom statement.
 
 ### The fix: edit the spec and retry through the installer API
 
