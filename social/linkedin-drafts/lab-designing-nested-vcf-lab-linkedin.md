@@ -18,4 +18,4 @@ How do you name things in your lab: a pattern, or whatever the wizard suggests?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-designing-nested-vcf-lab/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-designing-nested-vcf-lab
 
-#VCF9 #VMware #Broadcom #HomeLab #Design #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #HomeLab #Design #VirtualizationGurus #VMwareCommunity #vExpert

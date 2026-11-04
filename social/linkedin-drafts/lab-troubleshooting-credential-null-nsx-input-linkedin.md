@@ -18,4 +18,4 @@ When an error message and a log disagree, which one do you trust first?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-troubleshooting-credential-null-nsx-input/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-troubleshooting-credential-null-nsx-input
 
-#VCF9 #VMware #Broadcom #Troubleshooting #SDDCManager #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #Troubleshooting #SDDCManager #VirtualizationGurus #VMwareCommunity #vExpert

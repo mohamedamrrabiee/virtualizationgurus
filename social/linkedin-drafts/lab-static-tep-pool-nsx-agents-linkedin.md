@@ -19,4 +19,4 @@ Have you hit a stale status in NSX that only an agent restart cleared?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-static-tep-pool-nsx-agents/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-static-tep-pool-nsx-agents
 
-#VCF9 #VMware #Broadcom #NSX #Troubleshooting #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #NSX #Troubleshooting #VirtualizationGurus #VMwareCommunity #vExpert

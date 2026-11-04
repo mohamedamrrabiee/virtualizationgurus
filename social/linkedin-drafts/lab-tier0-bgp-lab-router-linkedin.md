@@ -19,4 +19,4 @@ Do you check BGP from the router, from NSX, or both?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-tier0-bgp-lab-router/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-tier0-bgp-lab-router
 
-#VCF9 #VMware #Broadcom #NSX #BGP #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #NSX #BGP #VirtualizationGurus #VMwareCommunity #vExpert

@@ -19,4 +19,4 @@ Have you ever had to bypass a precheck in a lab to get past a UI block?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-host-commissioning-network-pool-api/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-host-commissioning-network-pool-api
 
-#VCF9 #VMware #Broadcom #Troubleshooting #SDDCManager #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #Troubleshooting #SDDCManager #VirtualizationGurus #VMwareCommunity #vExpert

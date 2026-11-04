@@ -19,4 +19,4 @@ Do you manage your workload domain vCenters from one client yet?
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-vcenter-linking-vcf-operations/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-vcenter-linking-vcf-operations
 
-#VCF9 #VMware #Broadcom #vCenter #VCFSSO #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #vCenter #VCFSSO #VirtualizationGurus #VMwareCommunity #vExpert

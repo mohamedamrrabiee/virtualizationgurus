@@ -18,4 +18,4 @@ Have you ever had to patch a running deployment workflow, and would you do it ag
 
 Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-troubleshooting-vpc-config-nsx-version/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-troubleshooting-vpc-config-nsx-version
 
-#VCF9 #VMware #Broadcom #Troubleshooting #SDDCManager #VirtualizationGurus #VMwareCommunity
+#VCF9 #VMware #Broadcom #Troubleshooting #SDDCManager #VirtualizationGurus #VMwareCommunity #vExpert
