@@ -1,6 +1,6 @@
 ---
 title: "Proving VPC Isolation with PowerCLI Test VMs and a Ping Matrix"
-date: 2026-11-08
+date: 2026-11-20
 draft: true
 tags: ["VCF", "VMware", "Lab", "NSX", "VPC", "PowerCLI", "Testing"]
 categories: ["VCF 9", "Lab Series"]

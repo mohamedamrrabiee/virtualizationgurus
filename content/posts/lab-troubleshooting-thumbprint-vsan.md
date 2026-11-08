@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting Bring-up 1: Thumbprint Mismatch and vSAN ESA Disk Eligibility"
-date: 2026-10-26
+date: 2026-11-07
 draft: true
 tags: ["VCF", "VMware", "Lab", "Troubleshooting", "vSAN ESA", "VCF Installer"]
 categories: ["VCF 9", "Lab Series"]

@@ -1,6 +1,6 @@
 ---
 title: "VPCs and Subnets from vCenter: Private, Public, DHCP, DNS and NTP"
-date: 2026-11-07
+date: 2026-11-19
 draft: true
 tags: ["VCF", "VMware", "Lab", "NSX", "VPC", "DHCP", "Networking"]
 categories: ["VCF 9", "Lab Series"]

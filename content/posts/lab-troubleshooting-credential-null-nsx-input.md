@@ -1,6 +1,6 @@
 ---
 title: "Troubleshooting Bring-up 3: Credential Null and NSX Input Data"
-date: 2026-10-28
+date: 2026-11-09
 draft: true
 tags: ["VCF", "VMware", "Lab", "Troubleshooting", "SDDC Manager", "NSX"]
 categories: ["VCF 9", "Lab Series"]

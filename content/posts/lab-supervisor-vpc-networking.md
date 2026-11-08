@@ -1,6 +1,6 @@
 ---
 title: "Activating a Supervisor on VPC Networking: Design Choices, the Wizard and the First 50 Minutes"
-date: 2026-11-10
+date: 2026-11-22
 draft: true
 tags: ["VCF", "VMware", "Lab", "Supervisor", "vSphere Kubernetes", "NSX", "VPC"]
 categories: ["VCF 9", "Lab Series"]

@@ -1,6 +1,6 @@
 ---
 title: "Walking the VCF Installer Wizard for a New Fleet"
-date: 2026-10-24
+date: 2026-11-05
 draft: true
 tags: ["VCF", "VMware", "Lab", "VCF Installer", "Deployment", "vSAN ESA"]
 categories: ["VCF 9", "Lab Series"]

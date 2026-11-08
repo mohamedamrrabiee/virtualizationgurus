@@ -54,6 +54,8 @@ upcoming:
     title: "VMs Next to Containers: VM Service with cloud-init, and a Volume from the Local Consumption Interface"
   - part: 25
     title: "Micro-segmentation Between VPCs with the Distributed Firewall, Proven with Traceflow"
+  - part: 26
+    title: "Distributed Firewall for Kubernetes Workloads: Pods and VMs in the Namespace VPC"
 ---
 
 A hands-on build of a VCF 9.1.1 lab on nested hosts, from empty ESX to a working Supervisor and VKS cluster, including what broke and how it was fixed. {{< lab-status >}}

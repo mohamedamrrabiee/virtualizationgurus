@@ -1,6 +1,6 @@
 ---
 title: "Distributed Firewall for Kubernetes Workloads: Pods and VMs in the Namespace VPC"
-date: 2026-11-12
+date: 2026-11-27
 draft: true
 tags: ["VCF", "VMware", "Lab", "NSX", "DFW", "Supervisor", "vSphere Pods", "VM Service"]
 categories: ["VCF 9", "Lab Series"]
