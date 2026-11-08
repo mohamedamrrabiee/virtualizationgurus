@@ -24,7 +24,7 @@ The target is a VCF 9.1.1 fleet with two domains:
 
 -> **Management domain (m01)**: four hosts on vSAN ESA, vCenter, SDDC Manager, a three-node NSX cluster (Medium), a two-node VCF Operations deployment with a cloud proxy, and VCF Management Services in `small_ha` mode.
 
--> **Workload domain (w01)**: three hosts on vSAN ESA with their own vCenter, an isolated SSO domain and their own three-node NSX cluster, using a centralized connectivity VPC design.
+-> **Workload domain (w01)**: three hosts on vSAN ESA with their own vCenter, their own three-node NSX cluster and an SSO domain that starts isolated and is joined to VCF SSO later, using a centralized connectivity VPC design.
 
 -> **Services around it**: a lab router (gateway, DNS, NTP, BGP) and an Ubuntu jump host that carries PowerShell, the offline depot and, later, the identity provider.
 
@@ -64,14 +64,17 @@ Every VLAN has its own /24 inside `10.20.0.0/16`, with the third octet grouping 
 | 3322 | ESX Management | 10.20.11.0/24 | 1500 |
 | 3323 | m01 vMotion | 10.20.12.0/24 | 9000 |
 | 3324 | m01 vSAN | 10.20.13.0/24 | 9000 |
-| 3325 | m01 host TEP | 10.20.14.0/24 | 1500 |
+| 3325 | m01 host TEP | 10.20.14.0/24 | 9000 |
 | 3333 | VCF Management (VCF Management Services, VCF Operations) | 10.20.99.0/24 | 1500 |
 | 3332 | m01 VPC gateway connectivity | 10.20.98.0/24 | 1500 |
 | 3326 | w01 vMotion | 10.20.22.0/24 | 9000 |
 | 3327 | w01 vSAN | 10.20.23.0/24 | 9000 |
 | 3328 | w01 host TEP | 10.20.24.0/24 | 9000 |
+| 3329 | w01 Edge TEP | 10.20.25.0/24 | 9000 |
+| 3330 | w01 Edge uplink A | 10.20.26.0/24 | 1500 |
+| 3331 | w01 Edge uplink B | 10.20.27.0/24 | 1500 |
 
-Edge TEPs and the BGP uplinks get their own VLANs later in the series, once the Edge cluster is built. Overlay and VPC address space (`10.80.0.0/22`, `172.16.0.0/16`, `172.20.0.0/16`) is kept completely outside the `10.20.0.0/16` underlay, so a route on the lab router can never be confused with a lab VLAN.
+The last three rows are used only once the Edge cluster is built, later in the series. Overlay and VPC address space (`10.80.0.0/22`, `172.20.0.0/16` for VPC private subnets and the default `172.31.0.0/16` private transit gateway block) is kept completely outside the `10.20.0.0/16` underlay, so a route on the lab router can never be confused with a lab VLAN.
 
 ## Host sizing
 
@@ -89,7 +92,7 @@ Nested virtual NVMe disks are not on the vSAN ESA HCL. The lab handles that with
 
 -> **VCF Installer outside the management domain**: with vSAN ESA, the m01 hosts have no datastore before bring-up and their NVMe disks must stay blank. The installer therefore runs on a temporary datastore on a w01 host and is removed afterwards. Post 3 covers this.
 
--> **Isolated SSO for w01**: the workload domain gets its own vCenter and its own `vsphere.local` domain. VCF SSO with an external identity provider and vCenter linking come later, so one vSphere Client can see both domains.
+-> **Separate vCenter for w01, joined later**: the workload domain is created with its own vCenter and its own `vsphere.local` domain. vCenter linking and VCF SSO with an external identity provider come afterwards, so in the final lab both vCenters, both NSX Managers and VCF Operations sign in through the same Identity Broker.
 
 -> **Centralized connectivity for w01 VPCs**: Edge nodes and a Tier-0 gateway peer with the lab router over eBGP, which makes north-south traffic and VPC reachability something you can verify from both sides.
 
@@ -101,7 +104,7 @@ Nested virtual NVMe disks are not on the vSAN ESA HCL. The lab handles that with
 
 -> **NTP**: all seven hosts pointed at the lab router, service running and set to start with the host.
 
--> **Routing and MTU**: every gateway (`.1`) answers, and jumbo frames (MTU 9000) pass between hosts on the vMotion and vSAN networks once those interfaces exist (`vmkping -d -s 8972`). The m01 host TEP network stays at 1500 because the management domain uses distributed connectivity for its VPCs.
+-> **Routing and MTU**: every gateway (`.1`) answers, and jumbo frames (MTU 9000) pass between hosts on the vMotion and vSAN networks once those interfaces exist (`vmkping -d -s 8972`). The m01 host TEP network runs at 9000 like the other host networks.
 
 -> **Certificates**: regenerated on every host after the host name and domain are set correctly, before thumbprints are captured.
 
