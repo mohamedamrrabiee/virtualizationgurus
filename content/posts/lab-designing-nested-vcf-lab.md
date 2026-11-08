@@ -105,6 +105,34 @@ Nested virtual NVMe disks are not on the vSAN ESA HCL. The lab handles that with
 
 -> **Certificates**: regenerated on every host after the host name and domain are set correctly, before thumbprints are captured.
 
+## The lab as built
+
+The plan above is the starting point. These three views show the final state of the same lab once every post in the series was applied: the high-level design, the network and host detail, and where each component runs.
+
+
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-asbuilt-hld.svg"></object>
+</div>
+
+*High-level design: external services, VCF fleet, management domain m01 and workload domain w01.*
+
+
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-asbuilt-lld.svg"></object>
+</div>
+
+*Low-level design: VLANs, subnets, host wiring, NSX routing and addressing.*
+
+
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-asbuilt-placement.svg"></object>
+</div>
+
+*Component placement: which cluster and host runs each appliance.*
+
 ## What's Next
 
 Next in this series: Preparing nested ESX hosts, certificates and thumbprints done right.

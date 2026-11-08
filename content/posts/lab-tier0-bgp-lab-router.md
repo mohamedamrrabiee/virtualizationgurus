@@ -122,6 +122,16 @@ get route 0.0.0.0/0
 
 The first lists the logical routers and their VRF IDs, the next enters the Tier-0 service router, then the BGP neighbor summary and the default route learned from the router.
 
+## The topology as built
+
+
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-asbuilt-edge-bgp-vpc.svg"></object>
+</div>
+
+*Both Edges peer with the lab router over two uplink VLANs. Only 10.80.0.0/22 is advertised.*
+
 ## What to take from it
 
 -> **Pick Active/Standby when you need NAT**: the VPC default outbound NAT is stateful, and stateful services need Active/Standby.

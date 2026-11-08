@@ -196,6 +196,16 @@ The HTTP 200 from the jump host matters. It shows that the external IP block is 
 
 One side effect to expect: the floating IP moves between control plane nodes, so SSH may warn about a changed host key. `ssh-keygen -R 10.20.10.61` clears it.
 
+## The Supervisor and VKS as built
+
+
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-asbuilt-supervisor-vks.svg"></object>
+</div>
+
+*The final Supervisor, namespace VPC, VKS cluster and DFW layout on the centralized connectivity design.*
+
 ## What to take from it
 
 -> **Count the management IPs first**: five consecutive addresses, with one left free on purpose.
