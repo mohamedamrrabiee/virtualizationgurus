@@ -111,7 +111,7 @@ The two results show where the Distributed Firewall acts. Each packet is dropped
 
 ## What's Next
 
-This post closes the main thread of the lab series, from the installer to a firewalled Supervisor.
+This is the last post in the series. The lab now runs from the first host to a Supervisor with VKS clusters, VMs and a Distributed Firewall that follows both NSX tags and Kubernetes labels.
 
 ## Further Reading (Official Broadcom Documentation)
 

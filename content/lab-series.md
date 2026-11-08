@@ -7,7 +7,7 @@ ShowBreadCrumbs: false
 hidemeta: true
 upcoming:
   - part: 2
-    title: "Preparing Nested ESX Hosts: Certificates and Thumbprints"
+    title: "Preparing Nested ESX Hosts: Certificates and Thumbprints Done Right"
   - part: 3
     title: "VCF Installer in a Lab: Appliance Placement, Offline Depot and a Spec from the Planning Workbook"
   - part: 4
@@ -19,7 +19,7 @@ upcoming:
   - part: 7
     title: "Troubleshooting Bring-up 2: VPC Config Type and the NSX Version"
   - part: 8
-    title: "Troubleshooting Bring-up 3: LOQSE1 and P2KLT7"
+    title: "Troubleshooting Bring-up 3: Credential Null and NSX Input Data"
   - part: 9
     title: "Day-N Starts in VCF Operations: Verifying the Management Domain"
   - part: 10
