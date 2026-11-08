@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 470" width="1120" height="470" font-family="Helvetica,Arial,sans-serif">
+<defs>
+<marker id="ablue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker>
+<marker id="agreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker>
+<marker id="ared" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker>
+<marker id="aamber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fbbf24"/></marker>
+<marker id="agray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker>
+<marker id="aviolet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a78bfa"/></marker>
+</defs>
+<rect width="1120" height="470" fill="#0c1222"/>
+<text x="24" y="30" fill="#e2e8f0" font-size="17" font-weight="bold">Test VM placement at a glance</text><text x="24" y="50" fill="#94a3b8" font-size="12" font-style="italic">Five test VMs, chosen to cover every path in the ping matrix</text>
+<rect x="24" y="66" width="330" height="300" rx="8" fill="none" stroke="#34d399" stroke-dasharray="4 4" opacity="0.8"/><text x="36" y="84" fill="#34d399" font-size="12" font-style="italic">Management VLAN 3321, 10.20.10.0/24</text>
+<rect x="700" y="66" width="396" height="168" rx="8" fill="none" stroke="#38bdf8" stroke-dasharray="4 4" opacity="0.8"/><text x="712" y="84" fill="#38bdf8" font-size="12" font-style="italic">vpc-app01</text>
+<rect x="700" y="252" width="396" height="114" rx="8" fill="none" stroke="#38bdf8" stroke-dasharray="4 4" opacity="0.8"/><text x="712" y="270" fill="#38bdf8" font-size="12" font-style="italic">vpc-dev01</text>
+<path d="M334,136 L377,136 L377,216 L420,216" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)" marker-start="url(#ablue)"/>
+<rect x="363" y="167" width="29" height="16" rx="3" fill="#0c1222"/><text x="377" y="179" fill="#38bdf8" font-size="11" text-anchor="middle">BGP</text>
+<path d="M630,216 L673,216 L673,154 L716,154" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)"/>
+<path d="M630,216 L673,216 L673,322 L716,322" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)"/>
+<rect x="44" y="104" width="290" height="64" rx="7" fill="#151f30" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="52" y="112" width="34" height="22" rx="4" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="69" y="127" fill="#94a3b8" font-size="9" font-weight="bold" text-anchor="middle">RTR</text>
+<text x="94" y="127" fill="#e2e8f0" font-size="12.5" font-weight="bold">Lab router</text>
+<text x="56" y="145" fill="#94a3b8" font-size="11">10.20.10.1</text>
+<rect x="44" y="184" width="290" height="64" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="52" y="192" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="69" y="207" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">VM</text>
+<text x="94" y="207" fill="#e2e8f0" font-size="12.5" font-weight="bold">vg1-m01-test01</text>
+<text x="56" y="225" fill="#94a3b8" font-size="11">10.20.10.71, static</text>
+<rect x="44" y="264" width="290" height="64" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="52" y="272" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="69" y="287" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">VM</text>
+<text x="94" y="287" fill="#e2e8f0" font-size="12.5" font-weight="bold">vg1-w01-test01</text>
+<text x="56" y="305" fill="#94a3b8" font-size="11">10.20.10.72, static</text>
+<rect x="420" y="170" width="210" height="92" rx="7" fill="#2a2210" stroke="#fbbf24" stroke-width="1.5"/>
+<rect x="428" y="178" width="34" height="22" rx="4" fill="none" stroke="#fbbf24" stroke-width="1"/><text x="445" y="193" fill="#fbbf24" font-size="9" font-weight="bold" text-anchor="middle">T0</text>
+<text x="470" y="193" fill="#e2e8f0" font-size="12.5" font-weight="bold">Tier-0 and transit gateway</text>
+<text x="432" y="211" fill="#94a3b8" font-size="11">BGP to the router</text>
+<text x="432" y="225" fill="#94a3b8" font-size="11">SNAT for private subnets</text>
+<rect x="908" y="104" width="172" height="100" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="916" y="112" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="933" y="127" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">VM</text>
+<text x="958" y="127" fill="#e2e8f0" font-size="12.5" font-weight="bold">app-priv01</text>
+<text x="920" y="145" fill="#94a3b8" font-size="11">172.20.1.3, DHCP</text>
+<text x="920" y="159" fill="#94a3b8" font-size="11">app-private</text>
+<rect x="716" y="104" width="172" height="100" rx="7" fill="#10281f" stroke="#34d399" stroke-width="1.5"/>
+<rect x="724" y="112" width="34" height="22" rx="4" fill="none" stroke="#34d399" stroke-width="1"/><text x="741" y="127" fill="#34d399" font-size="9" font-weight="bold" text-anchor="middle">VM</text>
+<text x="766" y="127" fill="#e2e8f0" font-size="12.5" font-weight="bold">app-pub01</text>
+<text x="728" y="145" fill="#94a3b8" font-size="11">10.80.0.19, DHCP</text>
+<text x="728" y="159" fill="#94a3b8" font-size="11">app-public</text>
+<rect x="716" y="292" width="172" height="60" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="724" y="300" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="741" y="315" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">VM</text>
+<text x="766" y="315" fill="#e2e8f0" font-size="12.5" font-weight="bold">dev-priv01</text>
+<text x="728" y="333" fill="#94a3b8" font-size="11">172.20.17.3, DHCP</text>
+<text x="24" y="400" fill="#94a3b8" font-size="11">Private ranges (172.20.x.x) are not advertised, so management cannot reach them.</text>
+<text x="24" y="415" fill="#94a3b8" font-size="11">The matrix proves the expected PASS and FAIL cells from every VM to every other VM.</text>
+<text x="1096" y="458" fill="#64748b" font-size="10" text-anchor="end">Virtualization Gurus  |  nested VCF 9.1.1 lab</text></svg>

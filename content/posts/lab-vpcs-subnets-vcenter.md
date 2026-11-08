@@ -18,6 +18,14 @@ With the transit gateway in place, VPCs are quick to create. The vSphere Client 
 
 In this lab I built two VPCs and three subnets in about 25 minutes, from 22:49 to 23:14 local, then spent a few more minutes finding where DNS and NTP belong. That search is the most useful part of this post.
 
+## Architecture at a glance
+
+The two VPCs, their three subnets and the SNAT addresses, with the shared service profile underneath.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-vpcs-subnets-vcenter-glance.svg"></object>
+</div>
+
 ## The VPCs
 
 | VPC | Private CIDR | Profile |

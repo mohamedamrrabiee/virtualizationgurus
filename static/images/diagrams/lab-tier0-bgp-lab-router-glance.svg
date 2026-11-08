@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 450" width="1120" height="450" font-family="Helvetica,Arial,sans-serif">
+<defs>
+<marker id="ablue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker>
+<marker id="agreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker>
+<marker id="ared" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker>
+<marker id="aamber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fbbf24"/></marker>
+<marker id="agray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker>
+<marker id="aviolet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a78bfa"/></marker>
+</defs>
+<rect width="1120" height="450" fill="#0c1222"/>
+<text x="24" y="30" fill="#e2e8f0" font-size="17" font-weight="bold">Tier-0 and eBGP peering at a glance</text><text x="24" y="50" fill="#94a3b8" font-size="12" font-style="italic">Four sessions, two per Edge, each over its own VLAN</text>
+<rect x="24" y="66" width="470" height="290" rx="8" fill="none" stroke="#fbbf24" stroke-dasharray="4 4" opacity="0.8"/><text x="36" y="84" fill="#fbbf24" font-size="12" font-style="italic">Tier-0 vg1-w01-t0-01, Active/Standby, ASN 65100</text>
+<rect x="626" y="66" width="470" height="290" rx="8" fill="none" stroke="#94a3b8" stroke-dasharray="4 4" opacity="0.8"/><text x="638" y="84" fill="#94a3b8" font-size="12" font-style="italic">Lab router (FRR), ASN 65001</text>
+<path d="M304,152 L646,152" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)" marker-start="url(#ablue)"/>
+<rect x="458" y="143" width="35" height="16" rx="3" fill="#0c1222"/><text x="475" y="155" fill="#38bdf8" font-size="11" text-anchor="middle">eBGP</text>
+<path d="M304,152 L646,278" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)" marker-start="url(#ablue)"/>
+<path d="M304,278 L646,152" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)" marker-start="url(#ablue)"/>
+<path d="M304,278 L646,278" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)" marker-start="url(#ablue)"/>
+<rect x="458" y="269" width="35" height="16" rx="3" fill="#0c1222"/><text x="475" y="281" fill="#38bdf8" font-size="11" text-anchor="middle">eBGP</text>
+<rect x="44" y="110" width="260" height="84" rx="7" fill="#2a2210" stroke="#fbbf24" stroke-width="1.5"/>
+<rect x="52" y="118" width="34" height="22" rx="4" fill="none" stroke="#fbbf24" stroke-width="1"/><text x="69" y="133" fill="#fbbf24" font-size="9" font-weight="bold" text-anchor="middle">EDG</text>
+<text x="94" y="133" fill="#e2e8f0" font-size="12.5" font-weight="bold">vg1-w01-en01</text>
+<text x="56" y="151" fill="#94a3b8" font-size="11">10.20.26.2 on VLAN 3330</text>
+<text x="56" y="165" fill="#94a3b8" font-size="11">10.20.27.2 on VLAN 3331</text>
+<rect x="44" y="236" width="260" height="84" rx="7" fill="#2a2210" stroke="#fbbf24" stroke-width="1.5"/>
+<rect x="52" y="244" width="34" height="22" rx="4" fill="none" stroke="#fbbf24" stroke-width="1"/><text x="69" y="259" fill="#fbbf24" font-size="9" font-weight="bold" text-anchor="middle">EDG</text>
+<text x="94" y="259" fill="#e2e8f0" font-size="12.5" font-weight="bold">vg1-w01-en02</text>
+<text x="56" y="277" fill="#94a3b8" font-size="11">10.20.26.3 on VLAN 3330</text>
+<text x="56" y="291" fill="#94a3b8" font-size="11">10.20.27.3 on VLAN 3331</text>
+<rect x="646" y="110" width="260" height="84" rx="7" fill="#151f30" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="654" y="118" width="34" height="22" rx="4" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="671" y="133" fill="#94a3b8" font-size="9" font-weight="bold" text-anchor="middle">RTR</text>
+<text x="696" y="133" fill="#e2e8f0" font-size="12.5" font-weight="bold">VLAN 3330 interface</text>
+<text x="658" y="151" fill="#94a3b8" font-size="11">10.20.26.1/24</text>
+<text x="658" y="165" fill="#94a3b8" font-size="11">peers .2 and .3</text>
+<rect x="646" y="236" width="260" height="84" rx="7" fill="#151f30" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="654" y="244" width="34" height="22" rx="4" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="671" y="259" fill="#94a3b8" font-size="9" font-weight="bold" text-anchor="middle">RTR</text>
+<text x="696" y="259" fill="#e2e8f0" font-size="12.5" font-weight="bold">VLAN 3331 interface</text>
+<text x="658" y="277" fill="#94a3b8" font-size="11">10.20.27.1/24</text>
+<text x="658" y="291" fill="#94a3b8" font-size="11">peers .2 and .3</text>
+<text x="24" y="385" fill="#94a3b8" font-size="11">The router sends a default route and accepts only prefixes inside 10.80.0.0/22.</text>
+<text x="24" y="402" fill="#94a3b8" font-size="11">BFD off, no BGP password, uplink MTU 1500. One router stands in for two top-of-rack switches.</text>
+<text x="1096" y="438" fill="#64748b" font-size="10" text-anchor="end">Virtualization Gurus  |  nested VCF 9.1.1 lab</text></svg>

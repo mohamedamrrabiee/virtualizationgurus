@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 430" width="1120" height="430" font-family="Helvetica,Arial,sans-serif">
+<defs>
+<marker id="ablue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker>
+<marker id="agreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker>
+<marker id="ared" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker>
+<marker id="aamber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fbbf24"/></marker>
+<marker id="agray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker>
+<marker id="aviolet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a78bfa"/></marker>
+</defs>
+<rect width="1120" height="430" fill="#0c1222"/>
+<text x="24" y="30" fill="#e2e8f0" font-size="17" font-weight="bold">VCF SSO login flow at a glance</text><text x="24" y="50" fill="#94a3b8" font-size="12" font-style="italic">Keycloak as the OIDC provider, an Instance identity broker in between</text>
+<path d="M214,188 L244,188 L244,128 L274,128" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)"/>
+<rect x="211" y="149" width="66" height="16" rx="3" fill="#0c1222"/><text x="244" y="161" fill="#38bdf8" font-size="11" text-anchor="middle">1 sign in</text>
+<path d="M504,128 L522,128 L522,190 L540,190" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)"/>
+<rect x="514" y="150" width="16" height="16" rx="3" fill="#0c1222"/><text x="522" y="162" fill="#38bdf8" font-size="11" text-anchor="middle">2</text>
+<path d="M740,190 L800,190 L800,176 L860,176" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)" marker-start="url(#ablue)"/>
+<rect x="745" y="174" width="109" height="16" rx="3" fill="#0c1222"/><text x="800" y="186" fill="#38bdf8" font-size="11" text-anchor="middle">3 OIDC, ID token</text>
+<path d="M504,288 L522,288 L522,190 L540,190" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ablue)"/>
+<rect x="486" y="230" width="72" height="16" rx="3" fill="#0c1222"/><text x="522" y="242" fill="#38bdf8" font-size="11" text-anchor="middle">configures</text>
+<rect x="24" y="150" width="190" height="76" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="32" y="158" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="49" y="173" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">ADM</text>
+<text x="74" y="173" fill="#e2e8f0" font-size="12.5" font-weight="bold">Administrator</text>
+<text x="36" y="191" fill="#94a3b8" font-size="11">mrabiee</text>
+<text x="36" y="205" fill="#94a3b8" font-size="11">member of vcf-admins</text>
+<rect x="274" y="90" width="230" height="76" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="282" y="98" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="299" y="113" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">VC</text>
+<text x="324" y="113" fill="#e2e8f0" font-size="12.5" font-weight="bold">vCenter and NSX</text>
+<text x="286" y="131" fill="#94a3b8" font-size="11">VCF SSO components</text>
+<text x="286" y="145" fill="#94a3b8" font-size="11">sign-in goes to the broker</text>
+<rect x="274" y="250" width="230" height="76" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="282" y="258" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="299" y="273" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">APP</text>
+<text x="324" y="273" fill="#e2e8f0" font-size="12.5" font-weight="bold">VCF Operations</text>
+<text x="286" y="291" fill="#94a3b8" font-size="11">hosts the SSO wizard</text>
+<text x="286" y="305" fill="#94a3b8" font-size="11">runs Test Login</text>
+<rect x="540" y="150" width="200" height="80" rx="7" fill="#1d1a33" stroke="#a78bfa" stroke-width="1.5"/>
+<rect x="548" y="158" width="34" height="22" rx="4" fill="none" stroke="#a78bfa" stroke-width="1"/><text x="565" y="173" fill="#a78bfa" font-size="9" font-weight="bold" text-anchor="middle">ID</text>
+<text x="590" y="173" fill="#e2e8f0" font-size="12.5" font-weight="bold">Identity broker</text>
+<text x="552" y="191" fill="#94a3b8" font-size="11">vg1-m01-idb01</text>
+<text x="552" y="205" fill="#94a3b8" font-size="11">Instance mode, JIT, sub</text>
+<rect x="860" y="120" width="236" height="112" rx="7" fill="#2a2210" stroke="#fbbf24" stroke-width="1.5"/>
+<rect x="868" y="128" width="34" height="22" rx="4" fill="none" stroke="#fbbf24" stroke-width="1"/><text x="885" y="143" fill="#fbbf24" font-size="9" font-weight="bold" text-anchor="middle">ID</text>
+<text x="910" y="143" fill="#e2e8f0" font-size="12.5" font-weight="bold">Keycloak 26.3.0</text>
+<text x="872" y="161" fill="#94a3b8" font-size="11">jump host, HTTPS 8443</text>
+<text x="872" y="175" fill="#94a3b8" font-size="11">realm vgurus, client vcf</text>
+<text x="872" y="189" fill="#94a3b8" font-size="11">group vcf-admins</text>
+<text x="872" y="203" fill="#94a3b8" font-size="11">claims: groups, domain</text>
+<text x="24" y="360" fill="#94a3b8" font-size="11">1 sign in, 2 redirect to the broker, 3 OIDC authorization code flow and ID token with the groups claim.</text>
+<text x="24" y="380" fill="#94a3b8" font-size="11">SDDC Manager UI and ESX hosts keep their own local sign-in. SSO is managed only from VCF Operations once configured.</text>
+<text x="1096" y="418" fill="#64748b" font-size="10" text-anchor="end">Virtualization Gurus  |  nested VCF 9.1.1 lab</text></svg>

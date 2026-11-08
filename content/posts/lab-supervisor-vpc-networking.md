@@ -18,6 +18,14 @@ With the workload domain, the Edge cluster, the Tier-0 gateway, the transit gate
 
 The result was a Supervisor `vg1-w01-sup01` with three control plane VMs, running about 52 minutes after Finish was pressed.
 
+## Architecture at a glance
+
+The management addressing, the Supervisor and the workload network that the wizard ties together.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-supervisor-vpc-networking-glance.svg"></object>
+</div>
+
 ## Design choices
 
 | Decision | Choice | Reason |

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 370" width="1120" height="370" font-family="Helvetica,Arial,sans-serif">
+<defs>
+<marker id="ablue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker>
+<marker id="agreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker>
+<marker id="ared" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker>
+<marker id="aamber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fbbf24"/></marker>
+<marker id="agray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker>
+<marker id="aviolet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a78bfa"/></marker>
+</defs>
+<rect width="1120" height="370" fill="#0c1222"/>
+<text x="24" y="30" fill="#e2e8f0" font-size="17" font-weight="bold">Namespace VPC firewall at a glance</text><text x="24" y="50" fill="#94a3b8" font-size="12" font-style="italic">Kubernetes labels become NSX tags, groups use the Subnet Port member type</text>
+<rect x="24" y="66" width="1072" height="262" rx="8" fill="none" stroke="#a78bfa" stroke-dasharray="4 4" opacity="0.8"/><text x="36" y="84" fill="#a78bfa" font-size="12" font-style="italic">Namespace ns-app-dev, namespace VPC</text>
+<path d="M224,156 L320,156" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)"/>
+<rect x="233" y="147" width="78" height="16" rx="3" fill="#0c1222"/><text x="272" y="159" fill="#38bdf8" font-size="11" text-anchor="middle">label = tag</text>
+<path d="M950,156 L850,156" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)"/>
+<rect x="861" y="147" width="78" height="16" rx="3" fill="#0c1222"/><text x="900" y="159" fill="#38bdf8" font-size="11" text-anchor="middle">label = tag</text>
+<path d="M530,134 L640,134" fill="none" stroke="#f87171" stroke-width="1.6" marker-end="url(#ared)"/>
+<rect x="552" y="117" width="66" height="16" rx="3" fill="#0c1222"/><text x="585" y="129" fill="#f87171" font-size="11" text-anchor="middle">1012 Drop</text>
+<path d="M640,178 L530,178" fill="none" stroke="#f87171" stroke-width="1.6" marker-end="url(#ared)"/>
+<rect x="552" y="177" width="66" height="16" rx="3" fill="#0c1222"/><text x="585" y="189" fill="#f87171" font-size="11" text-anchor="middle">1013 Drop</text>
+<rect x="44" y="110" width="180" height="92" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="52" y="118" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="69" y="133" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">VM</text>
+<text x="94" y="133" fill="#e2e8f0" font-size="12.5" font-weight="bold">vm-demo01</text>
+<text x="56" y="151" fill="#94a3b8" font-size="11">VM Service VM</text>
+<text x="56" y="165" fill="#94a3b8" font-size="11">172.21.0.35</text>
+<text x="56" y="179" fill="#94a3b8" font-size="11">vm-selector: vm-demo01</text>
+<rect x="320" y="110" width="210" height="92" rx="7" fill="#2a2210" stroke="#fbbf24" stroke-width="1.5"/>
+<rect x="328" y="118" width="34" height="22" rx="4" fill="none" stroke="#fbbf24" stroke-width="1"/><text x="345" y="133" fill="#fbbf24" font-size="9" font-weight="bold" text-anchor="middle">DFW</text>
+<text x="370" y="133" fill="#e2e8f0" font-size="12.5" font-weight="bold">grp-vm-demo01</text>
+<text x="332" y="151" fill="#94a3b8" font-size="11">Subnet Port</text>
+<text x="332" y="165" fill="#94a3b8" font-size="11">tag vm-demo01</text>
+<text x="332" y="179" fill="#94a3b8" font-size="11">scope vm-selector</text>
+<rect x="640" y="110" width="210" height="92" rx="7" fill="#2a2210" stroke="#fbbf24" stroke-width="1.5"/>
+<rect x="648" y="118" width="34" height="22" rx="4" fill="none" stroke="#fbbf24" stroke-width="1"/><text x="665" y="133" fill="#fbbf24" font-size="9" font-weight="bold" text-anchor="middle">DFW</text>
+<text x="690" y="133" fill="#e2e8f0" font-size="12.5" font-weight="bold">grp-web-demo2</text>
+<text x="652" y="151" fill="#94a3b8" font-size="11">Subnet Port</text>
+<text x="652" y="165" fill="#94a3b8" font-size="11">tag web-demo2</text>
+<text x="652" y="179" fill="#94a3b8" font-size="11">scope app</text>
+<rect x="950" y="110" width="130" height="92" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="958" y="118" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="975" y="133" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">NS</text>
+<text x="1000" y="133" fill="#e2e8f0" font-size="12.5" font-weight="bold">web-demo2</text>
+<text x="962" y="151" fill="#94a3b8" font-size="11">3 vSphere Pods</text>
+<text x="962" y="165" fill="#94a3b8" font-size="11">172.31.0.34-.36</text>
+<text x="962" y="179" fill="#94a3b8" font-size="11">app: web-demo2</text>
+<text x="44" y="250" fill="#94a3b8" font-size="11">Two one-way rules, not one rule with both groups on both sides, because that would also drop traffic between pods inside web-demo2.</text>
+<text x="44" y="278" fill="#94a3b8" font-size="11">Pods use the private transit gateway block 172.31.0.0/16, the VM uses the namespace private range 172.21.0.0/16.</text>
+<text x="1096" y="358" fill="#64748b" font-size="10" text-anchor="end">Virtualization Gurus  |  nested VCF 9.1.1 lab</text></svg>

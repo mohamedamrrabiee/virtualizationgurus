@@ -18,6 +18,14 @@ The previous post wrote a Distributed Firewall policy for VMs with NSX tags. A S
 
 The answer in a namespace VPC is that Kubernetes labels become NSX tags on the workload's subnet port, and groups match on those tags. This post builds a two-rule policy between a VM and a set of pods and proves each direction with Traceflow.
 
+## Architecture at a glance
+
+How Kubernetes labels reach the firewall as tags, and where the two one-way rules sit.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-dfw-namespace-vpc-kubernetes-labels-glance.svg"></object>
+</div>
+
 ## The workloads
 
 | Workload | Kind | Address | Kubernetes label |

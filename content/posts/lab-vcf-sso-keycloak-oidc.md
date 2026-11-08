@@ -18,6 +18,14 @@ A nested lab usually has no Active Directory, but VCF SSO still needs an identit
 
 The whole job took about one hour 35 minutes of wall clock, from the first wizard page at 16:45 to the vCenter linking group becoming Active at about 18:20. A large part of that was building the identity provider, because the wizard needs it before it can finish.
 
+## Architecture at a glance
+
+The sign-in path this post builds, from the administrator through the identity broker to Keycloak.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-vcf-sso-keycloak-oidc-glance.svg"></object>
+</div>
+
 ## The identity provider
 
 Keycloak runs as a container on the jump host, with a certificate from a small lab CA. VCF SSO talks to it over HTTPS, so the certificate chain is part of the setup and not an afterthought.

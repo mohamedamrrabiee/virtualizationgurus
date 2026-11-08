@@ -18,6 +18,14 @@ Two VPCs and three subnets exist, but nothing has proved that they behave the wa
 
 In this lab 25 of 25 tested paths matched the expectation. The interesting part is the expectation itself, because several of the failures are the correct outcome.
 
+## Architecture at a glance
+
+Where each of the five test VMs sits, so the ping matrix results can be read against the topology.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-vpc-isolation-powercli-test-vms-glance.svg"></object>
+</div>
+
 ## The test VMs
 
 Five Photon OS 5 VMs, one vCPU and 1 GB each, in a Test VMs folder in each datacenter. One sits on the management domain management network, and four sit in the workload domain.

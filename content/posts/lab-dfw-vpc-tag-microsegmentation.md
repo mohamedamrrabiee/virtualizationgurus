@@ -18,6 +18,14 @@ Posts 18 and 19 built two VPCs and proved their isolation with a ping matrix. Th
 
 The policy has five rules and three groups. Two of the rules exist because the first design had a gap and a wrong assumption, and both are worth knowing before you write your own.
 
+## Architecture at a glance
+
+The three groups and five rules of the policy, and the path each rule controls.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-dfw-vpc-tag-microsegmentation-glance.svg"></object>
+</div>
+
 ## The test bed
 
 | VM | IP | NSX tag (scope `tier`) |

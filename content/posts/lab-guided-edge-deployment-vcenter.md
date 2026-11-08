@@ -18,6 +18,14 @@ A VPC with centralized connectivity needs NSX Edge nodes. In VCF 9.1.1 the vSphe
 
 In this lab the prerequisites took about 10 minutes and the wizard run about 20 minutes, ending with both Edge nodes Up.
 
+## Architecture at a glance
+
+What the guided deployment attaches to: two Edge nodes, four VLANs and the uplink mapping on the workload domain hosts.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-guided-edge-deployment-vcenter-glance.svg"></object>
+</div>
+
 ## Prerequisites to create first
 
 -> **A VM management port group on the w01 VDS**: the default switch profile created during the workload domain deployment has no port group for Edge management. I created `vg1-w01-cl01-vds-01-pg-vmmgmt` on VLAN 3321 before opening the wizard.

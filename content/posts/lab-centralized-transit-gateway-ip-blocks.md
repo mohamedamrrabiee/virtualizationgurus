@@ -18,6 +18,14 @@ The last page of the centralized connectivity wizard asks for two IP blocks, and
 
 In this lab the external block was 10.80.0.0/22, created inside the wizard, and the private block was the one VCF had already created during bring-up. After the VPCs existed, the lab router learned only addresses from the external block, which is exactly the point.
 
+## Architecture at a glance
+
+How the Tier-0, the transit gateway and the two IP blocks fit together, and which block is advertised.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-centralized-transit-gateway-ip-blocks-glance.svg"></object>
+</div>
+
 ## The two blocks
 
 | Block | Purpose | Advertised over BGP |

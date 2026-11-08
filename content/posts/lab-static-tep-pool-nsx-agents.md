@@ -18,6 +18,14 @@ The workload domain deployment succeeded, but the three w01 hosts showed Down in
 
 This post covers the fix, a second step that was needed even after the fix looked complete, and the small datacenter rename that finishes the post-deployment cleanup.
 
+## Architecture at a glance
+
+The three TEP roles, each with its own VLAN, subnet and static pool, are the whole subject of this post.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-static-tep-pool-nsx-agents-glance.svg"></object>
+</div>
+
 ## The symptom
 
 -> **In NSX Manager**: all three hosts Down, two alarms per host.

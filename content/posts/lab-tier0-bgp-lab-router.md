@@ -18,6 +18,14 @@ The guided Edge deployment from the previous post ends with the wizard asking fo
 
 In this lab the Tier-0 `vg1-w01-t0-01` came up with four eBGP sessions Established to the lab router, and both Edge nodes showed Up and Success about 20 minutes after the wizard started. One thing worth knowing up front: for a short time while the workflow was still running, the Edge 1 sessions dropped back to Connect and then recovered on their own.
 
+## Architecture at a glance
+
+The four eBGP sessions between the two Edge nodes and the lab router, each over its own VLAN.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-tier0-bgp-lab-router-glance.svg"></object>
+</div>
+
 ## What the documentation says
 
 Before the lab values, the parts of the VCF 9.1 documentation that shaped them:
