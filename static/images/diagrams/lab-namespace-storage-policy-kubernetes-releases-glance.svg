@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 470" width="1120" height="470" font-family="Helvetica,Arial,sans-serif">
+<defs>
+<marker id="ablue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker>
+<marker id="agreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker>
+<marker id="ared" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker>
+<marker id="aamber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fbbf24"/></marker>
+<marker id="agray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker>
+<marker id="aviolet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a78bfa"/></marker>
+</defs>
+<rect width="1120" height="470" fill="#0c1222"/>
+<text x="24" y="30" fill="#e2e8f0" font-size="17" font-weight="bold">Namespace, storage policy and releases at a glance</text><text x="24" y="50" fill="#94a3b8" font-size="12" font-style="italic">What a team gets in ns-app-dev, and where each piece comes from</text>
+<rect x="24" y="66" width="330" height="370" rx="8" fill="none" stroke="#a78bfa" stroke-dasharray="4 4" opacity="0.8"/><text x="36" y="84" fill="#a78bfa" font-size="12" font-style="italic">Supervisor vg1-w01-sup01</text>
+<rect x="390" y="66" width="340" height="370" rx="8" fill="none" stroke="#38bdf8" stroke-dasharray="4 4" opacity="0.8"/><text x="402" y="84" fill="#38bdf8" font-size="12" font-style="italic">Namespace ns-app-dev, zone vg1-w01-az01</text>
+<rect x="766" y="66" width="330" height="370" rx="8" fill="none" stroke="#34d399" stroke-dasharray="4 4" opacity="0.8"/><text x="778" y="84" fill="#34d399" font-size="12" font-style="italic">Storage</text>
+<path d="M931,204 L931,224" fill="none" stroke="#34d399" stroke-width="1.6" marker-end="url(#agreen)"/>
+<path d="M931,324 L931,344" fill="none" stroke="#34d399" stroke-width="1.6" marker-end="url(#agreen)"/>
+<path d="M710,356 L748,356 L748,154 L786,154" fill="none" stroke="#34d399" stroke-width="1.6" marker-end="url(#agreen)"/>
+<rect x="44" y="104" width="290" height="76" rx="7" fill="#1d1a33" stroke="#a78bfa" stroke-width="1.5"/>
+<rect x="52" y="112" width="34" height="22" rx="4" fill="none" stroke="#a78bfa" stroke-width="1"/><text x="69" y="127" fill="#a78bfa" font-size="9" font-weight="bold" text-anchor="middle">NS</text>
+<text x="94" y="127" fill="#e2e8f0" font-size="12.5" font-weight="bold">VKS service 3.7.0</text>
+<text x="56" y="145" fill="#94a3b8" font-size="11">svc-tkg, embedded in 9.1.1</text>
+<text x="56" y="159" fill="#94a3b8" font-size="11">Cluster API and ClusterClass</text>
+<rect x="44" y="200" width="290" height="92" rx="7" fill="#1d1a33" stroke="#a78bfa" stroke-width="1.5"/>
+<rect x="52" y="208" width="34" height="22" rx="4" fill="none" stroke="#a78bfa" stroke-width="1"/><text x="69" y="223" fill="#a78bfa" font-size="9" font-weight="bold" text-anchor="middle">K8S</text>
+<text x="94" y="223" fill="#e2e8f0" font-size="12.5" font-weight="bold">3 Kubernetes releases</text>
+<text x="56" y="241" fill="#94a3b8" font-size="11">v1.33.6 (FIPS), v1.34.8, v1.35.5</text>
+<text x="56" y="255" fill="#94a3b8" font-size="11">all READY and COMPATIBLE</text>
+<rect x="44" y="312" width="290" height="96" rx="7" fill="#151f30" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="52" y="320" width="34" height="22" rx="4" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="69" y="335" fill="#94a3b8" font-size="9" font-weight="bold" text-anchor="middle">DOC</text>
+<text x="94" y="335" fill="#e2e8f0" font-size="12.5" font-weight="bold">Kubernetes Service library</text>
+<text x="56" y="353" fill="#94a3b8" font-size="11">subscribed, download on demand</text>
+<text x="56" y="367" fill="#94a3b8" font-size="11">1.13 MB before the first cluster</text>
+<text x="56" y="381" fill="#94a3b8" font-size="11">8.38 GB after it</text>
+<rect x="410" y="104" width="300" height="84" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="418" y="112" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="435" y="127" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">NET</text>
+<text x="460" y="127" fill="#e2e8f0" font-size="12.5" font-weight="bold">Own VPC, default settings</text>
+<text x="422" y="145" fill="#94a3b8" font-size="11">private range from 172.21.0.0/16</text>
+<text x="422" y="159" fill="#94a3b8" font-size="11">VIPs from 10.80.0.0/22</text>
+<rect x="410" y="208" width="300" height="76" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="418" y="216" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="435" y="231" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">VM</text>
+<text x="460" y="231" fill="#e2e8f0" font-size="12.5" font-weight="bold">2 VM classes</text>
+<text x="422" y="249" fill="#94a3b8" font-size="11">best-effort-small and medium</text>
+<text x="422" y="263" fill="#94a3b8" font-size="11">no limits set</text>
+<rect x="410" y="304" width="300" height="104" rx="7" fill="#10281f" stroke="#34d399" stroke-width="1.5"/>
+<rect x="418" y="312" width="34" height="22" rx="4" fill="none" stroke="#34d399" stroke-width="1"/><text x="435" y="327" fill="#34d399" font-size="9" font-weight="bold" text-anchor="middle">vSAN</text>
+<text x="460" y="327" fill="#e2e8f0" font-size="12.5" font-weight="bold">2 storage policies</text>
+<text x="422" y="345" fill="#94a3b8" font-size="11">vSAN ESA Default Policy - RAID5</text>
+<text x="422" y="359" fill="#94a3b8" font-size="11">sp-vks-gold (new)</text>
+<rect x="786" y="104" width="290" height="100" rx="7" fill="#10281f" stroke="#34d399" stroke-width="1.5"/>
+<rect x="794" y="112" width="34" height="22" rx="4" fill="none" stroke="#34d399" stroke-width="1"/><text x="811" y="127" fill="#34d399" font-size="9" font-weight="bold" text-anchor="middle">vSAN</text>
+<text x="836" y="127" fill="#e2e8f0" font-size="12.5" font-weight="bold">sp-vks-gold</text>
+<text x="798" y="145" fill="#94a3b8" font-size="11">RAID-5, thin, checksum on</text>
+<text x="798" y="159" fill="#94a3b8" font-size="11">Auto-RAID off, 1 stripe</text>
+<rect x="786" y="224" width="290" height="100" rx="7" fill="#10281f" stroke="#34d399" stroke-width="1.5"/>
+<rect x="794" y="232" width="34" height="22" rx="4" fill="none" stroke="#34d399" stroke-width="1"/><text x="811" y="247" fill="#34d399" font-size="9" font-weight="bold" text-anchor="middle">DOC</text>
+<text x="836" y="247" fill="#e2e8f0" font-size="12.5" font-weight="bold">Two StorageClasses</text>
+<text x="798" y="265" fill="#94a3b8" font-size="11">sp-vks-gold (Immediate)</text>
+<text x="798" y="279" fill="#94a3b8" font-size="11">sp-vks-gold-latebinding</text>
+<rect x="786" y="344" width="290" height="64" rx="7" fill="#151f30" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="794" y="352" width="34" height="22" rx="4" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="811" y="367" fill="#94a3b8" font-size="9" font-weight="bold" text-anchor="middle">DC</text>
+<text x="836" y="367" fill="#e2e8f0" font-size="12.5" font-weight="bold">vSAN ESA datastore</text>
+<text x="798" y="385" fill="#94a3b8" font-size="11">vg1-w01-cl01-vsan01</text>
+<text x="1096" y="458" fill="#64748b" font-size="10" text-anchor="end">Virtualization Gurus  |  nested VCF 9.1.1 lab</text></svg>

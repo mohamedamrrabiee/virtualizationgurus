@@ -90,13 +90,13 @@ The order matters. R1 and R2 allow the intended paths, R3 removes the dev VPC, R
 
 Each rule was tested with a Traceflow between the real VMs. Traceflow injects a packet at the source vNIC and reports where it was delivered or which rule dropped it.
 
-| # | Source | Destination | Result |
-|---|---|---|---|
-| 1 | `app-priv01` | `app-pub01` | Delivered (before R5 existed) |
-| 2 | `app-priv01` | `app-pub01` | Dropped, rule 1009 |
-| 3 | `app-pub01` | `app-priv01` | Delivered by R2 |
-| 4 | `app-pub01` | `app-priv01` | Dropped, rule 1008 |
-| 5 | `dev-priv01` | `app-pub01` | Dropped, rule 1007 |
+| # | Source | Destination | Protocol | Result |
+|---|---|---|---|---|
+| 1 | `app-priv01` | `app-pub01` | ICMP | Delivered (before R5 existed) |
+| 2 | `app-priv01` | `app-pub01` | ICMP | Dropped, rule 1009 |
+| 3 | `app-pub01` | `app-priv01` | ICMP | Delivered by R2 |
+| 4 | `app-pub01` | `app-priv01` | TCP 80 | Dropped, rule 1008 |
+| 5 | `dev-priv01` | `app-pub01` | ICMP | Dropped, rule 1007 |
 
 ### The gap that needed R5
 

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 440" width="1120" height="440" font-family="Helvetica,Arial,sans-serif">
+<defs>
+<marker id="ablue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker>
+<marker id="agreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker>
+<marker id="ared" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker>
+<marker id="aamber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fbbf24"/></marker>
+<marker id="agray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker>
+<marker id="aviolet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a78bfa"/></marker>
+</defs>
+<rect width="1120" height="440" fill="#0c1222"/>
+<text x="24" y="30" fill="#e2e8f0" font-size="17" font-weight="bold">VKS cluster, app and storage at a glance</text><text x="24" y="50" fill="#94a3b8" font-size="12" font-style="italic">From the jump host over BGP to a pod, with a volume behind it</text>
+<rect x="240" y="66" width="260" height="330" rx="8" fill="none" stroke="#fbbf24" stroke-dasharray="4 4" opacity="0.8"/><text x="252" y="84" fill="#fbbf24" font-size="12" font-style="italic">w01 networking</text>
+<rect x="536" y="66" width="560" height="330" rx="8" fill="none" stroke="#38bdf8" stroke-dasharray="4 4" opacity="0.8"/><text x="548" y="84" fill="#38bdf8" font-size="12" font-style="italic">ns-app-dev, cluster vks-app-dev01</text>
+<path d="M204,212 L232,212 L232,142 L260,142" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)"/>
+<path d="M370,180 L370,200" fill="none" stroke="#fbbf24" stroke-width="1.6" marker-end="url(#aamber)"/>
+<path d="M370,276 L370,296" fill="none" stroke="#fbbf24" stroke-width="1.6" marker-end="url(#aamber)"/>
+<path d="M480,334 L518,334 L518,250 L556,250" fill="none" stroke="#38bdf8" stroke-width="1.6" marker-end="url(#ablue)"/>
+<path d="M806,250 L830,250" fill="none" stroke="#34d399" stroke-width="1.6" marker-end="url(#agreen)"/>
+<rect x="24" y="170" width="180" height="84" rx="7" fill="#151f30" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="32" y="178" width="34" height="22" rx="4" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="49" y="193" fill="#94a3b8" font-size="9" font-weight="bold" text-anchor="middle">PC</text>
+<text x="74" y="193" fill="#e2e8f0" font-size="12.5" font-weight="bold">Jump host</text>
+<text x="36" y="211" fill="#94a3b8" font-size="11">10.20.10.20</text>
+<text x="36" y="225" fill="#94a3b8" font-size="11">curl http://10.80.0.10</text>
+<rect x="260" y="104" width="220" height="76" rx="7" fill="#151f30" stroke="#94a3b8" stroke-width="1.5"/>
+<rect x="268" y="112" width="34" height="22" rx="4" fill="none" stroke="#94a3b8" stroke-width="1"/><text x="285" y="127" fill="#94a3b8" font-size="9" font-weight="bold" text-anchor="middle">RTR</text>
+<text x="310" y="127" fill="#e2e8f0" font-size="12.5" font-weight="bold">Lab router</text>
+<text x="272" y="145" fill="#94a3b8" font-size="11">learns /32 VIPs over BGP</text>
+<rect x="260" y="200" width="220" height="76" rx="7" fill="#2a2210" stroke="#fbbf24" stroke-width="1.5"/>
+<rect x="268" y="208" width="34" height="22" rx="4" fill="none" stroke="#fbbf24" stroke-width="1"/><text x="285" y="223" fill="#fbbf24" font-size="9" font-weight="bold" text-anchor="middle">T0</text>
+<text x="310" y="223" fill="#e2e8f0" font-size="12.5" font-weight="bold">Tier-0 and transit gateway</text>
+<text x="272" y="241" fill="#94a3b8" font-size="11">centralized, Edge cluster</text>
+<rect x="260" y="296" width="220" height="76" rx="7" fill="#10281f" stroke="#34d399" stroke-width="1.5"/>
+<rect x="268" y="304" width="34" height="22" rx="4" fill="none" stroke="#34d399" stroke-width="1"/><text x="285" y="319" fill="#34d399" font-size="9" font-weight="bold" text-anchor="middle">LB</text>
+<text x="310" y="319" fill="#e2e8f0" font-size="12.5" font-weight="bold">VPC load balancer</text>
+<text x="272" y="337" fill="#94a3b8" font-size="11">web-lb 10.80.0.10:80</text>
+<rect x="556" y="104" width="250" height="84" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="564" y="112" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="581" y="127" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">K8S</text>
+<text x="606" y="127" fill="#e2e8f0" font-size="12.5" font-weight="bold">1 control plane, 2 workers</text>
+<text x="568" y="145" fill="#94a3b8" font-size="11">172.21.0.2 to .4</text>
+<text x="568" y="159" fill="#94a3b8" font-size="11">v1.34.8, Photon 5, Antrea</text>
+<rect x="830" y="104" width="246" height="84" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="838" y="112" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="855" y="127" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">ID</text>
+<text x="880" y="127" fill="#e2e8f0" font-size="12.5" font-weight="bold">API VIP 10.80.0.9</text>
+<text x="842" y="145" fill="#94a3b8" font-size="11">kubectl and the cluster API</text>
+<rect x="556" y="212" width="250" height="76" rx="7" fill="#132239" stroke="#38bdf8" stroke-width="1.5"/>
+<rect x="564" y="220" width="34" height="22" rx="4" fill="none" stroke="#38bdf8" stroke-width="1"/><text x="581" y="235" fill="#38bdf8" font-size="9" font-weight="bold" text-anchor="middle">VM</text>
+<text x="606" y="235" fill="#e2e8f0" font-size="12.5" font-weight="bold">web, 2 pods</text>
+<text x="568" y="253" fill="#94a3b8" font-size="11">nginx-unprivileged on 8080</text>
+<text x="568" y="267" fill="#94a3b8" font-size="11">one per worker</text>
+<rect x="830" y="212" width="246" height="76" rx="7" fill="#10281f" stroke="#34d399" stroke-width="1.5"/>
+<rect x="838" y="220" width="34" height="22" rx="4" fill="none" stroke="#34d399" stroke-width="1"/><text x="855" y="235" fill="#34d399" font-size="9" font-weight="bold" text-anchor="middle">vSAN</text>
+<text x="880" y="235" fill="#e2e8f0" font-size="12.5" font-weight="bold">PVC web-data 1Gi</text>
+<text x="842" y="253" fill="#94a3b8" font-size="11">RWO, Bound in 15 s</text>
+<rect x="556" y="308" width="520" height="64" rx="7" fill="#10281f" stroke="#34d399" stroke-width="1.5"/>
+<rect x="564" y="316" width="34" height="22" rx="4" fill="none" stroke="#34d399" stroke-width="1"/><text x="581" y="331" fill="#34d399" font-size="9" font-weight="bold" text-anchor="middle">DS</text>
+<text x="606" y="331" fill="#e2e8f0" font-size="12.5" font-weight="bold">Storage class vsan-esa-default-policy-raid5 and sp-vks-gold</text>
+<text x="568" y="349" fill="#94a3b8" font-size="11">both synced into the cluster from the namespace</text>
+<text x="1096" y="428" fill="#64748b" font-size="10" text-anchor="end">Virtualization Gurus  |  nested VCF 9.1.1 lab</text></svg>
