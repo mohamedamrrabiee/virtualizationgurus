@@ -19,6 +19,14 @@ With three commissioned hosts waiting as unassigned, the workload domain (`w01`)
 
 The deployment took about one hour 12 minutes, from 15:24 to 16:36, with no failures.
 
+## Architecture at a glance
+
+What the wizard builds: the workload domain and its parts, before the first screen.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-creating-workload-domain-glance.svg"></object>
+</div>
+
 ## The wizard, step by step
 
 | Step | Setting used |

@@ -19,6 +19,14 @@ The management domain and the workload domain each have their own vCenter, and e
 
 In this lab the linking group went from In Progress to Active in about two minutes. This post covers the steps, what to check afterwards, and a permission limit that only shows up when you try to grant access as the SSO user.
 
+## Architecture at a glance
+
+Two vCenters, one common identity provider and the linking group that joins them.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-vcenter-linking-vcf-operations-glance.svg"></object>
+</div>
+
 ## Prerequisites
 
 The documentation lists these requirements for a linking group:

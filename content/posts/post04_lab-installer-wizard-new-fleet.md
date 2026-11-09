@@ -19,6 +19,14 @@ With the hosts prepared and the installer running, the wizard is where the desig
 
 The wizard was run three times in this lab. The first two runs stopped on a thumbprint problem and a vSAN disk problem (covered in the troubleshooting post). The settings below are from the final run, which passed every validation.
 
+## Architecture at a glance
+
+What the wizard builds: the management domain and the VCF management layer, before the first screen.
+
+<div class="diagram-embed">
+  <object type="image/svg+xml" data="/images/diagrams/lab-installer-wizard-new-fleet-glance.svg"></object>
+</div>
+
 ## The settings at a glance
 
 | Wizard step | Setting used |
