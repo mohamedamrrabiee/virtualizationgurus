@@ -205,7 +205,7 @@ The path the request takes is worth naming, because each hop is something built 
 
 -> **Tier-0 to the VPC load balancer**: the VIP belongs to a load balancer in the namespace VPC, reached through the transit gateway.
 
--> **Load balancer to a node, then to a pod**: the load balancer targets the worker nodes, and the Kubernetes service sends the request to one of the two pods.
+-> **Load balancer to the app**: the request ends on one of the two `web` pods, and the `web-lb` address answers HTTP 200.
 
 ## A persistent volume that survives the pod
 
