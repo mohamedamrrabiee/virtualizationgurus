@@ -179,6 +179,12 @@ That size is the point. The library is subscribed with the download set to happe
 
 Plan for that first download in an environment with a slow link to the depot, because the first cluster of each release pays for it.
 
+### Failed "Fetch Content of a Library item" tasks
+
+While working in the vSphere Client, the Recent Tasks panel lists failed `Fetch Content of a Library item` tasks. They are started by the Supervisor's own service account, `wcp-vmop-user`, and they target images for older Kubernetes versions such as v1.19, v1.24 and v1.27, not the three releases this Supervisor offers. Each one reports that the export of the library item failed because the source content could not be retrieved for the download session.
+
+They do not touch the READY releases above. The image for `v1.34.8` downloaded without a problem, and the cluster in the next post was built from it, so no action was needed in the lab.
+
 ## Checklist for a namespace that is ready for a team
 
 -> **Supervisor healthy**: all nodes Ready and no unhealthy pods before anything is layered on it.
