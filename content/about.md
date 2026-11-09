@@ -55,6 +55,10 @@ Named a **VMware vExpert 2026**, the Broadcom community program that recognizes 
     <img src="https://images.credly.com/size/150x150/images/081374d2-721a-4d32-bff8-cc737818a3fc/blob" alt="VMware Certified Professional - VMware Cloud Foundation Administrator" loading="lazy" />
     <span>VCP - VCF Administrator</span>
   </a>
+  <a class="cert-badge" href="https://www.credly.com/badges/94e54985-fd1d-4825-817e-5fde021172c1" target="_blank" rel="noopener noreferrer">
+    <img src="https://images.credly.com/size/150x150/images/a52ac771-c764-4437-9bb4-95682f0013a2/blob" alt="VMware Certified Advanced Professional - VMware Cloud Foundation Administrator" loading="lazy" />
+    <span>VCAP - VCF Administrator</span>
+  </a>
   <a class="cert-badge" href="https://www.credly.com/badges/73bc2f0a-25db-4001-8539-9daf828ed2b9" target="_blank" rel="noopener noreferrer">
     <img src="https://images.credly.com/size/150x150/images/09b91d88-e1a6-4bbc-9b72-58570b4e72c0/blob" alt="VMware Certified Advanced Professional - VMware Cloud Foundation VKS" loading="lazy" />
     <span>VCAP - VCF VKS</span>
