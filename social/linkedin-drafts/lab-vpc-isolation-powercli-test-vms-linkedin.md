@@ -1,5 +1,5 @@
 LinkedIn Draft: Proving VPC Isolation with PowerCLI Test VMs and a Ping Matrix
-Source post: content/posts/lab-vpc-isolation-powercli-test-vms.md
+Source post: content/posts/post19_lab-vpc-isolation-powercli-test-vms.md
 Image: social/linkedin-drafts/images/lab-vpc-isolation-powercli-test-vms-linkedin.jpg
 Status: DRAFT, needs review before posting
 

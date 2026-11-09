@@ -1,5 +1,6 @@
 ---
 title: "Micro-segmentation Between VPCs with the Distributed Firewall, Proven with Traceflow"
+slug: "lab-dfw-vpc-tag-microsegmentation"
 date: 2026-11-26
 draft: true
 tags: ["VCF", "VMware", "Lab", "NSX", "DFW", "VPC", "Traceflow", "Security"]

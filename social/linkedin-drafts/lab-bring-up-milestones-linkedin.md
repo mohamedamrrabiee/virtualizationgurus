@@ -1,5 +1,5 @@
 LinkedIn Draft: Bring-up Milestones: What Each Stage Builds and How Long It Took
-Source post: content/posts/lab-bring-up-milestones.md
+Source post: content/posts/post05_lab-bring-up-milestones.md
 Image: social/linkedin-drafts/images/lab-bring-up-milestones-linkedin.jpg
 Status: DRAFT, needs review before posting
 

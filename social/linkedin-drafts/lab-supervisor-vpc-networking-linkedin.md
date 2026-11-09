@@ -1,5 +1,5 @@
 LinkedIn Draft: Activating a Supervisor on VPC Networking: Design Choices, the Wizard and the First 50 Minutes
-Source post: content/posts/lab-supervisor-vpc-networking.md
+Source post: content/posts/post21_lab-supervisor-vpc-networking.md
 Image: social/linkedin-drafts/images/lab-supervisor-vpc-networking-linkedin.jpg
 Status: DRAFT, needs review before posting
 

@@ -1,5 +1,6 @@
 ---
 title: "Guided Edge Deployment from vCenter: Port Group, TEP Pool and the Edge Cluster"
+slug: "lab-guided-edge-deployment-vcenter"
 date: 2026-11-16
 draft: true
 tags: ["VCF", "VMware", "Lab", "NSX", "Edge", "Networking"]

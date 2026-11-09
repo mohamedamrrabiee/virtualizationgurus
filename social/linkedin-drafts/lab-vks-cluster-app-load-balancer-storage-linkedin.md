@@ -1,5 +1,5 @@
 LinkedIn Draft: A VKS Cluster in 8 Minutes from the vSphere Client, Then an App with a Load Balancer and Storage
-Source post: content/posts/lab-vks-cluster-app-load-balancer-storage.md
+Source post: content/posts/post23_lab-vks-cluster-app-load-balancer-storage.md
 Image: social/linkedin-drafts/images/lab-vks-cluster-app-load-balancer-storage-linkedin.jpg
 Status: DRAFT, needs review before posting
 

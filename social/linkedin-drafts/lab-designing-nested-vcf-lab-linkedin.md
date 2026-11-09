@@ -1,5 +1,5 @@
 LinkedIn Draft: Designing a Nested VCF 9.1.1 Lab
-Source post: content/posts/lab-designing-nested-vcf-lab.md
+Source post: content/posts/post01_lab-designing-nested-vcf-lab.md
 Image: social/linkedin-drafts/images/lab-designing-nested-vcf-lab-linkedin.jpg
 Status: DRAFT, needs review before posting
 

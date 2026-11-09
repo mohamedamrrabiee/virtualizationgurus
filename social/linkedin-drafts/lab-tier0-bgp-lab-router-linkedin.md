@@ -1,5 +1,5 @@
 LinkedIn Draft: Tier-0 Active/Standby and eBGP to the Lab Router, Verified from Both Sides
-Source post: content/posts/lab-tier0-bgp-lab-router.md
+Source post: content/posts/post16_lab-tier0-bgp-lab-router.md
 Image: social/linkedin-drafts/images/lab-tier0-bgp-lab-router-linkedin.jpg
 Status: DRAFT, needs review before posting
 

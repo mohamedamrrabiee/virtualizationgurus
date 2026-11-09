@@ -1,5 +1,5 @@
 LinkedIn Draft: VMs Next to Containers: VM Service with cloud-init, and a Volume from the Local Consumption Interface
-Source post: content/posts/lab-vm-service-cloud-init-volume.md
+Source post: content/posts/post24_lab-vm-service-cloud-init-volume.md
 Image: social/linkedin-drafts/images/lab-vm-service-cloud-init-volume-linkedin.jpg
 Status: DRAFT, needs review before posting
 

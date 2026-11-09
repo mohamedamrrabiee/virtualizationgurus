@@ -1,5 +1,5 @@
 LinkedIn Draft: VPCs and Subnets from vCenter: Private, Public, DHCP, DNS and NTP
-Source post: content/posts/lab-vpcs-subnets-vcenter.md
+Source post: content/posts/post18_lab-vpcs-subnets-vcenter.md
 Image: social/linkedin-drafts/images/lab-vpcs-subnets-vcenter-linkedin.jpg
 Status: DRAFT, needs review before posting
 

@@ -1,5 +1,6 @@
 ---
 title: "Day-N Starts in VCF Operations: Verifying the Management Domain"
+slug: "lab-verifying-management-domain"
 date: 2026-11-10
 draft: true
 tags: ["VCF", "VMware", "Lab", "VCF Operations", "Day-N", "Verification"]

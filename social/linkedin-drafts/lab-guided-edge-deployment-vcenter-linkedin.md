@@ -1,5 +1,5 @@
 LinkedIn Draft: Guided Edge Deployment from vCenter: Port Group, TEP Pool and the Edge Cluster
-Source post: content/posts/lab-guided-edge-deployment-vcenter.md
+Source post: content/posts/post15_lab-guided-edge-deployment-vcenter.md
 Image: social/linkedin-drafts/images/lab-guided-edge-deployment-vcenter-linkedin.jpg
 Status: DRAFT, needs review before posting
 

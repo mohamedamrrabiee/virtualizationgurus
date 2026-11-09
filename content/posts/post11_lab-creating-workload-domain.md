@@ -1,5 +1,6 @@
 ---
 title: "Creating the Workload Domain from VCF Operations"
+slug: "lab-creating-workload-domain"
 date: 2026-11-12
 draft: true
 tags: ["VCF", "VMware", "Lab", "Workload Domain", "VCF Operations", "NSX"]

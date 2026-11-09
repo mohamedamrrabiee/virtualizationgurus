@@ -1,5 +1,6 @@
 ---
 title: "Centralized Transit Gateway and IP Blocks: What Gets Advertised and What Does Not"
+slug: "lab-centralized-transit-gateway-ip-blocks"
 date: 2026-11-18
 draft: true
 tags: ["VCF", "VMware", "Lab", "NSX", "Transit Gateway", "VPC", "BGP"]

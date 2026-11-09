@@ -1,5 +1,5 @@
 LinkedIn Draft: After the Wizard: Static Host TEP Pool, NSX Agents and a Datacenter Rename
-Source post: content/posts/lab-static-tep-pool-nsx-agents.md
+Source post: content/posts/post12_lab-static-tep-pool-nsx-agents.md
 Image: social/linkedin-drafts/images/lab-static-tep-pool-nsx-agents-linkedin.jpg
 Status: DRAFT, needs review before posting
 

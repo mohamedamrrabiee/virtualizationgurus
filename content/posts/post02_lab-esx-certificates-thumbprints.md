@@ -1,5 +1,6 @@
 ---
 title: "Preparing Nested ESX Hosts: Certificates and Thumbprints Done Right"
+slug: "lab-esx-certificates-thumbprints"
 date: 2026-10-29
 draft: false
 tags: ["VCF", "VMware", "Lab", "ESX", "Certificates", "Troubleshooting"]

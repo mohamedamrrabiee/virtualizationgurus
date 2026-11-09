@@ -1,5 +1,5 @@
 LinkedIn Draft: Namespaces, Storage Policies and Kubernetes Releases: Getting VKS Ready for a Team
-Source post: content/posts/lab-namespace-storage-policy-kubernetes-releases.md
+Source post: content/posts/post22_lab-namespace-storage-policy-kubernetes-releases.md
 Image: social/linkedin-drafts/images/lab-namespace-storage-policy-kubernetes-releases-linkedin.jpg
 Status: DRAFT, needs review before posting
 

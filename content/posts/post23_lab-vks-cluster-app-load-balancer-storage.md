@@ -1,5 +1,6 @@
 ---
 title: "A VKS Cluster in 8 Minutes from the vSphere Client, Then an App with a Load Balancer and Storage"
+slug: "lab-vks-cluster-app-load-balancer-storage"
 date: 2026-11-24
 draft: true
 tags: ["VCF", "VMware", "Lab", "VKS", "Kubernetes", "Load Balancer", "vSAN", "Persistent Volume"]

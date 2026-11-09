@@ -1,5 +1,5 @@
 LinkedIn Draft: Centralized Transit Gateway and IP Blocks: What Gets Advertised and What Does Not
-Source post: content/posts/lab-centralized-transit-gateway-ip-blocks.md
+Source post: content/posts/post17_lab-centralized-transit-gateway-ip-blocks.md
 Image: social/linkedin-drafts/images/lab-centralized-transit-gateway-ip-blocks-linkedin.jpg
 Status: DRAFT, needs review before posting
 

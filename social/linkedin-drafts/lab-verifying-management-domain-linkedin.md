@@ -1,5 +1,5 @@
 LinkedIn Draft: Day-N Starts in VCF Operations: Verifying the Management Domain
-Source post: content/posts/lab-verifying-management-domain.md
+Source post: content/posts/post09_lab-verifying-management-domain.md
 Image: social/linkedin-drafts/images/lab-verifying-management-domain-linkedin.jpg
 Status: DRAFT, needs review before posting
 

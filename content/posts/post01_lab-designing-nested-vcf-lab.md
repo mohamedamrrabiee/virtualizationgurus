@@ -1,5 +1,6 @@
 ---
 title: "Designing a Nested VCF 9.1.1 Lab: Names, VLANs and Decisions"
+slug: "lab-designing-nested-vcf-lab"
 date: 2026-10-21
 draft: false
 tags: ["VCF", "VMware", "Lab", "Design", "Nested"]

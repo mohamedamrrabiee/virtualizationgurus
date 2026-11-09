@@ -1,5 +1,6 @@
 ---
 title: "One vSphere Client for Two Domains: vCenter Linking in VCF Operations"
+slug: "lab-vcenter-linking-vcf-operations"
 date: 2026-11-15
 draft: true
 tags: ["VCF", "VMware", "Lab", "vCenter Linking", "VCF SSO", "VCF Operations"]

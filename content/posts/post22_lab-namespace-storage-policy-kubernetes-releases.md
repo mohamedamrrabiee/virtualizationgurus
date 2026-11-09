@@ -1,5 +1,6 @@
 ---
 title: "Namespaces, Storage Policies and Kubernetes Releases: Getting VKS Ready for a Team"
+slug: "lab-namespace-storage-policy-kubernetes-releases"
 date: 2026-11-23
 draft: true
 tags: ["VCF", "VMware", "Lab", "Supervisor", "VKS", "vSphere Namespace", "vSAN", "Storage Policy"]

@@ -1,5 +1,5 @@
 LinkedIn Draft: One vSphere Client for Two Domains: vCenter Linking in VCF Operations
-Source post: content/posts/lab-vcenter-linking-vcf-operations.md
+Source post: content/posts/post14_lab-vcenter-linking-vcf-operations.md
 Image: social/linkedin-drafts/images/lab-vcenter-linking-vcf-operations-linkedin.jpg
 Status: DRAFT, needs review before posting
 

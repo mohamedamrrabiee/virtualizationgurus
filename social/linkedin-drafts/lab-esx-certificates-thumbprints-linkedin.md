@@ -1,5 +1,5 @@
 LinkedIn Draft: Preparing Nested ESX Hosts: Certificates and Thumbprints
-Source post: content/posts/lab-esx-certificates-thumbprints.md
+Source post: content/posts/post02_lab-esx-certificates-thumbprints.md
 Image: social/linkedin-drafts/images/lab-esx-certificates-thumbprints-linkedin.jpg
 Status: DRAFT, needs review before posting
 

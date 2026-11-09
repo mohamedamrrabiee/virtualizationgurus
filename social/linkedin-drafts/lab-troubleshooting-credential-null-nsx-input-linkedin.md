@@ -1,5 +1,5 @@
 LinkedIn Draft: Troubleshooting Bring-up 3: Credential Null and NSX Input Data
-Source post: content/posts/lab-troubleshooting-credential-null-nsx-input.md
+Source post: content/posts/post08_lab-troubleshooting-credential-null-nsx-input.md
 Image: social/linkedin-drafts/images/lab-troubleshooting-credential-null-nsx-input-linkedin.jpg
 Status: DRAFT, needs review before posting
 

@@ -1,5 +1,5 @@
 LinkedIn Draft: Lab Hygiene: Reverting Troubleshooting Changes on SDDC Manager
-Source post: content/posts/lab-sddc-manager-hygiene-revert-changes.md
+Source post: content/posts/post20_lab-sddc-manager-hygiene-revert-changes.md
 Image: social/linkedin-drafts/images/lab-sddc-manager-hygiene-revert-changes-linkedin.jpg
 Status: DRAFT, needs review before posting
 

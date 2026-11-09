@@ -1,5 +1,5 @@
 LinkedIn Draft: VCF SSO Without Active Directory: Keycloak as an OIDC Provider
-Source post: content/posts/lab-vcf-sso-keycloak-oidc.md
+Source post: content/posts/post13_lab-vcf-sso-keycloak-oidc.md
 Image: social/linkedin-drafts/images/lab-vcf-sso-keycloak-oidc-linkedin.jpg
 Status: DRAFT, needs review before posting
 

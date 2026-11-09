@@ -1,5 +1,5 @@
 LinkedIn Draft: Walking the VCF Installer Wizard for a New Fleet
-Source post: content/posts/lab-installer-wizard-new-fleet.md
+Source post: content/posts/post04_lab-installer-wizard-new-fleet.md
 Image: social/linkedin-drafts/images/lab-installer-wizard-new-fleet-linkedin.jpg
 Status: DRAFT, needs review before posting
 

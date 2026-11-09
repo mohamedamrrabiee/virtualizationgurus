@@ -1,5 +1,5 @@
 LinkedIn Draft: Troubleshooting Bring-up 1: Thumbprint Mismatch and vSAN ESA Disk Eligibility
-Source post: content/posts/lab-troubleshooting-thumbprint-vsan.md
+Source post: content/posts/post06_lab-troubleshooting-thumbprint-vsan.md
 Image: social/linkedin-drafts/images/lab-troubleshooting-thumbprint-vsan-linkedin.jpg
 Status: DRAFT, needs review before posting
 

@@ -1,5 +1,5 @@
 LinkedIn Draft: Host Commissioning in 9.1.1: Network Pools and the API Path for Nested Labs
-Source post: content/posts/lab-host-commissioning-network-pool-api.md
+Source post: content/posts/post10_lab-host-commissioning-network-pool-api.md
 Image: social/linkedin-drafts/images/lab-host-commissioning-network-pool-api-linkedin.jpg
 Status: DRAFT, needs review before posting
 

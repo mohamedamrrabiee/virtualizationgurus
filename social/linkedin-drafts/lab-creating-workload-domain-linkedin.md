@@ -1,5 +1,5 @@
 LinkedIn Draft: Creating the Workload Domain from VCF Operations
-Source post: content/posts/lab-creating-workload-domain.md
+Source post: content/posts/post11_lab-creating-workload-domain.md
 Image: social/linkedin-drafts/images/lab-creating-workload-domain-linkedin.jpg
 Status: DRAFT, needs review before posting
 

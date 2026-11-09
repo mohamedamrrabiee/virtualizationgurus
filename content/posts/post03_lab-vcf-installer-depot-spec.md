@@ -1,5 +1,6 @@
 ---
 title: "VCF Installer in a Lab: Appliance Placement, Offline Depot and a Spec from the Planning Workbook"
+slug: "lab-vcf-installer-depot-spec"
 date: 2026-11-04
 draft: false
 tags: ["VCF", "VMware", "Lab", "VCF Installer", "Offline Depot", "Deployment"]

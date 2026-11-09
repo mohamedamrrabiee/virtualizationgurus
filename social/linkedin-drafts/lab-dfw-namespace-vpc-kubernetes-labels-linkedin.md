@@ -1,5 +1,5 @@
 LinkedIn Draft: Distributed Firewall for Kubernetes Workloads: Pods and VMs in the Namespace VPC
-Source post: content/posts/lab-dfw-namespace-vpc-kubernetes-labels.md
+Source post: content/posts/post26_lab-dfw-namespace-vpc-kubernetes-labels.md
 Image: social/linkedin-drafts/images/lab-dfw-namespace-vpc-kubernetes-labels-linkedin.jpg
 Status: DRAFT, needs review before posting
 

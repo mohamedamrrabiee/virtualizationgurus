@@ -1,5 +1,5 @@
 LinkedIn Draft: VCF Installer in a Lab: Placement, Depot and Spec
-Source post: content/posts/lab-vcf-installer-depot-spec.md
+Source post: content/posts/post03_lab-vcf-installer-depot-spec.md
 Image: social/linkedin-drafts/images/lab-vcf-installer-depot-spec-linkedin.jpg
 Status: DRAFT, needs review before posting
 

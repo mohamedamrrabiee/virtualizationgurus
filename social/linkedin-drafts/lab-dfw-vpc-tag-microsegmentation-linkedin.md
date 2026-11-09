@@ -1,5 +1,5 @@
 LinkedIn Draft: Micro-segmentation Between VPCs with the Distributed Firewall, Proven with Traceflow
-Source post: content/posts/lab-dfw-vpc-tag-microsegmentation.md
+Source post: content/posts/post25_lab-dfw-vpc-tag-microsegmentation.md
 Image: social/linkedin-drafts/images/lab-dfw-vpc-tag-microsegmentation-linkedin.jpg
 Status: DRAFT, needs review before posting
 

@@ -1,5 +1,5 @@
 LinkedIn Draft: Troubleshooting Bring-up 2: VPC Config Type and the NSX Version
-Source post: content/posts/lab-troubleshooting-vpc-config-nsx-version.md
+Source post: content/posts/post07_lab-troubleshooting-vpc-config-nsx-version.md
 Image: social/linkedin-drafts/images/lab-troubleshooting-vpc-config-nsx-version-linkedin.jpg
 Status: DRAFT, needs review before posting
 

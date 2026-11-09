@@ -1,5 +1,6 @@
 ---
 title: "Tier-0 Active/Standby and eBGP to the Lab Router, Verified from Both Sides"
+slug: "lab-tier0-bgp-lab-router"
 date: 2026-11-17
 draft: true
 tags: ["VCF", "VMware", "Lab", "NSX", "BGP", "Tier-0", "Networking"]
