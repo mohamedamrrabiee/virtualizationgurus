@@ -205,7 +205,25 @@ The path the request takes is worth naming, because each hop is something built 
 
 -> **Tier-0 to the VPC load balancer**: the VIP belongs to a load balancer in the namespace VPC, reached through the transit gateway.
 
--> **Load balancer to the app**: the request ends on one of the two `web` pods, and the `web-lb` address answers HTTP 200.
+-> **Load balancer to a node, then to a pod**: the load balancer targets the two worker nodes on one NodePort, and the Kubernetes service on the node sends the request to one of the two `web` pods.
+
+The Supervisor shows the load balancer side of this. Each `LoadBalancer` service in the guest cluster is mirrored in the namespace as a service of the same type, and its endpoints are the worker nodes.
+
+```bash
+kubectl get svc,endpoints -n ns-app-dev
+```
+
+```text
+NAME                                          TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
+service/vks-app-dev01                         LoadBalancer   10.96.0.164   10.80.0.9     6443/TCP  19d
+service/vks-app-dev01-f9580c8a37280d0fc8555   LoadBalancer   10.96.0.99    10.80.0.10    80/TCP    19d
+
+NAME                                            ENDPOINTS                           AGE
+endpoints/vks-app-dev01                         172.21.0.2:6443                     19d
+endpoints/vks-app-dev01-f9580c8a37280d0fc8555   172.21.0.3:31109,172.21.0.4:31109   19d
+```
+
+The address `10.80.0.10` is the `web-lb` VIP from earlier, and its endpoints are the two workers, `172.21.0.3` and `172.21.0.4`, on NodePort 31109. The API VIP `10.80.0.9` points at the control plane node `172.21.0.2` on 6443.
 
 ## A persistent volume that survives the pod
 
