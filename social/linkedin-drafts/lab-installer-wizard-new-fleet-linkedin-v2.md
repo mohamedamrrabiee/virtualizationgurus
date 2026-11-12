@@ -19,6 +19,6 @@ The wizard takes minutes. The preparation behind it is the deployment.
 
 What is the one pre-deployment check you never skip?
 
-Full technical breakdown on the blog: https://virtualizationgurus.pages.dev/posts/lab-installer-wizard-new-fleet/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-installer-wizard-new-fleet
+Full technical breakdown on the blog: https://mohamedamrrabiee.github.io/virtualizationgurus/posts/lab-installer-wizard-new-fleet/?utm_source=linkedin&utm_medium=social&utm_campaign=lab-installer-wizard-new-fleet
 
 #VCF9 #VMware #Broadcom #VCFInstaller #vSAN #VirtualizationGurus #VMwareCommunity #vExpert
