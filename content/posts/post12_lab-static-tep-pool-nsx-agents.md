@@ -1,7 +1,7 @@
 ---
 title: "After the Wizard: Static Host TEP Pool, NSX Agents and a Datacenter Rename"
 slug: "lab-static-tep-pool-nsx-agents"
-date: 2026-11-20
+date: 2027-01-07
 draft: true
 tags: ["VCF", "VMware", "Lab", "NSX", "Host TEP", "Troubleshooting"]
 categories: ["VCF 9", "Lab Series"]

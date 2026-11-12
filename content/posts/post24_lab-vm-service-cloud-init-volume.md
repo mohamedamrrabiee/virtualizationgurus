@@ -1,7 +1,7 @@
 ---
 title: "VMs Next to Containers: VM Service with cloud-init, and a Volume from the Local Consumption Interface"
 slug: "lab-vm-service-cloud-init-volume"
-date: 2026-12-02
+date: 2027-04-01
 draft: true
 tags: ["VCF", "VMware", "Lab", "VM Service", "Supervisor", "cloud-init", "vSAN", "Local Consumption Interface"]
 categories: ["VCF 9", "Lab Series"]
