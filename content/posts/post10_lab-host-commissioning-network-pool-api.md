@@ -1,7 +1,7 @@
 ---
 title: "Host Commissioning in 9.1.1: Network Pools and the API Path for Nested Labs"
 slug: "lab-host-commissioning-network-pool-api"
-date: 2026-11-11
+date: 2026-11-18
 draft: true
 tags: ["VCF", "VMware", "Lab", "SDDC Manager", "Host Commissioning", "vSAN ESA"]
 categories: ["VCF 9", "Lab Series"]

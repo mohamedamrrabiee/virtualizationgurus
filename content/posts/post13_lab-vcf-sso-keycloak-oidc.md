@@ -1,7 +1,7 @@
 ---
 title: "VCF SSO Without Active Directory: Keycloak as an OIDC Provider"
 slug: "lab-vcf-sso-keycloak-oidc"
-date: 2026-11-14
+date: 2026-11-21
 draft: true
 tags: ["VCF", "VMware", "Lab", "VCF SSO", "Keycloak", "OIDC", "Identity"]
 categories: ["VCF 9", "Lab Series"]

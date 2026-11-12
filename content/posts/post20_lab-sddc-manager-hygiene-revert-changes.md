@@ -1,7 +1,7 @@
 ---
 title: "Lab Hygiene: Reverting Troubleshooting Changes on SDDC Manager"
 slug: "lab-sddc-manager-hygiene-revert-changes"
-date: 2026-11-21
+date: 2026-11-28
 draft: true
 tags: ["VCF", "VMware", "Lab", "SDDC Manager", "Troubleshooting", "Operations"]
 categories: ["VCF 9", "Lab Series"]

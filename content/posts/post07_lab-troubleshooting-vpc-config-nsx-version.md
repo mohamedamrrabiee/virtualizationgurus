@@ -1,7 +1,7 @@
 ---
 title: "Troubleshooting Bring-up 2: VPC Config Type and the NSX Version"
 slug: "lab-troubleshooting-vpc-config-nsx-version"
-date: 2026-11-08
+date: 2026-11-15
 draft: true
 tags: ["VCF", "VMware", "Lab", "Troubleshooting", "VCF Installer", "SDDC Manager"]
 categories: ["VCF 9", "Lab Series"]
