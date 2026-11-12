@@ -10,12 +10,12 @@ cover:
   image: "/images/covers/lab-installer-wizard-new-fleet.jpg"
   alt: "Walking the VCF Installer Wizard for a New Fleet"
   relative: false
-description: "A step-by-step walk through the VCF Installer wizard for a new VCF 9.1.1 fleet: every setting used for the management domain, the vSAN ESA HCL warnings on nested hardware, and what the final validation looked like."
+description: "A step-by-step walk through the VCF Installer wizard for a new VCF 9.1.1 fleet: every setting used for the management domain, the vSAN ESA disk eligibility settings, and what the final validation looked like."
 ---
 
 ## Overview
 
-With the hosts prepared and the installer running, the wizard is where the design from the first post turns into settings. This post walks through the management domain deployment in the order the wizard asks for it, with the exact choices used in this lab and the one step that needs extra attention on nested hardware.
+With the hosts prepared and the installer running, the wizard is where the design from the first post turns into settings. This post walks through the management domain deployment in the order the wizard asks for it, with the exact choices used in this lab and the one step that needs extra attention, the vSAN storage check.
 
 The wizard was run three times in this lab. The first two runs stopped on a thumbprint problem and a vSAN disk problem (covered in the troubleshooting post). The settings below are from the final run, which passed every validation.
 
@@ -71,7 +71,7 @@ Set the vCenter name (`vg1-m01-vc01`), datacenter (`vg1-m01-dc01`), cluster (`vg
 
 ### 5. Storage
 
-Choose vSAN ESA and enable the option to auto-claim HCL-incompatible disks. This is the step that matters most on nested hardware, and it gets its own section below.
+Choose vSAN ESA and enable the option to auto-claim HCL-incompatible disks. This is the step that needs the most care, and it gets its own section below.
 
 ![VCF Installer storage step with vSAN ESA and auto-claim of HCL-incompatible disks](/images/lab/lab-S016.jpg)
 *Storage: vSAN ESA with auto-claim of HCL-incompatible disks enabled.*
@@ -95,14 +95,14 @@ Enter the cluster VIP and the three appliance FQDNs, then the VLAN and gateway f
 The installer runs its pre-checks against the hosts, network, DNS and NTP. Anything that cannot be fixed shows up here as an error, and anything it considers a risk shows up as a warning you must acknowledge before deploying.
 
 ![VCF Installer validation with vSAN HCL warnings](/images/lab/lab-S024.jpg)
-*Validation: the vSAN HCL warnings that appear on virtual NVMe disks.*
+*Validation: the vSAN HCL warnings listed for disks that are not on the HCL.*
 
 ![VCF Installer final validation run with all checks passed](/images/lab/lab-S079.jpg)
 *Final run: all validations passed and the warnings acknowledged.*
 
-## The HCL warning on nested hardware
+## The vSAN HCL check
 
-The nested hosts use virtual NVMe disks, which are not on the vSAN ESA HCL. The first validation failed on all four hosts with "ESX Host vSAN HCL Compatibility" and the message "Host is not HCL compatible; no vSAN ESA certified disks".
+The disks in this lab are virtual NVMe devices that are not on the vSAN ESA HCL. The first validation failed on all four hosts with "ESX Host vSAN HCL Compatibility" and the message "Host is not HCL compatible; no vSAN ESA certified disks".
 
 -> **Spec setting**: `skipHclAutoDiskClaim` must be `true` in the vSAN ESA configuration of the spec. The imported spec had it set to `false`.
 
@@ -112,7 +112,7 @@ The nested hosts use virtual NVMe disks, which are not on the vSAN ESA HCL. The 
 
 -> **Both switches reset**: on every spec import and on every new installer appliance. If you re-import a spec, check the Storage step again.
 
-This is a lab-only workaround for unsupported hardware. On certified hardware, the HCL check should pass and none of this applies.
+Use these overrides only where the disks are not HCL listed. With certified disks the check passes and none of this applies.
 
 ## Before you deploy
 
