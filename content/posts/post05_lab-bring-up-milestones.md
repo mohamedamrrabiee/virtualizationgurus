@@ -2,7 +2,7 @@
 title: "Bring-up Milestones: What Each Stage Builds and How Long It Took"
 slug: "lab-bring-up-milestones"
 date: 2026-11-19
-draft: true
+draft: false
 tags: ["VCF", "VMware", "Lab", "VCF Installer", "Bring-up", "Timing"]
 categories: ["VCF 9", "Lab Series"]
 labPart: 5

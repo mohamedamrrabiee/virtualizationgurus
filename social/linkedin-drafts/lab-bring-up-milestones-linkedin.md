@@ -1,7 +1,7 @@
 LinkedIn Draft: Bring-up Milestones: What Each Stage Builds and How Long It Took
 Source post: content/posts/post05_lab-bring-up-milestones.md
 Image: social/linkedin-drafts/images/lab-bring-up-milestones-linkedin.jpg
-Status: DRAFT, needs review before posting
+Status: READY, publish with the blog post on 2026-11-19
 
 My VCF 9.1.1 management domain bring-up took about 14 hours 25 minutes of wall clock time. Most of that was one stage.
 
