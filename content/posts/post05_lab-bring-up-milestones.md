@@ -10,14 +10,21 @@ cover:
   image: "/images/covers/lab-bring-up-milestones.jpg"
   alt: "Bring-up Milestones: What Each Stage Builds and How Long It Took"
   relative: false
-description: "The seven bring-up milestones of a VCF 9.1.1 management domain deployment in a nested lab, with the duration of each stage as shown by the installer and what to expect while it runs."
+description: "What the VCF Installer automates in a VCF 9.1.1 management domain deployment: seven milestones, what each stage builds, how long each took in this lab, and what to expect while it runs."
 ---
 
 ## Overview
 
-Once validation passes, the installer takes over and builds the management domain as a series of milestones. In a nested lab nothing is fast, and knowing what each stage is doing tells you whether a long pause is normal or a problem.
+Once validation passes, the VCF Installer takes over and builds the management domain from the single validated configuration you gave it. vCenter, SDDC Manager, the cluster with its distributed switch and vSAN datastore, three NSX Managers and the three VCF 9 layers on top are deployed and configured in the right order, with no manual sequencing between them. That is the real benefit: one input, one workflow, a repeatable result.
 
-This post lists the milestones in order, with the durations the installer showed in this lab. The durations include time spent paused on failures, which the troubleshooting posts cover, so read them as a ceiling for a clean run, not a benchmark.
+This post lists the seven milestones in order, with the steps the installer tracks in each and the duration it showed in this lab. The durations include time spent paused on failures, which the troubleshooting posts cover, so read them as a ceiling for a clean run, not a benchmark.
+
+## What the installer automates
+
+-> **Dependency order**: each stage starts only when the one it depends on is complete, so you never build NSX before the cluster exists.
+-> **Tracked progress**: more than 280 steps are tracked across the stages, so you always know which stage is running and how far it is.
+-> **Pause, fix, retry**: a failed step pauses the stage and keeps state, so the deployment continues after the fix instead of starting over.
+-> **Repeatability**: the same validated input produces the same domain every time, which is what makes it consistent across environments.
 
 ## The milestones
 
@@ -31,7 +38,7 @@ This post lists the milestones in order, with the durations the installer showed
 | Deploy and configure the operations appliance | 58m 17s | 15 | |
 | Deploy and configure VCF Management Services | 1h 2m 49s | 18 | |
 
-The final run started on 16 October at 22:13 and completed on 17 October at 12:38, about 14 hours 25 minutes of wall clock time including every troubleshooting pause.
+The final run started on 16 October at 22:13 and completed on 17 October at 12:38, about 14 hours 25 minutes of wall clock time including every troubleshooting pause. All of it ran from one configuration, with no manual deployment steps between the stages.
 
 ## What each stage does
 
@@ -60,7 +67,9 @@ The final run started on 16 October at 22:13 and completed on 17 October at 12:3
 
 -> **Failures stop the stage, not the deployment**: when a step failed, the installer paused with an error and kept its state, so the deployment could be retried after the fix rather than rebuilt.
 
--> **Plan for a long day**: even a clean run is several hours in a nested lab. Start it when you can watch the first hour, since vCenter and SDDC Manager are where host-level problems appear.
+-> **Start it when you can watch the first hour**: vCenter and SDDC Manager are where host-level problems appear, and the rest runs on its own once they are through.
+
+-> **Preparation decides the outcome**: the installer rewards a validated input. The better the preparation, the less there is to pause on.
 
 ## When it completes
 
