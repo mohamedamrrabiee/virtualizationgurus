@@ -1,7 +1,7 @@
 LinkedIn Draft: Troubleshooting Bring-up 1: Thumbprint Mismatch and vSAN ESA Disk Eligibility
 Source post: content/posts/post06_lab-troubleshooting-thumbprint-vsan.md
 Image: social/linkedin-drafts/images/lab-troubleshooting-thumbprint-vsan-linkedin.jpg
-Status: DRAFT, needs review before posting
+Status: READY, publish with the blog post on 2026-11-26
 
 My first VCF bring-up failed at Deploy vCenter, and the cleanup caused a second failure that looked completely unrelated.
 
